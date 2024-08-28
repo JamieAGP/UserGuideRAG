@@ -40,17 +40,17 @@ class CallableLLM:
             model=self.model,
             prompt=prompt,
             max_tokens=512,
-            stream=False  # Switch off streaming temporarily to simplify debugging
+            stream=False  # Switch off streaming 
         )
-        # Ensure we return a string
+        # Return a string
         return response.choices[0].text.strip()
 
-# Load and prepare the single text file
-file_path = Path(__file__).parent / 'User Guide.txt'  # Replace with your actual file name
+# Load RAG data
+file_path = Path(__file__).parent / 'User Guide.txt'  
 loader = TextLoader(file_path, encoding="utf-8")
 doc_data = loader.load()
 
-# Split text into manageable chunks
+# Split text into chunks
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=200)
 splits = text_splitter.split_documents(doc_data)
 
@@ -73,6 +73,7 @@ retriever = vectorstore.as_retriever()
 # System prompt for setting context
 system_prompt = "You are a technical support AI for the software package 'Visualyse Professional Version 7'. You have specialised knowledge on how to perform simulations of a range of radiocommunication systems within the software. Use your knowledge to help questioners perform their task."
 
+# Template for use prompt
 template = """Use the provided pieces of context, in triple backticks, from the Visualyse User Guide to help answer the question at the end.
 If you don't know the answer, just say that you don't know. The context of the question will always be about Visualyse Professional.
 
@@ -93,7 +94,7 @@ def format_docs(docs):
     context = "\n\n".join(doc.page_content for doc in docs)
 
     # Create a temporary file
-    with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding="utf-8", suffix='.txt') as temp_file:
+    with tempfile.NamedTemporaryFile(delete=True, delete_on_close=True, mode='w', encoding="utf-8", suffix='.txt') as temp_file:
         temp_file.write(context)
         temp_file_path = temp_file.name
 
