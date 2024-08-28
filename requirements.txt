@@ -1,0 +1,5 @@
+openai>=0.27.0
+chromadb>=0.3.21
+langchain>=0.0.237
+langchain-core>=0.0.1
+langchain-community>=0.0.1
