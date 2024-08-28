@@ -8,18 +8,18 @@ from langchain_chroma import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 import tempfile
-import os
 
 
-# Initialize the client
+
+# Initialise client
 client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
 
-# Define the custom embedding function
+# Embedding function
 def get_embedding(text, model="nomic-ai/nomic-embed-text-v1.5-GGUF"):
     text = text.replace("\n", " ")
     return client.embeddings.create(input=[text], model=model).data[0].embedding
 
-# Create a custom embedding class
+# Custom embedding class 
 class CustomEmbeddings:
     def embed_documents(self, texts):
         return [get_embedding(text) for text in texts]
@@ -27,7 +27,7 @@ class CustomEmbeddings:
     def embed_query(self, text):
         return get_embedding(text)
 
-# Wrapper class to make the client callable  
+# Wrapper class to make the model callable  
 class CallableLLM:
     def __init__(self, client, model="ggml-model-Q8_0.gguf"):
         self.client = client
@@ -117,4 +117,3 @@ def enter_question():
 while True:
     enter_question()
 
-# No need to delete the collection since you want to persist it.
