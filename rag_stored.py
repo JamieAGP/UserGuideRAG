@@ -94,7 +94,7 @@ def format_docs(docs):
     context = "\n\n".join(doc.page_content for doc in docs)
 
     # Create a temporary file
-    with tempfile.NamedTemporaryFile(delete=True, delete_on_close=True, mode='w', encoding="utf-8", suffix='.txt') as temp_file:
+    with tempfile.NamedTemporaryFile(delete=False, delete_on_close=True, mode='w', encoding="utf-8", suffix='.txt') as temp_file:
         temp_file.write(context)
         temp_file_path = temp_file.name
 
