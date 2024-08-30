@@ -1,5 +1,5 @@
 from pathlib import Path
-import chromadb
+
 from openai import OpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -8,7 +8,6 @@ from langchain_chroma import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 import tempfile
-
 
 
 # Initialise client
@@ -65,7 +64,7 @@ if vectorstore_path.exists():
     vectorstore = Chroma(persist_directory=str(vectorstore_path), embedding_function=embeddings)
 else:
     vectorstore = Chroma.from_documents(documents=splits, embedding=embeddings, persist_directory=str(vectorstore_path))
-    vectorstore.persist()  # Save the vector store to disk
+
 
 # Retrieve and generate responses
 retriever = vectorstore.as_retriever()
@@ -74,8 +73,8 @@ retriever = vectorstore.as_retriever()
 system_prompt = "You are a technical support AI for the software package 'Visualyse Professional Version 7'. You have specialised knowledge on how to perform simulations of a range of radiocommunication systems within the software. Use your knowledge to help questioners perform their task."
 
 # Template for use prompt
-template = """Use the provided pieces of context, in triple backticks, from the Visualyse User Guide to help answer the question at the end.
-If you don't know the answer, just say that you don't know. The context of the question will always be about Visualyse Professional.
+template = """The following context, in triple backticks, is taken from the Visualyse Professional User Guide and should help you answer the question from the Visualyse Professional User at the end.
+Think step by step how to answer the question. If you do not know the answer to the question at the end, tell the user. The context of the question will always be about Visualyse Professional. Always give a response.
 
 CONTEXT:
 
@@ -83,7 +82,7 @@ CONTEXT:
 
 QUESTION: {question}
 
-HELPFUL ANSWER:"""
+ACCURATE ANSWER:"""
 
 custom_rag_prompt = PromptTemplate.from_template(template)
 
