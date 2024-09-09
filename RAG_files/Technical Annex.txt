@@ -1,0 +1,6158 @@
+Technical Annex 
+ 
+Page 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Visualyse Professional 
+Version 7 
+ 
+ 
+ Technical Annex 
+ 
+ 
+ 
+ 
+Technical Annex 
+ 
+Page 2 
+ 
+ 
+ 
+Version and Copyright Information 
+Product: 
+ 
+Version Professional 
+Version: 
+ 
+7.10.1.3 
+Document Version: 1.24 
+The IDWM database is © ITU and supplied under license. 
+Transfinite Systems Ltd reserves the right to change features and functionality 
+without notice. 
+We can be contacted at: 
+Address 
+Transfinite Systems Ltd 
+ 
+ 
+ 
+Suite 24 (5th Floor) 
+ 
+ 
+ 
+AMP House 
+ 
+ 
+ 
+Dingwall Road 
+ 
+ 
+ 
+Croydon CR0 2LX 
+ 
+ 
+ 
+ 
+United Kingdom 
+Phone  
++44 (0)20 3904 3220 
+Email  
+info@transfinite.com 
+Web  
+www.transfinite.com 
+ 
+© Transfinite Systems Ltd 
+ 
+Technical Annex 
+ 
+Page 3 
+ 
+ 
+ 
+Table of Contents 
+1 
+INTRODUCTION 
+............................................................................................ 
+7 
+2 
+UPDATE SEQUENCE ................................................................................... 
+8 
+3 
+COORDINATION SYSTEMS ......................................................................... 
+9 
+3.1 
+ECI Vectors 
+...................................................................................................................................... 9 
+3.2 
+Terrestrial Stations.........................................................................................................................10 
+3.3 
+Satellite Orbits ................................................................................................................................10 
+3.3.1 
+Orbit Parameters ..........................................................................................................................10 
+3.3.2 
+Orbit Models ................................................................................................................................11 
+3.3.3 
+Orbit Conversions ........................................................................................................................12 
+3.4 
+Station Coordinate Systems 
+...........................................................................................................13 
+3.4.1 
+Calculation of Azimuth and Elevation .........................................................................................13 
+3.4.2 
+Fixed Stations...............................................................................................................................14 
+3.4.3 
+Non Geostationary Satellites 
+........................................................................................................14 
+3.4.4 
+Geostationary Satellites................................................................................................................15 
+3.4.5 
+Moving Stations ...........................................................................................................................16 
+3.5 
+Station, Antenna and Beam Coordinate Systems ........................................................................17 
+3.6 
+Slice Angle 
+.......................................................................................................................................18 
+4 
+LINK BUDGET CALCULATIONS 
+................................................................ 
+20 
+4.1 
+Power Calculation Reference Points 
+.............................................................................................20 
+4.2 
+Noise Calculation 
+............................................................................................................................20 
+4.3 
+Other Parameters ...........................................................................................................................21 
+4.4 
+PFD and Field Strength .................................................................................................................21 
+4.5 
+Interference Adjustments ..............................................................................................................22 
+4.5.1 
+Carrier Overlap ............................................................................................................................22 
+4.5.2 
+Frequency Overlap 
+.......................................................................................................................23 
+4.5.3 
+Interference Calculation Adjustment ...........................................................................................23 
+4.5.4 
+Frequency Dependent Adjustment 
+...............................................................................................24 
+4.5.5 
+Polarisation Adjustment 
+...............................................................................................................24 
+4.5.6 
+Mask Integration to derive NFD ..................................................................................................24 
+4.6 
+Link Group Calculations ...............................................................................................................26 
+4.6.1 
+Thermal Additional 
+......................................................................................................................26 
+4.6.2 
+Wanted Signal Phase Addition ....................................................................................................26 
+4.7 
+Modelling Radar Reflections .........................................................................................................27 
+4.8 
+Listen before transmit 
+....................................................................................................................29 
+5 
+GAIN PATTERNS ........................................................................................ 
+31 
+5.1 
+ITU and ETSI Gain Patterns 
+.........................................................................................................31 
+5.1.1 
+Note on the IMT-MODEL Gain Patterns 
+.....................................................................................34 
+5.1.2 
+Note on the IMT-MODEL Non-Co-Frequency Gain Pattern ......................................................35 
+5.2 
+Additional Gain Patterns ...............................................................................................................35 
+5.2.1 
+Bessel ...........................................................................................................................................36 
+5.2.2 
+Capped Bessel 
+..............................................................................................................................36 
+Technical Annex 
+ 
+Page 4 
+ 
+ 
+ 
+5.2.3 
+GPS L1 
+.........................................................................................................................................36 
+5.2.4 
+GPS L2 
+.........................................................................................................................................37 
+5.2.5 
+GPS User 
+......................................................................................................................................37 
+5.2.6 
+Linear ...........................................................................................................................................38 
+5.2.7 
+Omni Directional .........................................................................................................................38 
+5.2.8 
+Parabolic ......................................................................................................................................38 
+5.2.9 
+Sin(x)/x ........................................................................................................................................38 
+5.3 
+Archived Gain Patterns .................................................................................................................38 
+6 
+PROPAGATION MODELS .......................................................................... 
+40 
+6.1 
+ITU-R Recommendations ..............................................................................................................40 
+6.1.1 
+Recommendation ITU-R P.452 
+....................................................................................................40 
+6.1.2 
+Recommendation ITU-R P.525 
+....................................................................................................40 
+6.1.3 
+Recommendation ITU-R P.526 
+....................................................................................................40 
+6.1.4 
+Recommendation ITU-R P.528 
+....................................................................................................40 
+6.1.5 
+Recommendation ITU-R P.530 
+....................................................................................................41 
+6.1.6 
+Recommendation ITU-R P.618 
+....................................................................................................41 
+6.1.7 
+Recommendation ITU-R P.676 
+....................................................................................................41 
+6.1.8 
+Recommendation ITU-R P.840 
+....................................................................................................41 
+6.1.9 
+Recommendation ITU-R SF.1395 ...............................................................................................42 
+6.1.10 
+Recommendation ITU-R P.1546 .............................................................................................42 
+6.1.11 
+Recommendation ITU-R P.1791 .............................................................................................42 
+6.1.12 
+Recommendation ITU-R P.1812 .............................................................................................43 
+6.1.13 
+Recommendation ITU-R P.2001 .............................................................................................43 
+6.2 
+Other Standard Models .................................................................................................................44 
+6.2.1 
+Crane Rain Model ........................................................................................................................44 
+6.2.2 
+Appendix S.7 (WRC-95)..............................................................................................................44 
+6.2.3 
+TIA Bulletin 10F 
+..........................................................................................................................45 
+6.2.4 
+Longley-Rice................................................................................................................................45 
+6.3 
+Terrestrial Mobile ..........................................................................................................................45 
+6.3.1 
+Egli 
+...............................................................................................................................................45 
+6.3.2 
+Hata / COST-231 .........................................................................................................................45 
+6.3.3 
+Lee ...............................................................................................................................................46 
+6.3.4 
+IMT Path Loss Models 
+.................................................................................................................46 
+6.3.5 
+Recommendation ITU-R P.2109: Building Entry Loss ...............................................................47 
+6.3.6 
+Recommendation ITU-R P.2108 
+..................................................................................................48 
+6.4 
+Fixed loss Models 
+............................................................................................................................49 
+6.4.1 
+Const Fixed ..................................................................................................................................49 
+6.4.2 
+Const Per Km 
+...............................................................................................................................49 
+6.4.3 
+Transhorizon loss .........................................................................................................................49 
+6.4.4 
+Clutter loss ...................................................................................................................................49 
+6.5 
+Extra Clutter Model 
+.......................................................................................................................49 
+6.5.1 
+No Clutter Loss ............................................................................................................................49 
+6.5.2 
+Constant Clutter Loss 
+...................................................................................................................49 
+6.5.3 
+P.2108 Clutter Model with zero loss short paths..........................................................................49 
+6.5.4 
+P.2108 Clutter Model with linear in d interpolation ....................................................................49 
+6.5.5 
+P.2108 Clutter Model with log-linear in d interpolation ..............................................................49 
+6.5.6 
+Constant Loss, Likelihood by Distance .......................................................................................50 
+6.6 
+Other Models ..................................................................................................................................50 
+6.6.1 
+Dry Air 
+.........................................................................................................................................50 
+6.6.2 
+Water 
+............................................................................................................................................50 
+6.7 
+Use with Define Variable Module .................................................................................................50 
+7 
+FILE FORMATS 
+........................................................................................... 
+51 
+Technical Annex 
+ 
+Page 5 
+ 
+ 
+ 
+7.1 
+Visualyse Binary Files ....................................................................................................................51 
+7.2 
+Shaped Beams Gain Tables ...........................................................................................................51 
+7.2.1 
+HPCON 
+........................................................................................................................................51 
+7.2.2 
+Visualyse Professional .................................................................................................................52 
+7.3 
+ITU Graphical Data .......................................................................................................................53 
+7.3.1 
+FormatInfo ...................................................................................................................................53 
+7.3.2 
+GeoMain ......................................................................................................................................53 
+7.3.3 
+COHeader ....................................................................................................................................54 
+7.3.4 
+Bi 
+..................................................................................................................................................54 
+7.3.5 
+Ci 
+..................................................................................................................................................55 
+7.3.6 
+Example .......................................................................................................................................55 
+7.4 
+Logged Data ....................................................................................................................................57 
+7.5 
+Terrain Data General Import File Format ..................................................................................57 
+7.6 
+Land Use Generic File Format ......................................................................................................59 
+7.7 
+View Overlay XML Files ...............................................................................................................61 
+7.7.1 
+View Overlay Images...................................................................................................................62 
+7.7.2 
+View Overlay Vector Line Data ..................................................................................................63 
+7.7.3 
+View Overlay Point Data .............................................................................................................64 
+7.7.4 
+View Overlay Drawing Objects ...................................................................................................65 
+7.8 
+Text File Format 
+.............................................................................................................................67 
+7.8.1 
+Structure 
+.......................................................................................................................................67 
+7.8.2 
+Creating Text Files 
+.......................................................................................................................68 
+7.8.3 
+Batch Mode 
+..................................................................................................................................68 
+7.9 
+Service Area Wizard ......................................................................................................................68 
+7.10 
+TLEs ................................................................................................................................................68 
+7.11 
+FS Import ........................................................................................................................................68 
+7.12 
+Import Tx System 
+...........................................................................................................................73 
+7.13 
+Import Rx System 
+...........................................................................................................................76 
+7.14 
+Import Non-GSO Orbit Elements 
+.................................................................................................77 
+8 
+VISTOOLS ................................................................................................... 
+78 
+8.1 
+dB Calculation ................................................................................................................................78 
+8.2 
+Frequency to Wavelength ..............................................................................................................78 
+8.3 
+Path Loss .........................................................................................................................................78 
+8.4 
+Field of View ...................................................................................................................................78 
+8.5 
+Peak Gain ........................................................................................................................................79 
+8.6 
+Half Power Beamwidth ..................................................................................................................79 
+8.7 
+Relative Gain ..................................................................................................................................79 
+8.8 
+Temperature to Noise 
+.....................................................................................................................80 
+8.9 
+Link Budget ....................................................................................................................................80 
+9 
+ACRONYMS AND ABBREVIATIONS ......................................................... 
+82 
+ 
+Technical Annex 
+ 
+Page 6 
+ 
+ 
+ 
+ 
+Technical Annex 
+ 
+Page 7 
+ 
+ 
+ 
+1 
+Introduction 
+The aim of this document is to give users of Visualyse Professional a better idea 
+of the algorithm it uses and hence a deeper understanding of the results 
+generated and which options should be selected. 
+It covers key elements of how Visualyse Professional works, including: 
+• 
+Update sequence 
+• 
+Coordination systems 
+• 
+Link budget calculations 
+• 
+Gain patterns 
+• 
+Propagation models 
+• 
+File formats 
+• 
+VisTools calculations 
+This document should be read in conjunction with the other documents 
+provided, in particular the: 
+• 
+User Guide: this describes how to use the product including all the dialogs 
+• 
+Tutorial Document: this gives a walk-through of the steps required to create 
+an example simulation 
+• 
+Maintenance Document: this gives information on changes released under 
+the Annual Maintenance and Support (AMS) service 
+• 
+Demonstration Files Document: this describes the example files shipped 
+with Visualyse Professional version 7 and gives an indication of the types 
+of simulations it can generate 
+Additional Technical Notes and White Papers can be found on our web site at: 
+ 
+http://www.transfinite.com  
+ 
+Note: 
+In places the description of the algorithm used has been simplified to make it 
+clearer and to protect elements of Transfinite’s Intellectual Property Rights (IPR) 
+ 
+Technical Annex 
+ 
+Page 8 
+ 
+ 
+ 
+2 
+Update sequence 
+This section describes the series of steps Visualyse Professional uses to update 
+the simulation at each time step. This well-defined procedure ensures the results 
+generated by Visualyse Professional are always consistent with the input 
+parameters selected. 
+The process is as follows: 
+1. 
+Update the current time using time step information 
+2. 
+Set the random number seed for this time step 
+3. 
+Update all the define variables 
+4. 
+Update all the positions of the stations 
+5. 
+Update the pointing of each antenna (except if pointing by link) 
+6. 
+Update all links including: 
+i. Calculating the traffic profile for this link for this time 
+step 
+ii. Selecting the station, antenna, beam to use for 
+dynamic links 
+iii. Updating the pointing of any antenna that uses pointing 
+by link 
+iv. Calculating the wanted signal level 
+v. Updating the wanted signal calculation if using power 
+control 
+7. 
+Updating all interference paths 
+8. 
+Updating all link groups 
+9. 
+Update all statistics 
+10. 
+Updating all views and outputting to file any information 
+requested to be logged 
+Technical Annex 
+ 
+Page 9 
+ 
+ 
+ 
+3 
+Coordination systems 
+This section defines the coordinate systems used for each type of station and 
+within antennas and beams. 
+3.1 
+ECI Vectors 
+All stations in Visualyse Professional are located in Earth Centred Inertial (ECI) 
+coordinate system using position and velocity vectors of the form: 
+r
+x
+y
+z
+=
+
+
+
+
+
+
+
+
+
+
+ 
+The co-ordinate system is defined as follows: 
+X axis: aligned with the vernal equinox as described further below 
+Z axis: aligned with the North Pole 
+Y axis: at right angles to the X and Z axes, using right handed co-
+ordinate system 
+The X axis of the ECI system is oriented in relation to the earth using the first 
+point of Aries at the following epoch: 
+ 
+At: 
+00:00 hours on the 1st January 1970 
+ 
+g0 =  100229421 
+This is shown in the figure below: 
+ 
+Figure 1. Orientation of inertial vectors 
+The frame of reference of the earth rotates at the following rate: 
+
+
+
+g
+g
+t
+=
++
+0
+ 
+Where: 
+ 
+ is the angular rotation rate of earth in radians / second 
+ 
+t 
+is time in seconds since reference time 
+X
+Y
+Z
+Direction of Vernal Equinox
+Vector
+Longitude zero
+Lat
+Long
+
+g
+
+Technical Annex 
+ 
+Page 10 
+ 
+ 
+ 
+3.2 
+Terrestrial Stations 
+Stations on the surface of the Earth are defined via their (latitude, longitude, 
+height) which is converted into an ECI vector using: 
+ 
+r
+R
+lat
+lat
+lat
+g
+g
+=
+
+
+
+
+
+
+
+
+
+
+cos(
+)cos(
+)
+cos(
+)sin(
+)
+sin(
+)
+
+
+ 
+Where: 
+R = Radius of the Earth (Re) + height of station above smooth Earth (h) 
+Lat = Latitude of the station 
+g = the conversion of the longitude in the rotating Earth frame to angle 
+with respect to the X axis. 
+Stations with non-zero speed will have their (latitude, longitude, heights) 
+updated assuming they take great circle paths over a spherical Earth. 
+3.3 
+Satellite Orbits 
+3.3.1 
+Orbit Parameters 
+Within Visualyse Professional a standardised set of orbital elements are used, 
+namely: 
+a 
+semi-major axis 
+e 
+eccentricity 
+i 
+inclination 
+ 
+longitude of ascending node 
+w 
+argument of periapsis 
+ 
+true anomaly 
+These parameters are shown in the figures below. 
+ 
+Origin = O
+Centre Earth
+Perigee
+Rp
+Ra
+Apogee
+
+0
+line of ascending node
+Satellite
+semi-major axis = a
+R
+Argument
+of Perigee
+True
+anomaly
+Technical Annex 
+ 
+Page 11 
+ 
+ 
+ 
+ 
+Figure 2. Orbital Elements 
+3.3.2 
+Orbit Models 
+Two orbit models are including in Visualyse Professional: 
+• 
+Point mass 
+• 
+Point mass plus J2 term 
+The J2 orbit model to update a non-GSO satellite at time t is calculated from 
+the orbit elements as follows: 
+ 
+ 
+a = a0 
+ 
+ 
+e = e0 
+ 
+ 
+i = i0 
+t
+r 
++
+=
+
+
+
+0
+ 
+t
+r 
+
++
+
+=
+
+0
+ 
+t
+n
+n
+M
+M
+user 
++
++
+=
+)
+(
+0
+ 
+Where: 
+ 
+0: 
+perigee argument at an initial moment 
+ 
+0: ascending node longitude at an initial moment 
+ 
+M0: mean anomaly at initial moment 
+ 
+nuser:  additional, user entered, precession (defaults to zero) 
+ 
+And: 
+ 
+r: 
+perigee argument precession rate 
+North pole
+Equatorial
+Plane
+
+vernal equinox
+direction
+line of
+ascending node
+plane of orbit
+i = inclination
+longitude of
+ascending node
+Technical Annex 
+ 
+Page 12 
+ 
+ 
+ 
+ 
+r: ascending node longitude precession rate 
+ 
+n :  rate of change of mean anomaly 
+These are calculated from the following: 
+( )
+
+
+
+
+−
+=
+
+i
+n
+p
+R
+J
+e
+r
+2
+2
+2
+2
+sin
+2
+5
+2
+2
+3
+ 
+( )
+i
+n
+p
+R
+J
+e
+r
+cos
+2
+3
+2
+2
+2
+−
+=
+
+ 
+( ) (
+)
+
+
+
+
+
+
+
+
+−
+
+
+
+
+
+−
++
+=
+2
+/
+1
+2
+2
+2
+2
+2
+0
+1
+sin
+2
+3
+1
+2
+3
+1
+e
+i
+p
+R
+J
+n
+n
+e
+ 
+where: 
+ 
+ 
+)
+1
+(
+2
+e
+a
+p
+−
+=
+ 
+ 
+J2 =  1.083e-3 
+ 
+n0= 
+3
+a
+ 
+3.3.3 
+Orbit Conversions 
+Some orbits are defined using other parameters, such as apogee / perigee 
+height or radii. These can be converted into the standard set above using the 
+following equations. 
+3.3.3.1 Elliptical orbit shape 
+The apogee / perigee heights / radius’s can be converted using: 
+ 
+Apogee conversion: Ra = Re + ha 
+ 
+Perigee conversion: Rp = Re + hp 
+Re is the Earth’s radius of 6378.1 km. 
+Then the semi major axis and eccentricity are: 
+ 
+Ra = a(1 + e) 
+ 
+Rp = a(1 - e) 
+So: 
+ 
+a = (Ra + Rp)/2 
+ 
+e = (Ra - Rp)/( Ra + Rp) 
+3.3.3.2 Anomaly Angle 
+There are a number of ways of defining where the satellite is in the orbit plane 
+with respect to the perigee, including 
+ = true anomaly 
+E = eccentric anomaly 
+Technical Annex 
+ 
+Page 13 
+ 
+ 
+ 
+M = mean anomaly 
+These are related using: 
+
+
+cos
+1
+cos
+cos
+e
+e
+E
++
++
+=
+ 
+1
+cos
+cos
+cos
+−
+−
+=
+E
+e
+E
+e
+
+ 
+E
+e
+E
+M
+sin
+−
+=
+ 
+The last equation can be used together with iteration to calculate E from M. 
+Elapsed time is related to M using: 
+ 
+T
+n
+M
+
+=
+ 
+where n is the mean motion: 
+ 
+3
+a
+n
+
+=
+ 
+where  = 3.986012e5 km^3/s^2 is the gravitational constant 
+3.4 
+Station Coordinate Systems 
+The coordinate system used by the station defines how the antennas are 
+pointed and varies between station types. 
+3.4.1 
+Calculation of Azimuth and Elevation 
+For each station type an intermediate local set of orthogonal vectors, (X’, Y’, Z’) 
+are generated. From these the azimuth and elevation are calculated as follows: 
+X’
+Y’
+Z’
+Observer
+Azimuth
+Elevation
+ 
+Figure 3. Azimuth, Elevation, Range 
+To define the coordinate system for each station type it is therefore necessary to 
+define the (X’, Y’, Z’) vectors in each case. 
+Technical Annex 
+ 
+Page 14 
+ 
+ 
+ 
+An alternative way of considering it is that for an observer, the azimuth is the 
+angle in the horizontal plane with the line directly ahead, with the right hand 
+being positive, whilst the elevation is the angle in the vertical plane compared to 
+the horizon, with up being positive. 
+3.4.2 
+Fixed Stations 
+For stations at fixed locations, whether Earth, terrestrial, mobile, maritime or 
+aeronautical stations, the azimuth and elevations are derived using the north, 
+east and zenith vectors as shown in the figure below: 
+Z
+X
+Y
+N
+Z
+E
+R
+ 
+Figure 4. Earth / Terrestrial station co-ordinate system 
+These are mapped onto the generic local vectors as follows: 
+X’ = E 
+Y’ = N 
+Z’ = Z 
+The result is the traditional alignment of: 
+• 
+Azimuth = angle in the horizontal plane from due North increasing in a 
+clockwise direction, defined within the range (-180 to +180) 
+• 
+Elevation = angle above the horizontal plane 
+3.4.3 
+Non Geostationary Satellites 
+For satellites the coordinate system is based upon the line to the centre of the 
+Earth (i.e. towards the sub-satellite point) and the velocity vector, so that for 
+circular orbits: 
+X’ = Q = vector at right angles to velocity and position vectors 
+Y’ = P = -R 
+Z’ = V 
+Technical Annex 
+ 
+Page 15 
+ 
+ 
+ 
+The P and Q vectors are shown in the figure below. 
+Z
+X
+Y
+N
+R
+V
+Satellite
+P
+V
+Q
+ 
+Figure 1: Definition of Satellite Coordinate System 
+Another way of looking at it is to consider the view from the satellite looking 
+down at the sub-satellite point, head pointing in the direction of the velocity 
+vector – the “superhero” position. In this case as in the figure below: 
+Velocity 
+vector
+Sub-satellite 
+point
+Elevation 
+up/down
+Azimuth 
+left/right
+ 
+Figure 2: Visualisation of Satellite Coordinate System 
+• 
+Azimuth = to left and right of the sub-satellite point, where right is 
+positive 
+• 
+Elevation = up and down, where up is positive 
+This coordinate system assumes that the radius vector and velocity vector are at 
+right angles which will only be the case for circular orbits. For elliptical orbits it is 
+necessary to select which vector of (R, V) the coordinate system will align with. 
+3.4.4 
+Geostationary Satellites 
+For satellites the coordinate system is based upon the line to the centre of the 
+Earth (i.e. towards the sub-satellite point), the north vector, and the velocity 
+vector, so that: 
+Technical Annex 
+ 
+Page 16 
+ 
+ 
+ 
+Velocity 
+vector
+Sub-satellite 
+point
+Elevation 
+up/down
+Azimuth 
+left/right
+North
+ 
+Figure 3: Coordinate System for Geostationary Satellites 
+In formal terms, for a GSO satellite: 
+X’ = V 
+Y’ = -R 
+Z’ = N 
+3.4.5 
+Moving Stations 
+Moving stations can use either of the coordinate systems describe above: 
+• 
+North based, as for terrestrial stations 
+• 
+Velocity based, as for non-GSO satellites. 
+Additional coordinate frames can be created by utilising the orientation (or Euler) 
+angles (pitch, roll, yaw) which define how the antenna platform is located with 
+respect to the station coordination scheme. 
+For example consider an aircraft, when the orientation is velocity based, where 
+the following Euler angles have been set: 
+ 
+Pitch = 90º 
+ 
+Roll = 0º 
+ 
+Yaw = 0º 
+This will rotate the az/el = (0, 0) line from the line from the station to the centre of 
+the Earth to the direction of motion. Having done this the azimuth angle is similar 
+to yaw while elevation angle similar to pitch, as in the figure below using a ship 
+as an example: 
+Technical Annex 
+ 
+Page 17 
+ 
+ 
+ 
+Godel, 
+London
+Azimuth
+Elevation
+ 
+Figure 4: Elevation and Azimuth for Moving Ships 
+A similar coordinate system can be used for aircraft. 
+Note that if the aircraft is pitching up or down the velocity vector will not be at 
+right angles to the position vector. Hence the coordinate frame will have to 
+choose which to align with. 
+To create a coordinate system in which the reference az/el = (0, 0) remains the 
+nose of the aircraft even when pitching up or down the following settings should 
+be used: 
+Coordinate System: 
+ 
+Velocity based = true 
+ 
+Align with velocity vector = true 
+ 
+Pitch = 90º 
+ 
+Roll = 0º 
+ 
+Yaw = 0º 
+3.5 
+Station, Antenna and Beam Coordinate Systems 
+A station can contain multiple antennas which can contain multiple beams. Each 
+can have its own pointing angles – so for example there can be: 
+• 
+Pointing angles of antenna with respect to station’s coordinate system 
+(these are the azimuth, elevation of the antenna in the station dialog) 
+• 
+Pointing angles of beam with respect to antenna’s coordinate system 
+(these are the azimuth, elevation of the beam in the antenna dialog) 
+In addition there can also be: 
+• 
+Pointing angles of antenna platform with respect to station (these are the 
+orientation angles on the station dialog’s advanced tab) 
+These angles are combined together in the following order from inertial ECI 
+vectors: 
+• 
+From ECI to (azimuth, elevation) in station coordinate system using 
+definition of (X’, Y’, Z’) in previous section 
+Technical Annex 
+ 
+Page 18 
+ 
+ 
+ 
+• 
+From station coordinate (azimuth, elevation) to antenna platform 
+(azimuth, elevation) using orientation angles (yaw, pitch, roll) 
+• 
+From antenna platform (azimuth, elevation) to a specific antenna’s 
+(azimuth, elevation) using the antenna’s az/el pointing angles 
+• 
+From an antenna’s (azimuth, elevation) to a beam’s (azimuth, elevation) 
+using the beam’s az/el pointing angles 
+3.6 
+Slice Angle 
+This section describes the definition of the slice angle which is used within 
+Visualyse Professional to display gain patterns. 
+ 
+ 
+ 
+Figure 5: Gain Geometry 
+For many antennas, such as those using parabolic reflectors, the gain pattern is 
+symmetric around the boresight. The gain pattern can therefore be displayed in 
+a graph as gain vs offaxis angle – for example the pattern below is 
+Recommendation ITU-R Rec. S.465 for a 2.4m dish at 3.6 GHz: 
+ 
+Other antennas do not have this symmetry: for example the patterns of a base 
+station antenna are likely to vary in both azimuth and elevation, and hence are 
+described as 3D patterns. 
+For these antennas the gain pattern taken in the azimuth and elevation 
+directions are likely to be different, and we call these different directions “slices”. 
+The slices are taken in planes that intersect the boresight line (see figure at top). 
+Elevation = +90
+Antenna
+Boresight
+Azimuth = -90
+Azimuth = +90
+f = 0
+f = 90
+Slice angle f = angle to the 
+elevation = 0 plane
+Elevation = 0 plane
+
+Technical Annex 
+ 
+Page 19 
+ 
+ 
+ 
+The orientation of the slice is defined by the slice angle or f, which is the angle 
+of the slice plane to the elevation = 0 plane. Hence the f = 0 slice is the gain 
+pattern in the azimuth plane while the f = 90 slice is the gain pattern in the 
+elevation plane. 
+Rather than showing offaxis angle along the X axis of the gain plot, the slice 
+instead shows the angle from the boresight line, shown in the figure above as . 
+Any slice angle can be selected from 0 to 180 and it will define a plane and 
+hence create a separate gain pattern. As all slices intersect the boresight line all 
+will start with the  = 0 point which is the boresight, usually, but not always, 
+defined as the point in the 3D gain pattern with highest gain value. 
+For example the figures below show two slices from the same 3D gain pattern 
+and hence start with  = 0 where the gain = 18 dBi. 
+ 
+Slice angle = 0 (azimuth plane) 
+ 
+Slice angle = 90 (elevation plane) 
+Note that azimuth and elevation in this figure are relative to the gain pattern’s 
+boresight and there could be a variety of orientation angles including: 
+• 
+Beam within the Antenna Type 
+• 
+Antenna with respect to the Antenna Platform 
+• 
+Antenna Platform with respect to the Station 
+Note also there are a variety of Station orientations as described in the previous 
+sections. 
+ 
+ 
+Technical Annex 
+ 
+Page 20 
+ 
+ 
+ 
+4 
+Link Budget Calculations 
+4.1 
+Power Calculation Reference Points 
+In order to be able to model a wide range of radio systems a generic link model 
+is used in all calculations in Visualyse Professional. The basic link budget is as 
+follows: 
+ 
+CRX = PTX + GPeakTX +GRelTX – LP + GPeakRX + GRelRX – LRX 
+Where: 
+ 
+PTX = transmit power at input to antenna (dBW) 
+ 
+GPeakTX = transmit antenna peak gain (dBi) 
+ 
+GRelTX = transmit antenna gain towards the receiver relative to peak (dB) 
+ 
+LP = propagation loss between transmit and receive antennas (dB) 
+ 
+GPeakRX = receive antenna peak gain (dBi) 
+ 
+GRelRX = receive antenna gain towards the transmitter relative to peak (dB) 
+ 
+LRX = losses between receive antenna and input to the receiver (dB) 
+The reference points are therefore: 
+Transmitter: at the input to the antenna 
+Receiver: at the input to the receiver 
+Hence there is no field in Visualyse Professional for the transmit line loss. 
+The reference points for the link budgets are therefore as shown in the figure 
+below: 
+Line
+Line
+Receiver
+Transmitter
+TX Power defined 
+here
+RX Power defined 
+here
+PTX
+GTX
+LP
+GRX
+LRX
+CRX
+ 
+Figure 6: Reference Link in Visualyse Professional 
+Note that: 
+ 
+GTX = GPeakTX +GRelTX 
+ 
+GRX = GPeakRX +GRelRX 
+The receive measurement point can be made to be at the output of the receive 
+antenna by setting the LRX to zero. 
+4.2 
+Noise Calculation 
+In Visualyse Professional there are two ways to define the noise at the receiver: 
+• 
+Enter the noise temperature of the receiver directly 
+Technical Annex 
+ 
+Page 21 
+ 
+ 
+ 
+• 
+Allow Visualyse Professional to calculate the receiver noise 
+temperature from the various components. 
+The calculation of receiver input noise is based upon the following parameters: 
+The system temperature is calculated from: 
+ 
+ 
+rx
+feed
+feed
+feed
+ant
+sys
+T
+L
+T
+L
+T
+T
++
+
+
+
+
+
+
+
+
+−
++
+=
+1
+1
+ 
+Where:  
+Frx  = noise figure of receiver 
+Tant = noise temperature of antenna 
+Lfeed = feeder loss  
+Tfeed = feeder temperature 
+Trx = (Frx - 1) * Tref 
+where Tref is 290 Kelvin 
+Converted to noise spectral density this is: 
+ 
+N
+k
+T
+sys =
++10
+10
+log
+ where k = -228.6 is Boltzman’s constant in dB 
+4.3 
+Other Parameters 
+There is a wide variety of methods to define link budgets and these can use 
+different parameters that might need to be mapped onto Visualyse Professional 
+fields. 
+• 
+Transmitter losses: losses such as transmit link losses can be modelled 
+by reducing the transmit power accordingly. 
+• 
+G/T: Some antennas have their performance defined via their G/T. In this 
+case it is necessary to determine separate G and T figures to be entered 
+into the link budget above. 
+• 
+Pointing losses: At the transmit side these can be modelled either by 
+reducing the transmit power according to the required level of pointing 
+loss or by adding a slight offset to the antenna pointing angles. At the 
+receive side the pointing loss could be modelled as either being part of 
+the receiver losses or adding a slight offset to the antenna pointing 
+angles. 
+• 
+Polarisation losses: These can be included by either adding them to 
+the receive feed loss or adjusting the required C/N or C/(N+I) threshold 
+upwards. 
+• 
+Baseband losses: losses such as implementation losses, demodulation 
+margin etc can be modelled by adjustment of the threshold required. 
+4.4 
+PFD and Field Strength 
+In Visualyse Professional the PFD calculation assumes free space path loss, 
+hence it is simply: 
+2
+.
+.
+4
+d
+EIRP
+pfd
+
+=
+ 
+Technical Annex 
+ 
+Page 22 
+ 
+ 
+ 
+It is sometimes useful to derive the PFD assuming the other propagation models 
+within Visualyse Professional’s library. In this case it is possible to calculate the 
+signal (wanted or interfering) as received at an isotropic receiver and convert 
+into either PFD or field strength.  
+The conversion factors in the case of interference is: 
+ 
+
+
+
+
+
+
++
+=
+2
+.
+4
+log
+10
+
+
+I
+pfd
+ 
+Note that c = f and that c = 2.997e8 m/s 
+To convert the pfd into field strength use: 
+Field strength dBV/m = pfd + 145.8 
+4.5 
+Interference Adjustments 
+4.5.1 
+Carrier Overlap 
+It should be noted that all unless masks are given, carrier spectre are assumed 
+to be square with the following parameters defined: 
+• 
+Central frequency 
+• 
+Occupied bandwidth 
+• 
+Allocated bandwidth 
+Typically the wanted and interfering signals have different central frequencies 
+and / or bandwidths. It is therefore necessary to consider how to adjust the 
+interference calculation to take account of bandwidth factors. The figure below 
+shows a typical situation: 
+Carrier-A
+Carrier-B
+OBW-A
+OBW-B
+Overlap
+Frequency-A
+Frequency-B
+ 
+Figure 5. Two Overlapping Carriers 
+The overlap algorithm is: 
+ 
+StartA = FreqA - OBWA / 2 
+ 
+EndA = FreqA + OBWA / 2 
+ 
+StartB = FreqB - OBWB / 2 
+ 
+EndB = FreqB + OBWB / 2 
+Then using the start and end frequencies above: 
+Technical Annex 
+ 
+Page 23 
+ 
+ 
+ 
+ 
+StartOverlap = max(StartA, StartB) 
+ 
+EndOverlap = min(EndA, EndB) 
+So: 
+ 
+Overlap = EndOverlap - StartOverlap 
+This is used in the two bandwidth calculations: whether to include the carrier as 
+being partially co-frequency and how much energy from the interfering carrier to 
+include. 
+4.5.2 
+Frequency Overlap 
+An interfering carrier is included in the interference calculation if at least one of 
+the following is true: 
+• 
+the overlap between carriers (as calculated above) is greater than zero 
+• 
+the force co-frequency flag is set 
+4.5.3 
+Interference Calculation Adjustment 
+If there is overlap between two carriers, then it is necessary to determine how 
+much energy to include. Three alternatives are available, and the result is the 
+BWF factor which is used to multiply the interfering carrier level to get the 
+resulting interfering level I.  
+No Adjustment 
+In this case the BWF is always 1. 
+Spectral Power Density 
+In this case the ratio of the two is used, based on the power spectral density: 
+ 
+BWF
+OBW
+OBW
+W
+I
+=
+ 
+Overlap 
+In this case the extent of overlap is used, calculated using: 
+ 
+BWF
+Overlap CarrierW CarrierI
+OBWI
+=
+(
+,
+)
+ 
+Note that for the force co-frequency case the frequency of both carriers is set to 
+the same and OBWW  OBWI, and so this becomes the same as Spectral Power 
+Density. 
+Multiple Carriers 
+In this case it is assumed that there could be multiple interfering carriers in the 
+bandwidth of the wanted signal. Each interfering carrier is separated by its ABW, 
+but occupies only the OBW. This is shown in the figure below: 
+Technical Annex 
+ 
+Page 24 
+ 
+ 
+ 
+OBW-W
+–
+OBW-I
+ABW-I
+OBW-I
+OBW-I
+OBW-I
+ABW-I
+ABW-I
+ABW-I
+Wanted Carrier
+Interfering Carriers
+ 
+Figure 6. Multiple Interferers Into Wanted Carrier 
+The calculation is therefore: 
+ 
+ 
+BWF
+OBW
+ABW
+W
+I
+=
+ 
+4.5.4 
+Frequency Dependent Adjustment 
+The bandwidth adjustment in the tables above is based upon rectangular blocks 
+of frequency. Some carriers are shaped, such as TV, and so the interference 
+to/from one of these carriers will depend on the separation between central 
+frequencies. 
+This can be included in the link calculation using a table of advantage vs offset 
+of central frequencies. Linear interpolation is used between entries in the table, 
+with no extrapolation at the ends of the table. 
+4.5.5 
+Polarisation Adjustment 
+Polarisation adjustment can be done one of three ways: 
+• no adjustment 
+• standard ITU adjustment table 
+• user defined table 
+The tables give constant adjustments based on wanted and interfering carrier 
+polarisations. The user defined table allows checking for main beam to main 
+beam alignment. This occurs when the transmit and receive relative gains are -3 
+dB or higher. 
+Note that it is possible in Visualyse Professional to do full cross-polar gain 
+pattern calculations by entering the cross-polar values for one system (typically 
+interfering) and using the co-polar gain pattern for the other system (typically 
+wanted). This can be done using the table patterns. 
+4.5.6 
+Mask Integration to derive NFD 
+In Visualyse Professional it is possible to specify the following two masks: 
+1. The transmit mask is defined as the relative power density compared to in-
+band: in other words as a table it would be defined in dB while in the 
+integration the units would be an absolute ratio. 
+2. The receive mask is defined as the relative attenuation of the receive signal 
+compared to in-band: in other words as a table it would be defined in dB 
+while in the integration the units would be an absolute ratio. 
+Technical Annex 
+ 
+Page 25 
+ 
+ 
+ 
+Both the transmit and receive masks are defined using tables with linear 
+interpolation in dB between each point and hence can be modelled as a set of 
+straight lines with equation (in dBs): 
+ 
+ 
+f
+b
+a
+y
+tx
+tx
+tx
++
+=
+ 
+ 
+ 
+f
+b
+a
+y
+rx
+rx
+rx
++
+=
+ 
+In which case the NFD is: 
+NFD  = 
+
+
+
+max
+min
+2
+1,
+f
+f
+f
+f
+NFD
+ 
+Where: 
+ 
+ 
+
+
+2
+1, f
+f
+NFD
+ = 
+(
+)
+1
+2
+10
+f
+Q
+f
+Q
+P
+e
+e
+Q
+
+−
+
+ 
+And: 
+ 
+ 
+P = (
+) 10
+/
+rx
+tx
+a
+a +
+ 
+ 
+ 
+Q = (
+) 10
+/
+rx
+tx
+b
+b +
+ 
+ 
+ 
+Q’ = 
+(
+) 10
+/
+).
+10
+ln(
+rx
+tx
+b
+b +
+ 
+Note that in general the values of a and b are not user entered but are derived 
+from a set of values at specific points, as in the figure below. 
+ 
+Figure 7: Example mask with interpolation 
+Three formats of this integration are available: 
+Integrate masks (Classic): Transmit and receive masks integrated and then 
+divided by the transmit bandwidth. This is the correct approach if the TX 
+spectrum mask is referenced to the mean in-band density i.e. 0 dB is when the 
+power density = TX power / occupied bandwidth. 
+Relative
+EIRP Density
+(dB units)
+(x1, y1)
+(x2, y2)
+y=a+bx
+Frequency
+(Hz units)
+Technical Annex 
+ 
+Page 26 
+ 
+ 
+ 
+Integrate masks (NFD): Transmit and receive masks integrated and then 
+divided by the integration of the transmit mask. This is the correct approach if 
+the TX spectrum mask 0 dBi point is referenced to the peak power density. 
+Integrate masks (ETSI): Transmit and receive masks are integrated for the 
+specified frequency offset and then divided by the integral of the TX and RX 
+masks when co-frequency. This is the correct approach to be consistent with the 
+methodology in ETSI TR 101 854 and is sometimes called the Frequency 
+Dependent Rejection or FDR. To adjust for different bandwidth carriers the 
+carrier overlap calculation is included in the adjustment as per section 4.5.3. 
+Note on the HCM1 NFD: this is calculated as two terms, called NFD and MD 
+where: 
+(
+)
+(
+)
+(
+)
+(
+)df
+f
+M
+f
+M
+df
+f
+M
+f
+M
+NFD
+RX
+RX
+TX
+f
+f
+TX
+TX
+RX
+TX
+f
+f
+TX
+
+
+=
+max
+min
+max
+min
+ 
+i.e. NFD = 10log10(OverlapAreaCoFrequency / OverlapAreaActualFrequency) 
+(
+)
+(
+)df
+f
+M
+f
+M
+MI
+MD
+TX
+RX
+TX
+f
+f
+TX
+TX
+
+=
+max
+min
+ 
+Therefore the MD = 10log10(TXArea / OverlapAreaCoFrequency) 
+Hence MD + NFD = 10log10(TXArea / OverlapAreaActualFrequency) 
+Therefore the total HCM bandwidth and mask integration factor is the same as 
+the “Standard NFD” calculation described above. 
+4.6 
+Link Group Calculations 
+4.6.1 
+Thermal Additional 
+Thermal addition is used to calculate end to end performance for analogue 
+systems. In this case the link qualities are added using the following formula: 
+C
+X dB
+C
+X
+i
+i dB
+=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10
+1
+1
+10
+10
+log
+,
+ 
+where X could be I, N or (N+I). 
+4.6.2 
+Wanted Signal Phase Addition 
+Some diversity systems use two links and merge the two received signals such 
+that the wanted carriers remain in phase. This changes the phase of the 
+ 
+1 HCM Agreement: coordination of Frequencies between 29.7 MHz and 39.5 GHz for the 
+fixed service and the land mobile service 
+ 
+Technical Annex 
+ 
+Page 27 
+ 
+ 
+ 
+interfering signal, and the following algorithm is used to add the link qualities 
+(note in W not dBW): 
+C
+C
+W
+i W
+i
+= 
+,
+ 
+N
+N
+W
+i W
+i
+= 
+,
+ 
+I
+I
+I
+W
+W
+i W
+i
+=
++
+0,
+, cosf  
+where f is a random number between 0 and 2. 
+4.7 
+Modelling Radar Reflections 
+One of the most important uses of the electromagnetic spectrum is for radar.  
+When modelling radar in simulation tools the most important difference from 
+most other types of radio system is that the signal is received after two paths via 
+a passive reflection, as can be seen in the figure below: 
+ 
+Figure 8: Modelling Radar Reflections 
+The signal strength that is received can be calculated using the standard radar 
+equation (assuming free space path loss): 
+ 
+ 
+eff
+T
+T
+R
+A
+R
+R
+G
+P
+P
+2
+2
+4
+1
+4
+1
+
+
+
+=
+ 
+Where: 
+ 
+ 
+PT = transmit power 
+ 
+ 
+GT = transmit antenna gain 
+ 
+ 
+R = range from radar to target 
+ 
+ 
+ = radar cross section of the target 
+ 
+ 
+Aeff = effective area of the radar receiving antenna  
+ 
+ 
+PR = received signal 
+Radar reflections can be modelled via the Link’s End to Start power option. To 
+enable this option: 
+• 
+Create the radar station with antenna pointing at the aircraft 
+• 
+Create the aircraft with the required height and for antenna use an 
+isotropic gain pattern with gain 0 dBi 
+• 
+Create a fixed or dynamic link with: 
+Aircraft
+Radar 
+signals
+Radar site
+Aircraft
+Reflections
+Radar site
+Technical Annex 
+ 
+Page 28 
+ 
+ 
+ 
+o Start station = radar station 
+o End station = aircraft 
+o Start to End direction: set the transmit power of the antenna 
+o End to Start direction: set the transmit power option to be “radar 
+reflection” and then set the radar cross section to be that of the 
+aircraft and the noise temperature to be that of the radar station, 
+as in the example below: 
+ 
+Figure 9: Radar Reflections Link Options 
+Having created this link the End to Start’s received power will be the radar 
+station’s wanted signal. 
+Note that any propagation model could be used, not just free space path loss as 
+in the equations above. In particular it could be appropriate to consider: 
+• 
+Recommendation ITU-R P.452: this includes the effect of terrain and is 
+considered acceptable for low altitudes 
+• 
+Recommendation ITU-R P.528: this is designed for air to ground / 
+ground to air links up to a maximum height of 20,000m. It does not 
+include the effect of terrain 
+Both these propagation models can also include a percentage of time field. 
+Note that the following are checked by Visualyse Professional: 
+• 
+The End→start carrier must be the same as the Start→End carrier 
+• 
+The End→start frequency must be the same as the Start→End 
+frequency 
+• 
+The end station must use an isotropic antenna with gain = 0 dBi 
+• 
+The Start→end direction must be enabled 
+Technical Annex 
+ 
+Page 29 
+ 
+ 
+ 
+4.8 
+Listen before transmit 
+Recent developments of cognitive technologies, such as listen before transmit, 
+are allowing a range of new sharing scenarios.  
+An example of this can be found in the 5 GHz band where Radio Local Area 
+Networks (RLANs) can operate as long as they do not cause harmful 
+interference into radars in the frequency ranges 5 250 - 5 350 and 5 470 - 5 725 
+MHz. The mechanism used to protect the radars is dynamic frequency selection 
+based upon listen before transmit technologies.  
+As described in Recommendation ITU-R M. 1652, RLANs with the potential to 
+transmit up to 200 mW e.i.r.p. must be capable of detecting radar signals of -62 
+dBm. If a signal is detected on a channel then it can not be used and instead the 
+RLAN must try another channel.  
+This is shown graphically in the figure below: 
+ 
+Figure 10: Modelling Listen Before Transmit 
+In regulatory terms there could be a constraint similar to:: 
+System A can only transmit at power = X if the signal received from 
+System B is less than Y 
+The question is then, what are the relevant values of X and Y? This requires 
+interference analysis taking into account deployment densities and propagation 
+conditions. 
+This can now be modelled in Visualyse Professional using a bi-directional link 
+(i.e. either fixed or dynamic link) as follows: 
+o Start→End: model System B’s signal as detected by System A 
+(for example, Radar to RLAN) 
+o End→Start: model System A transmitting in the signal received 
+on the Start→End path is below the detection threshold (i.e. the 
+RLAN transmitting) 
+The End→Start direction can then be used as one of the interferers into System 
+B to determine what the impact would be. 
+The link options are in the End→Start direction as shown in the figure below: 
+Radar site
+Nearby 
+RLANs must 
+switch off
+Remote 
+RLANs can 
+transmit
+Technical Annex 
+ 
+Page 30 
+ 
+ 
+ 
+ 
+Figure 11: Listen before transmit Link Options 
+ 
+ 
+ 
+Technical Annex 
+ 
+Page 31 
+ 
+ 
+ 
+5 
+Gain patterns 
+5.1 
+ITU and ETSI Gain Patterns 
+The gain patterns in Visualyse Professional come from a number of sources 
+including: 
+Source 
+Pattern(s) 
+Notes 
+ITU-R Radio Regulations Appendix 7: 
+ 
+App 7 Earth Station 
+App 7 Fixed Service 
+Useful for coordination 
+analysis between satellite 
+earth stations and 
+terrestrial fixed service 
+stations 
+ITU-R Radio Regulations Appendix 30:  
+Provisions for all services and associated Plans 
+and List for the broadcasting-satellite service in 
+the frequency bands 11.7-12.2 GHz (in Region 
+3), 11.7-12.5 GHz (in Region 1) and 12.2-12.7 
+GHz (in Region 2) 
+App 30 Earth Rx Reg 1 & 3 Comm 
+App 30 Earth Rx Reg 1 & 3 Ind 
+App 30 Earth Rx Reg 1 & 3 WRC-
+97 
+App 30 Earth Rx Reg 2 
+App 30 Satellite Tx Reg 1 & 3 
+App 30 Satellite Tx Reg 1 & 3 FR 
+App 30 Satellite Tx Reg 2 
+App 30 Satellite Tx Reg 2 FR 
+App 30 Space 
+App 30 Space Fast roll-off 
+Useful for studies of GSO 
+satellite networks in the 
+BSS plans 
+FR = Fast Rolloff 
+Comm = Commercial 
+Ind = Industry 
+Reg = Region 
+ITU-R Radio Regulations Appendix 30A:  
+Provisions and associated Plans and List for 
+feeder links for the broadcasting-satellite service 
+(11.7-12.5 GHz in Region 1, 12.2-12.7 GHz in 
+Region 2 and 11.7-12.2 GHz in Region 3) in the 
+frequency bands 14.5-14.8 GHz2 and 17.3-18.1 
+GHz in Regions 1 and 3, and 17.3-17.8 GHz in 
+Region 2 
+App 30A Satellite Rx Reg 1 & 3 
+App 30A Satellite Rx Reg 1 & 3 FR 
+App 30A Satellite Rx Reg 2 
+App 30A Satellite Rx Reg 2 FR 
+Useful for studies of 
+feeder links for BSS GSO 
+satellite networks 
+FR = Fast Rolloff 
+Reg = Region 
+ITU-R Radio Regulations Appendix 30B:  
+Provisions and associated Plan for the fixed-
+satellite service in the frequency bands 4 500-4 
+800 MHz, 6 725-7 025 MHz, 10.70-10.95 GHz, 
+11.20-11.45 GHz and 12.75-13.25 GHz 
+App 30B Earth Station A 
+App 30B Earth Station B 
+App 30B Space Station 
+App 30B Space Station FR 
+Useful for studies of GSO 
+satellite networks in the 
+FSS plans 
+FR = Fast Rolloff 
+ETSI ETS 300 157: 
+Satellite Earth Stations and Systems 
+(SES);Receive-only Very Small Aperture 
+Terminals (VSATs) operating in the 11/12 GHz 
+frequency bands 
+ETS 300-157 Rx 
+VSAT style satellite earth 
+stations operating in RX 
+mode 
+ETSI ETS 300 158 
+Satellite Earth Stations and Systems 
+(SES);Television Receive Only (TVRO-FSS) 
+Satellite Earth Stations operating in the 11/12 
+GHz FSS bands 
+ETS 300-158 Rx 
+TVRO style satellite earth 
+stations 
+ETSI ETS 300 159 
+Satellite Earth Stations and Systems 
+(SES);Transmit-only or transmit-and-receive 
+Very Small Aperture Terminals (VSATs) used for 
+communications operating in the Fixed Satellite 
+Service (FSS) 11/12/14 GHz frequency bands 
+ETS 300-159 Rx 
+ETS 300-159 Tx Spec 1 
+ETS 300-159 Tx Spec 2 
+VSAT style satellite earth 
+stations operating in TX 
+or TX/RX modes 
+ETSI ETS 300 327 
+Satellite Earth Stations and Systems 
+(SES);Satellite News Gathering (SNG) 
+Transportable Earth Stations (TES) (13-14/11-12 
+GHz) 
+ETS 300-327 Rx 
+ETS 300-327 Tx 
+SNG/TES TX or RX 
+satellite earth stations 
+ETSI ETS 300 332 
+Satellite Earth Stations and Systems 
+(SES);Transmit-only or transmit-and-receive 
+Very Small Aperture Terminals (VSATs) used for 
+ETS 300-332 Rx 
+ETS 300-332 Tx 
+VSATs style satellite 
+earth stations operating 
+in C band 
+Technical Annex 
+ 
+Page 32 
+ 
+ 
+ 
+communications operating in the Fixed Satellite 
+Service (FSS) 6 GHz and 4 GHz frequency 
+bands 
+ETSI ETS 300 333 
+Satellite Earth Stations and Systems 
+(SES);Receive-only Very Small Aperture 
+Terminals (VSATs) operating in the 4 GHz 
+frequency band 
+ETS 300-333 Rx 
+RX only VSATs operating 
+in C band 
+Recommendation ITU-R BO.1443: 
+Reference BSS earth station antenna patterns 
+for use in interference assessment involving 
+non-GSO satellites in frequency bands covered 
+by RR Appendix 30 
+ITU-R BO.1443-1 
+ITU-R BO.1443-3 
+Analysis of EPFD from 
+non-GSO networks into 
+BSS GSO satellite earth 
+stations  
+Recommendation ITU-R F.1245: 
+Mathematical model of average radiation 
+patterns for line-of-sight point-to-point radio-relay 
+system antennas for use in certain coordination 
+studies and interference assessment in the 
+frequency range from 1 to about 70 GHz 
+ITU-R F.1245 
+ITU-R F.1245-1 
+ITU-R F.1245-1 Annex 1 
+ITU-R F.1245-2 
+ITU-R F.1245-2 Annex 1 
+ITU-R F.1245-3 
+ITU-R F.1245-3 Annex 1 
+For point to point FS links 
+when aggregating 
+interference from large 
+numbers of transmitters 
+Recommendation ITU-R F.1336: 
+Reference radiation patterns of omnidirectional, 
+sectoral and other antennas in point-to-
+multipoint systems for use in sharing studies in 
+the frequency range from 1 to about 70 GHz 
+ 
+ITU-R F.1336 (2.1.1) 
+ITU-R F.1336 (2.1.2) 
+ITU-R F.1336 (2.2) 
+ITU-R F.1336 (4, NOTE 4) 
+ITU-R F.1336-1 (k=0) 
+ITU-R F.1336-1 (k=0.1) 
+ITU-R F.1336-1 (k=0.2) 
+ITU-R F.1336-1 (k=0.7) 
+ITU-R F.1336-2 (2.1) [k=0] 
+ITU-R F.1336-2 (2.1) [k=0.1] 
+ITU-R F.1336-2 (2.1) [k=0.2] 
+ITU-R F.1336-2 (2.1) [k=0.7] 
+ITU-R F.1336-2 (2.2) [k=0] 
+ITU-R F.1336-2 (2.2) [k=0.1] 
+ITU-R F.1336-2 (2.2) [k=0.2] 
+ITU-R F.1336-2 (2.2) [k=0.7] 
+ITU-R F.1336-5 Rec 2.1 
+ITU-R F.1336-5 Rec 2.2 
+ITU-R F.1336-5 Rec 3.1.1 
+ITU-R F.1336-5 Rec 3.1.2 
+ITU-R F.1336-5 Rec 3.2 
+ITU-R F.1336-5 Rec 4 
+ITU-R F.1336-5 Annex 4 
+For point to multi-point 
+fixed or mobile base 
+stations. 
+Sections 2.1.1 and 2.1.2 
+model azimuth symmetric 
+patterns using patterns 
+that are symmetric 
+around the boresight, so 
+should be orientated by 
+setting antenna elevation 
+= 90 degrees. 
+Patterns with defined k 
+value are for sectors with 
+fixed beamwidth of 120° 
+and are not elevation 
+dependent 
+Recommendation ITU-R F.699: 
+Reference radiation patterns for fixed wireless 
+system antennas for use in coordination studies 
+and interference assessment in the frequency 
+range from 100 MHz to about 70 GHz 
+ 
+ITU-R F.699-2 
+ITU-R F.699-2R 
+ITU-R F.699-3 
+ITU-R F.699-3R 
+ITU-R F.699-5 
+ITU-R F.699-6 
+ITU-R F.699-7 
+ITU-R F.699-8 
+For point to point FS 
+links. 
+The “R” versions had 
+reduced side-lobe. 
+Has been used for other 
+scenarios – e.g. to model 
+symmetric radar 
+antennas 
+Recommendation ITU-R S.580: 
+Radiation diagrams for use as design objectives 
+for antennas of earth stations operating with 
+geostationary satellites 
+ITU-R Rec. S.580-6 
+ITU-R S.580-6 (APL) 
+For satellite earth 
+stations – slightly better 
+than pattern in Rec. 
+S.465 as assumes 29-
+25log(phi) rolloff 
+Recommendation ITU-R S.465: 
+Reference earth-station radiation pattern for use 
+in coordination and interference assessment in 
+the frequency range from 2 to about 30 GHz 
+ITU-R S.465-5 
+ITU-R S.465-5 prior to 1993 
+ITU-R S.465-5 (APL) 
+ITU-R S.465-6 Rx 
+For satellite earth 
+stations – slightly worse 
+than pattern in Rec. 
+S.580 as assumes 32-
+25log(phi) rolloff 
+Technical Annex 
+ 
+Page 33 
+ 
+ 
+ 
+ITU-R S.465-6 Tx 
+Recommendation ITU-R S.672: 
+Satellite antenna radiation pattern for use as a 
+design objective in the fixed satellite service 
+employing geostationary satellites 
+ITU-R S.672-3 Annex 1 Ls = -10 
+ITU-R S.672-3 Annex 1 Ls = -20 
+ITU-R S.672-3 Annex 1 Ls = -25 
+ITU-R S.672-3 Annex 1 Ls = -30 
+ITU-R S.672-3 Ln = -20 
+ITU-R S.672-3 Ln = -25 
+ITU-R S.672-3 Ln = -30 
+ITU-R S.672-4 Annex 1 Ls = -10 
+ITU-R S.672-4 Annex 1 Ls = -20 
+ITU-R S.672-4 Annex 1 Ls = -25 
+ITU-R S.672-4 Annex 1 Ls = -30 
+ITU-R S.672-4 Ln = -20 
+ITU-R S.672-4 Ln = -25 
+Generally useful for 
+satellites with symmetric 
+gain patterns 
+A range of side-lobes are 
+given: note the Ls = -10 
+relates to patterns 
+defined in Article 22.2 of 
+the Radio Regulations 
+Recommendation ITU-R S. 1328: 
+Satellite system characteristics to be considered 
+in frequency sharing analyses within the fixed-
+satellite service 
+ITU-R S.1328 USAKUL1 
+Defines the gain pattern 
+for SkyBridge. 
+Should be used with 
+electronically steered 
+beams with footprint size 
+of 450 km 
+Recommendation ITU-R S.1428: 
+Reference FSS earth-station radiation patterns 
+for use in interference assessment involving 
+non-GSO satellites in frequency bands between 
+10.7 GHz and 30 GHz 
+ITU-R S.1428 
+ITU-R S.1428-1 
+Analysis of EPFD from 
+non-GSO networks into 
+FSS GSO satellite earth 
+stations 
+Recommendation ITU-R S. 1528: Satellite 
+antenna radiation patterns for non-geostationary 
+orbit satellite antennas operating in the fixed-
+satellite service below 30 GHz 
+ITU-R S. 1528: LN = -15 
+ITU-R S. 1528: LN = -20 
+ITU-R S. 1528: LN = -25 
+ITU-R S. 1528: LN = -30 
+ 
+Similar to Rec. ITU-R 
+S.672 but for non-GSO 
+satellites. 
+Includes elliptical beam 
+terms 
+Recommendation ITU-R RS.1813: Reference 
+antenna pattern for passive sensors operating in 
+the Earth exploration-satellite service (passive) 
+to be used in compatibility analyses in the 
+frequency range 1.4-100 GHz 
+ITU-R RS.1813 (Recommends 1) 
+ITU-R RS.1813 (Recommends 2) 
+Analysis of interference 
+into Earth exploration-
+satellite’s passive 
+sensors 
+ITU-R Radio Regulations Resolution 221: Use of 
+high altitude platform stations providing IMT in 
+the bands  1 885-1 980 MHz, 2 010-2 025 MHz 
+and 2 110-2 170 MHz in Regions 1 and 3 and 1 
+885-1 980 MHz and 2 110-2 160 MHz in Region 
+2 
+Resolution 221: LN = -25 
+Resolution 221: LN = -26 
+Resolution 221: LN = -28 
+Resolution 221: LN = -30 
+Resolution 221: LN = -32 
+ 
+Analysis sharing between 
+high altitude platform 
+stations (HAPS) and 
+other radio systems 
+Recommendation ITU-R F.1891: “Technical and 
+operational characteristics of gateway links in 
+the fixed service using high altitude platform 
+stations in the band 5 850-7 075 MHz to be used 
+in sharing studies” 
+ITU-R F.1891: LN = -25 
+ 
+Analysis sharing between 
+high altitude platform 
+stations (HAPS) and 
+other radio systems 
+Recommendation ITU-R M.2101: “Modelling and 
+simulation of IMT networks and systems for use 
+in sharing and compatibility studies” using 
+parameters from document 5D/TEMP/265R3 
+ 
+Options for the non-co-frequency gain pattern 
+are discussed in Annex 1 to Document 5-1/287-
+E 
+IMT-MODEL BS Indoor 
+IMT-MODEL BS Suburban 
+IMT-MODEL BS Urban Outdoor 
+IMT-MODEL UE Indoor 
+IMT-MODEL UE Suburban 
+IMT-MODEL UE Urban Outdoor 
+Sharing scenarios 
+involving IMT-2020 / 5G 
+systems 
+ 
+See notes below on use 
+of this gain pattern 
+Annex 15 to Document 5A/650-E: PDNR ITU-R 
+M.[MS-RXCHAR-28] Receiver characteristics 
+and protection criteria for systems (excluding 
+IMT)  in the mobile service in the frequency 
+range 27.5-29.5 GHz for use in sharing  and 
+compatibility studies with earth stations in motion 
+IMT-MODEL 28 GHz BS 
+IMT-MODEL 28 GHz UE A 
+IMT-MODEL 28 GHz UE B 
+Sharing scenarios 
+involving IMT-2020 / 5G 
+systems 
+ 
+See notes below on use 
+of this gain pattern 
+Technical Annex 
+ 
+Page 34 
+ 
+ 
+ 
+operating in geostationary FSS networks and 
+with applications under the fixed service 
+ 
+Options for the non-co-frequency gain pattern 
+are discussed in Annex 1 to Document 5-1/287-
+E 
+Recommendation ITU-R M.1851 "Mathematical 
+models for radiodetermination radar systems 
+antenna patterns for use in interference 
+analyses” 
+ITU-R M.1851 (COS Average)  
+ITU-R M.1851 (COS Peak)  
+ITU-R M.1851 (COS)  
+ITU-R M.1851 (COS2 Average)  
+ITU-R M.1851 (COS2 Peak)  
+ITU-R M.1851 (COS2)  
+ITU-R M.1851 (COS3 Average)  
+ITU-R M.1851 (COS3 Peak)  
+ITU-R M.1851 (COS3)  
+ITU-R M.1851 (SIN Average)  
+ITU-R M.1851 (SIN Peak)  
+ITU-R M.1851 (SIN) 
+For sharing scenarios 
+involving radar systems 
+with pencil beams. 
+ 
+See Tables 2, 3 and 5 in 
+Annex 1 of Rec. M.1851 
+for definition of these 
+patterns 
+Recommendation ITU-R M.2101: “Modelling and 
+simulation of IMT networks and systems for use 
+in sharing and compatibility studies”  
+ITU-R M.2101 
+Sharing scenarios 
+involving IMT-2020 / 5G 
+systems 
+ 
+ 
+Table 1: References for ITU-R and ETSI Visualyse Professional Gain Patterns 
+These documents can be accessed from: 
+http://www.itu.int 
+http://www.etsi.org 
+Registration and/or payment might be required for some documents. 
+Some patterns are not defined for the full range of offaxis angles. For example 
+ITU-R Rec.S.465 does not define the pattern for offaxis angles less than 1°: in 
+this case it is assumed to be parabolic until reaching the first side-lobe, i.e. 
+(
+)
+G
+G
+D
+=
+−
+
+
+
+
+
+
+−
+−
+
+
+
+
+
+
+
+
+
+
+max
+,
+log
+/
+log
+max
+min
+12
+52
+10
+25
+0
+10
+10
+f
+f
+
+f
+ 
+ 
+Variations for Recommendation S.465 and S.580 gain patterns extend the 
+pattern using the methodology in the ITU’s Antenna Pattern Library (APL). 
+5.1.1 
+Note on the IMT-MODEL Gain Patterns 
+In order to activate the beamforming of these gain patterns, the antenna type, 
+station and link options should be: 
+• 
+Antenna type: ensure “Electronically steerable” is checked 
+• 
+Station antenna pointing:  
+- 
+For the BS: set fixed pointing angles 
+- 
+For the UEs: point at another station (the BS) using random offsets of 
+azimuth = {-60, +60}, elevation = {-90, +90} 
+• 
+Link: either a Fixed or Dynamic link from the BS to the UE (or vice versa) to 
+activate the antenna pointing. Note that a transmit or receive link cannot be 
+used 
+Technical Annex 
+ 
+Page 35 
+ 
+ 
+ 
+The BS antenna azimuth could also be defined via the Monte Carlo service area 
+Define Variable. 
+The parameters used to configure this gain pattern take account of the 
+frequency, typically defined in the link. 
+5.1.2 
+Note on the IMT-MODEL Non-Co-Frequency Gain Pattern 
+For antenna types defined by the IMT-MODEL patterns, there are options to 
+select how the gain pattern changes for non-co-frequency interference paths.  
+The following options are available from the Advanced Beam Options dialog:  
+- 
+Use co-frequency pattern: the M.2101 pattern is used with D/lambda = 
+0.5 for both co-frequency and non-co-frequency scenarios 
+- 
+Single element pattern: the M.2101 single element pattern is used if the 
+victim centre frequency is non-co-frequency 
+- 
+Assume D/lambda = 0.46: in the M.2101 gain pattern a D/lambda of 0.46 
+is used rather than 0.5 
+- 
+Variable D/lambda: it is assumed that at the centre frequency supplied 
+the D/lambda = 0.5, and so for other frequencies the D is derived and 
+fixed but the lambda varies depending upon the victim frequency 
+The definition of what constitutes “co-frequency” and what “non-co-frequency” 
+for the IMT-MODEL gain pattern is set via: 
+- 
+Centre Frequency: this is the centre frequency that the IMT-MODEL 
+antenna has been tuned to 
+- 
+Co-Frequency Bandwidth: this is the total bandwidth that is defined as 
+being co-frequency in range: 
+o Minimum = CentreFrequency – CoFrequencyBandwidth./2 
+o Maximum = CentreFrequency + CoFrequencyBandwidth./2 
+Outside this frequency range the interference path is assumed to be non-co-
+frequency. 
+To activate these non-co-frequency gain patterns it is necessary to set the 
+Interference Path option: 
+- 
+Calculate Interfering Signal using Victim Frequency = true 
+This will use the victim centre frequency when calculating the interfering signal 
+and hence allow the antenna type to identify if the path is co-frequency (to the 
+IMT-MODEL antenna) or non-co-frequency. It will not affect other calculations, in 
+particular the mask integration adjustment or NFD. 
+5.2 
+Additional Gain Patterns 
+Other useful gain patterns are: 
+• 
+Bessel 
+• 
+Capped Bessel 
+• 
+GPS L1 
+• 
+GPS L2 
+• 
+GPS User 
+Technical Annex 
+ 
+Page 36 
+ 
+ 
+ 
+• 
+Linear with angle 
+• 
+Omni directional 
+• 
+Parabolic rolloff 
+• 
+Sine(x)/x 
+These are specified in the sections below. 
+5.2.1 
+Bessel 
+This is the theoretical model for antenna performance, and is given below. 
+If: 
+D
+
+
+=
+
+
+
+
+
+
+
+161374
+2
+0
+.
+sin
+ 
+Then: 
+(
+)
+(
+)
+GREL
+D
+D
+=
+
+
+
+
+
+
+
+
+
+20
+2
+10
+log
+j1
+sin
+
+
+
+
+
+
+ 
+5.2.2 
+Capped Bessel 
+The capped Bessel follows the Bessel for the main beam, and then for the side-
+lobes it connects the peaks. 
+5.2.3 
+GPS L1 
+The following pattern is used: 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
++
++
+=
+537
+.
+1
+944
+.
+4
+exp
+1
+4
+.
+3
+77
+.
+11
+
+abs
+G
+ 
+ 
+if 0  11 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
+−
++
++
+−
+=
+440
+.
+2
+83
+.
+21
+exp
+1
+03
+.
+49
+61
+.
+33
+
+abs
+G
+ 
+ 
+if 11<  22 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
++
++
+−
+=
+194
+.
+1
+13
+.
+24
+exp
+1
+02
+.
+10
+86
+.
+10
+
+abs
+G
+ 
+ 
+if 22<  29 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
+−
++
++
+−
+=
+216
+.
+3
+32
+.
+40
+exp
+1
+753
+.
+6
+749
+.
+7
+
+abs
+G
+ 
+ 
+if 29<  45 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
++
++
+−
+=
+122
+.
+1
+49
+.
+46
+exp
+1
+783
+.
+4
+319
+.
+7
+
+abs
+G
+ 
+ 
+if 45<  52 
+Technical Annex 
+ 
+Page 37 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
+−
++
++
+−
+=
+12
+.
+10
+79
+.
+73
+exp
+1
+05
+.
+27
+12
+.
+27
+
+abs
+G
+ 
+ 
+if 52<  82 
+3
+5
+19
+.
+3
+0111
+.
+0
+266
+.
+1
+65
+.
+37
+
+
+
+−
+−
++
+−
+=
+e
+Gabs
+ 
+if 82<  174 
+
+05
+.
+2
+1
+.
+323 −
+=
+abs
+G
+  
+ 
+ 
+ 
+if 174<  176 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
++
++
+−
+=
+6702
+.
+0
+4
+.
+177
+exp
+1
+199
+.
+6
+27
+.
+38
+
+abs
+G
+ 
+ 
+otherwise 
+Then: 
+6
+11.9010486
+−
+=
+abs
+rel
+G
+G
+ 
+Note this assumes that the peak gain is set to 11.90104866 dB. 
+5.2.4 
+GPS L2 
+The following pattern is used: 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
+−
++
++
+−
+=
+677
+.
+4
+91
+.
+33
+exp
+1
+51
+.
+80
+31
+.
+67
+
+abs
+G
+ 
+ 
+if 0  30 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
++
++
+−
+=
+51
+.
+4
+416
+.
+30
+exp
+1
+58
+.
+17
+79
+.
+19
+
+abs
+G
+ 
+ 
+if 30<  47 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
+−
++
++
+−
+=
+57
+.
+21
+75
+.
+88
+exp
+1
+58
+.
+28
+62
+.
+27
+
+abs
+G
+ 
+ 
+if 47<  97 
+3
+5
+05
+.
+4
+0167
+.
+0
+081
+.
+2
+44
+.
+97
+
+
+
+−
+−
+−
++
+−
+−
+=
+e
+Gabs
+ 
+if 97<  174 
+
+
+
+
+
+
+
+
+
+
+
+
+−
+−
++
++
+−
+=
+9522
+.
+0
+1
+.
+176
+exp
+1
+609
+.
+9
+23
+.
+30
+
+abs
+G
+ 
+ 
+otherwise 
+Then: 
+2
+13.1346117
+−
+=
+abs
+rel
+G
+G
+ 
+Note this assumes that the peak gain is set to 13.13461172 dB. 
+5.2.5 
+GPS User 
+The following pattern is used from ITU-R document 8D/142 from 13th October 
+1998: 
+01
+.
+2
+3
+957
+.
+1
+7
+
+−
+−
+=
+e
+Gabs
+ 
+ 
+if   80 
+Technical Annex 
+ 
+Page 38 
+ 
+ 
+ 
+2
+4
+455
+.
+5
+3882
+.
+0
+59
+.
+21
+
+
+−
++
+−
+=
+e
+Gabs
+ 
+otherwise 
+Then: 
+7
+−
+=
+abs
+rel
+G
+G
+ 
+Note this assumes that the peak gain is set to 7 dB. 
+5.2.6 
+Linear 
+This algorithm is used so that the offaxis angle can be determined from the 
+offaxis gain. The equation is: 
+ 
+ 
+Grel = -  
+5.2.7 
+Omni Directional 
+This gives the same value in all directions and is hence essentially isotropic. The 
+peak gain is set by default to 0 dB, but can be any user entered value. 
+5.2.8 
+Parabolic 
+This pattern is parabolic with floor defined. The equation is: 
+ 
+ 
+G
+G
+rel
+floor
+dB
+=
+−
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+max
+, 12
+3
+2
+
+
+ 
+The Gfloor is input by the user. A typical value is -30 dB. 
+5.2.9 
+Sin(x)/x 
+The calculation is the same as the Bessel Function, but replacing the call to 
+Bessel by sin. 
+5.3 
+Archived Gain Patterns 
+The following gain patterns are included in Visualyse Professional Version 7 for 
+reasons of backward compatibility: 
+• 
+Appendix 29 Earth Station 
+• 
+Analytic ES 
+• 
+Analytic NGSO 
+• 
+Cosine 
+• 
+FSATMULTI_1A Earth Station 
+• 
+FSATMULTI_1A Type A 
+• 
+NGSO FSS RX 
+• 
+NGSO FSS TX 
+• 
+SMATV 
+• 
+Sine 
+• 
+SkyBridge RX Type A 
+• 
+SkyBridge TX Type A 
+Technical Annex 
+ 
+Page 39 
+ 
+ 
+ 
+• 
+TVRO 
+• 
+Teledesic 2 - RX 
+• 
+Teledesic 2 - RX fixed BW 
+• 
+Teledesic 2 - TX 
+• 
+Teledesic 2 - TX fixed BW 
+• 
+Teledesic Type A 
+• 
+Teledesic Type B 
+• 
+Teledesic Type C 
+More information is available on request. 
+Technical Annex 
+ 
+Page 40 
+ 
+ 
+ 
+6 
+Propagation models 
+Visualyse Professional contains a number of propagation models that can be 
+activated either individually or in combination. These are described in the 
+sections below. 
+6.1 
+ITU-R Recommendations 
+6.1.1 
+Recommendation ITU-R P.452 
+Prediction procedure for the evaluation of microwave interference between 
+stations on the surface of the Earth at frequencies above about 0.7 GHz 
+This option uses the model in Recommendation ITU-R P.452 for line of sight 
+and trans-horizon loss valid for frequencies between 100 MHz and 50 GHz, 
+though recent research suggests it might also be applicable at higher 
+frequencies.  Visualyse Professional includes all the key components of the 
+model, including free space path loss, multi-path enhancements, gaseous 
+absorption, diffraction, ducting and layer reflection/refraction, troposcatter and 
+clutter loss. 
+Data needed for the model can be derived directly from the IDWM database if 
+you are using the IDWM module, otherwise they must be input by hand. If a 
+terrain database is available it will be used to derive parameters relating to the 
+path including diffraction. The clutter model can use the land usage database or 
+parameters entered by hand.  
+The associated percentage of time can either be user-entered or selected at 
+random for Monte Carlo style analysis. The range in the Recommendation is 
+0.001 % to 50%, reflecting the fact that this model is designed for interference 
+paths and so does not include effects for over 50% of time such as deep fades. 
+6.1.2 
+Recommendation ITU-R P.525 
+Calculation of free-space attenuation 
+This is the basic free space path loss that can be used for all paths at all 
+frequencies. Note that by default for all paths including terrestrial no 
+consideration is made as to whether there is line of sight, and losses increase 
+steadily by distance. 
+6.1.3 
+Recommendation ITU-R P.526 
+Propagation by diffraction 
+Recommendation ITU-R P.526 defines models to be used in calculating 
+diffraction losses for trans-horizon links for frequencies above about 30 MHz. 
+Visualyse Professional implements both the smooth Earth model and the 
+modified three-knife edge Deygout construction when terrain data is available.  
+6.1.4 
+Recommendation ITU-R P.528 
+Propagation curves for aeronautical mobile and radionavigation services using 
+the VHF, UHF and SHF bands 
+This Recommendation is designed to predict propagation loss for air to ground / 
+ground to air links. It gives curves of loss vs. distance for frequencies 125, 300, 
+1200, 5100, 9400 and 15 500 MHz and at TX/RX heights of 15m, 1 km, 10 km, 
+and 20 km for probabilities of 5%, 50% and 95% of time. Interpolation is used to 
+derive the loss for other frequencies, heights and percentages of time. 
+Technical Annex 
+ 
+Page 41 
+ 
+ 
+ 
+6.1.5 
+Recommendation ITU-R P.530 
+Propagation data and prediction methods required for the design of terrestrial 
+line-of-sight systems 
+Visualyse Professional contains two of the propagation models in 
+Recommendation ITU-R P.530 - rain and multipath fading, as describing below.  
+Parameters in various equations within the Recommendation have been derived 
+from fading data from links operating in the range 450 MHz – 37 GHz, though 
+they should be valid up to frequencies of 50 GHz. 
+6.1.5.1 Recommendation ITU-R P.530 Multipath  
+This option uses the fade distribution defined in Method 1 of Recommendation 
+ITU-R P.530 to generate a fade or multipath enhancement either for a specific 
+percentage of time or at random using a Monte-Carlo technique.  
+This method is applicable to line-of-sight fixed links and is intended for initial 
+planning and link design. The geoclimatic factor K parameter is derived from the 
+Recommendation. 
+6.1.5.2 Recommendation ITU-R P.530 Rain Fade 
+This option uses the model defined in Recommendation ITU-R P.530 to 
+generate a rain fade loss. It is intended to be used for line-of-sight fixed links. 
+The rain rate can either be entered directly or read automatically from 
+Recommendation ITU-R P.837. The associated percentage of time can be either 
+entered directly or generated at random for Monte Carlo analysis. 
+6.1.6 
+Recommendation ITU-R P.618 
+Propagation data and prediction methods required for the design of Earthspace 
+telecommunication systems 
+This Recommendation models rain attenuation on earth to space / space to 
+earth links and the rain rate can come from ITU-R Recommendation P.837 
+versions or directly entered by the user. It is valid for frequencies up to 55 GHz. 
+The associated percentage of time can be either entered directly or generated at 
+random for Monte Carlo analysis. 
+6.1.7 
+Recommendation ITU-R P.676 
+Attenuation by atmospheric gases 
+This method implements losses due to dry air and water vapour defined in 
+Annex 2 of Recommendation ITU-R P.676, and is intended to be used for earth 
+to space / space to earth links. It is valid for frequencies from 1 GHz to 350 GHz. 
+The values of the temperature, water vapour density and pressure can be 
+entered directly. 
+6.1.8 
+Recommendation ITU-R P.840 
+Attenuation due to clouds and fog 
+This method implements losses due to attenuation from cloud and fogs as 
+described in Recommendation ITU-R P.840, and is intended for earth to space / 
+space to earth links above about 10 GHz. 
+Technical Annex 
+ 
+Page 42 
+ 
+ 
+ 
+The values of the water concentration in the cloud and associated percentage of 
+time can be entered directly. 
+6.1.9 
+Recommendation ITU-R SF.1395 
+Minimum propagation attenuation due to atmospheric gases for use in frequency 
+sharing studies between the fixed-satellite service and the fixed service 
+This model calculates the attenuation due to atmospheric gases in more detail 
+for low elevation paths than the direct method in Recommendation ITU-R P. 
+676. It fits a set of curves to a numerical integration at key frequencies. 
+6.1.10 Recommendation ITU-R P.1546 
+Method for point-to-area predictions for terrestrial services in the frequency 
+range 30 MHz to 3 000 MHz 
+This propagation model is designed for use in modelling terrestrial services; in 
+particular point-to-area predictions in the frequency range 30 MHz to 3 GHz.  
+Propagation parameters required by this model such as distance over water and 
+whether warm water can be automatically extracted from IDWM or entered by 
+hand. 
+The clutter model can use the land usage database or parameters entered by 
+hand.  
+Note that this model calculates loss assuming high height transmitter and low 
+height receiver and it is assumed that the loss in the return direction is then the 
+same. The loss is calculated to a receiver height of 10m and then adjustments 
+must be made for the actual receiver height. 
+6.1.11 Recommendation ITU-R P.1791 
+Propagation prediction methods for assessment of the impact of ultra-wideband 
+devices 
+This model is a generic propagation model for short range scenarios built up 
+work within the ITU-R studying ultra-wideband (UWB) devices. In the 
+Recommendation it is basically a dual slope model with log-normal distribution: 
+however we have included a number of extensions that were discussed during 
+its development to make it a more generic short range propagation model. 
+In its more flexible generic form it comprises four elements: 
+1. 
+Basic loss: this can either be a single slope or dual slope, with a 
+specified break distance and either one or two slopes. For wide band 
+signals such as UWB it should use the adjusted basic path loss that 
+takes account of the frequency range 
+2. 
+Optional indoor-outdoor propagation loss: it is assumed that the loss 
+varies depending upon the building type and distance to exterior wall, 
+with distribution defined by two break points and assuming loss is 
+capped below and above and with linear interpolation between break 
+points 
+3. 
+Optional additional log-normal loss with mean zero and standard 
+deviation a user entered parameter, which can be different before 
+and after the break point 
+4. 
+Optional additional loss, to cover other propagation effects 
+Technical Annex 
+ 
+Page 43 
+ 
+ 
+ 
+The log-normal loss can include enhancements, which could in theory result in 
+less loss than would be the case with free space path loss. The loss can 
+therefore be capped at this value to ensure physically plausible results. 
+6.1.12 Recommendation ITU-R P.1812 
+A path-specific propagation prediction method for point-to-area terrestrial 
+services in the VHF and UHF bands    
+This propagation model is designed for use in modelling terrestrial services; in 
+particular point-to-area predictions in the frequency range 30 MHz to 3 GHz.  
+Conceptually it is a mixture of Recommendations ITU-R P.452 and ITU-R 
+P.1546 using: 
+• 
+The path profile extraction and analysis method in ITU-R P.452 to work 
+out propagation loss taking into account details of the terrain 
+• 
+The clutter loss and percentage of locations within a pixel methodology 
+within ITU-R P.1546. 
+The propagation model in ITU-R P.452 can calculate propagation loss for 
+percentages of time down to 0.001% for frequency over about 700 MHz. 
+However it is not feasible at present to predict propagation losses for very small 
+percentages of time for the lower frequencies ranges covered by ITU-R P.1812: 
+hence it is restricted to percentages between 1 and 50%. 
+Visualyse Professional includes all the key components of the model, including 
+gaseous absorption, fading, ducting, troposcatter and clutter. Data needed for 
+the troposcatter model can be derived directly from the IDWM database if you 
+are using the IDWM module, otherwise they must be input by hand. If a terrain 
+database is available it will be used to derive parameters relating to the path 
+including diffraction. If a land use database is available it will be used to adjust 
+the path profile with the heights indicated for each clutter category. 
+Propagation parameters required by this model such as distance over water and 
+whether warm water can be automatically extracted from IDWM or entered by 
+hand. 
+6.1.13 Recommendation ITU-R P.2001 
+A general purpose wide-range terrestrial propagation model in the frequency 
+range 30 MHz to 50 GHz   
+This propagation model is designed for terrestrial sharing scenarios, in particular 
+for use in Monte Carlo style methodologies. 
+Many of the other propagation models handle fading and enhancements 
+separately. For example in sharing scenarios involving the fixed service there 
+are two models: 
+• 
+Wanted path: as well as free space path loss, Rec. P.530 is used to 
+model fades on the link below the 50% of time level 
+• 
+Interference path: Rec. P.452 is used to model interference including 
+enhancements above the 50% of time level 
+When undertaking Monte Carlo modelling it is important to model the full range 
+of probabilities for wanted and interfering paths so that the convolution of 
+C/(N+I) is correctly calculated. This is was Rec. P.2001 is designed to do. 
+Technical Annex 
+ 
+Page 44 
+ 
+ 
+ 
+This Recommendation has similarities with both P.452 and P.1812 in its 
+handling of terrain paths but extends both to cover the full range of percentage 
+of times [0.00001% to 99.99999%]. 
+At present no clutter model is included in this Recommendation but if need be 
+the Extra models terminal clutter loss can be added to the list of propagation 
+models with P.2001. 
+6.2 
+Other Standard Models 
+6.2.1 
+Crane Rain Model 
+This implements the Crane rain model with options to include the NASA data 
+set. It is intended to be used for earth to space / space to earth paths. 
+Either the climatic region or rain rate and rain height can be entered. 
+The associated percentage of time can be either entered directly or generated at 
+random for Monte Carlo analysis. 
+Note: The implementation is based on Section 4.3 of Electromagnetic Wave 
+Propagation Through Rain by Robert K. Crane (© 1996 John Wiley & Sons, Inc. 
+ISBN 0-471-61376). 
+The following modifications were made when implementing the model: 
+• 
+The section of Crane that deals with horizontal paths over 22.5km is only 
+used when a climate region is specified. 
+• 
+In equation 4.8, 
+ the 
+ is replaced with 
+ 
+giving 
+ 
+• 
+This is similar to the method used in the NASA Propagation Effects 
+Handbook for Satellite Systems Design (1989, fourth edition, section 
+6.3.2.1, page 6-23). 
+• 
+Equation 4.10 is used instead of the approximations which follow it. 
+• 
+Equation 4.13 is used instead of 4.12 
+• 
+Alpha and K in section 4.3.1 are calculated using Rec. ITU-R P.838 
+(1992) 
+6.2.2 
+Appendix S.7 (WRC-95)  
+Visualyse Professional includes the propagation model defined in Appendix S.7 
+as agreed at WRC 95 (previously known as Appendix 28). This can be either 
+Mode 1, Mode 2 or a combined model. It is valid between 1 and 40 GHz. 
+If the IDWM model is available then it will extract the zone(s) required for Mode 
+1 calculations automatically, otherwise a single zone can be directly selected. 
+The associated percentage of time can be either entered directly or generated at 
+random for Monte Carlo analysis. 
+If the IDWM model is available then it will extract the rain rate, rain cell size, and 
+vapour density required for Mode 2 calculations automatically, otherwise these 
+fields can be entered directly. 
+Technical Annex 
+ 
+Page 45 
+ 
+ 
+ 
+6.2.3 
+TIA Bulletin 10F 
+The US Telecommunications Industry Association has produced a technical 
+bulletin relating to interference calculations for fixed service systems. One 
+element is a model for short term deep fading. Visualyse Professional allows this 
+model to be used across all percentages of time by linearly extrapolating from 
+deep to shallow fading.  
+6.2.4 
+Longley-Rice 
+The Longley-Rice Irregular Terrain Model 
+This propagation model is the point to point version of the National 
+Telecommunications and Information Administration (NTIA) Institute for 
+Telecommunication Sciences’s Irregular Terrain Model (ITM) version 1.2.2. 
+As well as using the path profile extracted from the terrain database there are 
+also options to select the surface refractivity, dielectric ground constant, ground 
+conductivity and radio climate from standard options. 
+The median propagation loss can be adjusted in two dimensions: 
+• 
+Time: you can enter the percentage of time that the propagation loss A 
+will not be exceeded i.e. A(qT) 
+• 
+Confidence: Confidence that the propagation loss will A(qT) not exceed 
+the level for the specified qT of time 
+6.3 
+Terrestrial Mobile 
+Visualyse Professional contains three standard propagation models to calculate 
+median loss for terrestrial mobile applications. 
+6.3.1 
+Egli 
+The Egli model is an empirical model applicable to a mobile environment. It is a 
+1/r4 model with corrections for antenna heights and frequency.  
+The calculations for this model have been derived from algorithms in: “The 
+Mobile Radio Propagation Channel”, J. D. Parsons, Pentech Press 1992.  This 
+simplified Egli model is valid for use at frequencies between 90 MHz and 1 GHz 
+and has no input parameters. 
+6.3.2 
+Hata / COST-231 
+The Hata model is an empirical model applicable to a mobile environment, which 
+gives the median loss and is widely used and was extended by COST-231. The 
+original Hata model was valid for frequencies from 150 MHz – 1,500 MHz and 
+the COST-231 version was extended to 2 GHz. 
+The implementation of COST-231 is consistent with the approach in defined in 
+ECC Report 68.  
+It should be noted that the Hata version of this model is asymmetric – the loss is 
+assumed to be calculated in the direction from the (higher) base station to the 
+(lower height) mobile station. To allow calculation in the reverse direction, the 
+COST-231 implementation assumes the station with the highest antenna is the 
+base station independent of other parameters of the network. 
+In both cases the environment can be selected as one of urban, suburban or 
+rural.  
+Technical Annex 
+ 
+Page 46 
+ 
+ 
+ 
+6.3.3 
+Lee 
+The Lee model is an empirical model applicable to a mobile environment, and 
+allows the median transmission loss, the slope of path loss curve, and frequency 
+adjustment factors to be entered. 
+The calculations for this model have been derived from algorithms in: “The 
+Mobile Radio Propagation Channel”, J. D. Parsons, Pentech Press 1992. 
+6.3.4 
+IMT Path Loss Models 
+These models are designed for short range paths for the wanted or interfering 
+signals of IMT-2020 / 5G systems. The models included are: 
+• 
+ABG 
+• 
+CI/CIF 
+• 
+3GPP TR 38.900 
+• 
+3GPP TR 38.901 
+• 
+WINNER II 
+• 
+WINNER+ 
+• 
+ITU-R Report M.2135 
+The alpha, beta, gamma (ABG) and close-in / close-in with frequency-dependent 
+path loss exponent (CI/CIF) path loss models were defined in document ITU-R 
+WP 5D/TEMP/292. Each requires a set of parameters which will depend upon 
+the environment models, such as the examples in the document referenced. 
+The 3GPP wanted signal path loss models are defined in these documents: 
+• 
+3GPP Technical Report (TR) 38.900: Study on channel model for 
+frequency spectrum above 6 GHz 
+• 
+3GPP TR 38.901: Study on channel model for frequencies from 0.5 to 
+100 GHz 
+These define path loss models for specific environments, taking into account 
+whether the path is line of sight (LOS) or non-LOS. For some environments the 
+path could also be from indoor to outdoor. 
+The 3GPP TR 38.900 and 38.901 path loss models are not symmetric, in that 
+they have as inputs the BS and UE heights. To ensure that Visualyse 
+Professional identifies the stations correctly, it should be configured so that: 
+• 
+The BS is a Terrestrial Fixed Station 
+• 
+The UE is a Mobile Station 
+Note that 3GPP TR 38.900 and 38.901 have, for some environments, 
+assumptions about the BS height. For example in the UMa environment it is 
+assumed that the height of the BS is 25m while for UMi – Street Canyons this is 
+10m. This value would be used within these path loss models irrespective of the 
+height set in the station dialog. The equations to determine the probability of 
+LOS makes similar assumptions about antenna heights. 
+In addition, some parameters have ranges of acceptable values which are 
+enforced. For example, the RMa environment requires the average street width 
+and building height to be entered which are constrained to be between 5m and 
+50m. 
+Technical Annex 
+ 
+Page 47 
+ 
+ 
+ 
+The WINNER propagation models are described in the following documents: 
+• 
+WINNER II Channel Models (Project IST-4-027756, versions D1.1.2 
+V1.2) 
+• 
+WINNER+ Final Channel Models (Project CELTIC / CP5-026, version 
+1.0) 
+6.3.5 
+Recommendation ITU-R P.2109: Building Entry Loss 
+Recommendation ITU-R P.2109 (previously described as P.BEL) defines the 
+entry / exit loss for a path between a station inside and another station outside a 
+building, as in the figure below: 
+ 
+The loss will depend upon a number of factors, such as frequency, elevation 
+angle of path at the station inside and the type of building. Measurements noted 
+that a key factor was whether the exterior is made from: 
+• 
+Traditional materials 
+• 
+Thermally efficient materials 
+There can be a wide variation in losses depending upon details of the materials, 
+the location of the station inside, the floors, furniture etc. Therefore, rather than 
+giving a single value a statistical model was used that defines the building entry 
+loss exceeded for a given likelihood. 
+The inputs are therefore: 
+• 
+Frequency 
+• 
+Elevation angle 
+• 
+Building material 
+• 
+Probability 
+The probability can either be entered or selected at random for Monte Carlo 
+analysis. The elevation angle can either be entered or will be calculated from the 
+radio path. 
+Technical Annex 
+ 
+Page 48 
+ 
+ 
+ 
+6.3.6 
+Recommendation ITU-R P.2108 
+Recommendation ITU-R P.2108 (previously described as P.Clutter) contains 
+three component models depending upon whether: 
+• 
+Terminal below representative clutter height 
+• 
+Terrestrial terminal within the clutter 
+• 
+One terminal is within the clutter and the other is a satellite, aeroplane or 
+other platform above the surface of the Earth. 
+6.3.6.1 Height / Gain Clutter Model 
+This is the same model as in P.1812 and depends upon: 
+• 
+Frequency 
+• 
+Antenna height 
+• 
+Street width 
+• 
+Representative clutter height 
+• 
+Clutter type 
+As this model is “stand-alone” it should be combined with other propagation 
+models as considered appropriate, such as that within Recommendation ITU-R 
+P.2001 (which does not include a clutter loss model). Note that if used with 
+P.452 the clutter model within that Recommendation should be switched off. 
+The model is valid for the frequency range 30 MHz to 3 GHz. 
+6.3.6.2 Statistical Clutter Model 
+This model is purely statistical in nature, depending upon: 
+• 
+Frequency 
+• 
+Distance 
+• 
+Percentage of locations 
+The model is valid for the frequency range 2 to 67 GHz and for a minimum path 
+length of: 
+• 
+0.25 km (for the correction to be applied at only one end of the path) 
+• 
+1 km (for the correction to be applied at both ends of the path) 
+6.3.6.3 Elevation Clutter Model 
+This model gives a clutter loss that is elevation dependent. It is not a fixed value 
+but probabilistic, so a percentage of locations (samples) value must also be 
+given. The parameters are: 
+• 
+Frequency 
+• 
+Elevation angle 
+• 
+Percentage of locations 
+This model is valid for the frequency range: 10 to 100 GHz and elevation angles 
+from 0° to 90°. 
+Technical Annex 
+ 
+Page 49 
+ 
+ 
+ 
+6.4 
+Fixed loss Models 
+6.4.1 
+Const Fixed 
+This option adds a constant dB value to the loss. The constant is a user input. 
+6.4.2 
+Const Per Km 
+This option adds a fixed loss per kilometre of atmosphere through which the 
+path passes.  
+6.4.3 
+Transhorizon loss 
+This allows a fixed loss to be included should the path extend beyond the radio 
+horizon. The loss and effective earth radius can be entered by the user. 
+This can be combined with ITU-R P.525 propagation model which by default 
+does not include a loss for terrestrial trans-horizon paths. Note this is not 
+needed for earth-space links that are assumed to fail when there is no longer 
+line of sight. 
+6.4.4 
+Clutter loss 
+The clutter loss can be entered by hand or taken from the land use database. 
+6.5 
+Extra Clutter Model  
+This option (found in Extra Models) defines the following options: 
+6.5.1 
+No Clutter Loss 
+Lctt = 0. 
+6.5.2 
+Constant Clutter Loss 
+Fixed user entered clutter loss, Lctt,u. 
+6.5.3 
+P.2108 Clutter Model with zero loss short paths 
+If distance (d) < 0.25 km:  
+Lctt = 0  
+Otherwise: 
+ Lctt = P.2108 Loss. 
+6.5.4 
+P.2108 Clutter Model with linear in d interpolation 
+If distance (d) < 0.04 km:  
+Lctt = 0 
+If d >= 0.025 km: 
+ Lctt = P.2108. 
+If 0.04 < d < 0.25 km: 
+calculate clutter loss at distance d = 0.25 (Lctt (0.25))  
+Lctt = Lctt (0.25) * (d - 0.04) / 0.21. 
+6.5.5 
+P.2108 Clutter Model with log-linear in d interpolation 
+Lctt = max{0, P.2108 Loss} 
+Technical Annex 
+ 
+Page 50 
+ 
+ 
+ 
+6.5.6 
+Constant Loss, Likelihood by Distance 
+User entered parameters: 
+• 
+Fixed user entered clutter loss Lctt,u 
+• 
+Minimum distance, d0 
+• 
+Exponent factor, k 
+ 
+Calculate likelihood of line of sight, pLoS: 
+ 
+if distance (d) < d0: 
+pLoS =1                  
+ 
+ 
+iIf d > d0: 
+ pLoS  = e^k(d0 - d)        
+  
+Then calculate clutter loss using random number p: 
+ 
+ 
+if p <= pLoS: 
+Lctt = 0 
+ 
+ 
+if p > pLoS: 
+Lctt = Lctt,u 
+ 
+6.6 
+Other Models 
+6.6.1 
+Dry Air 
+This option calculates attenuation due to dry air using frequency dependent 
+curves defined in ITU-R Report 719 to calculate the loss on the path. 
+6.6.2 
+Water  
+This option switches on just the water vapour attenuation part of 
+Recommendation ITU-R P.676. 
+6.7 
+Use with Define Variable Module 
+The Define Variable Module allows any input parameter to be specified for each 
+time step as being selected from a distribution or defined from set of values. 
+This can be used to extend the propagation models further – for example to 
+specific distributions such as Rayleigh or log-normal fading or user entered 
+distributions. 
+ 
+Technical Annex 
+ 
+Page 51 
+ 
+ 
+ 
+7 
+File Formats 
+7.1 
+Visualyse Binary Files 
+Visualyse Professional binary files are stored complete with all the information 
+that is required to describe a scenario including the windows used. The file 
+format is not available to the user. 
+7.2 
+Shaped Beams Gain Tables 
+The shaped beams are constructed as a table, with a grid of azimuth and 
+elevation angles, and a gain value for each point on the grid. To ease defining 
+complex gain tables, the data can be read in from a text file.  
+Two formats are available: 
+• HP-CON 
+• Visualyse Professional  
+7.2.1 
+HPCON 
+HPCON is a standard format for antenna pattern data. The format is defined by 
+TICRA Copenhagen, the world leader in antenna design and analysis software.  
+The format used is described below: 
+Record 
+Data 
+Format 
+First Line 
+Identifying label 
+18 characters of text 
+Second Line 
+U1,U2,V1,V2,MU,MV 
+Where: 
+U1 = start azimuth, 
+U2 = end azimuth, 
+V1 = start elevation, 
+V2 = end elevation, 
+ 
+MU = number of azimuths, 
+MV = number of elevations. 
+ 
+ 
+ 
+Floating point number 
+represented by an 8 character 
+fixed field padded out with 
+spaces. Accuracy is 3 decimal 
+places. 
+ 
+Integer value represented by a 
+4 character fixed field padded 
+out with spaces 
+ 
+Subsequent Lines 
+(ZR(I,J), J=1,MV) , I=1 MU 
+ 
+Where ZR(I,J) is the gain for 
+the Ith azimuth and Jth elevation. 
+There is a maximum of 10 
+entries per line. 
+Floating point number 
+represented by an 8 character 
+fixed field padded out with 
+spaces. Accuracy is 3 decimal 
+places. 
+ 
+Additional data may follow such as the phase of field for each azimuth 
+and elevation, but this is ignored. 
+ 
+ 
+Technical Annex 
+ 
+Page 52 
+ 
+ 
+ 
+7.2.2 
+Visualyse Professional  
+There are two possible file formats whereby the data is read in in rows or 
+columns.  
+The fields are text, separated by one of the following: 
+• tabs 
+• commas 
+• spaces 
+7.2.2.1 Format 1: 
+The file format is described below. The square brackets would not appear in the 
+actual file. 
+[AzStart] [AzStep] [AzNum] [ElStart] [ElStep] [ElNum] 
+[Gain X-1 Y-1] 
+ 
+: 
+[Gain X-n Y-1] 
+[Gain X-1Y-2] 
+: 
+[Gain X-nY-2] 
+: 
+: 
+[Gain X-1Y-m] 
+: 
+[Gain X-nY-m] 
+ 
+where: 
+[AzStart] 
+= start (smallest) azimuth in degrees 
+[AzStep] 
+= spacing between azimuth grid points (degrees) 
+[AzNum] 
+= number of azimuth points 
+[ElStart] 
+= start (smallest) elevation in degrees 
+[ElStep] 
+=  spacing between elevation grid points (degrees) 
+[ElNum] 
+= number of elevation points 
+[Gain Az-i El-j] 
+= gain of i-th Azimuth point, j-th Elevation point in dB 
+7.2.2.2 Format 2: 
+The file format is described below using the same notation as for the previous 
+version: 
+[AzStart] [AzStep] [AzNum] [ElStart] [ElStep] [ElNum] 
+[Gain X-1 Y-1] 
+ 
+: 
+[Gain X-1 Y-n] 
+[Gain X-2Y-1] 
+: 
+[Gain X-2Y-n] 
+: 
+: 
+[Gain X-nY-1] 
+: 
+[Gain X-nY-m] 
+ 
+Technical Annex 
+ 
+Page 53 
+ 
+ 
+ 
+7.3 
+ITU Graphical Data 
+Visualyse Professional has the ability to read/write files based on the format for 
+shaped beams specified in ITU CR/58. The file format structure is text with 
+sections as used by Microsoft Windows INI files, i.e.: 
+[SectionName1] 
+key1=value1 
+key2=value2 
+ 
+[SectionName2] 
+key1=value1 
+key2=value2 
+ 
+The sections are: 
+• FormatInfo: specifies the file format 
+• GeoMain: contains general information such as name and satellite location 
+• Header: specifies parameters such as number of contours and boresights 
+• Bi: one section for each boresight 
+• Ci: one section for each contour, specifying level and series of lat/long points 
+These sections are described in more detail in the sections below. 
+7.3.1 
+FormatInfo 
+This has a single field to specify the version which is set to one, i.e.: 
+Key 
+Type Description 
+format_v
+er 
+int 
+Version, set to 1 
+ 
+7.3.2 
+GeoMain 
+This section contains global information about the file. The fields are: 
+Key 
+Type Description 
+adm 
+char 
+The notifying administration: this 
+field is not used within Visualyse 
+Professional and so is set to DK for 
+export. 
+ntwk_org 
+char 
+The responsible organisation 
+operating the satellite: this field is 
+not used within Visualyse 
+Professional and so is set to DK for 
+export. 
+sat_nam
+e 
+char 
+This is the satellite name and is 
+used as the antenna description 
+long_no
+m 
+char 
+The satellite’s nominal longitude, 
+used as the antenna longitude 
+Technical Annex 
+ 
+Page 54 
+ 
+ 
+ 
+n_diag 
+int 
+The number of diagrams: not used 
+by Visualyse Professional, so set to 
+1 for export. 
+ 
+7.3.3 
+COHeader 
+This section describes the contours contained within the file. The fields are: 
+Key 
+Type Description 
+beam_id 
+char 
+The designation of the beam. Set to 
+1 for export 
+emi_rcp 
+char 
+The emission / reception flag at the 
+satellite, set to E for emission, R for 
+reception. Visualyse Professional 
+does not distinguish between up 
+and down beams: for export this 
+field is set to E. 
+polar_dis
+c 
+char 
+The polarisation discriminator, set 
+to C for co-polarisation, X for cross-
+polarisation. Visualyse Professional 
+contours are co-polar (though could 
+be used as cross polar) and so this 
+field should be set to C. 
+reason 
+char 
+The reason for notification: not used 
+by Visualyse so set to A (advance 
+publication) 
+n_bore 
+int 
+Number of boresights 
+n_cont 
+int 
+Number of contours 
+ 
+Visualyse Professional adds a field to this section to specify the peak gain of the 
+beam. This would not affect how the file is read by other systems, but is required 
+to completely define the pattern. This field has the following structure: 
+Key 
+Type Description 
+gain 
+real 
+peak gain in dBi of the beam 
+ 
+7.3.4 
+Bi 
+There is a separate section for each of the boresights. Each section has the 
+section name of the form Bi, for example the first boresight would have section 
+name B1. 
+Each boresight section has the following keys: 
+ 
+ 
+Technical Annex 
+ 
+Page 55 
+ 
+ 
+ 
+ 
+Key 
+Type Description 
+gain 
+real 
+gain relative to peak in dB of the 
+boresight 
+p 
+geo-
+coor
+d 
+The geographical co-ordinates of 
+the boresight in degrees 
+(longitude;latitude) 
+ 
+7.3.5 
+Ci 
+There is a separate section for each of the contours. Each section has the 
+section name of the form Ci, for example the first contour would have section 
+name C1. 
+Each contour section has the following keys: 
+Key 
+Type Description 
+gain 
+real 
+gain relative to peak in dB of the 
+boresight 
+n_point 
+int 
+The number of points forming the 
+contour 
+p1 
+geo-
+coor
+d 
+The geographical co-ordinates of 
+the first contour  point in degrees 
+(longitude; latitude) 
+: 
+ 
+: 
+pn 
+geo-
+coor
+d 
+The geographical co-ordinates of 
+the n-th contour  point in degrees 
+(longitude; latitude) 
+ 
+Visualyse Professional will convert open contours to closed contours when 
+reading in. 
+7.3.6 
+Example 
+The following file was produced by creating a contour antennas in Visualyse 
+Professional and then using the export to ITU file format option. 
+[FormatInfo] 
+format_ver=1 
+ 
+[GeoMain] 
+adm=DK 
+ntwk_org=DK 
+sat_name=GSO_Test_A 
+long_nom=-105.000 
+n_diag=1 
+ 
+[COHeader] 
+beam_id=1 
+emi_rcp=E 
+polar_disc=C 
+Technical Annex 
+ 
+Page 56 
+ 
+ 
+ 
+reason=A 
+gain=+30.00 
+n_bore=1 
+n_cont=3 
+ 
+[B1] 
+gain=+0.00 
+p=-99.559;+40.189 
+ 
+[C1] 
+gain=-3.00 
+n_point=30 
+p1=-109.008;+50.377 
+p2=-114.173;+49.623 
+p3=-120.598;+48.491 
+p4=-123.370;+47.547 
+p5=-124.126;+42.075 
+p6=-122.866;+37.170 
+p7=-120.724;+34.151 
+p8=-117.449;+32.264 
+p9=-114.551;+29.434 
+p10=-109.260;+28.679 
+p11=-105.102;+25.660 
+p12=-99.685;+23.208 
+p13=-96.913;+25.849 
+p14=-90.488;+28.679 
+p15=-86.079;+26.981 
+p16=-81.921;+23.396 
+p17=-77.890;+21.321 
+p18=-76.252;+21.321 
+p19=-77.008;+25.472 
+p20=-76.504;+31.887 
+p21=-74.866;+35.660 
+p22=-70.709;+39.434 
+p23=-68.945;+42.830 
+p24=-69.323;+46.415 
+p25=-72.724;+50.566 
+p26=-83.307;+51.698 
+p27=-90.866;+50.000 
+p28=-97.291;+49.811 
+p29=-105.228;+50.755 
+p30=-109.008;+50.377 
+ 
+[C2] 
+gain=-6.00 
+n_point=19 
+p1=-112.535;+62.453 
+p2=-124.882;+60.377 
+p3=-129.921;+51.887 
+p4=-131.307;+37.358 
+p5=-126.520;+28.113 
+p6=-116.189;+22.264 
+p7=-110.016;+16.415 
+p8=-99.433;+12.642 
+p9=-91.244;+12.453 
+p10=-80.787;+14.151 
+p11=-75.244;+12.642 
+p12=-69.701;+17.547 
+p13=-66.173;+35.472 
+Technical Annex 
+ 
+Page 57 
+ 
+ 
+ 
+p14=-64.283;+43.208 
+p15=-67.685;+55.660 
+p16=-78.898;+59.623 
+p17=-98.299;+62.264 
+p18=-108.882;+63.019 
+p19=-112.535;+62.453 
+ 
+[C3] 
+gain=-30.00 
+n_point=5 
+p1=-140.000;+70.000 
+p2=-60.000;+70.000 
+p3=-60.000;+0.000 
+p4=-140.000;+0.000 
+p5=-140.000;+70.000 
+7.4 
+Logged Data 
+Data can be logged to text file, where it has the following format (the entries in 
+square brackets are fields with values that will depend upon the simulation 
+setup): 
+Log data from run: 
+[Filename] 
+Number of logs: 
+[Number of variables logged, n] 
+Timesteps between logs: [Timesteps between file updates] 
+Elapsed Time 
+[Var-1 long name] … 
+[Var-n long name] 
+Time since start 
+[Var-1 short name] … 
+[Var-n short name] 
+s 
+[Var-1 units] 
+… 
+[Var-n units] 
+[t-0] 
+[Var-1 at t-0] 
+… 
+[Var-n at t-0] 
+[t-1] 
+[Var-1 at t-1] 
+… 
+[Var-n at t-1] 
+: 
+: 
+ 
+: 
+[t-m] 
+[Var-1 at t-m] 
+… 
+[Var-n at t-m] 
+7.5 
+Terrain Data General Import File Format 
+The General file format is a flexible documented format to the standard set of 
+terrain file formats (USGS GTOPO 30, SRTM etc). Users can translate terrain of 
+their own format into the General file format for loading into Visualyse 
+Professional.  
+The first terrain data point read is the height at the bottom left of the terrain 
+region specified.  The file is binary and each spot height is 2 bytes.   
+By default values of -9999 will be displayed as sea on the map so as to 
+differentiate from land with height zero.  The Propagation models and Path 
+Profile will use a height of zero in place of  -9999.   
+The first height data point is taken to be the terrain height at the bottom left the 
+next.  All the fields are twos compliment, little-endian (Intel) integers and the file 
+is packed binary. 
+Technical Annex 
+ 
+Page 58 
+ 
+ 
+ 
+ N
+ (Num Lats -1,0)
+ (0,Num Longs -1)
+(Num Lats -1, Num Longs -1)
+ (0,0)
+Terrain Area
+ 
+Figure 12: Terrain Area and Data Order 
+Terrain data can be imported into Visualyse Professional using the following file 
+format: 
+ 
+Description 
+Units 
+Size in bytes 
+Type  
+- 
+4 
+Version 
+- 
+4 
+Bottom most latitude 
+milliseconds 
+4 
+Left most longitude 
+milliseconds 
+4 
+Nlats 
+- 
+4 
+Nlongs 
+- 
+4 
+Spacing of latitude points  
+milliseconds 
+4 
+Spacing of longitude points  
+milliseconds 
+4 
+Height (1,1) 
+meters 
+2 
+Height (1,2) 
+meters 
+2 
+… 
+… 
+… 
+Height (1, nlongs) 
+meters 
+2 
+Height (2,1) 
+meters 
+2 
+Height (2,2) 
+meters 
+2 
+… 
+meters 
+2 
+Height (nlats, nlongs) 
+meters 
+2 
+EOF 
+- 
+- 
+ 
+Where Nlats is the number of latitude points and Nlongs is the number of 
+longitude points. 
+An example of the alternative sources of data is the Shuttle Radar Topography 
+Mission (SRTM), which can be found at: 
+Technical Annex 
+ 
+Page 59 
+ 
+ 
+ 
+http://edcsns17.cr.usgs.gov/srtm/index.html 
+7.6 
+Land Use Generic File Format 
+The clutter data is assumed to be structured as in the figure below: 
+Longitude 
+Left
+Latitude 
+Bottom
+Spacing of 
+longitude points
+Spacing of 
+latitude points
+0
+1
+2
+3
+4
+n
+n-1
+n-2
+n-3
+n-4
+1
+2
+3
+4
+n
+n-1
+n-2
+n-3
+Longitude 
+Right
+Latitude 
+Top
+ 
+There is a grid of clutter codes starting from bottom left. Each clutter code 
+represents the environment across the whole of the pixel: therefore with a grid of 
+n lat/long lines there are n pixel codes not n+1 (as for terrain). 
+The location of the bottom right of the rectangle is defined via the 
+(LatitudeBottom, LongitudeRight) point. The other corner of the rectangle is 
+calculated from: 
+LongitudeRight = LongitudeLeft + LongitudePoints * LongitudeSpacing 
+LatitudeTop = LatitudeBottom + LatitudePoints * LatitudeSpacing 
+Each clutter code is assumed to be an integer in the range [0..15] so that there 
+are sixteen possible clutter environments.  
+Mapping of codes to propagation parameters 
+The clutter codes are mapped to propagation parameters such as height of 
+clutter and distance to clutter in the Visualyse Professional configuration dialog 
+as shown in the figure below: 
+Technical Annex 
+ 
+Page 60 
+ 
+ 
+ 
+ 
+Reference Geoid 
+The clutter file format does not specify the reference geoid and all data used in a 
+simulation (clutter data, terrain data and station locations) should use the same 
+reference geoid. 
+File Format 
+Generic clutter data can be imported into Visualyse Professional using the 
+following file format. 
+Technical Annex 
+ 
+Page 61 
+ 
+ 
+ 
+Description 
+Units 
+Size in 
+bytes 
+Type  
+- 
+4 
+Version 
+- 
+4 
+Bottom most latitude 
+milliseconds 
+4 
+Left most longitude 
+milliseconds 
+4 
+nLats 
+- 
+4 
+nLongs 
+- 
+4 
+Spacing of latitude points  
+milliseconds 
+4 
+Spacing of longitude points  
+milliseconds 
+4 
+String name of clutter type 1 
+- 
+20 
+String name of clutter type 2 
+- 
+20 
+: 
+: 
+: 
+String name of clutter type 16 
+- 
+20 
+Code(1,1)  
+- 
+1 
+Code(1,2) 
+- 
+1 
+… 
+… 
+… 
+Code(1, nLongs-1)  
+- 
+1 
+Code(1, nLongs) 
+- 
+1 
+Code(2,1)  
+- 
+1 
+Code(2,2) 
+- 
+1 
+… 
+… 
+… 
+Code(nLats, nLongs-1)  
+- 
+1 
+Code(nLats, nLongs) 
+- 
+1 
+EOF 
+- 
+- 
+ 
+The field “Type” should be set to 200 and the field “Version” should be 100. 
+Strings should be ASCII coded zero terminated and padded to a length of 20 
+bytes including zero. 
+All the fields are twos compliment, little-endian (Intel) integers and the file is 
+packed binary. 
+7.7 
+View Overlay XML Files 
+It is possible to overlay images such as maps and vector data such as 
+boundaries, roads etc on top of the Mercator, Plate Carree and 3D views. This 
+section gives the file format for the XML file that describes the data. 
+The XML file and any referenced graphics files must be located in the “Visualyse 
+7/Overlays” directory at the time that Visualyse Professional 7 is started. 
+Technical Annex 
+ 
+Page 62 
+ 
+ 
+ 
+7.7.1 
+View Overlay Images 
+Images in formats such as JPG and BMP can be displayed on top of Visualyse 
+Professional’s views. An XML file is used to define the four corners (lat, long) in 
+either degrees or radians, and also point to the relevant file. 
+The format is given below, with the fields to complete contained within square 
+brackets and in capital letters - i.e. [MAP_NAME] 
+<?xml version="1.0" encoding="utf-8"?> 
+<image xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="[NAME]"> 
+    <texture>[FILENAME]</texture> 
+    <bottomLeft units="[UNITS]" latitude="[LAT_BL]" longitude="[LONG_BL]" /> 
+    <topLeft units="[UNITS]" latitude="[LAT_TL]" longitude="[LONG_TL]" /> 
+    <topRight units="[UNITS]" latitude="[LAT_TR]" longitude="[LONG_TR]" /> 
+    <bottomRight units="[UNITS]" latitude="[LAT_BR]" longitude="[LONG_BR]" /> 
+    <colour>[TTRRGGBB]</colour> 
+</image> 
+ 
+The fields to enter are therefore: 
+NAME 
+used to display this image on list of possible overlays 
+FILENAME 
+filename may include full path or be relative to overlays 
+directory 
+UNITS 
+either “degrees” or “radians” 
+LAT_BL 
+latitude in relevant units of bottom left of image 
+LAT_TL 
+latitude in relevant units of top left of image 
+LAT_BR 
+latitude in relevant units of bottom right of image 
+LAT_TR 
+latitude in relevant units of top right of image 
+LONG_BL 
+longitude in relevant units of bottom left of image 
+LONG_TL 
+longitude in relevant units of top left of image 
+LONG_BR 
+longitude in relevant units of bottom right of image 
+LONG_TR 
+longitude in relevant units of top right of image 
+TTRRGGBB codes in hex for the Transparency, Red, Green & Blue to 
+use 
+Note that it is necessary to define the lat/long of all four corners of the image 
+rather than just top (top left and bottom right) as some images could be rotated. 
+For example, maps generated in Universal Transverse Mercator (UTM) or local 
+variants such as the UK’s National Grid do not always align with vertically with 
+the North-South line. 
+An example of this format is given below: 
+ 
+ 
+Technical Annex 
+ 
+Page 63 
+ 
+ 
+ 
+ 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<image xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="Google Maps Seattle"> 
+    <texture>C:\Program Files (x86)\Visualyse 7\Overlays\Seattle Area.bmp</texture> 
+    <bottomLeft units="degrees" latitude="47.17" longitude="-125.6121825" /> 
+    <topLeft units="degrees" latitude="49.81" longitude="-125.6121825" /> 
+    <topRight units="degrees" latitude="49.81" longitude="-120.5035395" /> 
+    <bottomRight units="degrees" latitude="47.17" longitude="-120.5035395" /> 
+    <colour>ffffffff</colour> 
+</image> 
+7.7.2 
+View Overlay Vector Line Data 
+Vector data such as roads, railways, borders, boundaries etc can be displayed 
+on top of Visualyse Professional’s views. An XML file is used to define a set of 
+(lat, long) points and a line colour is used to connect them. 
+The format is given below, with the fields to complete contained within square 
+brackets and in capital letters - i.e. [NAME] 
+<?xml version="1.0" encoding="utf-8"?> 
+<lines xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="[NAME]" colour="[TTRRGGBB]">   
+<line units="UNITS"> 
+<coordinates> 
+“[LAT_1]”, “[LONG_1]”, 
+“[LAT_2]”, “[LONG_2]”, 
+“[LAT_3]”, “[LONG_3]”, 
+... 
+“[LAT_n]”, “[LONG_n]” 
+</coordinates> 
+</line> 
+</lines> 
+ 
+The fields to enter are therefore: 
+NAME 
+used to display this image on list of possible overlays 
+TTRRGGBB codes in hex for the Transparency, Red, Green & Blue to 
+use 
+UNITS 
+either “degrees” or “radians” 
+LAT_i 
+set of latitudes 
+LONG_i 
+set of longitudes 
+Any number of (lat, long) points may be used, though there could be 
+performance implications for very large data sets. 
+An example of this format is given below: 
+ 
+ 
+ 
+Technical Annex 
+ 
+Page 64 
+ 
+ 
+ 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<lines xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="Washington BEA" 
+colour="8000ffff"> 
+<line units="degrees"> 
+<coordinates> 
+39.194801,-79.487396, 
+39.205856,-79.487099, 
+39.279827,-79.487877, 
+39.216099,-79.507797, 
+39.194801,-79.487396 
+</coordinates> 
+</line> 
+</lines> 
+ 
+7.7.3 
+View Overlay Point Data 
+Point data such as capital cities can be displayed on top of Visualyse 
+Professional’s views. An XML file is used to define a set of (lat, long) points with 
+a label. 
+The format is given below, with the fields to complete contained within square 
+brackets and in capital letters - i.e. [NAME] 
+<?xml version="1.0" encoding="utf-8" ?>  
+- <points xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="[NAME]"> 
+  <poi units="[UNITS]" legend="[LEG_1]" latitude="[LAT_1]" longitude="[LONG_1]" />  
+  <poi units="[UNITS]" legend="[LEG_2]" latitude="[LAT_2]" longitude="[LONG_2]" />  
+  <poi units="[UNITS]" legend="[LEG_3]" latitude="[LAT_3]" longitude="[LONG_3]" />  
+  <poi units="[UNITS]" legend="[LEG_4]" latitude="[LAT_4]" longitude="[LONG_4]" />  
+  <poi units="[UNITS]" legend="[LEG_5]" latitude="[LAT_5]" longitude="[LONG_5]" />  
+  <poi units="[UNITS]" legend="[LEG_6]" latitude="[LAT_6]" longitude="[LONG_6]" />  
+  </points> 
+ 
+The fields to enter are therefore: 
+NAME  
+used to display this image on list of possible overlays 
+UNITS  
+either “degrees” or “radians” 
+LEG_i  
+set of legends 
+LAT_i  
+set of latitudes 
+LONG_i 
+set of longitudes 
+Any number of (lat, long) points may be used, though there could be 
+performance implications for very large data sets. 
+An example of this format is given below: 
+ 
+ 
+Technical Annex 
+ 
+Page 65 
+ 
+ 
+ 
+ 
+ 
+  <?xml version="1.0" encoding="utf-8"?>  
+<points xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="Capital Cities of the World"> 
+  <poi units="degrees" legend="Kabul" latitude="34.467" longitude="69.1833" />  
+  <poi units="degrees" legend="Tirane" latitude="41.3" longitude="19.81666667" />  
+  <poi units="degrees" legend="Algiers" latitude="36.7" longitude="3.133333333" /> 
+  <poi units="degrees" legend="Plymouth" latitude="16.6802" longitude="-62.2014" />  
+  <poi units="degrees" legend="Saint Johns" latitude="17.1175" longitude="-61.8455" />  
+  <poi units="degrees" legend="The Valley" latitude="18.2249" longitude="-63.0668" />  
+</points> 
+7.7.4 
+View Overlay Drawing Objects 
+Basic shapes including Rectangles, Ellipses and Grids can be displayed on top 
+of Visualyse Professional’s views. An XML file is used to define the drawing 
+object as below: 
+7.7.4.1 Rectangle 
+The format is given below, with the fields to complete contained within square 
+brackets and in capital letters - i.e. [NAME] 
+<?xml version="1.0" encoding="utf-8"?> 
+<drawing xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="[NAME]" colour="[TTRRGGBB]">     
+<rect units="[UNITS]" top="[LAT_TOP]" left="[LONG_LFT]" bottom="[LAT_BTM] right="[LONG_RGT]" />  
+</drawing> 
+ 
+The fields to enter are therefore: 
+NAME 
+used to display this image on list of possible overlays 
+TTRRGGBB codes in hex for the Transparency, Red, Green & Blue to 
+use 
+UNITS 
+either “degrees” or “radians” 
+LAT_TOP 
+top latitude 
+LONG_LFT 
+left longitude 
+LAT_BTM 
+bottom latitude 
+LONG_RGT right longitude 
+An example of this format is given below: 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<drawing xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="Test Rectangle" 
+colour="8000ffff"> 
+<rect units="degrees" top="37.0" left="-9.0" bottom="23.5" right="12.0" /> 
+</drawing> 
+Technical Annex 
+ 
+Page 66 
+ 
+ 
+ 
+7.7.4.2 Ellipse 
+The format is given below, with the fields to complete contained within square 
+brackets and in capital letters - i.e. [NAME] 
+<?xml version="1.0" encoding="utf-8"?> 
+<drawing xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="[NAME]" colour="[TTRRGGBB]">     
+<ellipse units="[UNITS]" centrelat="[CTR_LAT]" centrelong="[CTR_LNG]" radiuslat="[RAD_LAT] 
+radiuslong="[RAD_LNG]" />  
+</drawing> 
+ 
+The fields to enter are therefore: 
+NAME 
+used to display this image on list of possible overlays 
+TTRRGGBB codes in hex for the Transparency, Red, Green & Blue to 
+use 
+UNITS 
+either “degrees” or “radians” 
+CTR_LAT 
+centre latitude 
+CTR_LNG 
+centre longitude 
+RAD_LAT 
+radius latitude 
+RAD_LNG 
+radius longitude 
+An example of this format is given below: 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<drawing xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="Test Ellipse" colour="8000ffff"> 
+<ellipse units="degrees" centrelat="60.0" centrelong="20.0" radiuslat="10" radiuslong="20" /> 
+</drawing> 
+7.7.4.3 Grid 
+The format is given below, with the fields to complete contained within square 
+brackets and in capital letters - i.e. [NAME] 
+<?xml version="1.0" encoding="utf-8"?> 
+<drawing xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="[NAME]" colour="[TTRRGGBB]">     
+<grid areaunits="[UNITS]" top="[LAT_TOP]" left="[LONG_LFT]" bottom="[LAT_BTM] right="[LONG_RGT]" 
+horzres="[HOR_RES] vertres="[VER_RES]" />  
+</drawing> 
+ 
+The fields to enter are therefore: 
+NAME 
+used to display this image on list of possible overlays 
+TTRRGGBB codes in hex for the Transparency, Red, Green & Blue to 
+use 
+UNITS 
+either “degrees” or “radians” 
+CTR_LAT 
+centre latitude 
+CTR_LNG 
+centre longitude 
+Technical Annex 
+ 
+Page 67 
+ 
+ 
+ 
+RAD_LAT 
+radius latitude 
+RAD_LNG 
+radius longitude  
+HOR_RES 
+horizontal resolution (km) 
+VER_RES 
+vertical resolution (km) 
+ 
+An example of this format is given below: 
+ 
+<?xml version="1.0" encoding="utf-8"?> 
+<drawing xmlns="http://www.transfinite.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.transfinite.com overlay.xsd" name="Test Grid" colour="8000ffff"> 
+<grid areaunits="degrees" top="30.0" left="-50.0" bottom="10" right="-30" horzres="300" 
+vertres="300" /> 
+</drawing> 
+ 
+7.8 
+Text File Format 
+7.8.1 
+Structure 
+Visualyse Professional has a file format that allows complete definition of 
+simulations in a standard ASCII text file. In it are definitions of all objects and 
+their attributes required to specify any Visualyse Professional sharing scenario. 
+The file format can also be used to define single elements – for example a 
+station or an antenna. 
+The format is based upon the Microsoft Windows INI structure, using section 
+headers and field names as follows: 
+[Section Header] 
+[Field Name] = (value) 
+The section header describes the object being defined based upon the 
+Visualyse Professional object tree. Each simulation starts at the root object 
+“Simul” and then has branches for stations, antennas, links etc separated by a 
+period or “.”2. 
+So the section header for the geographic location of a station called “FS TX” 
+would be: 
+[Simul.Station List.FS TX.Start LatLongHeight] 
+Field names are the variables associated with the object defined by the section 
+header – so for the geographic location the variables would be latitude and 
+longitude. The section would then start as follows: 
+[Simul.Station List.FS TX.Start LatLongHeight] 
+Name=Start LatLongHeight 
+Description=Start Earth latitude, longitude, height 
+Latitude=N38:58'31.2034" 
+Longitude=W77:9'39.1658" 
+ 
+2 This is the reason that Visualyse Professional object names are not allowed to include the “.” character 
+Technical Annex 
+ 
+Page 68 
+ 
+ 
+ 
+7.8.2 
+Creating Text Files 
+While in theory it is possible to create text files solely using a text editor, in 
+practice it is easier to get Visualyse Professional to make a template which you 
+can then edit. This ensures the format is the one that Visualyse Professional 
+expects, as all the variables and objects must be specified in the correct format. 
+These can be done by either: 
+• 
+Creating a simulation file (as normal) and then using the “Save As” 
+option and selecting the text file format; 
+• 
+Opening the Model View and saving the object required as a text file. 
+7.8.3 
+Batch Mode 
+It is also possible to run Visualyse Professional in batch mode from the 
+command line. This could be useful if there are many simulations to be run or an 
+iterative approach is required. 
+With this file format the command line would be something like: 
+C:\Program Files (x86)\Visualyse 7\Program>visualyse –x mss-
+fs.txt  
+where the -x command closes Visualyse Professional on completion of the run.  
+This command line would save the results into the file “mss-fs.txt” which could 
+then be read in by other programs. 
+7.9 
+Service Area Wizard 
+Station locations can be read into Visualyse Professional using the service area 
+wizard. This requires a text file with a set of rows similar to this: 
+[Lat-1], [Long-1] 
+[Lat-2], [Long-2] 
+ 
+: 
+: 
+ 
+The fields should be separated by commas. 
+7.10 TLEs 
+Satellites orbit data can be read into Visualyse Professional using the Two Line 
+Element (TLE) format. 
+This file format is defined in the document that can be found here: 
+ 
+ 
+http://celestrak.com/columns/v04n03/ 
+7.11 FS Import 
+The FS Import tool uses a pre-defined format in which each row defines one 
+point to point (PtP) link. The FS Import requires the following fields to be defined 
+and then either pasted into Visualyse Professional or be available in a CSV 
+format file: 
+Column 
+Field 
+1 
+Link Number 
+2 
+Link Name Or Reference  
+3 
+Operator Name 
+4 
+Centre Frequency (GHz) 
+Technical Annex 
+ 
+Page 69 
+ 
+ 
+ 
+5 
+Licensed Bandwidth (MHz) 
+6 
+Tx  OBW (MHz) 
+7 
+Transmit Station Name   
+8 
+Tx Longitude (degrees)  
+9 
+Tx Latitude (degrees)  
+10 
+Tx Height Above Terrain (m) 
+11 
+Receive Station Name   
+12 
+Rx Longitude (degrees)  
+13 
+Rx Latitude (degrees)  
+14 
+Rx Height Above Terrain (m) 
+15 
+Transmit Power (dBW) 
+16 
+Tx Antenna Peak Gain (dBi) 
+17 
+Tx Antenna Gain roll-off Code 
+18 
+Tx Antenna Beam width (degrees) 
+19 
+Tx Feed Loss (dB) 
+20 
+Rx Antenna Peak Gain (dBi) 
+21 
+Rx Antenna Gain roll-off Code 
+22 
+Rx Antenna Beam width (dB) 
+23 
+Rx Feed Loss (dB) 
+24 (*) 
+Hop Geoclimatic Factor  (c) 
+25 (*) 
+pL (Rec P.453)  
+26 
+Pol   
+27 
+System Temp (k) 
+28 
+C/I Threshold  
+29 
+C/N Threshold  
+30 
+C/(N+I) Threshold  
+31  
+I/N Threshold  
+Table 2: FS Import Data Fields 
+Fields marked (*) are not required in Visualyse Professional Version 7 but are 
+there to ensure backwards compatibility. 
+Valid polarisation codes are given in the table below: 
+Polarisation 
+Code 
+Linear horizontal 
+H 
+Linear vertical 
+V 
+Left hand circular 
+LHC 
+Right hand circular 
+RHC 
+Table 3: FS Import Polarisation Codes 
+The gain patterns should match one of the following codes or text descriptions: 
+Code 
+Gain Pattern 
+0 
+Analytic ES 
+1 
+Analytic NGSO 
+2 
+App 29 Earth Station 
+3 
+App 30 Earth Rx Reg 1 & 3 Comm 
+4 
+App 30 Earth Rx Reg 1 & 3 Ind 
+Technical Annex 
+ 
+Page 70 
+ 
+ 
+ 
+5 
+App 30 Earth Rx Reg 1 & 3 WRC-97 
+6 
+App 30 Earth Rx Reg 2 
+7 
+App 30 Satellite Tx Reg 1 & 3 
+8 
+App 30 Satellite Tx Reg 1 & 3 FR 
+9 
+App 30 Satellite Tx Reg 2 
+10 
+App 30 Satellite Tx Reg 2 FR 
+11 
+App 30 Space 
+12 
+App 30 Space Fast roll-off 
+13 
+App 30A Satellite Rx Reg 1 & 3 
+14 
+App 30A Satellite Rx Reg 1 & 3 FR 
+15 
+App 30A Satellite Rx Reg 2 
+16 
+App 30A Satellite Rx Reg 2 FR 
+17 
+App 30B Earth Station A 
+18 
+App 30B Earth Station B 
+19 
+App 30B Space Station 
+20 
+App 30B Space Station FR 
+21 
+App 7 Earth Station 
+22 
+App 7 Fixed Service 
+23 
+App 8 Earth Station 
+24 
+Bessel 
+25 
+Capped Bessel 
+26 
+Cosine 
+27 
+ETS 300-157 Rx 
+28 
+ETS 300-158 Rx 
+29 
+ETS 300-159 Rx 
+30 
+ETS 300-159 Tx Spec 1 
+31 
+ETS 300-159 Tx Spec 2 
+32 
+ETS 300-327 Rx 
+33 
+ETS 300-327 Tx 
+34 
+ETS 300-332 Rx 
+35 
+ETS 300-332 Tx 
+36 
+ETS 300-333 Rx 
+37 
+FSATMULTI_1A Earth Station 
+38 
+FSATMULTI_1A Type A 
+39 
+GPS L1 
+40 
+GPS L2 
+41 
+GPS User 
+42 
+IMT-MODEL 28 GHz BS 
+43 
+IMT-MODEL 28 GHz UE A 
+44 
+IMT-MODEL 28 GHz UE B 
+45 
+IMT-MODEL BS Indoor 
+46 
+IMT-MODEL BS Suburban 
+47 
+IMT-MODEL BS Urban Outdoor 
+Technical Annex 
+ 
+Page 71 
+ 
+ 
+ 
+48 
+IMT-MODEL UE Indoor 
+49 
+IMT-MODEL UE Suburban 
+50 
+IMT-MODEL UE Urban Outdoor 
+51 
+ITU-R BO.1443-1 
+52 
+ITU-R BO.1443-3 
+53 
+ITU-R F.1245 
+54 
+ITU-R F.1245-1 
+55 
+ITU-R F.1245-1 Annex 1 
+56 
+ITU-R F.1245-2 
+57 
+ITU-R F.1245-2 Annex 1 
+58 
+ITU-R F.1245-3 
+59 
+ITU-R F.1245-3 Annex 1 
+60 
+ITU-R F.1336 (2.1.1) 
+61 
+ITU-R F.1336 (2.1.2) 
+62 
+ITU-R F.1336 (2.2) 
+63 
+ITU-R F.1336 (4, NOTE 4) 
+64 
+ITU-R F.1336-1 (k=0)  
+65 
+ITU-R F.1336-1 (k=0.1)  
+66 
+ITU-R F.1336-1 (k=0.2)  
+67 
+ITU-R F.1336-1 (k=0.7) 
+68 
+ITU-R F.1336-2 (2.1) [k=0.1]  
+69 
+ITU-R F.1336-2 (2.1) [k=0.2]  
+70 
+ITU-R F.1336-2 (2.1) [k=0.7] 
+71 
+ITU-R F.1336-2 (2.1) [k=0]  
+72 
+ITU-R F.1336-2 (2.2) [k=0.1]  
+73 
+ITU-R F.1336-2 (2.2) [k=0.2]  
+74 
+ITU-R F.1336-2 (2.2) [k=0.7] 
+75 
+ITU-R F.1336-2 (2.2) [k=0]  
+76 
+ITU-R F.1336-5 Rec 2.1 
+77 
+ITU-R F.1336-5 Rec 2.2 
+78 
+ITU-R F.1336-5 Rec 3.1.1 
+79 
+ITU-R F.1336-5 Rec 3.1.2 
+80 
+ITU-R F.1336-5 Rec 3.2 
+81 
+ITU-R F.1336-5 Rec 4 
+82 
+ITU-R F.1336-5 Annex 4 
+83 
+ITU-R F.1891 (LN = -25) 
+84 
+ITU-R F.699-2 
+85 
+ITU-R F.699-2R 
+86 
+ITU-R F.699-3 
+87 
+ITU-R F.699-3R 
+88 
+ITU-R F.699-5 
+89 
+ITU-R F.699-6 
+90 
+ITU-R F.699-7 
+Technical Annex 
+ 
+Page 72 
+ 
+ 
+ 
+91 
+ITU-R F.699-8 
+92 
+ITU-R M.1851 (COS Average) 
+93 
+ITU-R M.1851 (COS Peak) 
+94 
+ITU-R M.1851 (COS) 
+95 
+ITU-R M.1851 (COS2 Average) 
+96 
+ITU-R M.1851 (COS2 Peak) 
+97 
+ITU-R M.1851 (COS2) 
+98 
+ITU-R M.1851 (COS3 Average) 
+99 
+ITU-R M.1851 (COS3 Peak) 
+100 
+ITU-R M.1851 (COS3) 
+101 
+ITU-R M.1851 (COS4 Average) 
+102 
+ITU-R M.1851 (COS4 Peak) 
+103 
+ITU-R M.1851 (COS4) 
+104 
+ITU-R M.1851 (SIN Average) 
+105 
+ITU-R M.1851 (SIN Peak) 
+106 
+ITU-R M.1851 (SIN) 
+107 
+ITU-R M.2101 
+108 
+ITU-R RS.1813 (Recommends 1) 
+109 
+ITU-R RS.1813 (Recommends 2) 
+110 
+ITU-R S.1328 USAKUL1 
+111 
+ITU-R S.1428 
+112 
+ITU-R S.1428-1 
+113 
+ITU-R S.1528 (1.2) LN = -15 
+114 
+ITU-R S.1528 (1.2) LN = -20 
+115 
+ITU-R S.1528 (1.2) LN = -25 
+116 
+ITU-R S.1528 (1.2) LN = -30 
+117 
+ITU-R S.465-5 
+118 
+ITU-R S.465-5 (APL) 
+119 
+ITU-R S.465-5 prior to 1993 
+120 
+ITU-R S.465-6 Rx 
+121 
+ITU-R S.465-5 Tx 
+122 
+ITU-R S.580-6 
+123 
+ITU-R S.580-6 (APL) 
+124 
+ITU-R S.672-3 Annex 1 Ls = -10 
+125 
+ITU-R S.672-3 Annex 1 Ls = -20 
+126 
+ITU-R S.672-3 Annex 1 Ls = -25 
+127 
+ITU-R S.672-3 Annex 1 Ls = -30 
+128 
+ITU-R S.672-3 Ln = -20 
+129 
+ITU-R S.672-3 Ln = -25 
+130 
+ITU-R S.672-3 Ln = -30 
+131 
+ITU-R S.672-4 Annex 1 Ls = -10 
+132 
+ITU-R S.672-4 Annex 1 Ls = -20 
+133 
+ITU-R S.672-4 Annex 1 Ls = -25 
+Technical Annex 
+ 
+Page 73 
+ 
+ 
+ 
+134 
+ITU-R S.672-4 Annex 1 Ls = -30 
+135 
+ITU-R S.672-4 Ln = -20 
+136 
+ITU-R S.672-4 Ln = -25 
+137 
+Linear with angle 
+138 
+NGSO FSS RX 
+139 
+NGSO FSS TX 
+140 
+Omni directional 
+141 
+PFD Area 
+142 
+Parabolic rolloff 
+143 
+Resolution 221 (LN = -25) 
+144 
+Resolution 221 (LN = -26) 
+145 
+Resolution 221 (LN = -28) 
+146 
+Resolution 221 (LN = -30) 
+147 
+Resolution 221 (LN = -32) 
+148 
+SMATV 
+149 
+Sine 
+150 
+Sine(x)/x 
+151 
+SkyBridge RX Type A 
+152 
+SkyBridge TX Type A 
+153 
+TVRO 
+154 
+Teledesic 2 - RX 
+155 
+Teledesic 2 - RX fixed BW 
+156 
+Teledesic 2 - TX 
+157 
+Teledesic 2 - TX fixed BW 
+158 
+Teledesic Type A 
+159 
+Teledesic Type B 
+160 
+Teledesic Type C 
+Table 4: Antenna Gain Pattern Codes 
+7.12 Import Tx System 
+The Import Tx System tool uses a pre-defined format in which each row defines 
+one Transmit station and link. The Import Tx System tool requires the following 
+fields to be defined and then either pasted into Visualyse Professional or be 
+available in a CSV format file: 
+Column 
+Field 
+1 
+Number 
+2 
+Reference  
+3 
+Operator Name 
+4 
+Centre Frequency (GHz) 
+5 
+Licensed Bandwidth (MHz) 
+6 
+Tx  OBW (MHz) 
+7 
+Tx Station Name   
+8 
+Tx Longitude (degrees)  
+9 
+Tx Latitude (degrees)  
+Technical Annex 
+ 
+Page 74 
+ 
+ 
+ 
+10 
+Tx Height Above Terrain (m) 
+11 
+Transmit Power (dBW) 
+12 
+Tx Antenna Peak Gain (dBi) 
+13 
+Tx Antenna Gain roll-off Code 
+14 
+Tx Antenna Beam width (degrees) 
+15 
+Polarisation 
+16 
+Icon 
+17 
+Tx Antenna Azimuth (degrees)  
+18 
+Tx Antenna Elevation (degrees) 
+19 
+Tx Antenna Feeder Loss (dB) 
+20 
+Number of Links (optional field) 
+Table 5: Import TX System Data Fields 
+Valid polarisation codes are given in table 3 in the previous section 
+The gain patterns should match one of the codes or text descriptions in Table 4 
+in the previous section. 
+The Icon should be a string of the form icon-name (R,G,B) where R,G,B are 
+values in the range 0 – 255 to indicate colour. For example: dish-medium 
+(200,60,25) 
+Name 
+broadcast-tower 
+cell-tower      
+golf-ball    
+microwave-tower 
+office-building 
+broadcast-tower 
+Table 6: Tower Icons 
+ 
+Name 
+5G-base        
+dish-large 
+dish-medium 
+dish-small 
+dish-tiny 
+house 
+microwave-dish 
+radar          
+router        
+Table 7: Dish Icons 
+ 
+Name 
+3-cube       
+3-panel-h    
+3-panel      
+4-dish       
+Technical Annex 
+ 
+Page 75 
+ 
+ 
+ 
+8-panel      
+cube         
+eos          
+gps          
+gso          
+hubble       
+iss          
+leo-2-dish-h 
+leo-2-dish   
+leo          
+ngso-v       
+ngso         
+t-long       
+t-short   
+wide-span 
+Table 8: Satellite Icons 
+ 
+Name 
+ mobile-small 
+ mobile       
+ satphone     
+Table 9: Handset Icons 
+ 
+Name 
+aircraft   
+blimp      
+car        
+ferry      
+helicopter 
+rocket     
+ship       
+shuttle    
+tank       
+train      
+truck 
+Table 10: Vehicle Icons 
+ 
+ 
+Name 
+camera-small     
+camera           
+hand-mic-small   
+hand-mic         
+headset-small    
+headset          
+Technical Annex 
+ 
+Page 76 
+ 
+ 
+ 
+mic-symbol-small 
+mic-symbol       
+Table 11: Broadcasting Icons 
+ 
+Name 
+marker-cross       
+marker-dot         
+marker-flag        
+marker-map-rounded 
+marker-map         
+marker-pin         
+marker-ring        
+marker-triangle    
+Table 12: Marker Icons 
+7.13 Import Rx System 
+The Import Rx System tool uses a pre-defined format in which each row defines 
+one Receive station and link. The Import Rx System tool requires the following 
+fields to be defined and then either pasted into Visualyse Professional or be 
+available in a CSV format file: 
+ 
+ 
+Technical Annex 
+ 
+Page 77 
+ 
+ 
+ 
+ 
+Column 
+Field 
+1 
+Number 
+2 
+Reference  
+3 
+Operator Name 
+4 
+Centre Frequency (GHz) 
+5 
+Licensed Bandwidth (MHz) 
+6 
+Rx OBW (MHz) 
+7 
+Rx Station Name   
+8 
+Rx Longitude (degrees)  
+9 
+Rx Latitude (degrees)  
+10 
+Rx Height Above Terrain (m) 
+11 
+Rx Antenna Peak Gain (dBi) 
+12 
+Rx Antenna Gain roll-off Code 
+13 
+Rx Antenna Beam width (degrees) 
+14 
+Polarisation 
+15 
+Icon 
+16 
+Rx Antenna Azimuth (degrees)  
+17 
+Rx Antenna Elevation (degrees) 
+18 
+Rx Antenna Feeder Loss (dB) 
+19 
+Rx Temperature (K) 
+Table 13: Import RX System Data Fields 
+Valid polarisation codes are given in table 5 in the previous section 
+The gain patterns should match one of the codes or text descriptions in Table 4 
+in the previous section. 
+The Icon should be as per section 7.13. 
+ 
+7.14 Import Non-GSO Orbit Elements 
+The Import Non-GSO Orbit Elements tool uses a pre-defined format in which 
+each row defines one Non-GSO station. The Import Non-GSO Orbit Elements 
+requires the following fields to be defined and then either pasted into Visualyse 
+Professional or be available in a CSV format file: 
+Column 
+Field 
+1 
+Number 
+2 
+Semi-major axis, a (km) 
+3 
+Eccentricity, e 
+4 
+Inclination, i (degrees) 
+5 
+Use LAN 
+6 
+Longitude ascending node / RAAN 
+(degrees) 
+7 
+Argument of periapsis (degrees) 
+8 
+True anomaly (degrees) 
+Table 14: Import Non-GSO Orbit Elements Data Fields 
+ 
+Technical Annex 
+ 
+Page 78 
+ 
+ 
+ 
+8 
+VisTools 
+This section describes the calculations in the Visualyse Professional stand-alone 
+tool kit, VisTools. 
+8.1 
+dB Calculation 
+The dB tool converts between dB (d) and absolute (a) using: 
+ 
+ 
+a
+d
+a
+d
+=
+=
+10
+10
+10
+10
+log ( )
+ 
+8.2 
+Frequency to Wavelength 
+The Frequency tool converts between frequency f and wavelength  using: 
+ 
+ 
+ 
+where c is the speed of light 
+8.3 
+Path Loss 
+The Pathloss tool calculates the free space path loss. The parameters used are: 
+• 
+Frequency and Frequency units 
+• 
+Path Length 
+• 
+Path Loss 
+Each of these three can be calculated from the other using: 
+ 
+ 
+L
+Df
+c
+fs =
++
+
+
+
+
+
+
+22 0
+20
+10
+.
+log
+ 
+8.4 
+Field of View 
+The field of view tool provides information about circular orbits in terms of field of 
+view and orbit period. The parameters are: 
+• 
+height of satellite 
+• 
+distance to horizon 
+• 
+half of field of view,  
+• 
+orbital period 
+as shown in the figure below: 
+ 
+c
+f
+=
+
+h
+D
+
+Earth
+Re
+Technical Annex 
+ 
+Page 79 
+ 
+ 
+ 
+Figure 7. Field of View Parameters 
+The equations are: 
+ 
+ 
+=
++
+
+
+
+
+
+
+arcsin
+R
+R
+h
+e
+e
+ 
+ 
+ 
+(
+)
+D
+h
+R
+R
+e
+e
+2
+2
+2
+=
++
+−
+ 
+ 
+ 
+P
+a
+= 2
+3
+
+
+ 
+where: 
+ = GM is the gravitational constant for the Earth 
+a = semi-major axis of orbit 
+8.5 
+Peak Gain 
+This tool calculates peak gain based on the following parameters: 
+• 
+frequency and frequency units f 
+• 
+dish size D 
+• 
+efficiency  
+• 
+peak gain Gmax 
+These parameters are related using the following equation: 
+ 
+ 
+G
+Df
+c
+max =
+
+
+
+
+
+
+
+2
+ 
+8.6 
+Half Power Beamwidth 
+The Theta-3dB tool calculates half power beamwidth based upon the following 
+parameters: 
+• 
+peak gain, Gmax 
+• 
+efficiency,  
+• 
+half power beamwidth, 3dB 
+These parameters are related using the following equation: 
+ 
+ 
+G
+dB
+max = 
+
+
+
+
+
+
+
+70
+3
+2
+ 
+8.7 
+Relative Gain 
+The relative gain tool calculates offaxis gain within the main lobe for a pure 
+parabolic dish, based upon the following parameters: 
+• 
+Gain relative to peak, Grel 
+• 
+Half power beamwidth, 3dB 
+• 
+Offaxis angle,  
+Technical Annex 
+ 
+Page 80 
+ 
+ 
+ 
+These parameters are related using the following equation: 
+ 
+ 
+Grel
+dB
+= −
+
+
+
+
+
+
+12
+3
+2
+
+
+ 
+8.8 
+Temperature to Noise 
+The noise tool converts between temperature in Kelvin to noise in dBW/Hz. The 
+following parameters are used: 
+• 
+Temperature T in Kelvin 
+• 
+Noise N in dBW/Hz 
+These parameters are related using the following equations: 
+ 
+ 
+N
+k
+T
+=
++10
+10
+log
+ 
+where k is Boltzmann's constant in dBW/Hz/K, as specified in Section 15. 
+8.9 
+Link Budget 
+These various tools are combined to produce a link budget tool with the 
+following parameters: 
+• 
+Frequency, f, entered either directly or using the frequency tool 
+• 
+Transmit power, P, entered directly, or calculated from transmit EIRP 
+• 
+Transmit peak gain GTXmax, entered either directly or using the peak gain 
+tool 
+• 
+Transmit relative gain GTXrel, entered either directly or using the offaxis 
+gain tool 
+• 
+Transmit eirp, EIRP, either entered directly or calculated from C or using: 
+ 
+ 
+ 
+EIRP = P + GTXmax + GTXrel 
+• 
+Free space path loss, Lfs, either entered directly or using the pathloss 
+tool 
+• 
+Other losses, Lother, entered directly 
+• 
+Receive peak gain GRXmax, entered either directly or using the peak gain 
+tool 
+• 
+Receive relative gain GRXrel, entered either directly or using the offaxis 
+gain tool 
+• 
+Receive power, C, either entered directly or calculated from EIRP or 
+C/N0  or using 
+ 
+ 
+C = EIRP - Lfs - Lother + GRXmax + GRXrel 
+• 
+Receive noise, N0, either entered directly or using the noise tool 
+• 
+Receive C/N0, either entered directly or calculated using: 
+ 
+ 
+C = C - N0 
+Note that: 
+Technical Annex 
+ 
+Page 81 
+ 
+ 
+ 
+• 
+If C is changed directly the C/N0, EIRP and transmit power fields update 
+accordingly 
+• 
+If the EIRP field is changed directly, the C, C/N0, and transmit power 
+fields update accordingly 
+• 
+If the transmit power field is changed directly, the EIRP, C and C/N0, 
+fields update accordingly 
+• 
+If the C/N0 field is changed directly the C, EIRP, and transmit fields 
+update accordingly 
+ 
+ 
+ 
+Technical Annex 
+ 
+Page 82 
+ 
+ 
+ 
+9 
+Acronyms and Abbreviations 
+3GPP 
+3rd Generation Partnership Project 
+ABW 
+Allocated Bandwidth 
+AMS 
+Annual Maintenance and Support 
+BWF 
+Bandwidth Factor 
+BSS 
+Broadcast Satellite Service 
+CSV 
+Comma Separated Values 
+ECI 
+Earth Centred Inertial 
+EIRP 
+Equivalent Isotropic Radiated Power 
+EPFD 
+Equivalent Power Flux Density 
+ETSI 
+European Telecommunications Standards Institute 
+FDR 
+Frequency Dependent Rejection 
+FR 
+Fast Rolloff 
+FS 
+Fixed Service 
+FSS 
+Fixed Satellite Service 
+GPS 
+Global Positioning System 
+GSO 
+Geostationary Orbit 
+IDWM 
+ITU Digitised World Map 
+IPR 
+Intellectual Property Rights 
+ITU 
+International Telecommunications Union 
+NASA 
+National Aeronautical and Space Administration 
+NFD 
+Net Filter Discrimination 
+NGR 
+National Grid Reference 
+OBW 
+Occupied Bandwidth 
+PFD 
+Power Flux Density 
+PtP 
+Point to Point 
+SES 
+Satellite Earth Stations 
+SNG 
+Satellite News Gathering 
+RX 
+Receive 
+TES 
+Transportable Earth Station 
+TIA 
+Telecommunications Industry Association 
+TLE 
+Two Line Element 
+TVRO 
+Television Receive Only 
+TX 
+Transmit 
+UWB 
+Ultra Wideband 
+VSAT 
+Very Small Aperture Terminals 
+WRC 
+World Radiocommunications Conference 
+ 
+ 
+ 

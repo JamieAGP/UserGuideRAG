@@ -45,13 +45,18 @@ class CallableLLM:
         return response.choices[0].text.strip()
 
 # Load RAG data
-file_path = Path(__file__).parent / 'User Guide.txt'  
-loader = TextLoader(file_path, encoding="utf-8")
-doc_data = loader.load()
+folder_path = Path(__file__).parent / 'RAG_files'  # Change to your folder's name
+text_files = folder_path.glob('*.txt')  # Load all text files
+
+# Combine documents from RAG files
+docs = []
+for file_path in text_files:
+    loader = TextLoader(file_path, encoding="utf-8")
+    docs.extend(loader.load())  # Collect all loaded documents
 
 # Split text into chunks
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=200)
-splits = text_splitter.split_documents(doc_data)
+splits = text_splitter.split_documents(docs)
 
 # Instantiate the custom embeddings
 embeddings = CustomEmbeddings()
