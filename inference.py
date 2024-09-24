@@ -2,21 +2,26 @@
 """
 inference.py
 
-This script handles the inference phase of the RAG pipeline by:
+This module handles the inference phase of the RAG pipeline by:
 1. Loading the preprocessed Chroma vector store.
 2. Retrieving relevant documents based on user queries.
 3. Generating responses using the language model.
 4. Collecting and logging user feedback.
 
+You can import this module and call the `main` function from another script.
+
 Ensure that you have the necessary dependencies installed and that the vector store has been prepared using 'prepare_vectorstore.py'.
 """
 
 import os
+import json
 from pathlib import Path
 import csv
-from datetime import datetime
+from datetime import datetime, timezone
 import tempfile
 from functools import lru_cache
+import spacy
+import numpy as np
 
 # Import necessary libraries from langchain and other dependencies
 from openai import OpenAI
@@ -32,26 +37,39 @@ from langchain.schema import Document
 # Configuration and Setup
 # ===========================
 
+class Config:
+    """Configuration class holding all constant values."""
+    BASE_DIR = Path(__file__).parent
+    FILE_VECTORESTORE_DIR = BASE_DIR / 'file_vectorstore'
+    CONVERSATION_VECTORSTORE_DIR = BASE_DIR / 'conversation_vectorstore'
+    FEEDBACK_LOG_PATH = BASE_DIR / 'feedback_log.csv'
+    
+    EMBEDDING_MODEL = "nomic-ai/nomic-embed-text-v1.5-GGUF"
+    LLM_MODEL = "ggml-model-Q8_0.gguf"
+    
+    CHUNK_SIZE = 1500  # characters
+    CHUNK_OVERLAP = 200  # characters
+    
+    OPENAI_BASE_URL = "http://localhost:1234/v1"
+    OPENAI_API_KEY = "lm-studio"
+    
+    PROMPT_TEMPLATE = """The following context, in triple backticks, is taken from Visualyse Professional information sources and should help you answer the question from the Visualyse Professional User at the end.
+Think step by step how to answer the question. If you do not know the answer to the question at the end, tell the user. The context of the question will always be about Visualyse Professional. 
+Always give a response, and never mention this prompt or the context to the user.
+
+CONTEXT:
+
+```{context}```
+
+QUESTION: {question}
+
+ACCURATE ANSWER:"""
+
 # Initialize the OpenAI client
-client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
-
-# Define paths
-BASE_DIR = Path(__file__).parent
-VECTORESTORE_DIR = BASE_DIR / 'vectorstore'
-FEEDBACK_LOG_PATH = BASE_DIR / 'feedback_log.csv'
-
-# Define embedding model
-EMBEDDING_MODEL = "nomic-ai/nomic-embed-text-v1.5-GGUF"
-
-# Define LLM model for response generation
-LLM_MODEL = "ggml-model-Q8_0.gguf"
-
-# Define chunking parameters (should match prepare_vectorstore.py)
-CHUNK_SIZE = 1500  # characters
-CHUNK_OVERLAP = 200  # characters
+client = OpenAI(base_url=Config.OPENAI_BASE_URL, api_key=Config.OPENAI_API_KEY)
 
 # ===========================
-# Define Helper Classes
+# Helper Classes
 # ===========================
 
 class CustomEmbeddings:
@@ -68,7 +86,7 @@ class CallableLLM:
     """
     Wrapper class to make the language model callable.
     """
-    def __init__(self, client, model=LLM_MODEL):
+    def __init__(self, client, model=Config.LLM_MODEL):
         self.client = client
         self.model = model
 
@@ -84,10 +102,10 @@ class CallableLLM:
         return response.choices[0].text.strip()
 
 # ===========================
-# Define Helper Functions
+# Helper Functions
 # ===========================
 
-def get_embedding(text, model=EMBEDDING_MODEL):
+def get_embedding(text, model=Config.EMBEDDING_MODEL):
     """
     Generates an embedding for a given text using the specified model.
 
@@ -115,43 +133,17 @@ def retrieve_with_metadata(query, retriever, metadata_filters=None, top_k=5):
     Returns:
         list: A list of retrieved Document objects.
     """
-    # Perform semantic search
-    results = retriever.get_relevant_documents(query, k=top_k)
+    results = retriever.invoke(query, k=top_k)
 
     if metadata_filters:
         # Filter results based on metadata
         filtered_results = [
             doc for doc in results
-            if all(doc.metadata.get(k) == v for k, v in metadata_filters.items())
+            if all(doc.metadata.get(key) == value for key, value in metadata_filters.items())
         ]
         return filtered_results if filtered_results else results  # Fallback if no filter matches
 
     return results
-
-def rank_chunks_with_metadata(retrieved_docs, metadata_boost=None):
-    """
-    Ranks retrieved documents based on their similarity scores and metadata.
-
-    Args:
-        retrieved_docs (list): List of retrieved Document objects.
-        metadata_boost (dict, optional): Metadata key-value pairs to boost document scores.
-
-    Returns:
-        list: Ranked list of Document objects.
-    """
-    ranked_docs = []
-    for doc in retrieved_docs:
-        score = getattr(doc, 'score', 0)  # Assuming 'score' attribute exists
-        if metadata_boost:
-            for key, value in metadata_boost.items():
-                if doc.metadata.get(key) == value:
-                    score += 0.1  # Adjust boost value as needed
-        ranked_docs.append((doc, score))
-    
-    # Sort documents based on the boosted score
-    ranked_docs.sort(key=lambda x: x[1], reverse=True)
-    
-    return [doc for doc, score in ranked_docs]
 
 def format_docs(docs):
     """
@@ -163,7 +155,17 @@ def format_docs(docs):
     Returns:
         str: The concatenated context string.
     """
-    context = "\n\n".join(doc.page_content for doc in docs)
+    context = []
+    for doc in docs:
+        doc_context_string = (
+            f"=================\n"
+            f"Source: {doc.metadata['source']}\n"
+            f"Section title: {doc.metadata['section']}\n"
+            f"Description: {doc.metadata['description']}\n"
+            f"Content: {doc.page_content}\n\n"
+        )
+        context.append(doc_context_string)
+    context = "\n\n".join(context)
 
     # Create a temporary file for logging purposes
     with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding="utf-8", suffix='.txt') as temp_file:
@@ -187,7 +189,7 @@ def collect_feedback():
         else:
             print("Please enter 'yes' or 'no'.")
 
-def log_feedback(question, retrieved_docs, feedback, feedback_log_path=FEEDBACK_LOG_PATH):
+def log_feedback(question, retrieved_docs, feedback, feedback_log_path=Config.FEEDBACK_LOG_PATH):
     """
     Logs user feedback along with the question and retrieved document metadata.
 
@@ -207,138 +209,266 @@ def log_feedback(question, retrieved_docs, feedback, feedback_log_path=FEEDBACK_
         writer = csv.writer(file)
         # Convert metadata to string representation
         metadata_str = str([doc.metadata for doc in retrieved_docs])
-        writer.writerow([datetime.utcnow().isoformat(), question, metadata_str, feedback])
+        writer.writerow([datetime.now(timezone.utc).isoformat(), question, metadata_str, feedback])
+
+@lru_cache(maxsize=1)
+def load_file_metadata(folder_path="vectorstore_metadata"):
+    """
+    Loads file metadata from a JSON file.
+
+    Args:
+        folder_path (str): The folder containing the metadata file.
+
+    Returns:
+        dict: The loaded metadata.
+    """
+    base_path = Config.BASE_DIR / folder_path
+    with open(base_path / 'file_metadata.json', 'r') as f:
+        section_keywords = json.load(f)
+    return section_keywords
+
+@lru_cache(maxsize=1)
+def load_conversation_metadata(folder_path="vectorstore_metadata"):
+    """
+    Loads conversation metadata from a JSON file.
+
+    Args:
+        folder_path (str): The folder containing the metadata file.
+
+    Returns:
+        dict: The loaded metadata.
+    """
+    base_path = Config.BASE_DIR / folder_path
+    with open(base_path / 'conversation_metadata.json', 'r') as f:
+        section_keywords = json.load(f)
+    return section_keywords
 
 # ===========================
-# Load the Vector Store
+# Vector Store Functions
 # ===========================
 
-def load_vectorstore():
+def load_vectorstore(vectorstore_dir):
     """
     Loads the Chroma vector store from the specified directory.
+
+    Args:
+        vectorstore_dir (Path): The directory of the vector store.
 
     Returns:
         Chroma: The loaded Chroma vector store.
     """
-    if not VECTORESTORE_DIR.exists():
-        raise FileNotFoundError(f"The vector store directory {VECTORESTORE_DIR} does not exist. Please run 'prepare_vectorstore.py' first.")
+    if not vectorstore_dir.exists():
+        raise FileNotFoundError(f"The vector store directory {vectorstore_dir} does not exist.")
     
     embeddings = CustomEmbeddings()
     vectorstore = Chroma(
-        persist_directory=str(VECTORESTORE_DIR),
+        persist_directory=str(vectorstore_dir),
         embedding_function=embeddings,
     )
     return vectorstore
 
 # ===========================
-# Define the Prompt Template
+# Prompt Template
 # ===========================
 
-template = """The following context, in triple backticks, is taken from the Visualyse Professional User Guide and should help you answer the question from the Visualyse Professional User at the end.
-Think step by step how to answer the question. If you do not know the answer to the question at the end, tell the user. The context of the question will always be about Visualyse Professional. Always give a response.
-
-CONTEXT:
-
-```{context}```
-
-QUESTION: {question}
-
-ACCURATE ANSWER:"""
-
-custom_rag_prompt = PromptTemplate.from_template(template)
+custom_rag_prompt = PromptTemplate.from_template(Config.PROMPT_TEMPLATE)
 
 # ===========================
-# Define the Inference Function
+# Metadata Filter Functions
 # ===========================
 
-def retrieve_relevant_docs(user_question, retriever):
-    """
-    Retrieves and ranks relevant documents based on the user's question.
-
-    Args:
-        user_question (str): The user's input question.
-        retriever (Retriever): The retriever object from the vector store.
-
-    Returns:
-        list: A list of the top-ranked Document objects.
-    """
-    # Optionally expand the query
-    expanded_question = expand_query(user_question)  # Implement if desired
-
-    # Determine metadata filters based on the question
-    metadata_filters = determine_metadata_filters(user_question)
-
-    # Retrieve documents using the metadata-aware retrieval
-    retrieved_docs = retrieve_with_metadata(
-        query=expanded_question,
-        retriever=retriever,
-        metadata_filters=metadata_filters,
-        top_k=5  # Adjust as needed
-    )
-
-    # Optionally rank the retrieved documents further
-    # retrieved_docs = rank_chunks_with_metadata(retrieved_docs, metadata_boost={"section": "Simulation Basics"})
-
-    # Limit to top-N documents
-    TOP_N = 3
-    final_retrieved_docs = retrieved_docs[:TOP_N]
-
-    return final_retrieved_docs
-
-def determine_metadata_filters(user_question):
+def determine_conversation_metadata_filters(user_question):
     """
     Analyzes the user's question to determine relevant metadata filters.
-
+    
     Args:
         user_question (str): The user's input question.
 
     Returns:
         dict or None: A dictionary of metadata filters or None if no filters apply.
     """
-    # Implement logic to extract keywords or topics from the question
-    # For simplicity, let's assume we have predefined mappings
-    section_keywords = {
-        "Simulation Basics": ["simulate", "simulation"],
-        "Advanced Topics": ["advanced", "complex"],
-        "User Interface": ["interface", "UI", "user interface"],
-        "Data Analysis": ["data", "analysis", "reporting"],
-        # Add more mappings as needed
-    }
+    nlp = spacy.load('en_core_web_md')
 
+    conversation_metadata = load_conversation_metadata()
     filters = {}
-    for section, keywords in section_keywords.items():
-        if any(keyword.lower() in user_question.lower() for keyword in keywords):
-            filters["section"] = section  # Assuming section titles match exactly
-            break  # Use the first matching section
+    conversations_matched = []
 
-    return filters if filters else None
+    combined_scores = []
+    conversation_ids = []
 
-def expand_query(query):
+    user_doc = nlp(user_question)
+    if not user_doc.has_vector:
+        return None
+    
+    for conversation_id, metadata in conversation_metadata.items():
+        # Extract description
+        user_prompts = metadata["user_prompts"].split("+")
+        #responses = metadata["keywords"].split("+")
+             
+        # Compute keyword similarity
+        prompt_sims_list = []
+        exact_match = False
+        for prompt in user_prompts:
+            if prompt.lower() in user_question.lower():
+                prompt_sims_list.append(1.0)  # Exact match
+                # Boost exact keyword matches
+                exact_match = True
+            else:
+                prompt_doc = nlp(prompt)
+                if prompt_doc.has_vector:
+                    prompt_sims_list.append(user_doc.similarity(prompt_doc))
+
+        # Get average similarity between all user prompts in conversation
+        prompts_sim = sum(prompt_sims_list) / len(prompt_sims_list) if prompt_sims_list else 0
+        
+        # Combined score
+        combined_score = prompts_sim
+        if exact_match:
+            combined_score += 0.5 
+
+        combined_scores.append(combined_score)
+        conversation_ids.append(conversation_id)
+                
+        with open('conversation_scores.txt', 'a', encoding="utf-8") as file:
+            file.write("=========================\n")
+            file.write(f"ID: {conversation_id} \n")
+            file.write(f"Prompts: {user_prompts} - Prompt Sim: {prompts_sim}\n")
+        
+    
+    percentile_98 = np.percentile(combined_scores, 98)
+    conversations_matched = [conversation_ids[i] for i in range(len(combined_scores)) if combined_scores[i] >= percentile_98]
+
+    if conversations_matched:
+        filters["conversation_id"] = conversations_matched
+    
+    return filters if conversations_matched else None           
+
+def determine_file_metadata_filters(user_question):
     """
-    Expands the user query using synonym expansion to improve retrieval accuracy.
-
+    Analyzes the user's question to determine relevant metadata filters.
+    
     Args:
-        query (str): The original user query.
+        user_question (str): The user's input question.
 
     Returns:
-        str: The expanded query.
+        dict or None: A dictionary of metadata filters or None if no filters apply.
     """
-    # Example: Simple synonym expansion (can be enhanced with NLP models)
-    synonyms = {
-        "simulate": ["model", "emulate", "replicate"],
-        "problem": ["issue", "challenge", "difficulty"],
-        "configure": ["setup", "adjust", "set up"],
-        "optimize": ["improve", "enhance", "refine"],
-        # Add more synonyms as needed
-    }
-    words = query.split()
-    expanded_words = []
-    for word in words:
-        expanded_words.append(word)
-        if word.lower() in synonyms:
-            expanded_words.extend(synonyms[word.lower()])
-    expanded_query = " ".join(expanded_words)
-    return expanded_query
+    nlp = spacy.load('en_core_web_md')
+
+    section_metadata = load_file_metadata()
+    filters = {}
+    sections_matched = []
+
+    # Weights
+    desc_weight = 0.5
+    title_weight = 0.2
+    keyword_weight = 0.4
+    ex_question_weight = 0.7
+
+    # Variables to collect data for the graph
+    combined_scores = []
+    sections = []
+    
+    user_doc = nlp(user_question)
+    if not user_doc.has_vector:
+        return None
+    
+    for section, metadata in section_metadata.items():
+        # Extract description
+        one_sentence_description = metadata["description"]
+        keywords_list = metadata["keywords"]
+        ex_question = metadata['example_question']
+        
+        # Vectorize metadata
+        desc_doc = nlp(one_sentence_description)
+        title_doc = nlp(section)
+        ex_question_doc = nlp(ex_question)
+        
+        # Compute similarities
+        desc_sim = user_doc.similarity(desc_doc) if desc_doc.has_vector else 0
+        title_sim = user_doc.similarity(title_doc) if title_doc.has_vector else 0
+        ex_question_sim = user_doc.similarity(ex_question_doc) if ex_question_doc.has_vector else 0
+              
+        # Compute keyword similarity
+        keyword_sims_list = []
+        exact_matches = 0
+        for keyword in keywords_list:
+            
+            if keyword.lower() in user_question.lower():
+                keyword_sims_list.append(1.0)  # Exact match
+                # Boost exact keyword matches
+                exact_matches += 1
+            else:
+                keyword_doc = nlp(keyword)
+                if keyword_doc.has_vector:
+                    keyword_sims_list.append(user_doc.similarity(keyword_doc))
+   
+                        
+        keyword_sim = sum(keyword_sims_list) / len(keyword_sims_list) if keyword_sims_list else 0
+        
+        # Combined score
+        combined_score = (desc_sim * desc_weight) + (title_sim * title_weight) + (keyword_sim * keyword_weight) + (ex_question_sim * ex_question_weight)
+        combined_score += 0.1 * (exact_matches ** 2)
+
+        combined_scores.append(combined_score)
+        sections.append(section)
+                
+        with open('file_scores.txt', 'a', encoding="utf-8") as file:
+            file.write("=========================\n")
+            file.write(f"Section: {section} - Sec Sim: {title_sim}\n")
+            file.write(f"Keywords: {keywords_list} - Keyword Sim: {keyword_sim}\n")
+            file.write(f"Description: {one_sentence_description} - Desc Sim: {desc_sim}\n")
+            file.write(f"Ex Question: {ex_question} - Ex Question Sim: {ex_question_sim}\n")
+            file.write(f" - Combined_score: {combined_score}\n")
+        
+    
+    percentile_98 = np.percentile(combined_scores, 98)
+    sections_matched = [sections[i] for i in range(len(combined_scores)) if combined_scores[i] >= percentile_98]
+
+    if sections_matched:
+        filters["section"] = sections_matched
+    
+    return filters if sections_matched else None
+
+# ===========================
+# Retrieval Function
+# ===========================
+
+def retrieve_relevant_docs(user_question, file_retriever, conversation_retriever):
+    """
+    Retrieves and ranks relevant documents based on the user's question.
+
+    Args:
+        user_question (str): The user's input question.
+        file_retriever (Retriever): Retriever for file vector store.
+        conversation_retriever (Retriever): Retriever for conversation vector store.
+
+    Returns:
+        list: A list of the top-ranked Document objects.
+    """
+    # Determine metadata filters based on the question
+    file_metadata_filters = determine_file_metadata_filters(user_question)
+    conversation_metadata_filters = determine_conversation_metadata_filters(user_question)
+
+    # Retrieve documents using the metadata-aware retrieval
+    retrieved_docs_files = retrieve_with_metadata(
+        query=user_question,
+        retriever=file_retriever,
+        metadata_filters=file_metadata_filters,
+        top_k=2  # Adjust as needed
+    )
+
+    retrieved_docs_conversations = retrieve_with_metadata(
+        query=user_question,
+        retriever=conversation_retriever,
+        metadata_filters=conversation_metadata_filters,
+        top_k=2  # Adjust as needed
+    )
+    
+    print("Currently not using retrieved context from conversation files.\n\n")
+    # Optionally, you can combine or prioritize retrieved_docs_files and retrieved_docs_conversations
+    # For now, only file-based documents are returned
+    return retrieved_docs_files
 
 # ===========================
 # Main Execution Function
@@ -348,9 +478,11 @@ def main():
     """
     Main function to handle user interactions and generate responses.
     """
-    print("Loading vector store...")
-    vectorstore = load_vectorstore()
-    retriever = vectorstore.as_retriever()
+    print("Loading vector stores...")
+    file_vectorstore = load_vectorstore(Config.FILE_VECTORESTORE_DIR)
+    file_retriever = file_vectorstore.as_retriever()
+    conversation_vectorstore = load_vectorstore(Config.CONVERSATION_VECTORSTORE_DIR)
+    conversation_retriever = conversation_vectorstore.as_retriever()
 
     # Initialize the language model callable
     llm_callable = CallableLLM(client)
@@ -371,8 +503,8 @@ def main():
                 continue
 
             # Retrieve relevant documents
-            retrieved_docs = retrieve_relevant_docs(question, retriever)
-
+            retrieved_docs = retrieve_relevant_docs(question, file_retriever, conversation_retriever)
+            
             if not retrieved_docs:
                 print("Sorry, I couldn't find any relevant information to answer your question.")
                 continue
@@ -394,11 +526,12 @@ def main():
             log_feedback(question, retrieved_docs, feedback)
 
         except KeyboardInterrupt:
-            print("\nExiting the RAG Inference System. Goodbye!")
+            print("\nExiting the RAG Inference System.")
             break
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            continue
+        # Uncomment the following lines to handle other exceptions
+        # except Exception as e:
+        #     print(f"An error occurred: {e}")
+        #     continue
 
 # ===========================
 # Execute the Script
