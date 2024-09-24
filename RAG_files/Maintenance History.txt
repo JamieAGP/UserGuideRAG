@@ -1,0 +1,904 @@
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 1 of 17 
+ 
+June 2024 
+Visualyse 7 Maintenance History 
+This document describes the changes that have been made to Visualyse 7 for each maintenance release. If an 
+existing feature has been modified, or a new feature has been added, information on how to use it can be found in the 
+online user guide. To access this, select User Guide from the Help menu within the application. 
+Release 7.10.9.5 (June/2024) 
+The following changes have been made in this release: 
+▪ 
+Fix possible issue with Area Analysis with Tracking Strategies. 
+▪ 
+Fix issue with Custom Selection Method dialog not allowing decimal values for Minimum Track Angle. 
+▪ 
+Allow both Antenna and Beams to track at the same time. 
+Release 7.10.9.4 (May/2024) 
+The following changes have been made in this release: 
+▪ 
+Table View – ensure “Group to use” dropdown is updated as lists change. 
+▪ 
+Fix possible issue on the Tracking Strategy dialog when using “Advanced” option. 
+▪ 
+Allow Constellation Avoid to use the same constellation as under consideration. 
+Release 7.10.9.3 (May/2024) 
+The following changes have been made in this release: 
+▪ 
+Add new Tracking Strategy options as detailed in this Technical Note: Making Tracking Strategies 
+Release 7.10.9.2 (April/2024) 
+The following changes have been made in this release: 
+▪ 
+Add new setting for GIMS Database location. 
+▪ 
+Fix possible dialog issue on selecting built in Tracking Strategy - Avoid Constellation. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 2 of 17 
+ 
+Release 7.10.9.1 (April/2024) 
+The following changes have been made in this release: 
+▪ 
+Add ITU-R RA.1631, ITU-R SA.509 Rec 1.1, ITU-R SA.509 Rec 1.2 
+▪ 
+Refactor Help menu. 
+▪ 
+Fix issue where 3D view was unable to scroll in some scenarios. 
+Release 7.10.9.0 (March/2024) 
+The following changes have been made in this release: 
+▪ 
+Add ability to set the maximum number of active links that can use a single Traffic object. 
+▪ 
+Add some new Tracking Strategy Options as detailed in this Technical Note: Making Tracking Strategies 
+▪ 
+Add ability to reorder items on all the object lists. 
+▪ 
+Add toolbar icons for Change Variable Wizard. 
+▪ 
+Improve horizontal scrolling on the list dialogs. 
+▪ 
+Default File | Open directory to Example Files on first installation. 
+▪ 
+Fix issue loading example files using terrain when software not installed in default location. 
+▪ 
+Replace Watch Window "Modify Watches..." with "Show Object Tree..." and "Hide Object Tree..." for improved 
+clarity. 
+▪ 
+Fix icon issue on Object Tree. 
+▪ 
+Fix some spelling errors on some dialogs. 
+▪ 
+Make the Tracking Strategy and Handover Options dialogs resizable. 
+▪ 
+Enable horizontal scrolling on the Station/Link Group dialogs. 
+▪ 
+Use enhanced Combo Box on the Group Avoidance dialog. 
+Release 7.10.8.6 (February/2024) 
+The following changes have been made in this release: 
+▪ 
+Fix possible issue with losing connection to DK2 Network Server when PC goes to sleep. 
+▪ 
+Fix possible locale issue when importing GXT files. 
+▪ 
+Revise Lat/Long format to be 3.4 when exporting GXT files. 
+Release 7.10.8.5 (December/2023) 
+The following changes have been made in this release: 
+▪ 
+Warn that Propagation/Statistics are overridden when using File | Import. 
+▪ 
+Fix registry Application ID issue. 
+▪ 
+Handle DK2 HID devices on About dialog. 
+Release 7.10.8.4 (November/2023) 
+The following changes have been made in this release: 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 3 of 17 
+ 
+▪ 
+Add interface to new release of population data. See: https://www.transfinite.com/content/population_data 
+Release 7.10.8.3 (October/2023) 
+The following changes have been made in this release: 
+▪ 
+Add option to have Tracking Strategy filter where the Minimum Elevation Angle varies by Azimuth. 
+▪ 
+Make Visualyse Message dialog resizable. 
+▪ 
+Add extra validation when loading TXT files to better catch issues with Antenna Types. 
+▪ 
+Add notification when user loads a file created with a version of the software greater than the current version. 
+Release 7.10.8.2 (September/2023) 
+The following changes have been made in this release: 
+▪ 
+Allow user to enter a User Defined Clutter Model where the clutter loss can vary by azimuth angle at Tx and Rx 
+ends. 
+▪ 
+Fix scaling of saved/loaded views to better take into account Microsoft Windows scaling factors. 
+▪ 
+Fix possible issue loading dynamic links from TXT file. 
+▪ 
+Improve loading Antenna Types from TXT files. 
+▪ 
+Fix possible TXT file loading issue with NGSO orbits. 
+Release 7.10.8.1 (September/2023) 
+The following changes have been made in this release: 
+▪ 
+Revise and improve the antenna/beam locking strategy by clearing the locks of all antennas and beams prior to 
+the simulation update sequence undertaken at each time step. 
+Release 7.10.8.0 (August/2023) 
+The following changes have been made in this release: 
+▪ 
+Fix possible issue when loading a GXT file. 
+Release 7.10.7.9 (August/2023) 
+The following changes have been made in this release: 
+▪ 
+Resolve possible issue when saving/loading simulations to/from TXT file when using links with built-in Tracking 
+Strategy. 
+▪ 
+Fix possible initial selection issue on Object Tree when item selection is in [all station objects] or [all link objects]. 
+Release 7.10.7.8 (August/2023) 
+The following changes have been made in this release: 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 4 of 17 
+ 
+▪ 
+Fixes redraw issue when maximising Model View. 
+Release 7.10.7.7 (August/2023) 
+The following changes have been made in this release: 
+▪ 
+Fix filter on Clutter Configuration Import dialog. 
+▪ 
+Fix Traffic sub-menu being slow to display. 
+▪ 
+Ensure OpenGL station textures are created when running import wizards. 
+Release 7.10.7.6 (July/2023) 
+The following changes have been made in this release: 
+▪ 
+Fix issue when selecting invalid items to log. 
+▪ 
+Reconfigure Chart Settings dialog to accommodate users with low resolution screens. 
+▪ 
+Improve startup time of Chart Settings dialog. 
+▪ 
+Fix space tracks drawing issue on 3D View. 
+▪ 
+Handle SRS import errors better when MDB files haven’t been linked correctly. 
+▪ 
+Fix scrolling issue on Interfering Links tab. 
+▪ 
+Fix possible GIMS error when running x86 version on Windows 7. 
+▪ 
+Update installed DK2 DLL. 
+ 
+It is recommended all users install the latest DK2 device drivers (V8.22.26) from 
+https://www.transfinite.com/content/dongledriverinstall_V8_22_26 
+ 
+Release 7.10.7.5 (May/2023) 
+The following changes have been made in this release: 
+▪ 
+Add Suspend/Activate all Area Analysis option. 
+▪ 
+Add some new Menu icons. 
+▪ 
+Fix possible crash in Change Variable Wizard. 
+▪ 
+Fix DPI scaling issues on OpenGL views. 
+▪ 
+Fix Overlay drawing issues on OpenGL views. 
+▪ 
+Fix possible issues with Date control on the Simulation Run Time dialog. 
+▪ 
+Fix drawing issue on the Simulation Run Time dialog. 
+▪ 
+Fix possible redraw issues when using Shaped Beam Editor. 
+▪ 
+Fix locale issues when pasting to grid control. 
+▪ 
+Better address 2038 issues on Simulation Run Time dialog. 
+▪ 
+Resolve possible OpenGL issues on 3D View. 
+Release 7.10.7.4 (March/2023) 
+The following changes have been made in this release: 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 5 of 17 
+ 
+▪ 
+Modification to the PFD Mask Antenna Type to add an option to specify the PFD mask is used for RNSS 
+calculations under Resolution 609. 
+▪ 
+Add ability to calculate GDOP into a Link Group. 
+▪ 
+Fix issue with Model/Watch view when using large toolbar icons 
+Release 7.10.7.3 (March/2023) 
+The following changes have been made in this release: 
+▪ 
+Fix possible Toolbar icon redraw issue on low DPI displays. 
+Release 7.10.7.2 (March/2023) 
+The following changes have been made in this release: 
+▪ 
+Add new Setting "Show Update Dialog at Startup". 
+▪ 
+Fix Station | Advanced Roll/Pitch/Yaw issue. 
+▪ 
+Fix redraw issues on Custom Selection Method dialog. 
+Release 7.10.7.1 (February/2023) 
+The following changes have been made in this release: 
+▪ 
+Handle Cancel consistently on Graph selection dialogs. 
+▪ 
+Fix issue when reloading a SIM file that has an incorrectly configured Graph plot. 
+▪ 
+Address possible locale issue when importing from TLE. 
+Release 7.10.7.0 (February/2023) 
+The following changes have been made in this release: 
+▪ 
+Add “Use Large Icons” and “Reset” toolbar options under View | Toolbars. 
+▪ 
+Fix issue when importing non-GSO systems from SRS when phase_ang is NULL. 
+Release 7.10.6.9 (February/2023) 
+The following changes have been made in this release: 
+▪ 
+Fix DPI issues on Link Statistics page when using lots of D.P 
+▪ 
+Fix DPI scaling on Station Antenna Page. 
+▪ 
+Add Notification when Windows Scaling is set to a value that can cause truncated U.I elements. 
+▪ 
+Add Notification when Windows Resolution is less than the minimum of 1280x1024. 
+▪ 
+Provide more information when there are ITU Database connection issues. 
+▪ 
+Fix issues with Frequency View not allowing Return direction for a SIM with only that direction. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 6 of 17 
+ 
+Release 7.10.6.8 (January/2023) 
+The following changes have been made in this release: 
+▪ 
+Show both percentage bad (all steps) and percentage bad (active steps). 
+▪ 
+Allow option to select whether graph CDF should be over all steps or active steps. 
+Release 7.10.6.7 (January/2023) 
+The following changes have been made in this release: 
+▪ 
+Fix possible issue with Distribution Chart redraw. 
+▪ 
+Resolve issue on Tracking Strategy dialog where Min Track Angle not being updated when change the Exclude 
+Antennas option. 
+▪ 
+Resolve load/save issue with P.618 setting Maximum Percentage. 
+▪ 
+Fix issue on Chart Settings Dialog with invalid options (when using log-axis) being potentially displayed on initial 
+display. 
+Release 7.10.6.6 (December/2022) 
+The following changes have been made in this release: 
+▪ 
+Allow more than 6 Gain Tables to be used in Advanced Beam Options. 
+▪ 
+Fix issue setting CDF to use log Y-Axis in some scenarios. 
+▪ 
+Resolve issue with Area Analysis contour label drawing at offset. 
+▪ 
+Resolve CDF drawing issue. 
+▪ 
+Fix issue with TXT file import when icon starts with a number. 
+▪ 
+Fix issue in IDWM when path length is 0. 
+▪ 
+Resolve possible drawing issues with Area Analysis in Direct2D mode. 
+▪ 
+Fix issue in Tracking Strategy: Continue to Track. 
+Release 7.10.6.5 (September/2022) 
+The following changes have been made in this release: 
+▪ 
+Add option on Constellation Wizard to switch off ground tracks in preview. 
+Release 7.10.6.4 (September/2022) 
+The following changes have been made in this release: 
+▪ 
+Add initial implementation of Generic GRD/GRC interface for Clutter/Terrain data. 
+▪ 
+Ensure elevations increase in new user defined Clutter Model where Clutter Loss can vary by elevation angle. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 7 of 17 
+ 
+Release 7.10.6.3 (August/2022) 
+The following changes have been made in this release: 
+▪ 
+Allow users to enter a user defined Clutter Model where the Clutter Loss can vary by elevation angle at Tx and 
+Rx ends. 
+▪ 
+Initial support for a Generic GeoTIFF Terrain/Clutter DLL. 
+▪ 
+Add support for ITU regions to Country Service Area Wizard. 
+▪ 
+Fix error message when loading clutter file. 
+▪ 
+In (unlikely) event of issues loading overlay information, only report errors once. 
+▪ 
+Allow Export/Import of Clutter Configuration. 
+▪ 
+Fix possible memory issue when loading large Terrain/Clutter images. 
+▪ 
+Set Document modified flag when importing GSO/NGSO. 
+▪ 
+Add P2108 revision to Clutter Extra Models. 
+▪ 
+Fix "Don't draw" handling on Terrain Colours Dialog. 
+▪ 
+Fix issue drawing countries with opacity when using Direct2D. 
+▪ 
+Fix issue click selecting country in Service Area Wizard Area page. 
+▪ 
+Fix possible issue loading map data if two instances of Visualyse are opened at same time (prevent file lock). 
+Release 7.10.6.2 (July/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix DPI issue on Traffic Settings dialog. 
+▪ 
+Fix possible issue when using Traffic Exclusion Distance on a Dynamic Link. 
+Release 7.10.6.1 (June/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix issue scaling Views when loading files saved with an older version. 
+Release 7.10.6.0 (June/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix issue displaying the Variable Definition dialog when running on Windows Server 2012 (R2). (Note: we 
+generally recommend the software is installed on Windows 10/11). 
+▪ 
+Add a search bar to the Application Title bar. This allows users to search the menu options. 
+▪ 
+Add a notification icon to the Application Title Bar. This displays a badge with the number of notifications. 
+Clicking displays the Notifications View. At present this is used to display general application information (new 
+software updates, DK2 driver updates etc). 
+▪ 
+Implemented Windows 11 Snap Layout. When the program is running on Windows 11 and the maximize/restore 
+caption button is hovered, the layout popup menu will appear near this button.  
+▪ 
+Update installed DK2 DLL. 
+ 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 8 of 17 
+ 
+It is recommended all users install the latest DK2 device drivers (V8.20.21) from 
+https://www.transfinite.com/content/dongledriverinstall 
+Release 7.10.5.9 (May/2022) 
+The following changes have been made in this release: 
+▪ 
+Revise P.2109 elevation angle at building calculation. 
+Release 7.10.5.8 (May/2022) 
+The following changes have been made in this release: 
+▪ 
+Get the Interferer carrier for M.1461 continuous/chirped equations rather than wanted. 
+Release 7.10.5.7 (May/2022) 
+The following changes have been made in this release: 
+▪ 
+Add ability to change Chart legend fonts. 
+▪ 
+Make the OTR term visible in the watch window and object tree, not part of the bandwidth adjustment. 
+▪ 
+Force the inclination angle to in the range [0, 180] and for the GSO inclination to be in the range [0, 90]. 
+▪ 
+Results | View Results shows internal not display units in some cases. 
+Release 7.10.5.6 (April/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix possible issue when SIM has Area Analysis defined with area less than pixel size. 
+Release 7.10.5.5 (April/2022) 
+The following changes have been made in this release: 
+▪ 
+Performance improvements in P528-5 implementation. 
+Release 7.10.5.4 (April/2022) 
+The following changes have been made in this release: 
+▪ 
+Add P1812-6 implementation. 
+Release 7.10.5.3 (April/2022) 
+The following changes have been made in this release: 
+▪ 
+Add P452-17 implementation. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 9 of 17 
+ 
+Release 7.10.5.2 (April/2022) 
+The following changes have been made in this release: 
+▪ 
+Add P2108-1 implementation. 
+Release 7.10.5.1 (April/2022) 
+The following changes have been made in this release: 
+▪ 
+Add P1546-6 and revise dialog to include new options. 
+Release 7.10.5.0 (April/2022) 
+The following changes have been made in this release: 
+▪ 
+Add implementations of P2001-4, P2109-1, P528-5, P1812-5. 
+Release 7.10.4.2 (March/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix possible bug when changing the number of groundtracks. 
+Release 7.10.4.1 (March/2022) 
+The following changes have been made in this release: 
+▪ 
+Allow Point Mass plus J2 to be set in the NGSO Import. 
+▪ 
+Minor revision to Power Control “Use Freespace only” calculation. 
+▪ 
+Fix ground track save/load issues. 
+Release 7.10.4.0 (March/2022) 
+The following changes have been made in this release: 
+▪ 
+Remove PREVIEW from Title Bar. 
+Release 7.10.3.9 (March/2022) 
+The following changes have been made in this release: 
+▪ 
+Add seven new satellite icons. 
+▪ 
+Update M.2101 dialog to make clear horizontal/vertical = columns/rows 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 10 of 17 
+ 
+Release 7.10.3.8 (March/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix issue exporting ITU M.2101 parameters in TXT file. 
+▪ 
+Fix DPI display issue with Advanced Beam Options dialog. 
+▪ 
+Add Option under File menu – “Save Inputs Report” to export SIM input parameters. 
+Release 7.10.3.7 (February/2022) 
+The following changes have been made in this release: 
+▪ 
+Include the OTR term in the Bandwidth Adjustment Factor shown. 
+Release 7.10.3.6 (February/2022) 
+The following changes have been made in this release: 
+▪ 
+Add throughput calculations in S-2131-1 
+▪ 
+Add ability to set statistics calculation options in links and link groups 
+▪ 
+Update shaped gain table advanced options label to say sub-satellite point or zenith for cases where multiple 
+tables are used by ES/UTs. 
+▪ 
+Fix problems saving / loading text files when the DefVar Monte Carlo uses a table. 
+▪ 
+Resolve issues with TXT file loading/saving when using certain options for Dynamic Links. 
+Release 7.10.3.5 (February/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix issue with icons not updating on Model View after using the Import dialogs. 
+Release 7.10.3.4 (February/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix issue with propagation/statistics environment when loading TXT files. 
+Release 7.10.3.3 (February/2022) 
+The following changes have been made in this release: 
+▪ 
+Performance improvements. 
+▪ 
+Fix warning when loading .TXT files that use P.618. 
+▪ 
+Fix dialog display refresh when duplicating station antennas. 
+▪ 
+Improve text for the tracking strategy selection method “avoid tracking station tracked by another antenna”. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 11 of 17 
+ 
+Release 7.10.3.2 (January/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix issue with Rec. ITU-R F.1336-5. 
+Release 7.10.3.1 (January/2022) 
+The following changes have been made in this release: 
+▪ 
+Fix issue changing Latitude/Longitude grid spacing when using OpenGL 2D Views. 
+▪ 
+Fix possible crash when changing station Antenna Types. 
+Release 7.10.3.0 (December/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix issue with applying colours to certain icons. 
+▪ 
+On Import override propagation / statistics environment for links. Don't override global data. 
+▪ 
+Fix issue with Contour Antenna Type Properties dialog. 
+▪ 
+Fix issue with Beam colour getting lost when antenna type is updated. 
+▪ 
+Fix colouring by Antenna Type on Map Views. 
+Release 7.10.2.9 (December/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix issue when using File | Import multiple times. 
+Release 7.10.2.8 (December/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix some issue when using Probability Distribution graph. 
+▪ 
+Fix issues drawing Polar Plot / Line Graph when very -ve values. 
+▪ 
+Define Variable Service Area revise loading order in Text file to prevent issues. 
+▪ 
+Define Variable Service Area format output better in Text file. 
+▪ 
+Fix missing power variable in Object Tree. 
+▪ 
+Fix issue with duplicated output in Define Powers in Text file. 
+▪ 
+Fix issue in Data vs Time graph where number of points increased, and number of plots increased in same 
+update. 
+Release 7.10.2.7 (November/2021) 
+The following changes have been made in this release: 
+▪ 
+Add missing power variables in Object Tree. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 12 of 17 
+ 
+Release 7.10.2.6 (November/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix issue in alpha PC algorithm. 
+Release 7.10.2.5 (November/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix display issue on “About Visualyse” dialog. 
+Release 7.10.2.4 (November/2021) 
+The following changes have been made in this release: 
+▪ 
+Improve field spacing on Link Statistics tab on Simulation Results dialog 
+▪ 
+Improve frames and popup windows appearance on Windows 11. 
+Release 7.10.2.3 (October/2021) 
+The following changes have been made in this release: 
+▪ 
+Add analytic alpha calculation to vector and use it in the GSO tracking strategy. 
+▪ 
+Fix issue with EPFD/PFD in table view being shown as N/A. 
+Release 7.10.2.2 (October/2021) 
+The following changes have been made in this release: 
+▪ 
+Include option to synchronise all links using TDD so that all are on DL / UL at the same timestep 
+▪ 
+Terrestrial IFIC Search Results: Make Failed button more obvious 
+▪ 
+Fix possible issue when Earth Station located at North Pole. 
+▪ 
+Enable buttons better in Model View 
+▪ 
+Improve speed when SIM is running in non-interactive mode. 
+▪ 
+Enable/Disable Model View Add menu items for DefVar/Traffic depending on dongle status 
+▪ 
+Add DefVar to Model View menu 
+▪ 
+Support 1064 && 1065 population files 
+Release 7.10.2.1 (September/2021) 
+The following changes have been made in this release: 
+▪ 
+Speed up loading of SIM files that contain a large number of objects. 
+▪ 
+Make app more responsive on loading large files. 
+▪ 
+Fix possible issue when using a setup that falls back to the default “Microsoft Generic” software renderer. 
+▪ 
+Resolve DPI issue on Link Transmit Page. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 13 of 17 
+ 
+▪ 
+Fix possible issue when loading old files. 
+▪ 
+Make application more responsive when initialising. 
+▪ 
+Fix issue displaying ground tracks on Mercator view. 
+▪ 
+Support population data containing 1064 and 1065 files. 
+▪ 
+Resolve “Forward Call to SPBM_ANTGAINEX” error when using Edit Contours dialog. 
+Release 7.10.2.0 (August/2021) 
+The following changes have been made in this release: 
+▪ 
+Update installed DK2 DLL. 
+ 
+It is recommended all users install the latest DK2 device drivers (V8.19.7) from 
+https://www.transfinite.com/content/dongledriverinstall 
+Release 7.10.1.9 (August/2021) 
+The following changes have been made in this release: 
+▪ 
+Add option to export Beams to Google Earth. 
+▪ 
+Fix issue on Antenna Type Properties dialog. 
+Release 7.10.1.8 (August/2021) 
+The following changes have been made in this release: 
+▪ 
+Display DK2 driver version on About dialog. 
+▪ 
+Fix issues with Link Type and User Defined option on Watch View / Allow CVW to properly set this. 
+▪ 
+Add VisObj variables for Override Propagation / Stats. 
+Release 7.10.1.7 (July/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix DPI issue on Watch Window. 
+▪ 
+Make fonts consistent on top and bottom trees of Watch Window. 
+▪ 
+Fix drawing glitch when clicking "Modify Watches..." on Watch Window. 
+Release 7.10.1.6 (July/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix HANDLE leak in Map View when zooming/panning map when using Direct2D. 
+▪ 
+Fix issues loading a TXT format file when using Dynamic Links. 
+▪ 
+Revise and improve command line interface: 
+Options are now: 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 14 of 17 
+ 
+-x Close Visualyse at End 
+-s Save SIM file at End 
+-c Close SIM file at End 
+-r Run SIM non-interactively 
+▪ 
+Improve logic for handling “missing” values when loading old TXT files. 
+Release 7.10.1.5 (July/2021) 
+The following changes have been made in this release: 
+▪ 
+Update alpha PC algorithm to allow use of minimum power. 
+Release 7.10.1.4 (June/2021) 
+The following changes have been made in this release: 
+▪ 
+Include M.2101 power control algorithm. 
+▪ 
+Fix issue in M.2101 extended gain pattern. 
+▪ 
+Update M.2101 gain pattern dialog with tilt units. 
+Release 7.10.1.3 (June/2021) 
+The following changes have been made in this release: 
+▪ 
+Include enhanced M.2101 gain pattern. 
+▪ 
+Improve start-up time. 
+▪ 
+Add implementation of ITU-R F.699-8, ITU-R F.1245-3. 
+▪ 
+Add new “Extra Clutter Model” to Extra Models. Details in Technical Annex. 
+Release 7.10.1.2 (June/2021) 
+The following changes have been made in this release: 
+▪ 
+Resolve issue where nan can be returned from 528-4 implementation. 
+Release 7.10.1.1 (June/2021) 
+The following changes have been made in this release: 
+▪ 
+Fix issue with F.1336-5 implementation. 
+▪ 
+Add option to have service area define variable with shape sixth of hexagon with inner and outer radius. 
+▪ 
+Handle loading an old SIM file that used a Scatter Graph (make width = 0, turn on markers). 
+▪ 
+Fix possible issue loading old SIM files created using Graphics Server. 
+▪ 
+Handle error conditions in P.676-11, P.676-12 better. 
+▪ 
+Resolve issue using double-click in Model View. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 15 of 17 
+ 
+Release 7.10.1.0 (June/2021) 
+The following changes have been made to the software: 
+▪ 
+Add V and H D/L and max scan angles. 
+▪ 
+Handle max scan angles in beam pointing. 
+▪ 
+Handle beam footprint for IMT gain pattern. 
+▪ 
+Label power as power at antenna. 
+▪ 
+Label beamwidth as half-power beamwidth. 
+▪ 
+Update peak gain when change IMT parameters. 
+▪ 
+Fix possible antenna/beam lock bug with SIM in which both antenna and beam are steerable. 
+▪ 
+Fix issue with RX import tool not setting RX temperature. 
+▪ 
+Fix DPI issue on Roll-Off Dialog. 
+Release 7.10.0.9 (May/2021) 
+The following changes have been made to the software: 
+▪ 
+Initial public release. 
+Release 7.10.0.8 (May/2021) 
+The following changes have been made to the software: 
+▪ 
+Add implementation of ITU-R P-676-12. 
+▪ 
+Revise GIMS error handling for V13. 
+▪ 
+Install newer DK2 DLL. 
+Release 7.10.0.7 (March/2021) 
+The following changes have been made to the software: 
+▪ 
+Add F.1336-5 gain patterns including option to edit that pattern's parameters. 
+▪ 
+Add a generic M.2101 gain pattern including option to edit that pattern's parameters. 
+Release 7.10.0.6 (March/2021) 
+The following changes have been made to the software: 
+▪ 
+Improve speed of Watch/Model View in large SIMs. 
+▪ 
+Add new Chart markers (Triangle, Left Triangle, Down Triangle Right, Pentagon, Hexagon, Star, Cross) 
+▪ 
+Add UI to access number of beam points used when drawing beams on Map Views. Note: higher values will 
+impact drawing performance. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 16 of 17 
+ 
+Release 7.10.0.5 (March/2021) 
+The following changes have been made to the software: 
+▪ 
+Add total throughput, calculated using equations (2) and (3) of Recommendation ITU-R S.2131, to statistics C/N 
+and C/NI and show on results. 
+▪ 
+Update DefVar service area to allow selection for stations to be sea only i.e., converse of land only. 
+Release 7.10.0.4 (March/2021) 
+The following changes have been made to the software: 
+▪ 
+Add new UI / VisObj variables for code limiting PMax in P.618. 
+Release 7.10.0.3 (March/2021) 
+The following changes have been made to the software: 
+▪ 
+Improve way min Gain / max Gain is calculated in Polar Plot / Line Graph (improves display of lower limit). 
+Release 7.10.0.2 (March/2021) 
+The following changes have been made to the software: 
+▪ 
+Don’t theme built in dialogs. 
+▪ 
+Try to improve startup speed by optimising locale setting. 
+▪ 
+Fix DPI issues on font used in some dialogs in non-western locales. 
+Release 7.10.0.1 (March/2021) 
+The following changes have been made to the software: 
+▪ 
+Fix possible threading issue when using Area Analysis and ITU ShapedBM. 
+▪ 
+When loading old files ensure graph legends are in a similar position. 
+▪ 
+Fix DPI issues on Contour Beam dialog. 
+Release 7.10.0.0 (March/2021) 
+The following features have been added to the software: 
+H I G H  D P I  
+Visualyse 7 now supports high DPI displays. Improvements have been made to the Toolbar Icons, Map View, Path 
+Profile View, Station Icons, Graphing Controls. Full details of any major changes are in the User Guides. 
+ 
+ 
+ 
+Maintenance History 
+  
+ 
+Page 17 of 17 
+ 
+I T U - R  R E C O M M E N D A T I O N S  
+Visualyse 7 now supports ITU-R P.453-14, ITU-R P.526-15, ITU-R P.528-4, ITU-R P.530-17, ITU-R P.618-13, ITU-
+R P.676-11, ITU-R P.836-6, ITU-R P.837-7, ITU-R P.840-8, ITU-R P.1510-1, ITU-R P.2001-3. 
+Further recommendation updates will be provided in upcoming maintenance releases.  
+I T U - R  P . 5 3 0  
+It is now possible to select the revision of ITU-R P.453 that ITU-P.530 uses. 
+It is also now possible to select the revision of ITU-R P.837, ITU-R P.838 and ITU-R P.839 that ITU-R P.530 (Rain) 
+uses. 
+I T U - R  P . 6 1 8  
+It is now possible to select the revision of ITU-R P.839 that ITU-P.618 uses. 
+I T U - R  P . 6 7 6  
+It is now possible to select the revision of ITU-R P.836, ITU-R P.1510 that ITU-R P.676 uses. 
+I T U - R  P  8 4 0  
+It is now possible to randomise the Probability value. 
+V I S U A L Y S E  7  X 6 4  
+Visualyse 7 is now available in a 64-bit version. This can be useful in scenarios where the existing 32-bit version 
+used a lot of RAM when performing the analysis. Note: a working installation of the x64 Access Database Engine is 
+required to use this version with the ITU databases. 
+The following other features have been added: 
+▪ 
+Handle resize events better in the various Import dialogs. 
+▪ 
+Rename ITU-R P.CLUTTER to ITU-R Rec. P.2108. 
+▪ 
+Rename ITU-R P.BEL to ITU-R Rec. P.2109. 
+▪ 
+If using IMT antenna turn on Electronically Steerable, 
+▪ 
+Improve speed when loading from SRS. 
+▪ 
+Don’t send SIM updates when adding logs. 
+▪ 
+Fix potential issues displaying 3D/Mercator views when using low powered graphics cards. 
+▪ 
+General performance improvements. 
+▪ 
+Add stars overlay on 3D View 
+▪ 
+Resolve various drawing issues on 3D View. 
+▪ 
+Add setting to save SIM at end of run. 
+▪ 
+Add settings to control various aspects of the Frequency View drawing. 
+ 
+Release < 7.10.0.0 
+The Maintenance History document for versions prior to V7.10.0.0 can be found at 
+https://www.transfinite.com/MaintenanceRelease/Visualyse_Pre_V7_10_MaintenanceHistory.pdf 

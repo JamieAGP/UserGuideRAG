@@ -1,0 +1,4081 @@
+Modules User Guide 
+ 
+Page 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Visualyse Professional 
+Version 7 
+ 
+ 
+ Modules User Guide 
+ 
+ 
+ 
+ 
+Modules User Guide 
+ 
+Page 2 
+ 
+ 
+ 
+Version and Copyright Information 
+Product: 
+ 
+Version Professional 
+Version: 
+ 
+7.10.9.2 
+Document Version: 1.14 
+The IDWM database is © ITU and supplied under license. 
+Transfinite Systems Ltd reserves the right to change features and functionality 
+without notice. 
+We can be contacted at: 
+Address 
+Transfinite Systems Ltd 
+ 
+ 
+ 
+Suite 24 (5th Floor) 
+ 
+ 
+ 
+AMP House 
+ 
+ 
+ 
+Dingwall Road 
+ 
+ 
+ 
+Croydon CR0 2LX 
+ 
+ 
+ 
+ 
+United Kingdom 
+Phone  
++44 (0)20 3904 3220 
+Email  
+info@transfinite.com 
+Web  
+www.transfinite.com 
+© Transfinite Systems Ltd 
+Modules User Guide 
+ 
+Page 3 
+ 
+ 
+ 
+Table of Contents 
+1 
+INTRODUCTION 
+............................................................................................ 
+6 
+2 
+DEFINE VARIABLE 
+....................................................................................... 
+7 
+2.1 
+Introduction ..................................................................................................................................... 7 
+2.2 
+Managing Variable Definitions ...................................................................................................... 7 
+2.3 
+Variable Selection 
+............................................................................................................................ 9 
+2.4 
+Variable Definitions ........................................................................................................................ 9 
+2.4.1 
+Monte Carlo Variable.................................................................................................................... 9 
+2.4.2 
+Offset Variable 
+.............................................................................................................................10 
+2.4.3 
+Event List Variable ......................................................................................................................11 
+2.4.4 
+Sequence Variable .......................................................................................................................14 
+2.4.5 
+Monte Carlo Constellation ...........................................................................................................15 
+2.4.6 
+Monte Carlo Mobiles ...................................................................................................................18 
+2.5 
+Define Variable Tips ......................................................................................................................23 
+3 
+IDWM ........................................................................................................... 
+24 
+3.1 
+Introduction ....................................................................................................................................24 
+3.2 
+Using IDWM 
+...................................................................................................................................24 
+3.2.1 
+Recommendation ITU-R P.452 
+....................................................................................................24 
+3.2.2 
+Recommendation ITU-R P.1546 
+..................................................................................................25 
+3.2.3 
+Recommendation ITU-R P.1812 
+..................................................................................................25 
+3.2.4 
+Recommendation ITU-R P.2001 
+..................................................................................................26 
+3.2.5 
+Appendix S.7................................................................................................................................27 
+4 
+TERRAIN MODULE 
+..................................................................................... 
+29 
+4.1 
+Introduction ....................................................................................................................................29 
+4.2 
+Terrain Features in Visualyse Professional 
+..................................................................................31 
+4.2.1 
+Terrain Database Interface ...........................................................................................................31 
+4.2.2 
+Loading Terrain Regions .............................................................................................................31 
+4.2.3 
+Propagation Models .....................................................................................................................31 
+4.2.4 
+Path Profiles .................................................................................................................................31 
+4.2.5 
+Watch Window ............................................................................................................................32 
+4.2.6 
+Maps and 3D View ......................................................................................................................32 
+4.3 
+Availability and Types of Terrain Data 
+........................................................................................32 
+4.4 
+Terrain Database Interface ...........................................................................................................34 
+4.4.1 
+Interface Management..................................................................................................................34 
+4.4.2 
+Adding a Terrain Database Interface ...........................................................................................36 
+4.4.3 
+Deleting a Terrain Database Interface 
+..........................................................................................37 
+4.4.4 
+Edit a Terrain Database Interface 
+.................................................................................................38 
+4.4.5 
+Ordering Terrain Databases .........................................................................................................38 
+4.4.6 
+Changing the Path Profile Defaults 
+..............................................................................................39 
+4.4.7 
+Maximum Path Length.................................................................................................................40 
+4.4.8 
+Changing the Default Terrain Colours .........................................................................................41 
+4.5 
+Terrain Data Regions 
+.....................................................................................................................41 
+4.5.1 
+Selecting Terrain Data Regions ...................................................................................................41 
+4.5.2 
+Interactive Creation of Terrain Regions 
+.......................................................................................42 
+4.5.3 
+Terrain Region Manager ..............................................................................................................43 
+4.6 
+Path Profiles Parameters and Terrain Colours ...........................................................................44 
+Modules User Guide 
+ 
+Page 4 
+ 
+ 
+ 
+4.7 
+Path Profiles 
+....................................................................................................................................45 
+4.7.1 
+Path Profile View 
+.........................................................................................................................45 
+4.7.2 
+Creating Path Profiles ..................................................................................................................45 
+4.7.3 
+Path Profile Options 
+.....................................................................................................................46 
+4.7.4 
+Configuring Path Profiles.............................................................................................................46 
+4.7.5 
+Configuring Path Profile Displays ...............................................................................................47 
+4.7.6 
+Exporting Path Profile Data .........................................................................................................47 
+4.7.7 
+Showing Path Profiles on Maps and 3D View 
+.............................................................................48 
+4.7.8 
+Moving Path Profiles ...................................................................................................................48 
+4.8 
+Using Terrain Data 
+.........................................................................................................................49 
+4.9 
+Showing Terrain Data 
+....................................................................................................................49 
+5 
+CLUTTER LOSS MODELLING ................................................................... 
+50 
+5.1 
+Introduction ....................................................................................................................................50 
+5.2 
+Clutter Features in Visualyse Professional...................................................................................51 
+5.2.1 
+Land Use Database Interface .......................................................................................................51 
+5.2.2 
+Land Use Region 
+..........................................................................................................................51 
+5.2.3 
+Propagation Models .....................................................................................................................52 
+5.2.4 
+Watch Window ............................................................................................................................52 
+5.2.5 
+Maps and 3D View ......................................................................................................................52 
+5.3 
+Land Use Database Interface ........................................................................................................52 
+5.3.1 
+Interface Management..................................................................................................................52 
+5.3.2 
+Adding a source of Land Use Data ..............................................................................................53 
+5.3.3 
+Deleting Source of Land Use Data 
+...............................................................................................54 
+5.3.4 
+Edit Source of Land Use Data 
+......................................................................................................55 
+5.3.5 
+Configuration of Land Use Data ..................................................................................................55 
+5.4 
+Land Use Regions ...........................................................................................................................56 
+5.4.1 
+Selecting Land Use Regions ........................................................................................................56 
+5.4.2 
+Interactive Creation of Land Use Regions ...................................................................................56 
+5.4.3 
+Land Use Region Manager ..........................................................................................................56 
+5.5 
+Using Land Use Data 
+......................................................................................................................58 
+5.6 
+Showing Land Use Data 
+.................................................................................................................61 
+6 
+TRAFFIC MODULE ..................................................................................... 
+63 
+6.1 
+Overview .........................................................................................................................................63 
+6.1.1 
+Introduction 
+..................................................................................................................................63 
+6.1.2 
+What is traffic? 
+.............................................................................................................................63 
+6.1.3 
+Modelling Link Activity ..............................................................................................................63 
+6.1.4 
+Traffic Objects and Load Links ...................................................................................................64 
+6.2 
+Traffic Objects 
+................................................................................................................................64 
+6.2.1 
+Managing Traffic Objects ............................................................................................................64 
+6.2.2 
+Traffic Method On .......................................................................................................................65 
+6.2.3 
+Traffic Method State Machine .....................................................................................................66 
+6.2.4 
+Traffic Method TDD 
+....................................................................................................................68 
+6.2.5 
+Traffic Method Trigger Level ......................................................................................................70 
+6.2.6 
+Exclusion Zones 
+...........................................................................................................................76 
+6.2.7 
+Associating Traffic Objects with Links .......................................................................................77 
+6.3 
+Load Links ......................................................................................................................................77 
+6.3.1 
+Overview 
+......................................................................................................................................77 
+6.3.2 
+Example of Traffic Loading 
+.........................................................................................................78 
+6.3.3 
+Managing Load Link Objects ......................................................................................................80 
+6.3.4 
+Traffic Loading ............................................................................................................................82 
+6.3.5 
+Using Traffic Load 
+.......................................................................................................................85 
+Modules User Guide 
+ 
+Page 5 
+ 
+ 
+ 
+6.3.6 
+The Effect of Load on a Signal ....................................................................................................87 
+6.3.7 
+Loading Multiple Beams 
+..............................................................................................................93 
+6.3.8 
+Load Links on Watch Windows 
+...................................................................................................97 
+6.3.9 
+Load Links Tutorial .....................................................................................................................98 
+7 
+ACRONYMS AND ABBREVIATIONS ....................................................... 
+108 
+ 
+Modules User Guide 
+ 
+Page 6 
+ 
+ 
+ 
+1 
+Introduction 
+This document is the Modules User Guide for Visualyse Professional Version 7.  
+Visualyse Professional Version 7 can be enhanced by one or more of the 
+following modules, namely: 
+• 
+Define Variable Module, including Monte Carlo analysis in section 2 
+• 
+ITU Digitised World Map (IDWM) Module in section 3 
+• 
+Terrain Module including clutter calculations using land use data in 
+sections 4 and 5 
+• 
+Traffic Module in section 6 
+This Modules User Guide is to be read in conjunction with the following other 
+documents, namely: 
+• 
+User Guide: this describes how to use the core Visualyse Professional 
+product 
+• 
+Technical Annex: gives information about the calculations undertaken by 
+Visualyse Professional  
+• 
+Tutorial Document: this gives a walk-through of the steps required to 
+create an example simulation 
+• 
+Maintenance Document: this gives information on changes released 
+under the Annual Maintenance and Support (AMS) service 
+• 
+Demonstration Files Document: this describes the example files shipped 
+with Visualyse Professional version 7 and gives an indication of the types 
+of simulations it can model 
+ 
+ 
+ 
+Modules User Guide 
+ 
+Page 7 
+ 
+ 
+ 
+2 
+Define Variable 
+2.1 Introduction 
+The Define Variable Module allows you to vary the value of any input parameter 
+of any object during a simulation run. The value can be randomised, taken from 
+a sequence or offset from another object attribute. In addition there are tools to 
+Monte Carlo satellites within a non-GSO constellation and mobile stations within 
+a cell. 
+Under normal circumstances the value of an object attribute is either fixed for 
+the duration of a run or it is changed internally by the simulation. The Define 
+Variable Module gives you the ability to change or control an attribute’s value as 
+a run progresses. 
+Within Visualyse Professional this is done by a “Variable Definition”, of which 
+there are six types: 
+1. 
+Monte Carlo: a simulation variable is set by randomly sampling values 
+from a number of distributions including Rayleigh, normal, and log 
+normal 
+2. 
+Offset: a simulation variable is set based upon another simulation 
+variable’s value offset by a fixed amount or ratio 
+3. 
+Event table: the variable is set at each time step using interpolation 
+between points of a table of (value, time) 
+4. 
+Sequence: the variables value for each time step is set explicitly 
+5. 
+Monte Carlo Constellation: the position of all the satellites within a non-
+GSO constellation are randomised while maintaining their relative 
+positions 
+6. 
+Monte Carlo Mobiles: the positions of mobile stations is randomised 
+within a cell around a base station that can be a circle, square or 
+hexagon 
+2.2 Managing Variable Definitions 
+Variable Definition objects are part of the simulation, stored in the .sim file, and 
+managed via a list where they can be created, deleted, duplicated, and modified. 
+The Variable Definition list can be accessed via the “Model” menu option 
+“Variable Definition” or by the toolbar icon: 
+ 
+Selecting either of these will open the Variable Definition list, as shown below. 
+Modules User Guide 
+ 
+Page 8 
+ 
+ 
+ 
+ 
+From this list, you can add a new Variable Definition, edit or duplicate an 
+existing one or delete one from the list. 
+If you select add you will be prompted to select the appropriate type of Variable 
+Definition with following dialog: 
+ 
+Modules User Guide 
+ 
+Page 9 
+ 
+ 
+ 
+2.3 Variable Selection 
+A key stage in the first four types of Variable Definition is to select the variable 
+that must be modified. This is done using a tree-like selection dialog as in the 
+figure below: 
+ 
+The tree will show all objects within the simulation and their attributes – in this 
+case the simulation shows the aircraft’s position attributes of latitude, longitude 
+and height. 
+The tree is worth exploring as it’s quite extensive – in particular the variables 
+under the link objects. 
+For the Monte Carlo, Event List and Sequence Define Variables it is also 
+possible to select all the variables within a group. For example, rather than 
+randomizing the pointing of the antenna of one station, the azimuths of all the 
+antennas in a group of stations can be randomized. This is available for station 
+groups and link groups as the option [all station objects] or [all link objects] as in 
+the figure below: 
+ 
+Note that this requires that all stations in the group contain the same set of 
+internal objects and variables. For example, all stations in a group should use 
+the same names for their antennas. 
+2.4 Variable Definitions 
+2.4.1 Monte Carlo Variable 
+The value of an object attribute can be changed by randomly sampling from a 
+distribution. This process facilitates the Monte Carlo method of simulation. 
+Sampling is repeated for a number of trials, and the outcomes are tallied in 
+some way to produce the final result. 
+An example of the Monte Carlo dialog is shown below where the transmit 
+frequency of a link has been randomised to be 800 MHz +/- 10 MHz: 
+Modules User Guide 
+ 
+Page 10 
+ 
+ 
+ 
+ 
+The key stages are: 
+1. 
+Select the parameter to vary 
+2. 
+Select the distribution type as one of: Linear, Triangular, Normal, 
+Poisson, Log Normal, Erlang, Exponential, Gamma, Rayleigh and 
+Table. 
+3. 
+Configure the distribution  
+The configuration options will depend upon the distribution type selected. For 
+Erlang distributions, you need to specify a mean and k value and for Gamma 
+distributions, alpha and beta will be required. 
+For Table distributions, click “Edit…”. In the Table Size box, type the number of 
+table entries, and then fill out the table with values and associated probabilities. 
+They can also be pasted in – for example from applications such as Microsoft 
+Excel. When you have finished, click OK. 
+For all other distribution types, type a mean and variance in the Mean and 
+Variance boxes. 
+An example of use of the Monte Carlo Define Variable can be found in the 
+example file “AMT vs. Globalstar.SIM” in the “Aeronautical” directory. 
+2.4.2 Offset Variable 
+You can vary an object attribute in relation to another object attribute. The target 
+attribute can either be 
+• 
+A fixed offset from the source attribute  
+• 
+A multiple of the source attribute. 
+The offset dialog is shown below. 
+Modules User Guide 
+ 
+Page 11 
+ 
+ 
+ 
+ 
+The key stages are: 
+1. 
+Select the parameter to vary 
+2. 
+Select the method as either “offset from” or “multiple of” 
+3. 
+Select the parameter to base the calculation on 
+4. 
+Select the offset amount 
+The dialog in the figure above comes from the example file “WiFi and BT.SIM” in 
+the “Short Range” directory. It shows how the Offset from Variable Definition can 
+be used to have two Bluetooth devices at a random location but always paired 
+together with the same separation distance. 
+2.4.3 Event List Variable 
+An attribute can be made to change at or in between a specified set of 
+simulation times. This is known as varying an object attribute by events. 
+The dialog is shown in the figure below: 
+Modules User Guide 
+ 
+Page 12 
+ 
+ 
+ 
+ 
+The key stages are: 
+1. 
+Select the parameter to vary 
+2. 
+Enter a table of (time, value) pairs 
+3. 
+Select what interpolation method to use at times between points in the 
+table. 
+4. 
+Select what to do when reach the last time in the table as either “Start 
+Again” or “Use last value” 
+The table is entered using the standard Visualyse Professional table as in the 
+figure below. 
+Modules User Guide 
+ 
+Page 13 
+ 
+ 
+ 
+ 
+It contains a set of pairs of (time, variable), where time is in seconds since the 
+simulation start and variable is in its own units. A field at the top can be used to 
+change the table size. Note this format allows entries to be easily pasted if 
+created in applications such as Microsoft Excel. 
+Each event defines a value for the attribute at a point in time. What you need to 
+decide now is how to determine the value of the attribute for times not specified 
+in the event table. This process is known as interpolation and the method is 
+selected using the Interpolation list on the Define Event Variable dialog. 
+Visualyse Professional provides the following interpolation methods: 
+• 
+Linear: this is standard linear interpolation. If the required value does not 
+lie in between two entries in the table, the value for the nearest entry is 
+used. 
+• 
+Linear Extrapolate: this is the same as Linear, except that when the 
+required value does not lie in between two entries in the table, 
+extrapolation outside the bounds of the table is allowed. 
+• 
+Linear Check Equal: this is the same as Linear. However, if the required 
+value falls between two entries which have the same value then the two 
+previous and two following entries are used to generate two lines which 
+are then used to determine the required value. 
+• 
+Linear Check Equal Extrapolate: this is a combination of Linear Check 
+Equal and Linear Extrapolate. 
+• 
+Polynomial: a polynomial is computed from the entries in the table. The 
+interpolated value is then calculated from the polynomial. 
+Modules User Guide 
+ 
+Page 14 
+ 
+ 
+ 
+• 
+Cubic Spline: a cubic spline is computed from the entries in the table 
+and the interpolated value is calculated from this. 
+• 
+Largest: when the required value falls between two entries, then the 
+largest value of the two entries is used. 
+• 
+Smallest: when the required value falls between two entries, then the 
+smallest value of the two entries is used. 
+If you want the attribute to change only when an event occurs, choose Largest 
+or Smallest. However, if you want the attribute to change steadily from the value 
+at one event to the value at another event, choose one of the other interpolation 
+methods. 
+The dialog in the figure above comes from the example file “Aircraft with preset 
+track across US and interference from FS.SIM” in the “Aeronautical” directory. It 
+shows how the (latitude, longitude, height) of the aircraft is set via three Define 
+Variables, with way points marking airports and the aircraft flying in a straight 
+line between them. 
+In examples like this there should be consistency between the (time, latitude) 
+and (time, longitude) arrays to ensure the aircraft speed is constant. This can be 
+achieved using Microsoft Excel to calculate what would be appropriate values to 
+use at each way point. 
+2.4.4 Sequence Variable 
+An attribute can be made to change at every time step, using a sequence of 
+values. This could be because the value has been derived external to Visualyse 
+Professional using another tool or even could be measured data. 
+The dialog is shown in the figure below: 
+ 
+The key stages are: 
+1. 
+Select the parameter to vary 
+Modules User Guide 
+ 
+Page 15 
+ 
+ 
+ 
+2. 
+Enter a table values to use at each time step 
+3. 
+Select what to do when reach the last time in the table as either “Start 
+Again” or “Use last value” 
+The table is entered using the standard Visualyse Professional table as in the 
+figure below. 
+ 
+Note this format allows entries to be easily pasted if created in applications such 
+as Microsoft Excel. 
+2.4.5 Monte Carlo Constellation 
+Visualyse also provides a special Define Variable object that randomly positions 
+a single satellite or all satellites in a constellation while maintaining consistency 
+of their relative positions.  
+The figure below gives an example with a 10 satellite constellation at two time 
+samples: the relative positions are the same but the constellation’s start point 
+has been randomised. 
+Modules User Guide 
+ 
+Page 16 
+ 
+ 
+ 
+ 
+ 
+The Monte Carlo methodology is one of two methods that can be used to model 
+non-GSO constellations within Visualyse Professional: 
+1. 
+Dynamic simulation: the position of the satellites is specified for each 
+time step using orbit predictions based upon start time or epoch time 
+orbit parameters and time from that reference moment. 
+2. 
+Monte Carlo simulation: the position of the satellites is randomised over 
+the whole potential orbit sphere. 
+The benefits and disadvantages are shown in the table below. 
+Modules User Guide 
+ 
+Page 17 
+ 
+ 
+ 
+Simulation Method 
+Advantages 
+Disadvantages 
+Dynamic 
+Intuitive as can see 
+movement of the satellites 
+Can generate statistics of 
+interference event duration 
+and probabilities 
+Statistics are only valid if 
+run for the appropriate time 
+Can be difficult to work out 
+what the appropriate time 
+is 
+The appropriate time can 
+involve a large number of 
+time steps 
+Monte Carlo 
+Statistics can be checked 
+for validity as they are 
+generated 
+Statistics for medium 
+percentages of time can 
+be quickly generated 
+Do not get event length 
+information 
+Less intuitive 
+The problem with calculation of run time for dynamic simulations is to ensure 
+that all points on the orbit sphere have been filled to an equal number of times. If 
+a constellation is drifting slowly round the equator then it is necessary to work 
+out exactly how long this will take and stop precisely when it has achieved an 
+integer number of repeats.  
+These calculations can be done (see Recommendation ITU-R S.1503 for 
+details) but can become complex. Monte Carlo simulations avoid this as the 
+sampling method means the statistic’s validity can be assured to a percentage 
+of time that depends only on the number of samples. 
+Note it should only be used for circular orbit non-repeating ground track 
+constellations. This is because the Monte Carlo Constellation Define Variable 
+will randomly locate the longitude of ascending node and true anomaly with 
+equal likelihood for all values. For repeating ground track networks, including 
+HEO constellations, this is not the case as the satellite orbits are tuned for 
+specific values to control where the satellites are located. 
+The Define Monte Carlo Constellation dialog is shown below: 
+ 
+The options are: 
+• 
+Select a constellation from the list of currently defined groups 
+• 
+Reset the selected constellation: you will receive a prompt as in the 
+figure below: 
+Modules User Guide 
+ 
+Page 18 
+ 
+ 
+ 
+ 
+It is also possible to go to the station group list to create or edit a constellation. 
+Note the group can contain a single satellite. 
+2.4.6 Monte Carlo Mobiles 
+Visualyse also provides a special Define Variable object that randomly positions 
+mobiles within the cell of a base station. 
+The Monte Carlo variable option can be used to randomise the latitude and 
+longitude of a mobile. However this has to be configured for each station both 
+coordinates and is by nature limited to rectangular cells. 
+To simplify the process the Monte Carlo Mobiles option undertakes all the steps 
+necessary to randomise the location of a mobile within a cell, and can model a 
+variety of shapes and locations of the base station (or reference station, as 
+required), as in the figure below where the red dot indicates possible locations of 
+the BS: 
+Modules User Guide 
+ 
+Page 19 
+ 
+ 
+ 
+Radius
+Radius
+Radius
+Radius
+Width
+Length
+Azimuth
+Azimuth
+Azimuth
+Azimuth
+Azimuth
+Circle
+Hexagon Point
+or Segment
+Hexagon Flat
+Square
+Rectangle
+Radius
+Azimuth
+Diamond
+Radius
+(Azimuth has no impact)
+Inner 
+radius
+Doughnut
+Non-uniform
+Azimuth
+Radius
+Azimuth
+Circle 
+Segment
+Radius
+Azimuth
+Circle 
+Quadrant
+ 
+Modules User Guide 
+ 
+Page 20 
+ 
+ 
+ 
+ 
+The location of the mobile user is assumed to be equally likely at all points within 
+the cell. 
+The cell shapes available are: 
+• 
+Circle, with reference station (RS) at the centre or edge 
+• 
+Quadrant of circle (a quarter) with RS at the circle centre 
+• 
+Segment of circle (a third) with RS at the circle centre 
+• 
+Doughnut defined via inner and outer radius 
+• 
+Hexagon with point in the direction of azimuth with RS at centre or edge 
+• 
+Segment of hexagon (a third) with point in the direction of azimuth with 
+RS at hexagon centre 
+• 
+Hexagon with flat side in the direction of azimuth with RS at centre or 
+edge 
+• 
+Square with flat side in the direction of azimuth with RS at centre or edge 
+• 
+Diamond with point in the direction of azimuth with RS at centre or edge 
+• 
+Rectangle with flat side in the direction of azimuth with RS at centre or 
+edge 
+• 
+Non-uniform, using the deployment distributions agreed at TG 5-1 
+The shape can then be rotated around the reference station to the required 
+orientation. 
+The configuration dialog is shown below: 
+Modules User Guide 
+ 
+Page 21 
+ 
+ 
+ 
+ 
+The key stages are: 
+1. 
+Select the mobile or mobiles to randomise. This can be all those 
+stations within a group or just a single station. Note in the former case 
+you can add and remove stations from the group at any stage but the 
+group must exist at the time of creating the Monte Carlo Mobiles 
+2. 
+Select the reference station of the cell: note this must also already exist 
+when creating the Monte Carlo Mobiles 
+3. 
+Select the shape from the list above 
+4. 
+Select the radius of the cell in km (see figure above for definition of 
+radius) or, for the rectangle, the width and length in km. Note that the 
+non-uniform deployment uses the parameters agreed at the ITU so it is 
+necessary to select the environment rather than distances. 
+5. 
+Select, where applicable, whether the reference station is at the edge or 
+centre of the shape 
+6. 
+If required, select additional parameters (Minimum distance and Land 
+Only) as described below. 
+7. 
+Select the azimuth from the reference station to the shape. This can be 
+randomised in which case the antenna of the reference station will also 
+be randomised to ensure the antenna pointing and sector azimuths 
+align. Note only the first antenna of the reference station will be 
+randomised. 
+Modules User Guide 
+ 
+Page 22 
+ 
+ 
+ 
+The result is a cell with cells distributed at random with different locations at each 
+time step, as in the figures below. 
+ 
+ 
+Additional options can be used to: 
+• 
+Enforce a minimum distance between stations, in which case the 
+minimum distance should be entered. For example, if a random 
+deployment of BS is generated, it might be that there should be a 
+minimum separation distance of 100m. Note that Visualyse will make a 
+maximum of 10 attempts to select a location that has the minimum 
+separation distance 
+• 
+Ensure that the random locations are located on land not sea.  
+An example of these two options being enabled can be seen in the figures 
+below, with the figure to the left neither option being active, while the figure to 
+the right both are active so that the UEs are deployed on land with at least 100m 
+apart. 
+ 
+ 
+Modules User Guide 
+ 
+Page 23 
+ 
+ 
+ 
+ 
+2.5 Define Variable Tips 
+Two tips for using Define Variables within simulations. 
+Tip 1: Create Define Variables before Duplicating Stations and Links 
+If you have a define variable of a station object or a link object and you duplicate 
+it, Visualyse Professional will also duplicate the associated Variable Definitions.  
+Hence you can reduce the work required to define a simulation by creating the 
+Define Variables for one particular station or link before duplicating it. 
+Tip 2: Using Define Variable to set Propagation Parameters 
+The propagation environments are not available on the tree of Visualyse 
+Professional objects that is used to select a variable to modify. However the 
+propagation models within each link are available. Hence if you want to use 
+Define Variable on any propagation parameters you must select the link’s 
+advanced option “Override default propagation models” and configure them on a 
+link by link basis. 
+This can be very useful to: 
+• 
+To have extra control on how the percentage of time is set (for example 
+to force full correlation of propagation loss on interfering paths or 
+between wanted and interfering paths) 
+• 
+Define additional random losses – for example Rayleigh fading, indoor – 
+outdoor losses, or any other losses 
+ 
+Modules User Guide 
+ 
+Page 24 
+ 
+ 
+ 
+3 
+IDWM 
+3.1 Introduction 
+The IDWM module allows you to use data from the ITU Digitized World Map in 
+your propagation models. This includes information such as distance to coast, 
+path over water and radio climatic data. 
+Visualyse Professional includes implementations of Recommendation ITU-R 
+P.452, Recommendation ITU-R P.1546, Recommendation ITU-R P.1812, 
+Recommendation ITU-R P.2001, and Appendix S.7, all of which use information 
+that can be extracted from the IDWM. 
+The IDWM database can also be used in your own programs. Full 
+documentation as provided by the ITU is included in electronic format.  
+This section describes how information from the IDWM can be used in Visualyse 
+Professional propagation models.  
+3.2 Using IDWM 
+3.2.1 Recommendation ITU-R P.452 
+The propagation model in Recommendation ITU-R P.452 is very flexible and 
+can be used for most scenarios where it is necessary to calculate interference 
+between terrestrial stations. 
+A key parameter of the model is how much of the path is over water, how much 
+over coastal areas, and how much over land. This can be entered by hand if 
+known, but where it is not these can be extracted from IDWM, as in the figure 
+below. 
+ 
+Modules User Guide 
+ 
+Page 25 
+ 
+ 
+ 
+3.2.2 Recommendation ITU-R P.1546 
+The propagation model in Recommendation ITU-R P.1546 is very powerful and 
+is the basis of broadcasting networks planning. As with Recommendation P.452, 
+a key parameter of the model is how much of the path is over water. This can be 
+entered by hand if known, but where it is not these can be extracted from IDWM, 
+as in the figure below. 
+ 
+3.2.3 Recommendation ITU-R P.1812 
+The propagation model in Recommendation ITU-R P.1812 combines aspects of 
+Recs ITU-R P.452 and P.1546, in that it: 
+• 
+Undertakes path specific analysis using a terrain database in a similar 
+way to Rec. ITU-R P.452 
+• 
+Includes a location dependent clutter model similar to that in Rec. ITU-R 
+P.1546 
+Modules User Guide 
+ 
+Page 26 
+ 
+ 
+ 
+ 
+The path analysis part can use IDWM, in a similar way to the Rec. ITU-R P.452. 
+3.2.4 Recommendation ITU-R P.2001 
+This Recommendation has similarities with both P.452 and P.1812 in its 
+handling of terrain paths but extends both to cover the full range of percentage 
+of times [0.00001% to 99.99999%]. 
+Modules User Guide 
+ 
+Page 27 
+ 
+ 
+ 
+ 
+The path analysis part can use IDWM, in a similar way to the Rec. ITU-R P.452. 
+3.2.5 Appendix S.7 
+The propagation model in Appendix S.7 of the Radio Regulations can be used to 
+calculate whether coordination is required between stations of the fixed service 
+and satellite earth stations. 
+This model uses parameters that are within IDWM including: 
+Mode 1 propagation: Zone (A, B or C) 
+Mode 2 propagation: Rain rate, rain cell size, water vapour density 
+If you select these propagation models and you have the IDWM module you 
+have the option for these parameters to be extracted automatically and hence 
+they can vary depending upon location. 
+The configuration dialogs are shown below. 
+Modules User Guide 
+ 
+Page 28 
+ 
+ 
+ 
+ 
+ 
+The Appendix S7 Combined model uses all the parameters, as in the figure 
+below. 
+ 
+ 
+ 
+Modules User Guide 
+ 
+Page 29 
+ 
+ 
+ 
+4 
+Terrain Module 
+The Terrain Module includes the ability to model the effects of irregular terrain 
+and also the impact of clutter via a land-use database. This section discusses 
+terrain modelling, and the next section clutter modelling, but both are part of the 
+Terrain Module. 
+4.1 Introduction 
+One of the factors that can influence the strength of a received signal, whether 
+wanted or interfering, is the terrain between the transmitter and the receiver. For 
+example consider the scenario in the figure below. 
+Base station
+Line of sight receiver
+Non line of sight 
+receiver
+ 
+The base station is transmitting to two mobiles: the red one is in line of sight but 
+the blue one is on the other side of a hill and so the signal will be reduced or 
+attenuated due to diffraction loss. 
+In this and other similar scenarios, the signal received depends upon the terrain 
+characteristics along the path from the transmitter. 
+In Visualyse Professional Version 7, terrain modelling can be included via: 
+1) The ability to read a database that contains spot heights on a grid of points, 
+the terrain database  
+2) Extraction from this database of path profiles – a series of spot heights that 
+describes a slice through the terrain between a transmitter and receiver 
+3) Propagation models that use the path profile to calculate path loss between 
+the transmitter and the receiver 
+The result of using terrain is a more realistic modelling, where the coverage of a 
+transmitter takes accounts of the hills and plains, as in the figure below. 
+Modules User Guide 
+ 
+Page 30 
+ 
+ 
+ 
+ 
+This example shows coverage of a base station in a coastal region with green 
+the strongest signal, yellow medium and red the weakest. The signal can be 
+seen to propagate out to sea best, less well along the coastline and is stopped 
+by the hills inland. The terrain has been colour coded grey for low areas and 
+brown for high areas. On the right are two windows showing path profiles 
+through the terrain: the upper one is mostly flat and along the coast while the 
+lower is into the hills. 
+The impact can also be seen by viewing the same coverage prediction exported 
+to Google Earth (as described in the main User Guide), as in the figure below. 
+ 
+Modules User Guide 
+ 
+Page 31 
+ 
+ 
+ 
+4.2 Terrain Features in Visualyse Professional 
+To include terrain modelling in Visualyse Professional you need to be aware of 
+all the various components and where they can be found on the menus. This 
+section gives an overview of all terrain related features in Visualyse 
+Professional. 
+4.2.1 Terrain Database Interface 
+The starting point for using terrain is to configure the interface from Visualyse 
+Professional to one or more sources of terrain data. This can be found on the 
+“File” menu under “Terrain Settings” and is described in more detail in section 
+4.4. 
+4.2.2 Loading Terrain Regions 
+When Visualyse Professional has been configured to interface to one or more 
+topographic databases, it must then be told whether to load the data and over 
+what geographic area – what we call a Terrain Region.  
+This can be done by one of the following ways: 
+• 
+Selecting “New Terrain Region” from the “Terrain Menu” and then 
+interactively using the mouse to identify the area required 
+• 
+Opening up the Terrain Region Manager, also on the “Terrain Menu” and 
+then explicitly defining the new region of interest 
+• 
+Selecting the toolbar cursor option “New Terrain Region” and then 
+interactively using the mouse to identify the area required 
+More information is given in section 4.5. 
+4.2.3 Propagation Models 
+With terrain data loaded it can be used within link calculations via the 
+propagation model, either selected via one of the propagation environments or 
+via a link specific propagation model. The heights and path profiles can be used 
+within the following models: 
+• 
+Recommendation ITU-R P.452 
+• 
+Recommendation ITU-R P.526 
+• 
+Recommendation ITU-R P.1546 
+• 
+Recommendation ITU-R P.1812 
+• 
+Recommendation ITU-R P.2001 
+• 
+Longley-Rice 
+More information on the use of terrain within propagation model is given in 
+section 4.8. 
+4.2.4 Path Profiles 
+A key parameter in the calculation of propagation loss due to terrain is the path 
+profile resolution. The value used in the current simulation can be found under 
+the “Terrain” menu option “Path profile settings…” while the default values to 
+use for new simulations can be set via the “File” menu option “Terrain 
+settings…” More information on path profile settings is given in section 4.4.6. 
+Modules User Guide 
+ 
+Page 32 
+ 
+ 
+ 
+Path profiles can also be displayed on a special view and configured to select 
+the path of interest. More information on the path profile window is given in 
+section 4.7. 
+4.2.5 Watch Window 
+The resulting path loss calculated using the propagation model and the terrain 
+data can be seen in the watch window along with the other propagation loss 
+fields and will be included in the received signal strength calculation (whether 
+wanted or interfering). 
+4.2.6 Maps and 3D View 
+The terrain data can be displayed graphically on the Plate Carree and Mercator 
+maps, and also on the 3D View. A translation between spot heights and colours 
+can be created and so the terrain shown as one of the overlays found under the 
+View Properties dialog. The terrain data overlay can be configured like any of 
+the other overlays, including: 
+• 
+Changing display order 
+• 
+Changing transparency level 
+• 
+Changing tint colour 
+The colour to use for terrain data for the current simulation is set via the 
+“Terrain” menu option “Terrain Colours….”, while the default colours to use can 
+be set via the “File” menu option “Terrain settings” option. 
+More information is given in section 4.9. 
+4.3 Availability and Types of Terrain Data 
+A number of sources of terrain data are available and they can have significantly 
+different characteristics. These are arranged in a grid of spot heights, where the 
+grid can be aligned with lines of latitude and longitude, or with a local reference 
+frame, such as in the UK the National Grid. 
+The first and most important characteristic is the resolution of the terrain data. 
+This is the spacing between the spot heights and the higher the resolution (i.e. 
+the smaller the distance between samples) the better. 
+For example consider the following two figures which show the topography 
+around London using different resolution terrain databases. For comparison with 
+later figures, the circle shows the location of London’s Docklands and the grid 
+lines are spaced every 10km. In addition all use the same colour scheme. 
+GTOPO30: a 30 arc second i.e. 900m terrain database: 
+Modules User Guide 
+ 
+Page 33 
+ 
+ 
+ 
+ 
+Ordnance Survey terrain data, sampled every 50m: 
+ 
+It can be seen that the latter is much higher resolution and would give much 
+more accurate predictions!  
+However the higher resolution data also requires significantly greater memory 
+and so for analysis over large areas it can be better to use the lower resolution 
+data, or to use high resolution data only for around the transmit and receive 
+sites. 
+Another difference to be aware of is between terrain and surface data. The 
+figure below uses a surface database taken by radar measurements from a 
+Space Shuttle mission. It contains measurements of where the radar waves are 
+reflected, which could be terrain but also be from structures like buildings sitting 
+on the terrain. This data is freely available and can be downloaded from various 
+websites. 
+Modules User Guide 
+ 
+Page 34 
+ 
+ 
+ 
+SRTM Surface Database, sampled every 3 arc seconds i.e. 90m: 
+ 
+Additional features can be seen which include roads, railways, and buildings. 
+The circled feature is the Docklands development to the east of London. It can 
+be seen that there are structures in white, which are the large office towers, 
+which are not shown in the previous OS database, which excludes surface 
+objects like buildings. 
+Using surface data can improve the accuracy of predictions as the radio waves 
+will actually propagate over the surface rather than the terrain. However to 
+significantly improve accuracy this can require much higher resolution – such as 
+use of LIDAR whereby surface data with resolutions of under 5m can be 
+generated. 
+Note that use of a clutter database (as discussed in the following section) should 
+be combined with a terrain but not a surface database. This is to avoid the 
+double counting that can come from modelling the additional loss due to 
+buildings twice. 
+A final point to be aware of is that different terrain databases can use different 
+Earth geoids and the locations (latitude, longitudes) of stations entered should 
+be consistent with the reference frame used for terrain data. 
+4.4 Terrain Database Interface 
+4.4.1 Interface Management 
+The first step to using terrain data in Visualyse Professional Version 7 is to 
+configure the interfaces to the sources of data. This is a “Visualyse” level 
+operation in that the changes you make here will impact all simulations you 
+open on that PC. 
+The interface will depend upon the terrain database available to you and 
+provided by us. At the time of writing the following interfaces were shipped by 
+default: 
+Modules User Guide 
+ 
+Page 35 
+ 
+ 
+ 
+• 
+General Import – uses file format as described in the Technical Annex, 
+so if you can convert your data into this format it can be read into 
+Visualyse Professional 
+• 
+USGS GLOBE DEM – 30 arc second (about 900m) global for all latitudes 
+• 
+USGS GTOPO 30 – 30 arc second (about 900m) global for all latitudes 
+• 
+USGS SRTM Level 1 – 3 arc second (about 90m) global land masses 
+below 60 degrees in latitude 
+• 
+USGS SRTM Level 3 – 1 arc second (about 30m) for the United States 
+of America for latitudes below 60° North 
+• 
+Transfinite processed SRTM – as SRTM level 1 but processed to take 
+account of land / sea boundaries 
+• 
+SRTM .HGT format data. Full details can be found here: 
+http://www.transfinite.com/content/SRTM_HGT_Format_Terrain.html 
+• 
+ASTER GDEM (30m) format terrain data. Full details can be found here: 
+http://www.transfinite.com/content/ASTER_GDEM_Format_Terrain.html 
+• 
+ASTER2 GDEM (30m) format terrain data. Full details can be found 
+here: 
+http://www.transfinite.com/content/ASTER2_GDEM_Format_Terrain.html 
+• 
+Ordnance Survey public domain Landform Panorama 50m terrain 
+database. Please contact Transfinite Systems for further details. 
+• 
+National Elevation Dataset (NED) GeoTIFF 1, 1/3, 1/9 arc second data 
+that is downloadable from: 
+http://seamless.usgs.gov/ 
+Note that data in this format is loaded first adding the “NED GeoTIFF” 
+database in “Terrain Settings” then opening “Terrain Manager”, selecting 
+“Load Region”, choosing “NED GeoTIFF” from the file type and then 
+selecting an appropriate GeoTIFF file. This terrain format does not 
+support the click-drag terrain interface. 
+• 
+Transfinite processed SRTM V2.1. Full details can be found here: 
+http://www.transfinite.com/content/SRTM_V2_1_FormatTerrain.html 
+• 
+Transfinite processed SRTM V3. Full details can be found here: 
+http://www.transfinite.com/content/SRTM_V3_FormatTerrain.html 
+ 
+If you have a specific requirement to interface to an additional database, please 
+do not hesitate to contact us.  
+The “File” menu option “Terrain Settings…” opens the following dialog: 
+Modules User Guide 
+ 
+Page 36 
+ 
+ 
+ 
+ 
+This dialog can be used to: 
+• 
+Add an interface to a new source of terrain data 
+• 
+Delete an existing interface to terrain data 
+• 
+Edit an existing interface to terrain data 
+• 
+Set the default path profile settings to use when opening a new 
+simulation 
+• 
+Set the default terrain colours to use when opening a new simulation 
+These are discussed in more detail in the sections below. 
+4.4.2 Adding a Terrain Database Interface 
+If you click on the “Add Database …” button a list of available terrain database 
+interfaces will be shown, as in the figure below. 
+Modules User Guide 
+ 
+Page 37 
+ 
+ 
+ 
+ 
+After selecting the interface you want to create you will be prompted for 
+configuration options, such as name to call this source of data (as in the figure 
+below) and any other parameters such as directories where data can be found. 
+The terrain database interface will then be added to the list of those available. 
+4.4.3 Deleting a Terrain Database Interface 
+To delete a terrain database interface (for example because you now have 
+access to higher resolution data), select the terrain data source from the list and 
+click on the “Delete Database…” button.  
+A dialog will ask you to confirm, as shown below. 
+ 
+Modules User Guide 
+ 
+Page 38 
+ 
+ 
+ 
+Note deleting a terrain database interface will also impact on your ability to load 
+files that referred to that source of terrain data and that any configuration options 
+would have to be re-set. 
+4.4.4 Edit a Terrain Database Interface 
+This option allows you to rename a terrain database interface and / or alter the 
+directory identifying where the data is stored. 
+4.4.5 Ordering Terrain Databases 
+The list of terrain database interfaces can be ordered by selecting one and 
+clicking on the move up or move down arrows. For example in the example 
+below the TSL SWBD Merged SRTM-3 is initially below the USGS GTOP30 
+DEM.  
+ 
+By selecting it and clicking the up arrow the order of terrain databases can be 
+changed so that it is above, as in the figure below. 
+ 
+Visualyse Professional uses the order of databases here when there are two 
+terrain regions covering the same location to determine which it should use. For 
+example you might want very high resolution terrain data in the vicinity of the 
+transmitter / receiver, but it would require excessive memory to continue with the 
+same resolution all along the path.  
+An example can be seen in the figure below where a high resolution terrain 
+region is overlaid on top of a larger low resolution terrain region. The path profile 
+Modules User Guide 
+ 
+Page 39 
+ 
+ 
+ 
+can be seen to be highly detailed at the start and be less detailed when it 
+crosses into the lower resolution area. 
+ 
+Tip:  This feature can be used to model locations in high detail to specify objects such 
+as buildings. A surface (i.e. terrain plus buildings) database can be created and 
+read into Visualyse Professional using the general terrain file format. 
+This can then be used within propagation models such as ITU-R Rec.P.452 – 
+see the example file “Urban GSO S-DARS Coverage.SIM” in the “Satellite 
+Terrestrial directory. 
+4.4.6 Changing the Path Profile Defaults 
+The path profile describes how the terrain varies along the great circle path 
+between any two points, as in the example below. 
+ 
+Modules User Guide 
+ 
+Page 40 
+ 
+ 
+ 
+The heights along the path profile are extracted from the terrain database using 
+bi-linear interpolation at equal spacings along the line using a parameter called 
+the path resolution, as shown in the figure below: 
+Equally spaced heights along path profile
+Start
+End
+Grid of terrain spot heights
+ 
+This value can make a significant difference to the results and so is set for each 
+simulation under the “Terrain” menu. In addition it is possible to set the default 
+value to use for all new simulation using the “Path Profile Defaults” option under 
+the “File” menu’s “Terrain Settings” dialog. 
+The dialog is shown in the figure below. 
+ 
+There are options to use a fixed path resolution or to use a fraction of the 
+highest / lowest terrain resolution. 
+4.4.7 Maximum Path Length 
+In addition it is possible to set the maximum path length: this is used in some of 
+the propagation models to define the point beyond which a constant should be 
+used, as the distance is so large that the signal strength will negligible. 
+Tip:  
+It is usually best to set the maximum distance to be a large number e.g. 1,000 
+km. 
+Modules User Guide 
+ 
+Page 41 
+ 
+ 
+ 
+This applies to the following propagation models: 
+• 
+Recommendations ITU-R P.452  
+• 
+Recommendations ITU-R P.526 (which also has a maximum path length) 
+• 
+Recommendations ITU-R P.1812 
+• 
+Recommendations ITU-R P.2001 
+• 
+Longley-Rice 
+4.4.8 Changing the Default Terrain Colours 
+This option allows you to set the default mapping to use between terrain heights 
+and colour to use on a map or 3D view when opening a new simulation. 
+ 
+Having opened a new simulation, the mapping between terrain heights and 
+colours is set and stored within that simulation and can be changed via the 
+“Terrain” menu. 
+To map between terrain heights and colours, you need to set a number of break 
+points where specific heights are mapped to specific colours. Between these 
+break points, the colours are spread out equally in height.  
+You can edit the height and colour by selecting each respectively. New entries in 
+the table can be created by clicking on “Add” and existing ones deleted by 
+selecting them and then clicking on “Delete”.  
+A preview is available to the left of the dialog, and colour schemes you are 
+happy with can be saved for use in other simulations to a Visualyse terrain 
+colour file with extension “vtc”. 
+4.5 Terrain Data Regions 
+4.5.1 Selecting Terrain Data Regions 
+Terrain databases can be extremely large and it would represent a significant 
+overhead to load the complete database. In addition there are times when you 
+want to calculate propagation loss without use of a terrain database – for 
+example when doing smooth Earth calculations. 
+Therefore it is necessary to specify on a simulation by simulation basis whether 
+you want to use terrain data and if so what geographic area should be loaded. 
+Modules User Guide 
+ 
+Page 42 
+ 
+ 
+ 
+This is then the “Terrain Region” and can be shown on the maps and 3D view 
+and also used within propagation calculations. 
+Terrain regions must come from just one of the terrain databases that have been 
+configured on that PC. The data in the region can come from multiple files within 
+the database, as in the figure below. 
+GTOPO 30 tile A
+GTOPO 30 tile B
+GTOPO 30 tile C
+GTOPO 30 tile D
+Terrain Region 
+used in simulation
+Extracted data 
+stored in .TRN file
+.TRN files located in
+“Program Files\Visualyse 7\Terrain”
+GTOPO30 tile files 
+stored on CD or local 
+hard disk
+ 
+In this case and also for raw SRTM data, a new .TRN file is generated that 
+contains the extracted terrain data needed for the simulation. This can be stored 
+and used direction in other simulations. 
+For other terrain interfaces, such as the converted SRTM data available from 
+Transfinite, the simulation simply stores references to the terrain data. This 
+means there is no need to save the extracted terrain data in a new file, which 
+saves both time and hard disk space. 
+Terrain regions can be created in one of two ways: 
+• 
+Using the mouse to select the area of interest as in the following section 
+• 
+Specifying the area explicitly using the Terrain Manager (see below) 
+4.5.2 Interactive Creation of Terrain Regions 
+You can select an area within which to load terrain data by selecting the “New 
+Terrain Region” icon on the tool bar 
+ and then using drag and drop to select 
+the region of interest on the map or 3D views.  
+This interactive tool can also be activated using the “Terrain” menu option “New 
+Terrain Region”. 
+If there are multiple data sources that have data for the region chosen, you must 
+select it from the list presented, as in the figure below. 
+Modules User Guide 
+ 
+Page 43 
+ 
+ 
+ 
+ 
+4.5.3 Terrain Region Manager 
+The Terrain Region Manager (below) can be used to create, edit, and delete 
+terrain regions. It can also be used to save and load terrain regions where 
+copyright permits. 
+ 
+The list on the left-hand side shows the currently loaded terrain regions in the 
+simulation and the data source used. If you select one, information about that 
+terrain region is shown at the bottom. 
+You can use the option “Create Region” to customise a terrain region, within 
+specific lat/long box or one that uses the minimum size region to enclose all 
+relevant stations. 
+The Create Region dialog is shown below: it can also use to modify an existing 
+terrain region. 
+Modules User Guide 
+ 
+Page 44 
+ 
+ 
+ 
+ 
+You can specify or change: 
+• 
+The name to use to display the terrain region 
+• 
+The maximum latitude of the terrain region 
+• 
+The minimum latitude of the terrain region 
+• 
+The maximum longitude of the terrain region 
+• 
+The minimum longitude of the terrain region 
+You can change the units to show or specify the regions extent in radians or 
+using degrees, minutes, seconds with format: 
+ 
+ 
+[N/S/E/W] DD:MM’SS.SS” 
+Another button can be used to create a terrain region that just covers the 
+locations of all the stations currently in the simulation. 
+If there are multiple terrain data sources that could be used to create that region 
+then you will be asked to select which one to use, as in the figure below. 
+ 
+4.6 Path Profiles Parameters and Terrain Colours 
+As described in section 4.4.6 and 4.4.8, the default path profile parameters and 
+terrain colours are set via the “File” menu option “Terrain settings…” Within each 
+simulation file you can have different parameters and colours and these can be 
+accessed by the “Terrain” menu options “Path Profile Settings…” and “Terrain 
+Colours…” respectively. 
+Modules User Guide 
+ 
+Page 45 
+ 
+ 
+ 
+4.7 Path Profiles 
+4.7.1 Path Profile View 
+An important use of terrain data is the ability to extract and process terrain spot 
+heights along the great circle line between a transmitter and receiver, whether 
+wanted or interfering. This line of spot heights is called the path profile, and can 
+be displayed using the path profile view, similar to that below: 
+ 
+This section describes how to create and configure path profiles views. 
+4.7.2 Creating Path Profiles 
+A new path profile view can be created using the toolbar by selecting the path 
+profile icon, 
+: 
+An alternative way to create a new path profile window is via the menu options, 
+as shown below. 
+ 
+These two options will create a new path profile view which can then be 
+configured to select the two points to use as the path profile start and end 
+points. 
+An alternative way to create a path profile is to interactively select the start/end 
+point using the mouse. In this case select either of the maps or 3D views and 
+select the icon 
+. 
+Then click on the start location on the map and hold the mouse button down and 
+drag to the end point and then release. A new path profile window will be 
+created already configured to select the required start / and end points.  
+Modules User Guide 
+ 
+Page 46 
+ 
+ 
+ 
+4.7.3 Path Profile Options 
+The path profile configuration options can be selected by right clicking within the 
+path profile view which brings up the following menu: 
+ 
+The first two options can also be accessed via the “Edit” menu options “View 
+Properties” and “Plot data”. 
+4.7.4 Configuring Path Profiles 
+The start and end points of a path profile can be selected using the path 
+definition dialog shown below. 
+ 
+There are three ways of specifying path profile start and end points: 
+Modules User Guide 
+ 
+Page 47 
+ 
+ 
+ 
+1) By selecting a station from drop down list of those in the simulation 
+2) By selecting the points (latitude, longitude) directly using decimal degrees, 
+radians or degrees, minutes, seconds (selected via button at the top). 
+3) By being one end of a link’s wanted or worst interfering path from a drop 
+down list of links either in the simulation or within a specific link group 
+Note selecting the option to show the path profile of the worst interferer can 
+have additional uses as the path profile line can be shown on the maps and 3D 
+view. Hence it can be used to quickly highlight which interfering transmitter is the 
+worst single entry. 
+4.7.5 Configuring Path Profile Displays 
+The path profile display dialog allows significant configuration options, as shown 
+in the figures below. 
+ 
+ 
+ 
+ 
+4.7.6 Exporting Path Profile Data 
+The path profile can be exported in comma separated values or CSV format by 
+selecting the option “Export data…” from the right click pop-up menu. 
+It then prompts for a file to save to which will contain the path profile data in the 
+form of a CSV text file containing for each point along the path: 
+• 
+Latitude (decimal degrees) 
+• 
+Longitude (decimal degrees) 
+• 
+Distance from start point (km) 
+• 
+Height above sea level of terrain (m) 
+Modules User Guide 
+ 
+Page 48 
+ 
+ 
+ 
+• 
+IDWM Zone (A1, A2, B) 
+4.7.7 Showing Path Profiles on Maps and 3D View 
+The currently open path profiles can be displayed upon either of the maps or the 
+3D view as shown in the figure below. 
+ 
+This is useful to get additional feel as to the terrain data by showing a slice 
+through it and the location of the slice on a map. 
+The path profile is shown as a line with labels which can be configured – for 
+example to change the line colour, text, font etc. The controls are shown below – 
+more information is available on the section of the User Guide on View 
+Properties. 
+ 
+4.7.8 Moving Path Profiles 
+Path profiles can be moved using the mouse by selecting the “Edit path profile” 
+option on the tool bar, 
+ 
+Modules User Guide 
+ 
+Page 49 
+ 
+ 
+ 
+After selecting the “Edit path profile” option, it is possible to select one end of a 
+path profile and move it around. The path profile view will update in real time as 
+the path profile end point is moved. 
+4.8 Using Terrain Data 
+The terrain data can be used within Visualyse Professional to calculate path loss 
+on a link as part of the propagation modelling. This is described in more detail in 
+other parts of the User Guide.  
+Terrain data can be used within the path loss calculations as part of the 
+following propagation models: 
+• 
+Recommendation ITU-R P.452 
+• 
+Recommendation ITU-R P.526 
+• 
+Recommendation ITU-R P.1546 
+• 
+Recommendation ITU-R P.1812 
+• 
+Recommendation ITU-R P.2001 
+• 
+Longley-Rice 
+By default, if there is terrain data available it will be used within these models.  
+4.9 Showing Terrain Data 
+The terrain regions loaded can be shown on any map or 3D view. Each pixel is 
+displayed using the colour selected in the Terrain Colours dialog. 
+The terrain data comprises another “overlay” along with clutter data, user 
+defined overlays (such as maps) and area analysis. 
+The management of the overlays is described in more detail in the view 
+configuration sections of the User Guide. 
+The following should be noted: 
+• 
+It is easy to overload the view with too many overlays: select the ones 
+you want and hide others 
+• 
+The most important overlays should be highest on the list and less 
+important ones lower down 
+• 
+The level of transparency of each overlay can be used to show more or 
+less of the lower layers 
+• 
+Colours of land use pixels can be selected to avoid clashing with other 
+overlays. For example in the example below the area analysis of 
+coverage from a base station is in green and yellow, hence these colours 
+are not used in the selection of terrain colours. 
+Modules User Guide 
+ 
+Page 50 
+ 
+ 
+ 
+5 
+Clutter Loss Modelling 
+This section describes clutter loss modelling, which is part of the functionality of 
+the Terrain Module.  
+5.1 Introduction 
+One of the factors that can influence the received signal is the clutter loss. For 
+example consider the scenario in the figure below. 
+Transmit Tower
+Receiver 1
+in rural location
+Receiver 2
+in sub-urban location
+Receiver 3 
+in urban location
+ 
+A transmitter’s signal is being detected at three receivers. Each is the same 
+distance from the transmit tower, but is located in three very different 
+environments. 
+The first is in a rural area by a lake: here there are no obstructions and so the 
+signal received is likely to be strong. 
+The second receiver is in a suburban location. There are some obstructions, 
+houses, but they are low and widely separated. The signal is likely to be lower 
+than that in the rural areas but not much lower. 
+Finally the third receiver is in an urban location. It is surrounded by tall buildings 
+that will significantly degrade the signal. It is likely to have the lowest received 
+signal. 
+Thus it can be seen that the structures at each location can have an impact on 
+how the signal is received. 
+In Visualyse Professional Version 7 this effect is included via: 
+1) A database that identifies the land-use category for each location 
+2) Calculations within the propagation model that works out a clutter loss based 
+upon the land-use field 
+This section describes how to interface to and configure land-use database, and 
+then use that information within calculations.  
+If a land-use database is not available the parameters can be entered directly by 
+hand: in this case they will not vary across a geographic area. 
+Modules User Guide 
+ 
+Page 51 
+ 
+ 
+ 
+The result is an improvement in the accuracy of predictions of signal strengths, 
+whether wanted or interfering, by including not just terrain effects but also 
+terminal clutter losses. An example of the impact of clutter on signal strengths 
+can be seen in the mobile phone base station prediction coverage in the figure 
+below. 
+ 
+This example shows coverage in an urban area (London – the blue line is the 
+Thames). It can be seen how the signal propagates further in open spaces such 
+as the park to the north east and south west of the base station (Hyde Park and 
+Green Park respectively). In addition some of the major roads can be seen and 
+the graphic illustrates how the received signal can be greater along them. 
+5.2 Clutter Features in Visualyse Professional 
+To include clutter modelling in Visualyse Professional you need to be aware of 
+all the various components and where they can be found on the menus. This 
+section gives an overview of all clutter related features in Visualyse 
+Professional. 
+5.2.1 Land Use Database Interface 
+The starting point for using clutter is to interface to one or more sources of land-
+use data. This can be found on the “File” menu under “Land Use Data Sources” 
+and is described in more detail in section 5.3. 
+5.2.2 Land Use Region 
+When Visualyse Professional has been configured to interface to a land use 
+database, it must then be told whether to load the data and over which 
+geographic locations. This is done in a similar way to terrain regions in that you 
+select a geographic region for which you want data loaded. This can be done 
+interactively after selecting the toolbar cursor option or using the “Land Use 
+Region Manager…” that can be found under the “Terrain” menu option. 
+Modules User Guide 
+ 
+Page 52 
+ 
+ 
+ 
+More information is given in section 5.4. 
+5.2.3 Propagation Models 
+With a land use region loaded it can be used within link calculations via the 
+propagation model, either via one of the propagation environments or via a link 
+specific propagation model. The land use data can be used within the following 
+models: 
+• 
+Recommendation ITU-R P.452 
+• 
+Recommendation ITU-R P.1546 
+• 
+Recommendation ITU-R P.1812 
+• 
+Extra losses 
+If a land use database is not available then values can be entered by hand. 
+More information is given in section 5.5. 
+5.2.4 Watch Window 
+The resulting clutter loss calculated using the propagation model and the land 
+use data can be seen in the watch window along with the other propagation loss 
+fields and will be included in the received signal strength calculation (whether 
+wanted or interfering). 
+5.2.5 Maps and 3D View 
+The land use region can be displayed on the Plate Carrée and Mercator maps, 
+and on the 3D View. Each land use code can be displayed by a different colour 
+and shown as one of the overlays found under the View Properties dialog. The 
+land use data overlay can be configured like any of the other overlays, including: 
+• 
+Changing display order 
+• 
+Changing transparency level 
+• 
+Changing tint colour 
+The colour to use for each land use code is set via the land use database 
+“Configure source” dialog that can be accessed from the “File” menu option 
+“Land Use Data Sources”. 
+More information is given in section 5.6. 
+5.3 Land Use Database Interface 
+5.3.1 Interface Management 
+The first step to using land use data in Visualyse Professional Version 7 is to 
+configure the interfaces to the sources of data. This is a “Visualyse” level 
+operation in that the changes you make here will impact all simulations you 
+open. 
+The interface will depend upon the land use database available to you and 
+provided by us. We have provided an example clutter database together with 
+associated interface and plan to develop more in the future: if you have a 
+specific requirement please do not hesitate to contact us.  
+Modules User Guide 
+ 
+Page 53 
+ 
+ 
+ 
+The example land use database interface is based upon UK specific coordinates 
+as described in more detail in the Technical Annex. Note that the example land 
+use data supplied with Visualyse Professional is copyright Infoterra Ltd. For 
+additional land use data please do not hesitate to contact us to discuss your 
+requirements. 
+The “File” menu option “Land Use Data Sources…” opens the following dialog: 
+ 
+This dialog can be used to: 
+• 
+Add an interface to a new source of land use data 
+• 
+Delete an existing interface to land use data 
+• 
+Edit an existing interface to land use data 
+• 
+Configure the source of land use data (change definitions of land-use 
+codes, colours to display on map etc.) 
+These are discussed in more detail in the sections below. 
+5.3.2 Adding a source of Land Use Data 
+If you click on the “Add Source…” button a list of available land use database 
+interfaces will be shown, as in the figure below. 
+ 
+The list is generated from the land use database interface DLLs that are found in 
+the “\Visualyse 7\Program\Clutter DLLs” directory by Visualyse Professional 
+when it starts. 
+Modules User Guide 
+ 
+Page 54 
+ 
+ 
+ 
+If you select the interface you wish to add you will then be given the option to 
+select what name to call that source of land use data and configuration options 
+such as directory or path to where the data can be found, as in the two figures 
+below. 
+ 
+ 
+The land use data source will then be added to the list of those available. 
+5.3.3 Deleting Source of Land Use Data 
+You can remove an interface to a land use database by selecting it from the list 
+and clicking on the “Delete Source…” button. A dialog will ask you to confirm, as 
+shown below. 
+ 
+Modules User Guide 
+ 
+Page 55 
+ 
+ 
+ 
+Note deleting a land use source will also impact on your ability to load files that 
+referred to that source of clutter data and that any configuration options would 
+have to be re-set. 
+5.3.4 Edit Source of Land Use Data 
+This option allows you to rename a source of land-use data and / or alter the 
+directory identifying where the data is stored. 
+5.3.5 Configuration of Land Use Data 
+Land use databases typically contain for each pixel within a geographic area a 
+code describing how it is used. Examples of typical types of land usage include: 
+• 
+High City 
+• 
+City 
+• 
+High Urban 
+• 
+Urban 
+• 
+High Suburban 
+• 
+Suburban 
+• 
+etc. 
+The definition of what comprises the differences between these categories is not 
+standardised, and different land use databases can have subtle and not so 
+subtle variations.  
+Hence it is necessary to define a translation mapping between these codes and 
+how they are used within the various propagation models and also to specify 
+how they are displayed on the map. This is done via the land use data 
+configuration dialog, as in the figure below 
+ 
+This dialog can be used to specify for each land use code: 
+• 
+The parameters to use within Rec. ITU-R P.452, namely height and 
+distance of obstacle 
+Modules User Guide 
+ 
+Page 56 
+ 
+ 
+ 
+• 
+The parameters to use within Rec. ITU-R P.1546, namely height of clutter 
+and type (urban or non-urban) 
+• 
+The parameters to use within Rec. ITU-R P.1812, namely height of clutter 
+and type (urban or non-urban) 
+• 
+The loss to use within the extra propagation models 
+• 
+The colour to show this land use category on the maps and 3D view 
+Note this configuration data should be selected as being consistent with the 
+source of data. As the values used will affect the results of the simulation, care 
+must be made that all PCs that run the simulation have the same land use 
+configuration options. 
+5.4  Land Use Regions 
+5.4.1 Selecting Land Use Regions 
+Land use databases can be extremely large and it would represent a significant 
+overhead to load the complete database. In addition there are times when you 
+want to calculate propagation loss without use of a clutter database – for 
+example when doing smooth Earth calculations. 
+Therefore it is necessary to specify on a simulation by simulation basis whether 
+you want to use land use data and if so what geographic area should be loaded. 
+This is then the “Land Use Region” and can be shown on the maps and 3D view 
+and also used within propagation calculations. 
+Land use regions can be created in one of two ways: 
+• 
+Using the mouse to select the area of interest as in the following section 
+• 
+Specifying the area explicitly using the Land Use Manager (see below) 
+5.4.2 Interactive Creation of Land Use Regions 
+You can select an area within which to load land use data by selecting the “New 
+Clutter Region” icon on the tool bar 
+ and then using drag and drop to select 
+the region of interest on the map or 3D views.  
+If you have more than one land use data source available for the area selected, 
+you will be shown a list and should select the most appropriate one. If no land 
+use data is available from any of the available sources you will see a warning 
+message similar to the one below. 
+ 
+5.4.3 Land Use Region Manager 
+This dialog, as shown below, is on the “Terrain” menu and can be used to 
+manage clutter regions.  
+Modules User Guide 
+ 
+Page 57 
+ 
+ 
+ 
+ 
+On the left is a list of land use regions currently loaded in the simulation, while 
+on the right buttons to create, delete, and edit a region. The parameters of the 
+currently selected land use region are shown in the information section at the 
+bottom. 
+New regions can be created and existing ones edited using the following dialog: 
+ 
+You can specify or change: 
+• 
+The name to use to display the land use region 
+• 
+The maximum latitude of the land use region 
+• 
+The minimum latitude of the land use region 
+• 
+The maximum longitude of the land use region 
+• 
+The minimum longitude of the land use region 
+You can change the units to show or specify the regions extent in radians or 
+using degrees, minutes, seconds with format: 
+ 
+ 
+[N/S/E/W] DD:MM’SS.SS” 
+Another button can be used to create a land use region that just covers the 
+locations of all the stations currently in the simulation. 
+Modules User Guide 
+ 
+Page 58 
+ 
+ 
+ 
+5.5 Using Land Use Data 
+The land use data can be used within Visualyse Professional to calculate clutter 
+loss on a link as part of the propagation modelling. This is described in more 
+detail in other parts of the User Guide.  
+Clutter loss calculations can be part of the following propagation models: 
+• 
+Recommendation ITU-R P.452 
+• 
+Recommendation ITU-R P.1546 
+• 
+Recommendation ITU-R P.1812 
+• 
+Extra loss models 
+For ITU-R P.452 you can either get Visualyse Professional to calculate the 
+clutter loss using the land use database or enter the distance and height to 
+clutter at either ends of the link explicitly, using controls as in the figure below: 
+ 
+For ITU-R P.1546 you can either get Visualyse Professional to calculate the 
+clutter loss at the receiver using the land use database or enter the environment 
+and clutter height explicitly, using controls as in the figure below: 
+Modules User Guide 
+ 
+Page 59 
+ 
+ 
+ 
+ 
+Recommendation ITU-R P.1812 has the similar configuration options as P.1546, 
+as shown below. 
+Modules User Guide 
+ 
+Page 60 
+ 
+ 
+ 
+ 
+The configuration options for the extra loss models are shown below: 
+ 
+The extra loss model can be used to include user defined clutter loss models. If 
+the value is calculated for a known receiver height for each land use category it 
+can be entered in the configuration dialog and then accessed via look-up using 
+the extra loss “Use clutter database loss” option. 
+The clutter loss is stored within the path loss field and can then be displayed in 
+watch windows as in the figure below. 
+Modules User Guide 
+ 
+Page 61 
+ 
+ 
+ 
+ 
+5.6 Showing Land Use Data 
+The land use regions loaded can be shown on any map or 3D view. Each pixel 
+is displayed using the colour selected in the configuration dialog. 
+The land use data comprises another “overlay” along with terrain data, user 
+defined overlays (such as maps) and area analysis. 
+The management of the overlays is described in more detail in the view 
+configuration sections of the User Guide. 
+The following should be noted: 
+• 
+It is easy to overload the view with too many overlays: select the ones 
+you want and hide others 
+• 
+The most important overlays should be highest on the list and less 
+important ones lower down 
+• 
+The level of transparency of each overlay can be used to show more or 
+less of the lower layers 
+• 
+Colours of land use pixels can be selected to avoid clashing with other 
+overlays. For example in the example below the area analysis of 
+coverage from a base station is in red and yellow, hence these colours 
+are not used in the selection of land use colours. 
+Modules User Guide 
+ 
+Page 62 
+ 
+ 
+ 
+ 
+This example shows coverage in an urban area (London – the blue line is the 
+Thames). It can be seen how the signal propagates further in open spaces such 
+as the park to the north east and south west of the base station (Hyde Park and 
+Green Park respectively). In addition, some of the major roads can be seen. 
+Modules User Guide 
+ 
+Page 63 
+ 
+ 
+ 
+6 
+Traffic Module 
+6.1 Overview 
+6.1.1 Introduction 
+Communication links are not always active, but can switch on and off over a 
+period of time. For example, in a terrestrial mobile system, the link between a 
+mobile phone and the nearest base station is sometimes on and sometimes off. 
+The state of the link depends on several factors:  
+• 
+Is the owner of the phone making a call? 
+• 
+Is the mobile phone located inside an exclusion zone where 
+transmissions are prohibited? 
+• 
+Can the nearest base station handle the call or is it already serving the 
+maximum number of users?  
+The transmit characteristics of a link can also change over time. For example, in 
+a mobile satellite system, the transmissions from a particular satellite beam may 
+vary in bandwidth and power. These parameters will change according to: 
+• 
+The number of handsets using the beam 
+• 
+The access method, which can be one of (CDMA, TDMA or FDMA) 
+• 
+The maximum operating bandwidth. 
+Variations in link activity will obviously have an effect on interference 
+calculations. It is therefore useful to be able to model these variations. This is 
+what the Traffic Module is all about.  
+6.1.2 What is traffic? 
+Traffic is just another way of saying the amount of activity on a link. This activity 
+can, for example, be caused by: 
+• 
+Fluctuations in the output from a station (e.g. data link transmissions 
+using TDMA) 
+• 
+Changes in the number of users of a stations resources (e.g. handsets 
+using beams on an mobile satellite service network) 
+An example of traffic modelling can be found in the example file “Traffic and 
+Exclusion Zones” which is in the “Others” directory. This shows a simulation 
+where there is an exclusion zone of 5 km around a radio astronomy site and a 
+mobile network base station operating just outside. The mobile’ locations are 
+randomised using the Define Variable Module and the Traffic Module used to 
+give each one an activity factor of 25%. 
+6.1.3 Modelling Link Activity 
+The Traffic Module allows you to model link activity at two levels. 
+At the basic level, you can take a Visualyse Professional link and switch it on 
+and off. The switching process can be determined by several different methods 
+(these are described later). The amount of traffic on the link is ignored. The link 
+is either on or off, it’s as simple as that. 
+Modules User Guide 
+ 
+Page 64 
+ 
+ 
+ 
+At the advanced level, links can also be switched on and off. However, when the 
+links are on, the amount of traffic can be considered. This traffic level can vary 
+according to time of day or a defined distribution.  
+Modelling at the basic level would be used for links where the traffic level does 
+not vary or where the variations are insignificant enough to be ignored. For 
+example, uplinks to a satellite in a fixed satellite service (FSS) system may 
+switch on and off throughout the day. However, on these occasions the traffic 
+will always be the same, and the link will transmit at the same power level. 
+Advanced level modelling would be used for links where the amount of traffic 
+does vary. For example, in a mobile satellite service (MSS) system, the number 
+of active handsets changes over time. This affects the power output from the 
+server satellite and thus any interference that this may cause. 
+6.1.4 Traffic Objects and Load Links 
+The Traffic Module is based upon: 
+1. 
+Traffic object: can be used by any link to determine whether the link 
+should be switched on or off. All you need to do is create a traffic object, 
+configure it, and then assign it to your link. 
+2. 
+Load link: load links are used in conjunction with traffic objects to 
+determine the amount of traffic on a link. 
+If you want to model variations in the level of traffic, you need to use a load link 
+instead of one of the other types of link. In this case, the traffic object will also 
+define the traffic level when the link is switched on. 
+Sections 6.2 and 6.3 describe these two types of objects in detail. 
+6.2 Traffic Objects 
+6.2.1 Managing Traffic Objects 
+Traffic objects are part of the simulation, stored in the .sim file, and managed via 
+a list where they can be created, deleted, duplicated, and modified. 
+The traffic list can be accessed via the “Model” menu option “Traffic” or by the 
+toolbar icon  
+Selecting any of these will open the traffic list, as shown below. 
+Modules User Guide 
+ 
+Page 65 
+ 
+ 
+ 
+ 
+There are four methods for using a traffic object to switch links on/off and to 
+determine traffic levels: 
+• 
+On 
+• 
+State Machine 
+• 
+TDD 
+• 
+Trigger level 
+In addition traffic objects can be used to define exclusion zones. These options 
+are described further in the following sections. 
+6.2.2 Traffic Method On 
+The On method simply switches the link on permanently. If your link is a load 
+link, then the traffic level used will always be 100%. 
+Modules User Guide 
+ 
+Page 66 
+ 
+ 
+ 
+The edit dialog for a traffic object is shown below. 
+ 
+To use the “On” method, simply click on the method list in the method selection 
+area and choose On.  
+6.2.3 Traffic Method State Machine 
+A link has two states. It can either be on or off. This method uses probabilities to 
+determine when a link moves from one state to another. 
+There is a probability of moving from State = On to State = Off and a probability 
+of moving from State = Off to State = On.At the start of a run, the link is in an 
+undetermined state. Hence an additional probability, the probability that the link 
+starts on, is required to determine the initial state of the link.  
+The state transition diagram is shown in the figure below. 
+Modules User Guide 
+ 
+Page 67 
+ 
+ 
+ 
+Start
+On
+Off
+RandomPercent 
+> p(OnStart)
+RandomPercent 
+< p(SwitchOff)
+RandomPercent 
+< p(SwitchOn)
+RandomPercent 
+< p(OnStart)
+ 
+Note that all the probabilities are expressed as percentages. 
+For the state machine method, if you are using this object with a load link, the 
+traffic level is always 100% when the link is switched on. 
+If you edit a traffic object, you will be able to see the controls that define this 
+behaviour, as in the figure below: 
+ 
+A number of possible methods can be used to select the values to use. The 
+simplest is that if the probability that a link should be active is q (as a 
+percentage), then the values should be set to: 
+Modules User Guide 
+ 
+Page 68 
+ 
+ 
+ 
+p(Start) = q 
+p(Switch On) = q 
+p(Switch Off) = 100 - q 
+Another possible approach to selecting the values to use is to include a call 
+duration and average number of links required to be active using: 
+p(Start) = q 
+p(Switch Off) = 100 * TimeStepLength / AverageCallDuration 
+p(Switch On) = p(Switch Off) * q / (100 – q) 
+Both these approaches should give the same mean number of links active when 
+applied to sufficiently large number: the principle difference is the average call 
+duration. 
+Note that the state machine approach generates “calls” with duration having a 
+binomial distribution, whereby the probability of length n-steps = p(Switch Off)^n.  
+6.2.4 Traffic Method TDD 
+Mobile networks require two communication directions, the downlink (from the 
+BS to UE) and the uplink (from the UE to the BS). These two paths can either 
+be: 
+• 
+At different frequencies, typically using a paired block arrangement, 
+potentially both transmitting at the same time 
+• 
+In the same frequency block but at different times.  
+These two arrangements, frequency division duplex (FDD) and time division 
+duplex (TDD) are shown diagrammatically in the figure below: 
+ 
+In Visualyse Professional, the frequencies can be entered on a fixed and 
+dynamic links on the start→end (forward) and end→start directions (return), and 
+these can be either different (for FDD) or the same (for TDD). 
+However, a key difference between FDD and TDD is that FDD allows both the 
+UE and BS to transmit simultaneously while typically TDD operation only permits 
+one of these stations to be active at the same time. 
+A new feature in the Traffic Module allows this TDD behaviour to be modelled. 
+The user interface (shown below) allows the following to be defined: 
+• 
+Likelihood as a percentage that the link is active in any direction 
+(whether forward or return)  
+• 
+Likelihood as a percentage that the link, if active, is active in the forward 
+or start→end direction 
+Frequency
+Power
+FDD UL
+FDD DL
+TDD UL + DL
+FDD Paired Blocks
+Modules User Guide 
+ 
+Page 69 
+ 
+ 
+ 
+• 
+If the TDD Synchronised option is enabled, then, at each time step, all 
+links that use this Traffic object will have the same state in terms of 
+{active, direction}. 
+The likelihood that the link is active in each direction is then: 
+p(Forward) = P(TDD link active)/100 * P(TDD forward active)/100 
+p(Return) = P(TDD link active)/100 * (1 – P(TDD forward active)/100) 
+ 
+This traffic object can then be selected on the fixed or dynamic links traffic tab: 
+Modules User Guide 
+ 
+Page 70 
+ 
+ 
+ 
+ 
+  
+For other link types: 
+• 
+Transmit links and TDD traffic models: the link will be active if the 
+forward direction is active 
+• 
+Receive links and TDD traffic models: the link will be active if the forward 
+direction is active 
+• 
+Load links: the TDD model will not have an impact 
+Note that if one direction is active then the tx/rx stations will be configured (i.e. 
+antennas pointed) in both directions but the signal only calculated in the 
+direction that is active. 
+6.2.5 Traffic Method Trigger Level 
+This method uses either a time of day profile or a distribution to determine the 
+level of traffic at each time step. The traffic level is then compared to a trigger 
+level in order to determine whether the link is on or off. 
+If the traffic level exceeds the trigger level, a link using the traffic object will be 
+switched on. If the traffic level falls below the trigger level, a link using the traffic 
+will be switched off. 
+Note that if the traffic object is used by many links, switching is determined for 
+each link individually. 
+There are three trigger level methods: 
+• 
+Time of day: a threshold is set and at each time step compared against 
+the level in a time of day table: if the table is above the threshold then the 
+link is considered active else the link is idle 
+Modules User Guide 
+ 
+Page 71 
+ 
+ 
+ 
+• 
+Distribution vs. Time of day: at each time step a random number is 
+generated according to a pre-defined distribution and compared against 
+the level in a time of day table. If the random number is above the table 
+the link is considered active else the link is idle 
+• 
+Distribution vs. Fixed: a threshold is set and at each time step a 
+random number is generated according to a pre-defined distribution. If 
+the random number is above the threshold the link is considered active 
+else the link is idle 
+Each of these options is described in more detail below. 
+6.2.5.1 Time of Day 
+This method uses a table that defines the traffic level at various times 
+throughout the day.  
+The key stages are: 
+1. 
+In the traffic object, select “Trigger level” from “Method selection” 
+2. 
+Select in “Type” the option “Time of Day” 
+3. 
+Enter the threshold as a percentage 
+4. 
+Enter a time of day table, with time in minutes since midnight and level 
+as a percentage, as in the figure below 
+ 
+5. 
+Select what to do when reach the last time in the table using the 
+“Repeat cycle option” 
+6. 
+Select whether to use simulation time (UTC) or the transmit station’s 
+local time 
+Modules User Guide 
+ 
+Page 72 
+ 
+ 
+ 
+Because the table represents traffic levels for a discrete set of times, you need 
+specify how the level is calculated in between these times. This is done using an 
+interpolation method, selected from the Interpolation list.  
+Visualyse Professional provides the following interpolation methods: 
+• 
+Linear: this is standard linear interpolation. If the required value does not 
+lie in between two entries in the table, the value for the nearest entry is 
+used. 
+• 
+Linear Extrapolate: this is the same as Linear, except that when the 
+required value does not lie in between two entries in the table, 
+extrapolation outside the bounds of the table is allowed. 
+• 
+Linear Check Equal: this is the same as Linear. However, if the required 
+value falls between two entries which have the same value then the two 
+previous and two following entries are used to generate two lines which 
+are then used to determine the required value. 
+• 
+Linear Check Equal Extrapolate: this is a combination of Linear Check 
+Equal and Linear Extrapolate. 
+• 
+Polynomial: a polynomial is computed from the entries in the table. The 
+interpolated value is then calculated from the polynomial. 
+• 
+Cubic Spline: a cubic spline is computed from the entries in the table 
+and the interpolated value is calculated from this. 
+• 
+Largest: when the required value falls between two entries, then the 
+largest value of the two entries is used. 
+• 
+Smallest: when the required value falls between two entries, then the 
+smallest value of the two entries is used. 
+If you want the traffic level to change only when a time in the table is reached, 
+choose largest or smallest. However, if you want the traffic level to change 
+steadily from one time in the table to the next, choose one of the other 
+interpolation methods. 
+After the last time in the table has been reached, the process can be repeated, 
+starting at the first time again. To do this, make sure that the “Repeat Cycle” box 
+is checked. 
+The times in the table are just numbers of minutes and therefore need to be 
+referred to some specific time. This time can either be the start of the simulation 
+or midnight on the start day. To use the start of the simulation as the reference 
+time, make sure that the “Use Local Time” box is checked. To use midnight on 
+the start day as the reference time, make sure that the “Use Local Time” box is 
+not checked. 
+To define when a link is switched on and off, all you need to do is provide a 
+trigger level. The default value is zero, which means that any link that uses this 
+traffic will always be switched on with a traffic level defined by the time of day 
+profile. 
+Modules User Guide 
+ 
+Page 73 
+ 
+ 
+ 
+Traffic Level
+Time
+Trigger Level
+100%
+0%
+Start
+End
+On
+Off
+On
+Off
+ 
+By increasing the trigger level, you restrict the activity of the link to periods when 
+the traffic level exceeds the trigger level. 
+If you are using this method to provide a traffic level for a load link, then you can 
+effectively ignore the trigger level by setting it to zero. The state of the link would 
+then be determined solely by the time of day profile; the link would be off during 
+periods when the traffic level is zero. 
+If you are using this method simply to switch a link on and off, then you can 
+choose any traffic levels you wish for your time of day profile. The state of the 
+link is determined by comparing the traffic level to the trigger level, so the actual 
+value does not matter. 
+For example, the two diagrams below illustrate two different time of day profiles, 
+each with a different trigger level. Both provide the same behaviour when they 
+are used to switch a link on and off. 
+Traffic Level
+Time
+Trigger Level
+100%
+0%
+Start
+End
+On
+Off
+On
+Off
+ 
+Modules User Guide 
+ 
+Page 74 
+ 
+ 
+ 
+Traffic Level
+Time
+Trigger Level
+100%
+0%
+Start
+End
+On
+Off
+On
+Off
+ 
+6.2.5.2 Distribution vs. Time of Day 
+This method is very similar to the Time of Day method described above. It uses 
+the exactly the same Time of Day table to define variations in traffic levels. 
+The difference is in the way that the trigger level is specified. Instead of using a 
+fixed value, the value is sampled from a distribution. Hence rather than the link 
+being deterministic, always being active / idle at the same times, the process is 
+more randomised, with the threshold altering the probability that the link is 
+active. 
+The key stages are: 
+1. 
+In the traffic object, select “Trigger level” from “Method selection” 
+2. 
+Select in “Type” the option “Distribution vs. Time of Day” 
+3. 
+Select a distribution from one of the options as described below 
+4. 
+Enter parameters for the distribution (i.e. mean & standard 
+deviation, or as required) 
+5. 
+Enter a time of day table, with time in minutes since midnight 
+and level as a percentage, as in the previous example 
+6. 
+Select what to do when reach the last time in the table using the 
+“Repeat cycle option” 
+7. 
+Select whether to use simulation time (UTC) or the transmit 
+station’s local time 
+The trigger level distribution is based on one of 10 different types of distribution. 
+These are: 
+▪ 
+Linear 
+▪ 
+Normal 
+▪ 
+Triangular 
+▪ 
+Poisson 
+▪ 
+Log Normal 
+▪ 
+Erlang  
+▪ 
+Exponential  
+▪ 
+Gamma 
+▪ 
+Rayleigh 
+▪ 
+Table 
+Once you have chosen the type of distribution, you then need to define it. The 
+two fields below the “Trigger Level” field will change to reflect the information 
+that is required.  
+Modules User Guide 
+ 
+Page 75 
+ 
+ 
+ 
+Almost all of the distribution types require a mean value and most of these 
+require a variance as well. For Erlang distributions you will have to provide a k 
+value and for gamma distributions, alpha and beta will be required. 
+The operation of this method is illustrated in the diagram below. 
+Traffic Level
+Time
+Trigger Level
+100%
+0%
+Start
+End
+On
+Off
+On
+Off
+ 
+6.2.5.3 Distribution vs. Fixed 
+This method samples the traffic level from a distribution. Activation of links is the 
+same as for previous methods: the traffic level must be above a fixed trigger 
+level in order for a link to be switched on. 
+The key stages are: 
+1. 
+In the traffic object, select “Trigger level” from “Method selection” 
+2. 
+Select in “Type” the option “Distribution vs. Fixed” 
+3. 
+Enter the threshold as a percentage 
+4. 
+Select a distribution and parameters from the list as for the previous 
+example 
+The diagram below shows an example of how this method works.  
+Traffic Level
+Time
+100%
+0%
+Start
+End
+On
+Off
+On
+Off
+Trigger Level
+ 
+While this effectively is just a convoluted way of defining the probability that the 
+link is active, when combined with load links it can be used to build statistical 
+models of traffic levels using the various distributions. 
+Modules User Guide 
+ 
+Page 76 
+ 
+ 
+ 
+6.2.6 Exclusion Zones 
+A traffic object can also be used to prevent transmissions in certain defined 
+areas. These areas are called exclusion zones.  
+An exclusion zone is defined by a radial distance and a group of stations. If you 
+imagine a sphere of the specified radius, around each station in the group, then 
+the exclusion zone is the volume of space occupied by all the spheres. 
+Any link that uses the traffic will be switched off if the start or end station lies 
+within the exclusion zone. 
+To use an exclusion zone: 
+1. Create a group of stations around which you want to prevent 
+transmissions. These can be marker stations or stations which are used 
+in your interference scenario 
+2. Edit the traffic object you want to use an exclusion zone with 
+3. Click the exclude tab (shown below) 
+ 
+4. 
+Make sure that the exclude zone box is checked 
+5. 
+Type the radius for the spheres in the exclusion distance box 
+6. 
+In the exclusion group list, select the group of stations you want to use. 
+You can switch the exclusion zone off by editing the traffic object and making 
+sure that the exclude zone box is not checked. 
+You can use the exclusion zone on its own without the traffic object switching 
+the link on / off by using the traffic method = on. 
+Modules User Guide 
+ 
+Page 77 
+ 
+ 
+ 
+6.2.7 Associating Traffic Objects with Links 
+To use traffic on a link, whether to switch it on/off or impose and exclusion zone, 
+select the “Traffic” tab, enable traffic, and then select the appropriate model, as 
+in the figure below. 
+ 
+Once associated with a link, a traffic object serves two purposes: 
+1. 
+It determines whether a link is on or off 
+2. 
+If the link is a load link, it determines the traffic level for the link 
+Any number of links can be associated with a single traffic object.  
+If a number of links share a traffic object, the state and traffic level is determined 
+individually for each link; one link could be off, another could be on. If the links 
+are load links, the traffic levels for the ones that are switched on could all be 
+different. 
+There are additional parameters when using traffic objects with transmit links: 
+this is discussed further in section 6.3.5 below. 
+6.3 Load Links 
+Advanced level modelling of traffic is achieved by using load links. Load links 
+are used to model systems whose link characteristics vary according to traffic 
+levels.  
+This section describes how to create and use load links. The process of traffic 
+loading is explained in detail. 
+6.3.1 Overview 
+Before going into the detail of how load links work, it is useful to have a high 
+level picture of what load links are and what their purpose is. 
+Modules User Guide 
+ 
+Page 78 
+ 
+ 
+ 
+A load link is similar to a dynamic link in that: 
+• 
+It has a start and an end station, 
+• 
+The start station can be named or it can be the end station of another 
+link, 
+• 
+The end station can be named or it can be selected from a group of 
+stations using a tracking strategy. 
+However, load links have no transmitting or receiving capabilities. They have no 
+carrier, no powers and no propagation characteristics. 
+Their purpose is not to provide a signal, but to determine the amount of traffic 
+flow or throughput between the start station and end station. This is achieved by 
+a process called traffic loading: the subject of the next section. 
+Traffic loading is done in two stages: 
+1. Generation of traffic: determines the potential throughput from the start 
+station 
+2. Traffic Allocation: tries to load this throughput onto the end station 
+The end result of traffic loading is a load value for each station. This value can 
+be used in its own right as a metric of network loading, or by a transmit link to 
+change transmit characteristics such as bandwidths and powers. 
+The idea is that you create load links to manage the traffic flow and then create 
+transmit links for all the stations you are interested in. The transmit link provides 
+the signal that can be used in interference calculations. 
+6.3.2 Example of Traffic Loading 
+The figure below shows an example where a base station with two antennas is 
+serving four users. 
+BBC News
+BBC News
+BBC News
+BBC News
+Voice, Video,
+Web
+Voice
+User A
+Mobile
+device
+Antenna
+Sector 1
+Antenna
+Sector 2
+Base Station
+Time
+Traffic
+level
+Time
+Traffic
+level
+User B
+User C
+User D
+ 
+The amount of traffic generated per user varies in time and will depend upon the 
+service type (e.g. voice, data etc.). The traffic level at each time step can be 
+derived from: 
+Modules User Guide 
+ 
+Page 79 
+ 
+ 
+ 
+• 
+If no traffic object is selected: the station maximum throughput level: in 
+this case it is fixed for the duration of the run, i.e. constant traffic 
+• 
+If a traffic object is selected: the station maximum throughput level times 
+the percentage of maximum loading specified by the traffic object. In this 
+case the traffic level can vary during the simulation depending upon the 
+model used. 
+This traffic level is thus associated with the station and can be varied during the 
+simulation using the traffic object. 
+The load link is then used to manage how this traffic is routed between stations: 
+the start/end pages are used to define the topology – i.e. where traffic flows. This 
+can be to a specific station or assumed to be split between more than one, 
+depending upon whether the load link is configured to use “Multiple Allocation” 
+method. 
+Multiple load links can be used to accumulate traffic from many stations, which 
+could have different traffic levels and time of day variations. In the example 
+above for example “Antenna Sector 1” receives traffic from three stations - Users 
+A, B, and C - while Antenna Sector 2 receives traffic from just one station, 
+namely User D. 
+This aggregation must take account of constraints within the network that will 
+limit the maximum that can be handled. These constraints can be at the station 
+level (for example due to limited backhaul) or on an antenna by antenna basis 
+(maximum codes, EIRP etc. within that sector). 
+Hence it is possible to define in Visualyse Professional the maximum traffic that 
+can be handled by each antenna and station. The aggregation of the load link 
+respects both those limits, and if exceeded there will be traffic unallocated – i.e. 
+from the user’s viewpoint this represents degradation in the quality of service 
+available.  
+The places to find the key traffic loading parameters are: 
+1. Generation of traffic key parameters: 
+• 
+Load link’s start station object’s “Maximum throughput” 
+• 
+Load link’s traffic object (if specified) percentage level 
+2. Allocation of traffic key parameters: 
+• 
+Load link’s end station selection algorithm 
+• 
+Multiple allocation algorithm (if specified) 
+• 
+Maximum “Load” of start station and its antenna’s “Maximum load” 
+• 
+Maximum “Load” of end station and its antenna’s “Maximum load” 
+The currently traffic levels can be viewed in the watch window under station and 
+antenna. Any traffic that could not be allocated can be identified in the watch 
+window under the load link. 
+The outputs from the load links can be twofold: 
+a) Determination of the quality of service using the “load left” to identify if the 
+current network is insufficiently sized to handle the requirements of its users 
+b) The level of interference specified using transmit links can take account of the 
+load level on the associated stations and antennas.   
+Modules User Guide 
+ 
+Page 80 
+ 
+ 
+ 
+The figure below shows the overall process: note that not all stages are required 
+– for example it is possible to use load links without a traffic object. 
+Traffic
+1. Load level 
+as %
+Tracking 
+Strategy
+Load Link
+Load 
+Level
+Carrier
+Transmit 
+Link
+Interfering Signal
+Station group (end stations of load link, start stations of transmit link)
+Start station = N 
+users
+2. Load level as no. users
+3. Select 
+available 
+stations
+4. Load traffic to 
+stations and beams
+5. Convert load to 
+block of spectrum
+EIRP
+Frequency
+6. Use block as source 
+of interference
+BBC News
+Load 
+Level
+Load 
+Level
+Load 
+Level
+BBC News
+BBC News
+Victim station
+ 
+The various stages are: 
+1) The traffic level for this time step for this start station is calculated as a 
+percentage of maximum using a traffic object 
+2) This percentage is used with the maximum throughput of the start station to 
+calculate the throughput for this time step for this start station 
+3) The load link’s tracking strategy is used to work out a set of possible 
+stations to assign this load to 
+4) The load link’s assignment algorithm is used to allocate the throughput for 
+this time step for this start station to one or more of the end stations and 
+their antennas & beams 
+5) A transmit link uses its carrier parameters to convert the loading on each of 
+the beams of the stations within the station group into blocks of spectrum 
+with defined (EIRP, bandwidth) 
+6) These blocks of (EIRP, bandwidth) are then used to calculate the 
+interference into a victim, which will therefore take into account the traffic 
+and loading algorithms in the previous steps 
+6.3.3 Managing Load Link Objects 
+Load link objects are part of the simulation, stored in the .sim file, and managed 
+via a list where they can be created, deleted, duplicated, and modified. 
+The load link list can be accessed via the “Model” menu option “Traffic. This will 
+open the load link list, as shown below. 
+Modules User Guide 
+ 
+Page 81 
+ 
+ 
+ 
+ 
+As with all Visualyse Professional objects the name is used to identify it and 
+must be unique for that type of object.  
+There are four parts to the definition of a load link: 
+• 
+Start station definition 
+• 
+End station definition 
+• 
+Traffic  
+• 
+Allocation 
+The start and end stations are specified in the same way as for dynamic links. If 
+you want to know how to do this, you should refer to the user guide for the main 
+program or look in the on-line help system. 
+You can also choose whether to use a traffic object with the load link using the 
+tab as in the figure below. 
+Modules User Guide 
+ 
+Page 82 
+ 
+ 
+ 
+ 
+For now we’ll ignore the traffic allocation method. This is an advanced option 
+and will be explained in a later section. 
+6.3.4 Traffic Loading 
+Traffic loading is done in two stages: 
+• 
+Stage 1 determines the potential throughput from the start station 
+• 
+Stage 2 tries to load this throughput onto the end station 
+Stage 1 
+Every station has a maximum throughput. This throughput value can be used to 
+represent data or users depending on the type of system you are modelling. 
+To change the maximum throughput for a station, simply edit the station and 
+click the “Traffic” tab (shown below). 
+Modules User Guide 
+ 
+Page 83 
+ 
+ 
+ 
+ 
+In the “Max Throughput” box, type a value for the throughput. 
+The load link now needs to determine the throughput from the start station that 
+could potentially be loaded onto the end station. The word potentially is used 
+here because sometimes not all the throughput can be loaded onto the end 
+station. The factors that govern this are explained fully when Stage 2 is 
+discussed. 
+If the load link uses a traffic object, the potential throughput is calculated as 
+follows: 
+1. The traffic object provides a percentage traffic level based on the traffic 
+method that has been specified. 
+2. The traffic level is then multiplied by the maximum throughput for the start 
+station to obtain the potential throughput. 
+If the load link doesn’t use a traffic object, the maximum throughput is used. 
+Stage 2 
+Once the potential throughput has been established, the load link tries to ‘load’ 
+the throughput onto the end station beam. 
+The load link can load the beams on multiple end stations (see section 6.3.7). 
+However, to keep things simple let’s assume that the load link has a single 
+named end station. 
+There are four factors that govern how much throughput can be loaded onto the 
+end station beam. These are: 
+• 
+the spare load capacity at the start station 
+• 
+the spare load capacity at the start station antenna / beam 
+Modules User Guide 
+ 
+Page 84 
+ 
+ 
+ 
+• 
+the spare load capacity at the end station antenna / beam 
+• 
+the spare load capacity at the end station 
+We’ll deal with the beams first. 
+The spare capacity of the beam of an antenna is determined by two properties: 
+maximum load and current load. The beam determines maximum load. This is a 
+restriction on the amount of throughput that can be loaded onto a beam. 
+To change the maximum load for a beam, edit the relevant antenna, select the 
+beam in question, and then select “Advanced” value in the “Maximum Load” field 
+(shown below for an equation type antenna). 
+ 
+Current load only becomes an issue when multiple load links are loading the 
+same beam of the same antenna. The spare capacity of an antenna’s beam is 
+then the difference between the maximum load and the current load. 
+The spare capacity for a station is calculated in the same way as it is calculated 
+for a beam. Stations have a maximum load: to view or change this value, simply 
+edit the station and click the traffic tab. 
+The current load for a station can be displayed by opening a watch window and 
+selecting the stations’ traffic sub-object. The station load is just the sum of the 
+loads on each of its antennas and their beams. 
+Once a load link has determined the spare capacities of the start and end 
+stations and their beams, it can then attempt the loading process.   
+The amount of throughput that becomes load is the minimum of all four 
+capacities. This throughput is added to the load values for the start station and 
+the end station beams. 
+The process is best clarified with an example. The following table shows a 
+possible loading scenario. Load values are quoted for each stage of the loading 
+process. 
+Modules User Guide 
+ 
+Page 85 
+ 
+ 
+ 
+ 
+Start 
+Station 
+Start 
+Beam 
+End 
+Beam 
+End 
+Station 
+Stage 1 
+Max Throughput 
+10 
+ 
+Traffic Level 
+40% 
+Potential Throughput 
+4 
+Max Load 
+8 
+6 
+3 
+4 
+Load (from previous links) 
+4 
+3 
+0 
+2 
+Spare Capacity 
+4 
+3 
+3 
+2 
+Stage 2 
+Actual throughput 
+2 
+ 
+Load (after adding this link) 
+6 
+5 
+2 
+4 
+You can see that although the potential throughput is 4, the amount that can be 
+loaded onto the end beam is limited by the spare load capacity of the end 
+station. 
+6.3.5 Using Traffic Load 
+The previous section described how variations in traffic levels are modelled by 
+loading stations and beams. This section describes how to use the load on a 
+beam to determine the characteristics of a signal 
+You will recall from the overview section that once you have a set of load links 
+which load stations and beams with traffic, you then need to create transmit links 
+for all the stations you are interested in. The transmit link provides the signal and 
+there are several ways that the signal may change according to load. 
+You should already be familiar with transmit links: they have a start station, but 
+no end station. This is specified on the transmit station tab (shown below). 
+Modules User Guide 
+ 
+Page 86 
+ 
+ 
+ 
+ 
+For more information on specifying these parts of a transmit link, see the links 
+and interference paths section of the main user guide. 
+In order to change the way a transmit link responds to load, you need to click the 
+traffic tab (shown below). 
+ 
+There are four ways of specifying whether and how to use the load on the 
+transmit beam. These are selected from the “No. of Carriers” list.  
+Modules User Guide 
+ 
+Page 87 
+ 
+ 
+ 
+Single Carrier is the default option. This does not take load into account. 
+Beam Load uses the load on the transmit beam as calculated by any load links. 
+Maximum uses the “Max Load” value for the transmit antenna’s beam instead of 
+the its current load 
+Traffic is similar to maximum, but the load is multiplied by the traffic level from a 
+given traffic object. 
+Station Users: this uses the Station’s “Maximum Load” field to determine the 
+transmit power. For more information, please see the White Paper on using 
+Population Data in Visualyse Professional. 
+If you choose the traffic option, you need to specify a traffic object.  
+To do this, first make sure that the “Enable traffic modelling on this link” box is 
+checked. In the traffic model list, select one of the traffic objects. Finally, in the 
+Traffic load box, choose the level at which the traffic level should be applied.  
+Remember that a transmit link can apply to anything from a whole group of 
+stations, antennas and beams right down to a single beam on one station.  
+The “Traffic load” option defines the position in the group-station-antenna-beam 
+hierarchy at which individual traffic levels should be applied. 
+For example, if you choose “Group”, the same traffic level will be applied to the 
+maximum load for every beam on every antenna for all stations in the transmit 
+group. 
+If you choose “Antenna”, the same traffic level will be applied to the maximum 
+load for all beams in a given antenna. However, each antenna will use a 
+different traffic level. 
+6.3.6 The Effect of Load on a Signal 
+The two properties of a transmit signal that are affected by variations in load are 
+the bandwidth and the EIRP. 
+The way that the load affects these properties depends mainly on the link’s 
+carrier.  
+Remember that carriers are blocks of allocated and occupied bandwidth, which 
+have a defined polarisation type. The occupied bandwidth is where most of the 
+signal is transmitted. However, the signal tails off at the edge of this range and 
+can interfere with other signals. 
+The carrier therefore has an allocated bandwidth that encloses the emissions at 
+the edge of the occupied bandwidth. This relationship is shown in the diagram 
+below. 
+Modules User Guide 
+ 
+Page 88 
+ 
+ 
+ 
+EIRP
+Frequency
+Allocated
+Bandwidth
+Occupied
+Bandwidth
+ 
+The carrier defines the access method for the link. This is the most significant 
+factor in determining how the signal responds to changes in load. 
+To change the access method for a carrier:  
+1. Edit the carrier and select “Traffic”. The following dialog is displayed. 
+ 
+2. Select an access method from TDMA, FDMA, and CDMA 
+3. If selected TDMA, then enter number of slots 
+4. If selected CDMA, then enter number of codes 
+5. Select a loading method 
+There are three access methods: TDMA, CDMA and FDMA. The next three 
+sections look at how the signal changes for each access mode, and also the 
+implications of the loading methods. 
+6.3.6.1 TDMA 
+TDMA stands for Time Division Multiple Access. It allows several separate 
+digital transmission channels to be used within the same carrier bandwidth. The 
+time over which a signal is transmitted is split up into equal length frames. Each 
+frame is then split into a fixed number of slots. 
+Modules User Guide 
+ 
+Page 89 
+ 
+ 
+ 
+The individual channels are allocated a slot for each time frame. No two 
+messages are actually being transmitted at the same time. Instead the channels 
+share the bandwidth by transmitting at different times. 
+Time
+Slot 1
+Frame
+Slot 2
+Slot 3
+Slot 4
+Slot 1
+Frame
+Slot 2
+Slot 3
+Slot 4
+Carrier
+Bandwidth
+ 
+The total bandwidth of a TDMA transmission is determined by the number of 
+carriers. Each carrier can handle one time frame worth of slots and each slot or 
+can accommodate 1 unit of load. The number of carriers required to handle a 
+particular load is therefore:  
+slots
+of
+Number
+Load
+Carriers
+of
+Number
+=
+ 
+The central frequency for these carriers is determined by the load method for the 
+carrier, the transmit antenna’s beam’ maximum load and the central frequency 
+for the link. 
+The maximum number of carriers can be calculated by substituting the transmit 
+antenna maximum load into the formula above. 
+You will recall from the section on traffic loading that an antenna has a 
+maximum load and that this is used to limit the load on any associated beams. 
+You can view or edit the maximum load for a beam by editing the corresponding 
+antenna and looking at the “Maximum Load” field under the “Advanced” options. 
+This is shown below for a single beam antenna defined via contours. 
+Modules User Guide 
+ 
+Page 90 
+ 
+ 
+ 
+ 
+The total bandwidth for the maximum number of carriers gives the maximum 
+bandwidth for the link. This is shown in the diagram below. 
+Frequency
+Maximum Bandwidth
+Link Central Frequency
+Carriers
+ 
+Modules User Guide 
+ 
+Page 91 
+ 
+ 
+ 
+The load method for the carrier then provides four methods for stacking the 
+carriers within the maximum bandwidth. 
+To change the load method for a carrier:  
+1. Edit the carrier for the link and click on “Traffic”. The following options are 
+displayed: 
+ 
+2. In the Load Method list, select one of the four methods. These are described 
+below. 
+ 
+Link Central Frequency
+ 
+Start Low 
+Stacks the carriers together 
+from the bottom of the 
+bandwidth upwards. 
+Start High 
+Stacks the carriers together 
+from the top of the 
+bandwidth downwards. 
+ 
+Start Centre 
+Stacks the carriers 
+symmetrically around the 
+centre frequency. 
+ 
+Space Evenly 
+Spreads the carriers evenly 
+throughout the bandwidth. 
+Frequency
+Maximum Bandwidth
+ 
+EIRP varies according to the number of carriers and not the load at the transmit 
+beam. This is because a TDMA signal always uses the spare slots in a time 
+frame if there are fewer messages than slots. 
+The variation of EIRP with load is as shown in the graph below. 
+Modules User Guide 
+ 
+Page 92 
+ 
+ 
+ 
+Load
+1 Carrier
+EIRP
+3 Carriers
+2 Carriers
+4 Carriers
+ 
+You will notice that the EIRP only increases when an additional carrier is 
+required. 
+6.3.6.2 CDMA 
+CDMA stands for Code Division Multiple Access. The method uses unique code 
+sequences to produce a set of orthogonal signals that provide distinct digital 
+transmission channels within the same carrier bandwidth. 
+These signals are distinguishable even though they share the same frequency 
+bands and the same time intervals. 
+The number of codes for a CDMA signal is defined by the carrier of the link. 
+A single carrier can support a maximum number of codes. When the demand for 
+channels exceeds the maximum number of codes, additional carriers are 
+required. This determines the total bandwidth of the CDMA signal. 
+The number of carriers required to handle a particular load is therefore:  
+codes
+of
+Number
+Load
+Carriers
+of
+Number
+=
+ 
+The central frequency for these carriers is determined in exactly the same way 
+as for TDMA carriers. The result is a set of carriers stacked within the maximum 
+bandwidth of the link as determined by the maximum load for the transmit 
+antenna’s beam. 
+The main difference between TDMA and CDMA transmissions is the way that 
+EIRP varies with load. 
+The orthogonal signals produced by a CDMA transmitter are noise-like in their 
+appearance. The EIRP therefore needs to be increased for each additional 
+channel. 
+The variation of EIRP with load is as shown in the graph below. The variation for 
+an equivalent TDMA signal has been superimposed in order to make a 
+comparison. 
+Modules User Guide 
+ 
+Page 93 
+ 
+ 
+ 
+Load
+1 Carrier
+EIRP
+3 Carriers
+2 Carriers
+4 Carriers
+TDMA
+CDMA
+ 
+6.3.6.3 FDMA Signals 
+FDMA stands for Frequency Division Multiple Access. This allows a large 
+number of channels to share access to a group of frequency bands without 
+interference by assigning specific frequencies within the group of frequencies to 
+each channel. 
+The shared frequency bandwidth is the maximum load of the transmit Beam 
+Type multiplied by the bandwidth of the carrier for the link. The central frequency 
+is the central frequency for the link.  
+Each channel uses a single carrier and these can appear randomly within the 
+share frequency band as shown below. 
+Frequency
+Link Central Frequency
+Carriers
+Shared Bandwidth
+ 
+Instead of simulating all these carriers individually, Visualyse Professional 
+models the whole FDMA transmission as a wide band signal with a power level 
+that is proportional to the number of carriers. 
+The graph of EIRP against load is therefore a similar shape to the graph for 
+CDMA. 
+Load
+10 Carriers
+EIRP
+20 Carriers
+ 
+6.3.7 Loading Multiple Beams 
+Section 6.3.4 described how a load link can be used to load the throughput from 
+a station onto a single beam on another station. In this case as much of the 
+throughput as possible is used to load the end station beam. 
+Modules User Guide 
+ 
+Page 94 
+ 
+ 
+ 
+However, sometimes you may wish to spread the load among individual beams 
+on a number of end stations. 
+For example, an Earth Station with a maximum throughput of 10 could be used 
+to model handsets transmitting from a particular area on the ground. The 
+maximum throughput represents the maximum number of handsets that are 
+expected to be transmitting at any one time. 
+The handsets communicate with a constellation of non-geostationary satellites. 
+Each satellite can service a maximum of 5 handsets at a time. 
+The usage of satellites by handsets can be modelled by creating a load link from 
+the Earth Station to the constellation of satellites. A tracking strategy would be 
+used to select the highest elevation satellite. 
+However, if more than 8 handsets are transmitting, only five of them can use the 
+highest elevation satellite. The other 3 handsets would have to use the next 
+satellite that meets the conditions of the tracking strategy. 
+The load link can model this behaviour by loading the beams on more than one 
+station. The next section explains how this behaviour is defined. 
+The first point to note is that a load link can only load a single beam on any one 
+station. Multiple beam loading is therefore achieved by spreading the load 
+across a number of stations. For each station, a single beam is used. 
+To do this, the load link must select its end station from a group. In addition, the 
+end station must be selected using a tracking strategy object and not one of the 
+predefined tracking strategies. 
+The reason for this is that the tracking strategy object compiles a list of 
+candidate stations by applying its reduction criteria. It is the beams on these 
+stations that receive the load. 
+To use a tracking strategy object to select the end station: 
+1. Edit the load link. 
+2. Click the “End” tab. 
+3. Click on “Add or Edit…” and then create a user defined tracking strategy 
+4. Under “Tracking strategy” select the newly created one 
+The picture below shows an example of how the dialog should look. 
+Modules User Guide 
+ 
+Page 95 
+ 
+ 
+ 
+ 
+Finally, in the group list, select a group from which to select an end station 
+together with the antenna / beam selection methods. 
+You must make sure that your tracking strategy object does not reduce the 
+candidate list to just one station. If this happens, the throughput will be allocated 
+to just one station. 
+To ensure that a tracking strategy uses the entire candidate list: 
+1. Edit the tracking strategy 
+2. Under selection method, select “Advanced” and then click on “Edit…” 
+3. Make sure that the check boxes are not checked (as shown below). 
+ 
+Having set up the tracking strategy and end station selection for your load link, 
+the final step is to decide how load is allocated to multiple beams. 
+Modules User Guide 
+ 
+Page 96 
+ 
+ 
+ 
+To enable allocation of load to multiple beams: 
+1. Edit the load link 
+2. Click the “Allocate” tab. 
+3. Make sure that the Multiple Allocation box is checked (as shown below). 
+ 
+Before we go any further, let’s just recap on the process of throughput allocation 
+to multiple beams: 
+1. The load link is configured so that the end stations are selected from a 
+group of stations according to a tracking strategy. 
+2. The tracking strategy compiles a list of candidate stations. 
+3. The load link selects which antenna and beam to use. 
+4. The throughput from the start station is then divided into parts that are then 
+allocated to the specified beam on each candidate station. 
+There are a number of ways of dividing up the load from the start station and 
+sharing it amongst the candidate stations. This is determined by the parameter, 
+method and unallocated method controls (these are visible in the picture above). 
+The method list provides four ways of sharing the load amongst the candidate 
+stations. 
+▪ 
+Equal 
+- allocates traffic equally amongst the 
+stations 
+▪ 
+Proportional 
+- shares the traffic load according to 
+distance or elevation 
+▪ 
+Biased 
+- shares the traffic such that there is a bias 
+towards the highest elevation or nearest 
+station 
+Modules User Guide 
+ 
+Page 97 
+ 
+ 
+ 
+▪ 
+Table 
+- uses tabulated data to define the sharing 
+of traffic load between stations 
+If you choose the proportional, biased or table methods, you need to decide 
+whether you want to use distance or elevation. This is specified in the parameter 
+list. 
+The load for the ith station is 
+i
+factor
+load
+total
+
+.  
+For each method, 
+i
+factor  is calculated as follows: 
+Equal 
+stations
+of
+number
+wi
+1
+=
+ 
+i
+i
+w
+factor =
+ 
+Proportional 
+
+i
+i
+elevation
+w =
+      OR  
+1
+1
++
+=
+i
+i
+distance
+w
+ 
+i
+i
+i
+w
+w
+factor
+
+=
+ 
+Biased 
+1
+1
+w
+b =
+ , 
+ 
+i
+i
+i
+b
+b
+factor
+
+=
+ 
+Where
+i
+w is the same as for 
+the proportional method. 
+Table 
+The weighting, 
+i
+w  is 
+calculated from the table by 
+applying linear interpolation 
+if necessary. 
+i
+i
+i
+w
+w
+factor
+
+=
+ 
+The unallocated method list determines what happens to throughput, which 
+cannot be loaded onto a particular beam. This can occur if the current load plus 
+the additional load exceeds the maximum for the beam. 
+The excess load can either be discarded or it can be diverted to a beam on 
+another candidate station that has available loading. To discard the unallocated 
+load, choose “None” from the unallocated method list. To divert the load to a 
+beam on another candidate station, choose “Available loading” from the 
+unallocated method list. 
+You can look at the discarded load for a load link using the watch window. To do 
+this, select the load link from the “Add watch” options. 
+You can also collect statistics for the load left attribute. You can plot it on a 
+graph or log it to a file just like any other object attribute. 
+6.3.8 Load Links on Watch Windows 
+The principle way to see output from the load link calculations is via the watch 
+window. In addition the watch window can also be used to show the inputs into 
+the algorithm for reporting process. 
+The key locations to look are: 
+Under station, for each beam of each antenna: 
+ 
+Load:  
+ 
+ 
+current load on that beam 
+Under station, under the traffic: 
+(
+)
+i
+i
+i
+w
+w
+b
+−
+=
+1
+Modules User Guide 
+ 
+Page 98 
+ 
+ 
+ 
+Maximum throughput: 
+throughput if traffic object is 100% 
+Maximum load: 
+ 
+capacity of this station 
+Load:  
+ 
+ 
+current traffic through this station 
+Under each load link: 
+ 
+ 
+   
+Load left: 
+ 
+ 
+traffic that could not be allocated 
+6.3.9 Load Links Tutorial 
+6.3.9.1 Introduction 
+This section gives a worked example that shows how load links can be used and 
+combined with traffic objects. 
+The simulation considers a scenario involving a base station being loaded by 
+traffic from mobile users, using constraints within traffic and load link objects. 
+This is used in traffic modelling and also to calculate interference into a sensitive 
+radio astronomy receiver in an adjacent band. 
+The simulation will be built in stages as follows: 
+1. 
+Base station, mobiles and carriers 
+2. 
+Load link, traffic and watch window 
+3. 
+TX link, RX link, and interference path 
+Note that familiarity with Visualyse Professional is assumed to the extent that 
+users are confident in the steps required to create key elements. When 
+parameters are not mentioned they can be assumed to be left as the default 
+values. 
+6.3.9.2 Stage 1: Basic Simulation 
+Open a blank simulation to work with. The first stage involves building the 
+mobile network – i.e. the base station and its mobile users, in the follow steps: 
+a) Create the antennas 
+b) Create the stations, together with their groups and define variables 
+c) Add the carriers  
+d) Configure a view 
+ 
+Antennas: 
+The simulation should already have a single zero gain isotropic antenna which 
+will be used for the mobiles and radio astronomy service. It is therefore only 
+necessary to create an antenna for the base station as follows: 
+Type:  
+ 
+Multiple Identical Beams 
+Arrangement: 
+Name:  
+BS 3 sector 
+Number beams: 
+3 
+Azimuths: 
+ 
+(0, 120, -120) 
+Modules User Guide 
+ 
+Page 99 
+ 
+ 
+ 
+Elevations: 
+ 
+(-1, -1, -1) 
+All beams: 
+Beam type: 
+ 
+elliptical 
+Beam pattern:  
+parabolic 
+Peak gain: 
+ 
+15 dBi 
+Semi-major axis: 
+120° 
+Semi-minor axis: 
+5° 
+Use gain floor: 
+ 
+yes 
+Gain floor: 
+ 
+-20 dB 
+Advanced: 
+Maximum load: 
+ 
+2  
+ 
+Station Groups: 
+For convenience all stations are contained within a group. Create three empty 
+groups and add stations as follows: 
+ 
+Group 1:  
+Name: Base Stations 
+Add a terrestrial fixed station and configure as follows: 
+Name:  
+ 
+BS-1 
+Lat/Long/Height: 
+(51.0°, 0.0°, 20m) 
+Antenna: 
+ 
+BS 3 sector 
+ 
+Group 2:  
+Name: Mobiles 
+Add a mobile station and configure as follows: 
+Name:  
+ 
+MS-1 
+Height: 
+ 
+ 
+1.5 m 
+Antenna: 
+ 
+Zero gain antenna 
+Duplicate MS-1 five times to make six mobiles 
+Create a new define variable to Monte Carlo the position of a terrestrial station 
+over a service area.  
+ 
+Group:  
+ 
+Mobiles 
+ 
+Central station: 
+BS-1 
+ 
+Service area radius: 5 km 
+ 
+Service area type: 
+hexagons 
+ 
+ 
+Modules User Guide 
+ 
+Page 100 
+ 
+ 
+ 
+Group 3:  
+Name: RAS 
+Add a terrestrial fixed station and configure as follows: 
+Name:  
+ 
+RAS 
+Lat/Long/Height: 
+(51.05°, 0.0°, 20m) 
+Antenna: 
+ 
+Zero gain antenna 
+ 
+Carriers 
+The simulation should already have a standard 1 MHz carrier defined. Create 
+another with parameters: 
+Name:  
+ 
+WCDMA 
+Bandwidth: 
+ 
+5 MHz 
+Traffic: 
+Access method: 
+CDMA 
+Number codes: 
+512 
+ 
+Views: 
+Open a Mercator view and jump to the UK. On the properties disable show 
+beams and on the overlay tab, active the “20 km square grid at 51N 0E” user 
+defined overlay while switching off all others. Zoom in so the window shows the 
+stations and the grid. 
+ 
+Running the simulation: 
+The result should be a view similar to this: 
+Modules User Guide 
+ 
+Page 101 
+ 
+ 
+ 
+ 
+If you run the simulation you should see the locations of the six mobiles change 
+from time step to time step. 
+This models a single cell mobile network with six users that can be located 
+anywhere in its hexagonal service area. With three sectors there will be on 
+average 2 users per sector, and but as the locations are randomised there could 
+be times where there are more or less users within each sector.  
+Save this file as “Traffic tutorial.sim”. 
+6.3.9.3 Stage 2: Traffic and Load Links 
+The next stage involves loading the base station with traffic from the users in the 
+following steps: 
+e) Create the traffic object 
+f) Create the load links 
+g) Open and configure a watch window and data vs. time graph 
+ 
+Traffic: 
+Create a traffic object which will by default be simply on: this will be changed at 
+a later stage. 
+ 
+Load Links: 
+Open up the load link list and create a load link with following parameters: 
+Name: LL-1 
+Start:  
+Modules User Guide 
+ 
+Page 102 
+ 
+ 
+ 
+Named station: 
+MS-1 
+End: 
+Tracking strategy: 
+Named 
+ 
+Station: 
+ 
+BS-1 
+ 
+Antenna: 
+ 
+Antenna-1 
+ 
+Beam:  
+ 
+Highest gain beam 
+Traffic: 
+Enable traffic:  
+True 
+Traffic model:  
+Traffic 
+ 
+Having done this, duplicate the load link five times and change the start station 
+to be (MS-2 to MS-6). 
+ 
+Watch window and Data vs. Time Graph: 
+Open up a watch window and add the following: 
+• 
+BS.BS-1.Traffic.Load 
+• 
+LL-1.Load Left 
+ 
+• 
+LL-2.Load Left 
+ 
+• 
+LL-3.Load Left 
+ 
+• 
+LL-4.Load Left 
+ 
+• 
+LL-5.Load Left 
+ 
+• 
+LL-6.Load Left 
+ 
+ 
+Open a Data vs. time graph and select the variable “BS.BS-1.Traffic.Load”. 
+ 
+Running the simulation: 
+The load left field shows if there is traffic that could not be allocated due to 
+constraints within the model. In most cases the maximum load on the antenna 
+and stations is the default value of 100, apart from the maximum load on each of 
+the sectors of the base station antenna which is set to 2. 
+Hence in many cases the randomisation of the locations of the mobiles means 
+there is more than 2 within that sector and hence the 3rd mobile will be unable 
+to allocate its traffic. Therefore as you run the simulation you will see non-zero 
+values for the “Load left” – in particular for those at the bottom of the list which 
+are allocated last. 
+The aggregate traffic can be seen in the base station “Load”: if all user’s traffic is 
+allocated this would be six, but often it is less than this, as can be seen in the 
+plot below of traffic at BS-1 vs. time. 
+Modules User Guide 
+ 
+Page 103 
+ 
+ 
+ 
+ 
+This can be used to analyse quality of service requirements – for example by 
+calculating statistics of failed call requests. 
+6.3.9.4 Stage 3: Interference Path 
+The final stage involves creating the links and interference paths: 
+h) Create the links 
+i) Create the interference path with statistics 
+j) Update the watch window and open a statistics view 
+ 
+Links: 
+To model the radio astronomy site, open up the link list and create a receive link 
+with following parameters: 
+Name: RAS RX 
+Type:  
+ 
+Space <-> Earth 
+End: 
+Station: 
+ 
+RAS 
+Receive: 
+Frequency: 
+ 
+611 MHz 
+ 
+Then create the following transmit link to model emissions from the base station 
+in an adjacent band: 
+Name: BS TX 
+Type:  
+ 
+Terrestrial mobile 
+Start: 
+Named station: 
+BS-1 
+Antennas: 
+ 
+All antennas 
+Modules User Guide 
+ 
+Page 104 
+ 
+ 
+ 
+Transmit: 
+ 
+Carrier: 
+ 
+WCDMA 
+Frequency: 
+ 
+617 MHz 
+ 
+Power:  
+ 
+-10 dBW 
+Traffic: 
+ 
+Number of carriers: 
+Beam load 
+ 
+The traffic field “Number of carriers” = “Beam load” means the transmit power in 
+each sector will depend upon the loading for that antenna. Each user’s downlink 
+is assumed to transmit at -10 dBW1 and because the carrier is defined as using 
+CDMA as the access method, the power from each user will aggregate. Hence if 
+there are two users per sector the transmit power will be -7 dBW. 
+Finally configure the “Terrestrial Mobile” propagation model to use Hata / COST 
+231 for interfering paths, setting the environment to be open. 
+ 
+Interference Path and Statistics: 
+Create an interference path with following options: 
+Wanted link:  
+ 
+RAS RX 
+Interfering link: 
+ 
+BS TX 
+Advanced: 
+ 
+Check overlap: 
+ 
+false 
+ 
+Other adjustments: 
+ 
+45 dB 
+ 
+Bandwidth adjustment: 
+none 
+ 
+ 
+This sets up the interference path for an adjacent band scenario with 45 dB of 
+attenuation compared to the systems operating co-frequency. 
+Under statistics, select threshold type = “I”, level -143 dBW2, and activate collect 
+histogram with 1 dB bins. 
+ 
+Watch Window and Statistics Graph: 
+Add the following to the existing watch window: 
+• 
+RAS RX.All Interferers.No. of Interferers 
+ 
+• 
+RAS RX.All Interferers.I 
+• 
+RAS RX.Statistics.I statistics.Percentage bad steps 
+ 
+• 
+RAS RX.Statistics.I statistics.Worst value 
+ 
+1 i.e. fixed EIRP / carrier. This field could be further randomised – for example to include variations due to 
+power control 
+2 Note this number, like the other parameters of this simulation, is completely arbitrary! 
+Modules User Guide 
+ 
+Page 105 
+ 
+ 
+ 
+• 
+RAS RX.Worst Interferer.Interfering Power 
+• 
+RAS RX.Worst Interferer.Interfering Relative Gain 
+Then open a new distribution chart and show a histogram of the interference. 
+ 
+The resulting simulation should look something like this at the end of the run: 
+ 
+6.3.9.5 Running the Simulation 
+Having created the basic simulation it is possible to undertake some analysis.  
+Notice that as the location of each of the mobiles is randomised the number in 
+each sector varies from none to up to six. As the limit of loading per beam is 
+two, this means that in situations where there is three or more mobiles within a 
+sector there will be traffic that cannot be allocated 
+Hence the load link’s “Load left” is often non-zero – in particular for the last few 
+load links to be allocated. The first two load links should always be able to 
+allocate their traffic. 
+The traffic at the base station will therefore vary, depending on whether the 
+sector limit is met. The traffic will only reach 6 units if there are exactly 2 users in 
+each sector. 
+As the traffic per sector varies in the range (0 – 2) the interference at the radio 
+astronomy site varies. The field “No. of interferers” refers to number of sectors 
+i.e. antenna beams that are causing interference. As at times some sectors will 
+be empty the number can drop below 3. It will never reach zero as the users 
+should at all times be in one of the three sectors! 
+The number of users per sector will impact the EIRP of that sector: look at the 
+transmit power of the worst interfering link budget and it will be either -10 dBW 
+(one user) or -6.9 dBW (two users) 
+Modules User Guide 
+ 
+Page 106 
+ 
+ 
+ 
+If there are no users in the sector pointing towards the radio astronomy site then 
+interference will come from the side lobes of the other two sectors – typically 12 
+dB lower. 
+Over the 1,000 time step run the probability of interference should calculated to 
+be about 90% with worst value -140 dBW (actual numbers could be slightly 
+different depending upon random number seed). 
+6.3.9.6 Variations on the Simulation 
+The basic simulation can be varied in a number of ways. Try re-setting the 
+simulation to its start and then carrying out the following changes one by one: 
+Remove the sector load limit 
+Change the “BS 3 sector” antenna maximum load to 100 and re-run: all load 
+links will be able to allocate all their traffic and hence the base station traffic will 
+always be six. The highest interfering level increases to 137.7 dBW to reflect 
+situations where the sector pointing towards the radio astronomy site has more 
+than 2 mobiles. 
+Set a base station sector limit 
+Set the maximum traffic to the base station as being 4: in this case the last two 
+load links will always have traffic unallocated as the previous ones will fully use 
+up the total for the station. Both the percentage of steps bad and worst 
+interfering level will decrease due to this additional constraint. 
+Add a high traffic user 
+Set the maximum through-put for mobile “MS-1” to be 10 (e.g. representing high 
+speed data rather than voice): this is greater traffic than the base station can 
+manage, and so this mobile will have 6 units unallocated and all other load links 
+will be unable to allocate any traffic. The histogram will show two bars – one 
+when MS-1 is in the sector pointing towards the radio astronomy site and 
+another twice as frequent for the other two sectors. 
+Add traffic modelling 
+Set the maximum load for the base station to 12 so not all load links can be 
+active at once. However also change the traffic object to use a state machine 
+model with probability active/on/off as 50%. This will increase the variation in 
+users active and result in probability of interference reduced to around 30%. 
+Include exclusion zone 
+In the traffic object include a 3 km exclusion zone around the radio astronomy 
+site where mobiles must switch off. This reduces the probability of interference 
+to around 18 % 
+Modify mobile network 
+To reduce the interference even further, increase the downtilt on the base 
+station’s antenna to 3° and reduce the power per user to -14 dBW and re-run the 
+simulation. The probability of interference should in this case be under 1%:  this 
+could be an acceptable level. 
+Modules User Guide 
+ 
+Page 107 
+ 
+ 
+ 
+6.3.9.7 Summary 
+This tutorial has shown how the load links can be used to model traffic within a 
+network and how that in turn can be used to model interference into other 
+systems.  
+This basic simulation could be extended in many other ways. For example there 
+could be a larger deployment with more base stations and mobiles. In these 
+situations there could be alternative routes for the traffic – not just the nearest 
+base station but also the 2nd nearest could be considered. Hence the traffic 
+identified in this simulation as “Load left” could be routed to another base 
+station. This can be included by using the load link’s “Allocate” functions. 
+By including these additional factors a more detailed model of complex networks 
+can be generated, improving the ability for communication systems to share the 
+radio spectrum. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Modules User Guide 
+ 
+Page 108 
+ 
+ 
+ 
+7 
+Acronyms and Abbreviations 
+AGD 
+Australian Geodetic Datum 
+AMS 
+Annual Maintenance and Support 
+AMT 
+Aeronautical Mobile Telemetry 
+BS 
+Base Station 
+BT 
+Bluetooth 
+CDMA 
+Code Division Multiple Access 
+CSV 
+Comma Separated Values 
+DEM 
+Digital Elevation Model 
+EIRP 
+Equivalent Isotropic Radiated Power 
+FDMA 
+Frequency Division Multiple Access 
+FS 
+Fixed Service 
+FSS 
+Fixed Satellite Service  
+GPS 
+Global Positioning System 
+GSO 
+Geostationary Orbit 
+IDWM 
+ITU Digitised World Map 
+ITU 
+International Telecommunications Union 
+MS 
+Mobile Station 
+MSS 
+Mobile Satellite Service  
+OS 
+Ordnance Survey 
+RAS 
+Radio Astronomy Service 
+RX 
+Receive 
+S-DARS 
+Satellite – Digital Audio Radio Service 
+SRTM 
+Shuttle Radar Topography Mission 
+SWBD 
+SRTM Water Body Data 
+TDMA 
+Time Division Multiple Access 
+TX 
+Transmit 
+UK 
+United Kingdom 
+USGS 
+United States Geological Survey 
+UTC 
+Universal Coordinated Time 
+WCDMA 
+Wideband Code Division Multiple Access 
+WGS84 
+World Geodetic System 
+ 
+ 

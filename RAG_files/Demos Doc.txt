@@ -1,0 +1,4260 @@
+Demonstration Files 
+ 
+Page 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Visualyse Professional 
+Version 7 
+ 
+ 
+ Demonstration Files 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 2 
+ 
+ 
+ 
+Version and Copyright Information 
+Product:  
+ 
+Version Professional 
+Version:  
+ 
+7.10.0 
+Document Version: 
+1.6 
+The IDWM database is © ITU and supplied under license. 
+© Transfinite Systems Ltd 
+ 
+Important Note 
+Transfinite Systems Ltd reserves the right to change features and functionality 
+without notice. 
+The simulation files shipped might vary slightly from the ones described in this 
+document. Not all terrain, clutter and map overlays might be available for copyright 
+reasons. 
+Demonstration Files 
+ 
+Page 3 
+ 
+ 
+ 
+Table of Contents 
+1 
+INTRODUCTION 
+............................................................................................ 
+5 
+2 
+VISUALYSE PROFESSIONAL 
+...................................................................... 
+6 
+3 
+THE DEMONSTRATION FILES .................................................................... 
+9 
+3.1 
+Aeronautical 
+..................................................................................................................................... 9 
+3.1.1 
+Aeronautical satellite service .......................................................................................................10 
+3.1.2 
+Aircraft into FS stations ...............................................................................................................12 
+3.1.3 
+Aircraft with pre-set track across US and interference from FS ..................................................14 
+3.1.4 
+AMT vs. Globalstar .....................................................................................................................16 
+3.1.5 
+Modelling air traffic routes ..........................................................................................................18 
+3.2 
+Digital Dividend 
+..............................................................................................................................19 
+3.2.1 
+3G into DVB Punched Holes .......................................................................................................20 
+3.2.2 
+DVB into 3G Punched Holes .......................................................................................................22 
+3.2.3 
+Monte Carlo Mobile into DTT Fixed Receive .............................................................................24 
+3.3 
+Earth Station Coordination ...........................................................................................................26 
+3.3.1 
+Coordination Contours 
+.................................................................................................................27 
+3.3.2 
+WiMAX to ES EZ 
+........................................................................................................................29 
+3.3.3 
+Little LEO gateways into FS 
+........................................................................................................31 
+3.4 
+Fixed Planning and Coordination 
+.................................................................................................33 
+3.4.1 
+FS Import from IFIC ....................................................................................................................34 
+3.4.2 
+PtMP UT Deployment .................................................................................................................35 
+3.4.3 
+PtP link planning 
+..........................................................................................................................37 
+3.5 
+GSO to GSO Satellite .....................................................................................................................39 
+3.5.1 
+GSO downlink with rain loss .......................................................................................................40 
+3.5.2 
+GSO to GSO MSS availability 
+.....................................................................................................41 
+3.5.3 
+GSO transfer orbit TTC with interference from populated GSO arc ...........................................43 
+3.5.4 
+LUX 28,2 coverage 
+......................................................................................................................45 
+3.5.5 
+Lux Arabsat Coordination 
+............................................................................................................47 
+3.6 
+Maritime 
+..........................................................................................................................................49 
+3.6.1 
+ESV Interference Area .................................................................................................................50 
+3.6.2 
+GSO ES on ship entering Seattle Port into FS .............................................................................52 
+3.6.3 
+MRCC Coverage 
+..........................................................................................................................54 
+3.7 
+Military 
+............................................................................................................................................56 
+3.7.1 
+Missile telemetry with jamming...................................................................................................57 
+3.7.2 
+UAV demo 
+...................................................................................................................................58 
+3.8 
+Network Coverage 
+..........................................................................................................................60 
+3.8.1 
+Broadcasting Coverage ................................................................................................................61 
+3.8.2 
+Mobile Coverage 
+..........................................................................................................................63 
+3.8.3 
+PMR Coverage 
+.............................................................................................................................66 
+3.9 
+Non-GSO Satellites 
+.........................................................................................................................68 
+3.9.1 
+Data relay satellite end to end route with handover .....................................................................69 
+3.9.2 
+Galileo with HEO overlay 
+............................................................................................................71 
+3.9.3 
+GSO to non-GSO Area Analysis..................................................................................................73 
+3.9.4 
+HEO into GSO DL at Ku band ....................................................................................................75 
+3.9.5 
+MSS Feeder links with spot beams ..............................................................................................77 
+3.9.6 
+Non-GSO MSS and Galileo 
+.........................................................................................................78 
+3.9.7 
+PFD at GSO from NGSO MSS Feeder link 
+.................................................................................80 
+3.9.8 
+Teledesic & Celestri with constellation avoidance ......................................................................82 
+3.9.9 
+Teledesic 840 satellite constellation 
+.............................................................................................84 
+Demonstration Files 
+ 
+Page 4 
+ 
+ 
+ 
+3.10 
+Others ..............................................................................................................................................85 
+3.10.1 
+HAPS with FS and FSS ...........................................................................................................86 
+3.10.2 
+Smart Antennas........................................................................................................................88 
+3.10.3 
+Traffic and Exclusion Zone .....................................................................................................90 
+3.10.4 
+Wi-Fi and ENG 
+........................................................................................................................92 
+3.11 
+PCS / AWS ......................................................................................................................................94 
+3.11.1 
+Analysis of FS into mobile RX 
+................................................................................................95 
+3.11.2 
+PCS-FS Demo - BS TX ...........................................................................................................97 
+3.11.3 
+PCS-FS Demo - MS TX ..........................................................................................................99 
+3.12 
+Radiolocation ................................................................................................................................101 
+3.12.1 
+Radar and Wind Farms Line of Sight ....................................................................................102 
+3.12.2 
+Radar into IMT BS ................................................................................................................104 
+3.12.3 
+Satellite ES into Radar 13.75 GHz ........................................................................................106 
+3.13 
+Satellite & Terrestrial ..................................................................................................................109 
+3.13.1 
+HEO FSS and FS ...................................................................................................................110 
+3.13.2 
+Satellite ATC Example ..........................................................................................................112 
+3.13.3 
+Urban GSO S-DARS Coverage 
+.............................................................................................115 
+3.14 
+Short Range Devices 
+.....................................................................................................................117 
+3.14.1 
+SRR into FS 
+...........................................................................................................................118 
+3.14.2 
+Wi-Fi and BT 
+.........................................................................................................................120 
+3.15 
+Space Science Service 
+...................................................................................................................122 
+3.15.1 
+PFD from non-GSO satellite DL ...........................................................................................123 
+3.15.2 
+P-MP FS into EESS (passive) 
+................................................................................................125 
+3.15.3 
+Sensor pointing at defined (az, el) angles ..............................................................................127 
+4 
+INDEX OF EXAMPLES BY FREQUENCY BAND ..................................... 
+129 
+5 
+MORE INFORMATION .............................................................................. 
+132 
+6 
+ACRONYMS AND ABBREVIATIONS ....................................................... 
+133 
+ 
+ 
+Demonstration Files 
+ 
+Page 5 
+ 
+ 
+ 
+1 
+Introduction 
+This document describes the example files supplied with the Version 7 of 
+Visualyse Professional. They have been selected to give an idea how Visualyse 
+Professional can model a range of radio systems and sharing scenarios. 
+Visualyse Professional Version 7 is a very flexible tool to study interference 
+between radio systems, in particular radio communication systems. We have 
+grouped the example files into the following categories: 
+• 
+Aeronautical 
+• 
+Digital Dividend 
+• 
+Earth station coordination 
+• 
+Fixed planning and coordination 
+• 
+GSO to GSO Satellite 
+• 
+Maritime 
+• 
+Military 
+• 
+Network Coverage 
+• 
+Non-GSO Satellites 
+• 
+Others 
+• 
+PCS/AWS 
+• 
+Radiolocation 
+• 
+Satellite & Terrestrial 
+• 
+Short range devices 
+• 
+Space Science Service 
+Some files require one or more of the Modules that enhance the main product: 
+• 
+Terrain  
+• 
+Traffic 
+• 
+Define Variable 
+• 
+IDWM 
+At the start of each section there is a table which shows the modules needed for 
+that example file. In the case of the Terrain Module it is also necessary to have the 
+right terrain data file available, so these are also listed. The terrain files should be 
+in the Visualyse 7/Terrain directory. 
+If you have a full version of Visualyse Professional you can also look at these files: 
+however, should the example file use a Module for which you do not have a 
+license, the demonstration might work incorrectly. In this case remove your dongle 
+so that you operate in Demonstration Mode.  
+Hint: You can change the parameters to see how that would impact the results, but only 
+at the start. You might have to reset the simulation to start: “Rewind” button on the 
+control bar. 
+Note: These simulation files have in places been simplified for clarity. 
+Demonstration Files 
+ 
+Page 6 
+ 
+ 
+ 
+2 
+Visualyse Professional 
+Visualyse Professional is the most widely used study tool within the ITU-R for 
+interference analysis and radio compatibility with over 200 papers produced using 
+it.  
+Visualyse Professional helps you model complex radio communication systems, 
+including terrestrial, aeronautical, maritime and satellite, including: 
+• 
+Sophisticated antenna modelling, including single beam, multiple beam, 
+symmetric beams (as in the figure below), and fixed, random, tracking, 
+rotating pointing methods 
+ 
+• 
+Detailed gain pattern modelling – e.g. ITU-R Recs, shaped and GIMS 
+contour beams, as in the figures below: 
+Demonstration Files 
+ 
+Page 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• 
+Library of propagation models including terrestrial mobile, fixed & 
+broadcasting, and earth to/from space, including those in the figure below. 
+ 
+ 
+ 
+• 
+Dynamics of mobile stations, ships, aircraft and satellites (GSO, HEO, and 
+non-GSO) 
+• 
+Access to intermediate calculations including link budgets, terrain path 
+profiles, and geometry 
+• 
+Link performance criteria including C, I, C/I, I/N, C/(N+I), PFD, EPFD, FDP, 
+plus statistics where required 
+Demonstration Files 
+ 
+Page 8 
+ 
+ 
+ 
+• 
+Data import tools for station locations, fixed links, SRS for GSO and non-
+GSO satellites, and terrestrial IFIC data 
+• 
+Monte Carlo any variable or use a sequence of pre-defined values  
+• 
+Interface to terrain and land-use databases, and use within propagation 
+models 
+• 
+Ability to see impact of varying the location of a station of almost any of the 
+results (i.e. to plot coverage, elevation angles, interference etc.) 
+ 
+Demonstration Files 
+ 
+Page 9 
+ 
+ 
+ 
+3 
+The Demonstration Files 
+3.1 Aeronautical 
+This section contains the following examples: 
+• 
+Aeronautical satellite service 
+• 
+Aircraft into FS stations 
+• 
+Aircraft with pre-set track across US and interference from FS 
+• 
+AMT vs. Globalstar 
+• 
+Modelling air traffic routes 
+Demonstration Files 
+ 
+Page 10 
+ 
+ 
+ 
+3.1.1 Aeronautical satellite service 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+L 
+Station types: 
+GSO Satellite, Aeronautical 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows Visualyse Professional modelling communication between 
+aircraft and GSO satellites. 
+The simulation uses a dynamic modelling whereby the planes are “flown” across 
+the world from Europe/US to Asia. During the route, they access broadband 
+services via a network of GSO satellites, one for each ocean region. 
+To provide the high gain needed to close the link, the GSO satellite uses an 
+antenna that generates 89 thin spot beams covering the field of view. As the 
+aircraft moves it must hand-over between these beams. 
+Visualyse Professional is calculating the C/N of the uplink as the aircraft moves 
+and switches between beam assuming free space path loss and gaseous 
+absorption in ITU-R Rec.P.676. 
+The figure above shows the simulation with three views open: 
+• 
+Plate Carrée map view (top) showing the aircraft, the satellites, the satellite 
+spot beams, the links, and the tracks of the aircraft 
+• 
+Quick graph (bottom left) showing the how the C/N for each link varies with 
+time. As the aircraft moves this plot will follow the peaks and troughs of the 
+currently active beam 
+Demonstration Files 
+ 
+Page 11 
+ 
+ 
+ 
+• 
+Table view (bottom right) showing the link budget and satellite spot beam 
+used at the present time step. 
+Demonstration Files 
+ 
+Page 12 
+ 
+ 
+ 
+3.1.2 Aircraft into FS stations 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+Aeronautical, Fixed 
+Propagation models: 
+Free space, ITU-R Rec.P.530, Diffraction at visible 
+horizon 
+ 
+This example shows Visualyse Professional modelling interference from airborne 
+radar into a fixed link at Ku band. 
+The aircraft is flying across the UK transmitting at high power on a frequency also 
+used by a point to point fixed link. The antenna on the aircraft is rotating round 
+pointing 10 degrees below the horizon and is modelled using ITU-R Rec.F.699 
+gain pattern. Note the radar antenna spin rate has been reduced to make the 
+example easier to see. 
+The propagation model for the air to ground is assumed to be free space path loss 
+if line of sight otherwise an additional diffraction term is used.  
+The fixed link is modelled using free space path loss plus the ITU-R Rec.P.530 
+rain and fade models which means the wanted signal can vary in time. The fixed 
+link antennas are based upon an ETSI specification style table. 
+As the aircraft flies and its antenna rotates and the fade varies on the fixed link the 
+C/I changes. When the C/I is below the threshold of C/I = 25 dB the link is 
+assumed to be suffering interference and is shown in red. 
+The simulation shows the following views open: 
+Demonstration Files 
+ 
+Page 13 
+ 
+ 
+ 
+• 
+Mercator map view (top left) showing the location of the aircraft, the fixed 
+service stations, the aircraft antenna footprint, and the link coloured as 
+either green (good) or red (bad) 
+• 
+Watch window (bottom left) showing the interfering link budget from the 
+AWACs to the fixed link 
+• 
+Statistics graph (top right) showing the cumulative distribution function of 
+the C/I at the fixed link’s receiver 
+• 
+Quick graph (bottom right) showing how the C/I varies against time 
+together with a line showing the threshold of C/I = 25 dB. 
+Demonstration Files 
+ 
+Page 14 
+ 
+ 
+ 
+3.1.3 Aircraft with pre-set track across US and interference from FS 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+S 
+Station types: 
+Aeronautical, Fixed 
+Propagation models: 
+Free space, ITU-R Rec.P.676, Diffraction when 
+beyond line of sight, Aircraft body shielding 
+ 
+This example shows a scenario whereby a commercial aircraft flies across the US 
+using part of C band (2 GHz) for communication services. This band is also used 
+by a number of point to point fixed links, and therefore there is the potential for 
+interference. 
+The aircraft is assumed to travel along pre-defined traffic routes: three are 
+modelled: 
+• 
+Los Angeles to New York 
+• 
+New York to Seattle 
+• 
+Seattle to Los Angeles 
+One hundred fixed service transmitters were deployed across the US, with random 
+antenna azimuth and elevations. Each was assumed to have a single antenna 
+using ITU-R Rec.P.699 as its gain pattern assuming a 2m dish. 
+The propagation model from the FS to the aircraft included the following four 
+terms: 
+1. Free space path loss 
+2. Diffraction when aircraft is beyond visible line of sight of the fixed station 
+Demonstration Files 
+ 
+Page 15 
+ 
+ 
+ 
+3. Attenuation due to atmospheric gases in ITU-R Rec.P.676 
+4. Shielding loss due to body of aircraft 
+5. The aggregate I/N at the receiver on the aircraft is then calculated from all 
+one hundred of the FS transmitters. 
+The simulation is shown with four windows open: 
+1. Mercator view (top left) showing the aircraft, its field of view and each of the 
+fixed service transmitters 
+2. Statistics view (bottom left) showing the cumulative distribution function of 
+I/N  
+3. Quick plot (top right) showing how the I/N would vary against time 
+4. Watch window (bottom right) showing the worst single interfering link 
+budget and the aggregate interference 
+Demonstration Files 
+ 
+Page 16 
+ 
+ 
+ 
+3.1.4 AMT vs. Globalstar 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+C 
+Station types: 
+Non-GSO Satellite, Earth Station, Aeronautical 
+Propagation models: 
+Free space 
+ 
+This scenario relates to sharing between aeronautical mobile telemetry (AMT) and 
+non-GSO MSS feeder links at around 5 GHz. In the study cycle leading up to WRC 
+07 it was Agenda Items 1.5 and 1.6. 
+The simulation is configured with the victim being the uplink to the Globalstar (G*) 
+network from a gateway in Australia. Co-frequency are a number of aircraft being 
+tested in the desert using the same frequency. 
+The Define Variable module is being used to specify the location of the aircraft 
+either: 
+• 
+On a square flight path 
+• 
+Selected at random using Monte Carlo methods 
+On each aircraft there are two antennas – one pointing up and one pointing down. 
+The interference is then the aggregate at the satellite receiver of all antennas on all 
+aircraft. 
+The propagation model for the wanted link from the gateway to the satellites and 
+the interfering link from the aircraft to the satellites is assumed to be simply free 
+space path loss. 
+In the simulation file, there are three windows open: 
+Demonstration Files 
+ 
+Page 17 
+ 
+ 
+ 
+• 
+3D view (right) showing the satellites, their space tracks, the gateway earth 
+station, the link connecting the gateway to the highest elevation satellites, 
+the aircraft and their field of views. 
+• 
+Watch window (top left) showing the wanted and interfering link budgets 
+• 
+Statistics window (bottom left) showing the cumulative distribution function 
+of the I/N at the satellite. In this case the highest I/N is predicted to be 
+around -7.5 dB 
+Demonstration Files 
+ 
+Page 18 
+ 
+ 
+ 
+3.1.5 Modelling air traffic routes 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+any 
+Station types: 
+Aeronautical 
+Propagation models: 
+n/a 
+ 
+This simulation shows how aircraft traffic routes can be modelled in Visualyse 
+Professional. The simulation shows a number of routes in the vicinity of the UK, 
+some of which are short-haul and some of which are long haul. 
+A single view is open showing a map of Europe in Mercator projection.  
+Demonstration Files 
+ 
+Page 19 
+ 
+ 
+ 
+3.2 Digital Dividend 
+This section contains the following examples: 
+• 
+3G into DVB Punched Holes 
+• 
+DVB into 3G Punched Holes 
+• 
+Monte Carlo Mobile into DTT Fixed Receive 
+This section considers issues relating to the so-called “Digital Dividend”, the 
+release of spectrum in parts of UHF as analogue TV is switched off. This could be 
+used for a variety of purposes, including mobile applications such as IMT-2000, 
+WiMAX, and DVB-H. However, these cellular like services could cause or suffer 
+interference with broadcasting applications, and so there has been a request for 
+studies by the ITU under WRC-11 Agenda Item 1.17. 
+The examples are based around sharing scenarios between digital TV and mobile 
+applications – and in particular between fixed TV receivers and IMT-2000 services. 
+Others scenarios could be considered and we would be happy to discuss this 
+further. There are also sharing scenarios involving other services – such as 
+aeronautical radionavigation – for which there could be examples in other sections 
+of this document. 
+Demonstration Files 
+ 
+Page 20 
+ 
+ 
+ 
+3.2.1 3G into DVB Punched Holes 
+Action: 
+None 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+South Wales 
+Frequency band: 
+UHF 
+Station types: 
+Broadcasting, Mobile 
+Propagation models: 
+ITU-R Rec.P.1546, ITU-R Rec.P.452 
+ 
+This example considers the impact of a mobile network working in an adjacent 
+band to a broadcaster. It considers a 1 kW local in-fill transmitter in the South 
+Wales part of Britain transmitting DVB-T on channel C63, i.e. a frequency of 810 
+MHz. In the adjacent channel C64, i.e. a frequency of 818 MHz is the downlink or 
+base station transmit part of a 3G / IMT-2000 network.  
+The analysis identifies the locations where interference from the adjacent mobile 
+operator would cause interference into a fixed TV receiver. The analysis takes 
+account of all the key factors including: 
+• 
+Terrain and land-use data: we have loaded the relevant terrain data and 
+(where available for copyright reasons) the land-use data to derive clutter 
+loss 
+• 
+Propagation models: we have used ITU-R Rec.P.1546 for the calculation of 
+the broadcaster’s wanted signal, using a location variability of 95%. For the 
+interference path we have used ITU-R Rec.P.452 due to its detailed 
+modelling when terrain data is available. We have a library of other ITU-R 
+models including P.1812 and generic models such as Hata and dual slope. 
+• 
+Gain patterns: we have modelled the fixed receive antenna using the 
+pattern in the RRC-06 Final Acts and the base stations as having three 
+sector antennas with downtilt of 2°. Visualyse Professional includes a wide 
+range of gain patterns and can include measured data in table format 
+Demonstration Files 
+ 
+Page 21 
+ 
+ 
+ 
+• 
+Interference measures: we have undertaken this analysis using the C/N or 
+C/(N+I) measure, but we can also calculate I, I/N, C/I, and PFD / field 
+strength. 
+• 
+Carrier shapes and net filter discrimination (NFD): Visualyse Professional 
+undertakes a direct analytic integration of the TX spectrum mask and RX 
+filter characteristics to calculate the NFD for this path.  
+The result is a highly accurate prediction of the impact of a 3G network operating 
+in an adjacent band on the coverage of a broadcasting network. In the screen shot 
+above you can see four windows: 
+• 
+Mercator map view (top right) showing the coverage of the broadcasting 
+system in the absence of interference overlaid on a map and also showing 
+the clutter database categories (where available) 
+• 
+Mercator map view (top left) showing the reduction in coverage of the 
+broadcasting system due to the “punched-holes” from the 3G network’s 
+base station transmissions 
+• 
+Frequency view (bottom left) showing the broadcasting receive mask 
+assumed and the spectrum mask of the 3G transmitter, and the NFD 
+calculated, around 46 dB 
+• 
+Path profile view (bottom right) showing the terrain between the broadcast 
+transmitter and the test point fixed receiver. 
+Demonstration Files 
+ 
+Page 22 
+ 
+ 
+ 
+3.2.2 DVB into 3G Punched Holes 
+Action: 
+None 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+South Wales 
+Frequency band: 
+UHF 
+Station types: 
+Broadcasting, Mobile 
+Propagation models: 
+ITU-R Rec.P.452 
+ 
+This scenario considers the reverse case to the previous example, and analyses 
+where the mobile network’s coverage would be reduced due to adjacent band 
+interference from the broadcaster. 
+In the screen shot above you can see four windows: 
+• 
+Mercator map view (top right) showing where the wanted signal of the 
+mobile system is sufficient to provide a service, overlaid on a map and also 
+showing the clutter database categories (where available) 
+• 
+Mercator map view (top left) displays the C/I of interference from the 
+broadcast transmitter into the mobile network, showing the “punched-hole” 
+effect from the broadcast transmitter 
+• 
+Frequency view (bottom left) showing the 3G receive mask assumed and 
+the spectrum mask of the broadcast transmitter, and the NFD calculated, 
+around 46 dB 
+• 
+Path profile view (bottom right) showing the terrain between one of the 
+base stations and the test point UE. 
+It can be seen that the higher power broadcast transmitter causes significant 
+“punched-holes” into the mobile networks coverage. To maintain coverage the 
+mobile operator would have to plan with increased number of base stations near 
+Demonstration Files 
+ 
+Page 23 
+ 
+ 
+ 
+each of the broadcaster’s transmitters. This in turn would increase interference into 
+the broadcast network! 
+Demonstration Files 
+ 
+Page 24 
+ 
+ 
+ 
+3.2.3 Monte Carlo Mobile into DTT Fixed Receive 
+Action: 
+Run Simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+UHF 
+Station types: 
+Broadcasting, Mobile 
+Propagation models: 
+Rec.P.1546, Hata / COST 231 
+ 
+The previous two examples where based upon the premise of prediction of interference 
+between real networks – i.e. using actual locations and powers to work out the resulting 
+coverage that can be expected. 
+To undertake regulatory analysis it is often useful to consider generic scenarios 
+with generic propagation models to identify lessons that are widely applicable. 
+This example considers one such simulation, using Monte Carlo methods to 
+identify the impact of a mobile network on a fixed receiver using generic 
+propagation models. 
+A test area has been configured with a grid of 20 base stations of a mobile network 
+deployed in a hexagonal grid. Each cell is assumed to contain 10 mobile users 
+simultaneously active and transmitting / receiving. The question this file addresses 
+is if this network operating in the adjacent channel to a DTT broadcast to a fixed 
+receiver, what would be the likelihood of interference? 
+Two sub-questions are actually being addressed in this simulation file: 
+1. What would be interference into the fixed receiver if the adjacent band was 
+used for a mobile network’s downlink? 
+2. What would be interference into the fixed receiver if the adjacent band was 
+used for a mobile network’s uplink? 
+Demonstration Files 
+ 
+Page 25 
+ 
+ 
+ 
+To address this question a fixed receiver has been deployed, and its location 
+randomised within the central mobile network cell. Simultaneously the location of 
+each of the 200 mobiles has been randomised within its cell. Power control is used 
+on both the uplink and downlink and the propagation models used are: 
+Hata / COST 231: base station to mobile / DTT receiver, mobile to base station / 
+DTT receiver 
+ITU-R Rec.P.1546: broadcast transmitter to DTT receiver, assuming 95% location 
+coverage and 50% of time 
+This form of Monte Carlo analysis produces results in the form of statistics, and in 
+this case there are cumulative distribution functions (CDFs) of C/N, C/I, and 
+C/(N+I) for the two cases above. 
+The screen shot above shows three windows open: 
+• 
+Mercator view (right) showing the location of the base stations, the mobile, 
+and the DTT receiver, and the links. A grid is overlaid with 1 km spacing. 
+• 
+Statistics view (top left) showing the CDFs of C/N, C/I and C/(N+I) for each 
+of the two cases above 
+• 
+Frequency view (bottom left) showing the DVB and WCDMA carriers in 
+adjacent channels 
+It can be seen that interference from the IMT-2000 downlink (BS TX) direction 
+causes greater interference than the uplink (MS TX) direction, but both would 
+reduce the likelihood of good reception. 
+ 
+Demonstration Files 
+ 
+Page 26 
+ 
+ 
+ 
+3.3 Earth Station Coordination 
+This section contains the following examples: 
+• 
+Coordination Contours 
+• 
+ES Exclusion Zone around WiMAX BS 
+• 
+Little LEO gateways into FS 
+Demonstration Files 
+ 
+Page 27 
+ 
+ 
+ 
+3.3.1 Coordination Contours 
+Action: 
+Export to Google Earth 
+Modules used: 
+IDWM 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+GSO Satellite, Earth Stations, Fixed Station 
+Propagation models: 
+Free space, ITU-R Rec.P.618, RR Appendix 7 Mode 1 
+ 
+This example shows Visualyse Professional calculating the coordination contour 
+around a satellite Earth Station. 
+The Earth Station is in Tunisia and is communicating with a GSO satellite at 23° 
+East with an EIRP of 56 dBW. This might require coordination with the networks of 
+other countries, and the starting point is derivation of the coordination contour. 
+In this simplified example we calculate the total of the EIRP plus path loss using 
+the propagation model in Appendix 7 of the Radio Regulations. The Mode 1 of this 
+propagation model has been selected (propagation along great circles), configured 
+for 0.01% of the time. The various zones the path crosses (sea, coastal, inland 
+etc.) are extracted from the IDWM database.  
+Note: If you don’t have access to IDWM you might see a slightly different contour. 
+Three contours are given for the -160, -180, and -200 dBW as received at a test 
+point with isotropic 0 dBi gain.  
+Two windows are open: 
+3. Mercator view (left) showing the location of the Earth Station and a test 
+point, and the coordination contours 
+Demonstration Files 
+ 
+Page 28 
+ 
+ 
+ 
+4. Watch window (right) showing the link budget of the interfering signal from 
+the Earth Station to the test point and the wanted signal on the uplink to the 
+satellite 
+Note these coordination contours can be exported into Google Earth1 by selecting 
+menu option “File | Export to KMZ”. This should produce a figure something like 
+this: 
+ 
+ 
+1 At time of writing this document, Google Earth could be downloaded from: http://earth.google.com/  
+Demonstration Files 
+ 
+Page 29 
+ 
+ 
+ 
+3.3.2 WiMAX to ES EZ 
+Action: 
+Export to Google Earth 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+Sydney SRTM90 
+Frequency band: 
+C 
+Station types: 
+GSO Satellite, Earth Stations, Fixed Station 
+Propagation models: 
+ITU-R Rec.P.452 
+ 
+This simulation shows Visualyse Professional deriving the area around a WiMAX 
+base station where it would not be possible to deploy an Earth station receiving in 
+C-band. 
+It is based upon analysis relating to Agenda Item 1.4 as discussed at the WRC in 
+November 2007. More information about this example is given in the associated 
+“Visualyse Professional Version 7 Tutorial Document”. 
+The WiMAX base station has been deployed near Sydney with 3 sectors and with 
+power of 43 dBm within 10 MHz carrier. The C Earth station uses a 3m dish 
+pointing at a satellite at 150°E. The interference is calculated taking into account 
+the terrain using the propagation model in ITU-R Rec.P.452.  
+The simulation can be used in two ways: 
+1. Static analysis: the link budget shows the contributions of the interfering 
+link budget and hence could be used for detailed coordination between a 
+WiMAX network and a specific Earth station 
+2. Exclusion zone analysis: using the Area Analysis, the locations where an 
+Earth Station would suffer interference are identified and the level of 
+interference at that point used to select the colour to fill in that pixel. 
+The screen shot above shows three windows open, namely: 
+Demonstration Files 
+ 
+Page 30 
+ 
+ 
+ 
+• 
+Mercator view (left) showing the terrain, coastlines, sea, locations of 
+WiMAX base station and earth station, the base station sectors, and the 
+overlaid Area Analysis showing by colour the interference an Earth station 
+would experience at each point. 
+• 
+Watch window (top right) showing the interfering link budget from the 
+WiMAX base station to the test location of the Earth station shown on the 
+map 
+• 
+Path Profile (bottom right) showing the characteristics of the terrain 
+between the Earth station and the base station 
+Additional geographical features can be observed by exporting the simulation 
+including Area Analysis to Google Earth, as in the figure below. 
+ 
+Demonstration Files 
+ 
+Page 31 
+ 
+ 
+ 
+3.3.3 Little LEO gateways into FS 
+Action: 
+Run Simulation 
+Modules used: 
+Terrain 
+Terrain regions: 
+Washington Area 
+Frequency band: 
+L 
+Station types: 
+GSO Satellite, Earth Stations, Fixed Station 
+Propagation models: 
+Free space, ITU-R Rec.P.618, ITU-R Rec.P.452 
+ 
+This example shows Visualyse Professional supporting the coordination of the 
+gateway for a non-Geostationary satellite network with a number of nearby point to 
+point fixed links. These could have been entered directly, read in using the FS 
+import tool, or via the interface to the ITU’s terrestrial IFIC. 
+The non-GSO network is assumed to be providing store and forward messaging 
+services – these are known as “Little LEOs” due to the lower capacity than the 
+voice and high-speed data of the “Big LEOs”. 
+In this simulation, the gateway Earth Stations are uplink in L-band, co-frequency 
+with a number of fixed service links. Interference at each of the FS receivers will 
+vary depending upon: 
+1. Gain of the gateway antenna (modelled using a Bessel function – real 
+measured data could also be used) towards the FS link 
+2. Path length and topography between the gateway and the FS receiver 
+using a terrain database 
+3. Change in atmospheric conditions using the propagation model in ITU-R 
+Rec.P.452 
+Hence the interference, measured as the I/N, will vary in time and it is necessary to 
+run a simulation to work out the probability that various thresholds are met. 
+Demonstration Files 
+ 
+Page 32 
+ 
+ 
+ 
+The screen shot above shows four windows open: 
+• 
+Mercator view (top left), showing the locations of the gateway and fixed 
+service receivers, the direction of their azimuth, colour coding of terrain 
+heights, and overlaid map (this might not be available on all installation) 
+• 
+3D view (bottom left), showing the satellites in the non-GSO constellation, 
+their beams, the links, space tracks, gateway and terrestrial fixed stations 
+• 
+Terrain path profile (top right), showing the slice of terrain between the 
+gateway and one of the fixed service receivers 
+• 
+Statistics graph (bottom right), showing the cumulative distribution function 
+of the I/N at each of the FS receivers. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 33 
+ 
+ 
+ 
+3.4 Fixed Planning and Coordination 
+This section contains the following examples: 
+• 
+FS Import from IFIC 
+• 
+PtMP UT Deployment 
+• 
+PtP link planning 
+Demonstration Files 
+ 
+Page 34 
+ 
+ 
+ 
+3.4.1 FS Import from IFIC 
+Action: 
+None 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+C 
+Station types: 
+Fixed Stations 
+Propagation models: 
+ITU-R Rec.P.452 
+ 
+This example file shows the results of a search of the Terrestrial IFIC. The screen 
+shot above shows the search which was of: 
+• 
+Assignments in the UK (Administration code = “G”) 
+• 
+Frequency between 7,000 MHz and 7,010 MHz 
+• 
+Any receipt date, filing type or service 
+The query returned 13 FS transmitters, including their locations (latitude, 
+longitudes), gain patterns, pointing angles, frequencies, bandwidths and EIRPs. 
+The screen shot above shows two windows and two dialogs: 
+• 
+Terrestrial IFIC query dialog (top left) showing the options to search the 
+database 
+• 
+Terrestrial IFIC query response (middle) showing the return list of systems 
+• 
+Table view (bottom left) showing the (lat, long, heights) of the returned 
+systems 
+• 
+Mercator map view (right) showing the locations of the stations and pointing 
+angles of their antennas. 
+Demonstration Files 
+ 
+Page 35 
+ 
+ 
+ 
+3.4.2 PtMP UT Deployment 
+Action: 
+Run simulation 
+Modules used: 
+Terrain, IDWM, Define Variable 
+Terrain regions: 
+Northern Ireland 
+Frequency band: 
+C 
+Station types: 
+Earth Stations, Fixed Stations 
+Propagation models: 
+ITU-R Rec.P.452 
+ 
+ 
+This example file shows an analysis of the impact of deployment probability on the 
+interference that an Earth station would experience from a point to multi-point 
+(PtMP) fixed service network. 
+In this scenario a PtMP operator intends to provide communication services to 
+fixed terminals on a frequency that is also used by an Earth station to receive 
+downlinks. The PtMP operator must ensure it protects the ES, but it does not know 
+where it will have customers in the future. 
+One approach to determine the feasibility of deploying a base station at certain 
+locations is to identify the probability that a deployment of user terminals (UTs) 
+would cause interference. 
+This is done by undertaking a Monte Carlo modelling approach that randomises 
+the locations of the UTs across the PtMP operator service area. Other factors that 
+could vary, such as propagation, are fixed, as they would vary in the time domain 
+and this simulation is looking at probabilities relating to deployments. 
+The screen shot above shows four windows open: 
+• 
+Mercator view (top left) showing the locations of the base stations, the UTs, 
+the links from each UT to its respective base station, the location of the 
+Earth station, and the terrain overlay 
+Demonstration Files 
+ 
+Page 36 
+ 
+ 
+ 
+• 
+Statistics graph (bottom left) showing the cumulative distribution function of 
+the aggregate I/N at the Earth station from each of the potential deployment 
+configurations of UTs. Though the I/N at the ES exceeds the -10 dB 
+threshold, the probability of a “bad” deployment is only about 10% 
+• 
+Watch window (top right) showing the link budget for one of the PtMP 
+terminal uplinks and also the aggregate interference at the ES 
+• 
+Path Profile (bottom right) showing the path between the Earth station and 
+its worst interferer 
+Demonstration Files 
+ 
+Page 37 
+ 
+ 
+ 
+3.4.3 PtP link planning 
+Action: 
+Change propagation parameters 
+Modules used: 
+Terrain 
+Terrain regions: 
+North West 
+Frequency band: 
+Ka 
+Station types: 
+Fixed Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.530 (rain), ITU-R Rec.P.452,  
+ 
+This example shows Visualyse Professional being used to support the planning of 
+point to point (PtP) fixed links. A database of link positions has been entered – 
+either directly or using one of: 
+• 
+Fixed service import tool 
+• 
+Station location import tool 
+All links are co-frequency within the 28 GHz band and are using a bandwidth of 14 
+MHz. The links have been planned using the rain fade model in ITU-R Rec.P.530-
+16 using the rain rates in ITU-R Rec.P.837 and a percentage level of 0.01% - i.e. 
+an availability target of 99.99%. 
+The transmit power (and hence EIRP) have been selected so that the receive C/N 
+is about 15 dB, which includes some interference and implementation margin 
+against the target C/(N+I) of 13.5 dB. In this case we have assumed the 
+implementation margin should be 1 dB so the target C/(N+I) is 14.5 dB. 
+Interference paths have been set up so that the aggregate interference from all 
+other links into each other is calculated using ITU-R Rec.P.452 and a terrain 
+database. As the wanted link is set to deep fade, the interfering signal is assumed 
+to be a median 50% of time level. 
+The screen shot above shows four windows open: 
+Demonstration Files 
+ 
+Page 38 
+ 
+ 
+ 
+• 
+Mercator view (right) showing the locations of each of the FS links and with 
+a terrain overlay 
+• 
+Table view (top left) showing the TX power, rain fade, C/N and C/(N+I) for 
+the forward direction for each of the links 
+• 
+Table view (middle left) showing the TX power, rain fade, C/N and C/(N+I) 
+for the return direction for each of the links 
+• 
+Terrain path profile (bottom left) for the worst interfering path one of the 
+fixed links 
+Select “Propagation | Terrestrial Fixed” and try the following the changes: 
+1. Analyse the median wanted signal level by changing the Rec.P.530 
+percentage time to 50% and the Rec.P.452 percentage time to 0.01% as in 
+the figures below. 
+ 
+ 
+2. Analyse the changes in ITU-R Rec.P.530-16 over P.530-11 by changing 
+the version number – it should be quite significant! This is because the rain 
+rates in the revised version of Rec.P.837 for these locations are much 
+higher. 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 39 
+ 
+ 
+ 
+3.5 GSO to GSO Satellite 
+This section contains the following examples: 
+• 
+GSO downlink with rain loss 
+• 
+GSO to GSO MSS availability 
+• 
+GSO transfer orbit TTC with interference from populated GSO arc 
+• 
+LUX 28,2 coverage 
+• 
+Lux Arabsat coordination 
+Demonstration Files 
+ 
+Page 40 
+ 
+ 
+ 
+3.5.1 GSO downlink with rain loss 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+GSO Satellite, Earth Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.618, ITU-R Rec.P.676 
+ 
+This example that shows a GSO satellite with a single transmit spot beam. In its 
+coverage are 6 receive earth stations, and links have been set up to model 
+atmospheric effects such as gaseous absorption and rain fade. This uses the ITU-
+R's relevant propagation models, Rec. 676 and Rec. 618. 
+There are three windows: 
+• 
+Map in Plate Carrée projection (left) showing the satellite, earth stations, beam 
+footprint and links. The links go red when a rain fade degrades the received 
+signal. 
+• 
+Watch window (top right) showing details of one of the downlinks including 
+components of the propagation loss due to absorption and fading. 
+• 
+Quick graph (bottom right) showing how the C/N of each link is varying with 
+time. 
+The watch window also shows the calculation of the receive noise temperature on 
+one of the links and shows how it increases due to rain noise – the double 
+whammy effect of rain in lowering the wanted signal while increasing the noise. 
+This simulation could be extended to allow detailed analysis of GSO links or GSO-
+GSO interference subject to rain fading. 
+Demonstration Files 
+ 
+Page 41 
+ 
+ 
+ 
+3.5.2 GSO to GSO MSS availability 
+Action: 
+After reading text below, select user defined 
+polarisation advantage on the Interference Paths 
+dialog – Advanced tab 
+Modules used: 
+none 
+Terrain regions: 
+None 
+Frequency band: 
+L 
+Station types: 
+GSO Satellite, Maritime 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows an example of how Visualyse Professional can support the 
+coordination of GSO satellite networks. In this scenario there are two mobile 
+satellite networks covering Europe and the US respectively. These are part of 
+integrated mobile/terrestrial networks, and hence have little interest in maritime 
+regions. A third operator wishes to take advantage of this but must coordinate with 
+the other two networks. 
+The coordination agreement is likely to take the form of a transmit EIRP 20 dB 
+below that of the regional networks and with at least 6 dB antenna discrimination 
+from land. The question is whether these tight constraints leave sufficient area 
+over which service can be provided to make operation profitable. 
+The simulation is configured with two windows open: 
+• 
+Map in Plate Carrée projection (left) showing the satellites, gain patterns, ship 
+used as reference, and Area Analysis of the C/N 
+• 
+Watch window showing the wanted and interfering link budgets. 
+The green area in the Visualyse Professional Area Analysis shows where the 
+C/(N+I) is above 10 dB and hence service should be possible. The red area is 
+Demonstration Files 
+ 
+Page 42 
+ 
+ 
+ 
+where a marginal reduced service would be available. It can be seen that it is 
+limited in area. 
+One possibility to increase this area is to agree during coordination to use 
+alternative polarisations – even though it is assumed this would only reduce 
+unwanted signals by about 3 dB. 
+If you: 
+• 
+Select “Interference Paths” from the icon / toolbar 
+• 
+Double click on “From other satellites” 
+• 
+Select “Advanced” 
+• 
+Under “Polarisation Advantage” select “User Defined” 
+• 
+Click “Ok” then “Close” 
+The Area Analysis should then update with a significantly large area coloured in 
+green as in the figure below. 
+ 
+This could be sufficiently large an area to justify deployment if combined with 
+services on other frequencies that can cover the ocean regions not covered by this 
+network. 
+Demonstration Files 
+ 
+Page 43 
+ 
+ 
+ 
+3.5.3 GSO transfer orbit TTC with interference from populated GSO arc 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+GSO Satellite, Non-GSO Satellite, Earth Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows a satellite being transferred from low earth orbit into GSO. 
+During this period, it is transmitting TT&C to ground control stations. As the orbit 
+height increases it uses power control to maintain a constant received signal. To 
+maintain constant communication, it hands over between ground control stations. 
+While in transit it crosses a location with a large number of GSO beams which are 
+transmitting on the same frequency. This causes the downlink to suffer 
+interference as the TT&C stations point towards the GSO satellites. 
+The following windows are open: 
+• 
+3D view (top right) showing the beams from the GSO satellites, the TT&C 
+control stations and the satellite in transfer orbit. As the satellite move the hand 
+overs between ground control stations can be seen. This link goes red when 
+subject to interference from the GSO satellites. 
+• 
+Plate Carrée map view (bottom left) showing the same beams, satellites and 
+earth stations as for the 3D View, plus the GSO satellites. 
+• 
+Quick graph (bottom right) showing how the C/I, C/N and C/(N+I) varies 
+against time. When in the field of view of the GSO satellites the C/(N+I) can be 
+seen to be dominated by the C/I. 
+• 
+Watch window (top left) showing the link budget for the wanted downlink. This 
+shows how the transmit power increases to compensate for the increased path 
+Demonstration Files 
+ 
+Page 44 
+ 
+ 
+ 
+loss as the satellite ascends. When the maximum power of 10 dBW has been 
+reached the received signal starts to decrease gradually. 
+ 
+Demonstration Files 
+ 
+Page 45 
+ 
+ 
+ 
+3.5.4 LUX 28,2 coverage 
+Action: 
+None 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+GSO Satellite, Earth Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows graphically the coverage of a GSO satellite network over 
+Europe. 
+The satellite location and gain pattern are those for the LUX-28.2 satellite 
+extracted from the ITU’s database via Visualyse Professional’s interface to SRS. 
+The transmit power, bandwidth and frequency were also taken from SRS read 
+using the SpaceCap tool. 
+The link was set up to a reference earth station representing a TVRO service. The 
+link was configured using an earth-space propagation model that included ITU-R 
+Rec.676 for gaseous absorption and ITU-R Rec.618 for rain, using a percentage of 
+time of 0.1%. Hence the link budget is calculated for an availability of 99.9% of 
+time. 
+The location of the test point was then varied using Visualyse Professional’s Area 
+Analysis tool. Locations were then coloured depending upon whether the threshold 
+of C/N > 10 dB for 99.9 % of time could be met as follows: 
+Bright green: could be met with a 60 cm dish 
+Dark green: could be met with an 80 cm dish 
+Red: would require receive antenna greater than 80 cm. 
+The simulation is configured with three views open: 
+Demonstration Files 
+ 
+Page 46 
+ 
+ 
+ 
+• 
+Plate Carrée map view (top left) showing the area analysis, satellite 
+footprint, reference test station and link; 
+• 
+3D view (top right), also showing the area analysis, satellite footprint, 
+reference test station and link; 
+• 
+Watch window (bottom left) showing the link budget from the GSO satellite 
+to the reference Earth Station 
+This simulation can be extended in a number of ways – for example including 
+interference from adjacent satellites, the impact of station keeping or pointing 
+errors etc. 
+Demonstration Files 
+ 
+Page 47 
+ 
+ 
+ 
+3.5.5 Lux Arabsat Coordination 
+Action: 
+None 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+GSO Satellite, Earth Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows Visualyse Professional undertaking the sort of calculations 
+required for detailed coordination between two GSO satellite networks.  
+Using Visualyse Professional’s interface to the ITU’s SRS database combined with 
+parameters extracted using SpaceCap, the following two networks were 
+configured: 
+Network 
+Lux-28 2E 
+Arabsat-KU-26E 
+Longitude 
+28.2E 
+26E 
+Beam  
+T1 Transmit 
+KDF Transmit 
+Peak gain (dBi) 
+35.0 
+33.9 
+Transmit power (dBW) 
+20.0 
+18.0 
+Bandwidth (MHz) 
+26.0 
+30.0 
+Receive temperature (K) 
+180 
+120 
+Earth station dish size (m) 
+0.6 
+0.8 
+Both networks were assumed to be operating at 12.5 GHz with a clear air 
+propagation model of free space path loss plus attenuation due to atmospheric 
+gases ITU-R Rec.P.676. 
+Demonstration Files 
+ 
+Page 48 
+ 
+ 
+ 
+The DT/T and C/I’s were then calculated at the reference earth station across the 
+relevant service areas. 
+The simulation is configured with four views open: 
+• 
+Plate Carrée map view (top left) showing the satellite beam footprints and a 
+contour where the DT/T > 6% (i.e. I/N > -12.2 dB) for interference from 
+Arabsat into the Lux network 
+• 
+Plate Carrée map view (top right) showing the satellite beam footprints and 
+a contour where the C/I > 20, 25, 30 dB for interference from Arabsat into 
+the Lux network 
+• 
+Watch window (bottom left) showing the link budget for the wanted and 
+interfering signals for Arabsat network 
+• 
+Watch window (bottom right) showing the link budget for the wanted and 
+interfering signals for Lux network 
+This simulation can be re-configured to show the converse interference path, i.e. 
+from Lux-28.2E into Arabsat by changing the two Area Analysis as follows: 
+ 
+The scenario can be built on to include many other factors, including impact of 
+interference mitigation, what-if analysis, end to end performance and coordination 
+constraints. 
+ 
+Demonstration Files 
+ 
+Page 49 
+ 
+ 
+ 
+3.6 Maritime 
+This section contains the following examples: 
+• 
+ESV Interference Area 
+• 
+GSO ES on ship entering Seattle Port into FS 
+• 
+MRCC Coverage 
+Demonstration Files 
+ 
+Page 50 
+ 
+ 
+ 
+3.6.1 ESV Interference Area 
+Action: 
+None 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+Seattle Area 
+Frequency band: 
+C 
+Station types: 
+GSO Satellite, Earth Stations, Fixed Stations, Maritime 
+Propagation models: 
+Free space, ITU-R Rec.P.452, ITU-R Rec.P.530  
+ 
+This example shows locations where an Earth Station on Vessel (ESV) 
+transmitting up to a GSO satellite in C band could cause interference into co-
+frequency point to point fixed links. This analysis could also be used for adjacent or 
+guard band operation or to calculate interference into point to multi-point fixed 
+services. 
+The simulation has been configured to calculate the interference from an Earth 
+Station into a fixed service receiver taking into account the effect of terrain using 
+the ITU-R Rec.P.452 propagation model. This has been configured with a 
+percentage of time of 0.216% based upon: 
+Required probability of interference 
+= 
+0.001% 
+Number of ships / day  
+ 
+= 
+4 
+Time spent at each pixel 
+ 
+= 
+100 seconds 
+Probability ship active at pixel  
+= 
+1/216 
+Propagation probability used 
+ 
+= 
+216 * 0.001 = 0.216% 
+The window above shows the I/N that the ESV would cause colour coded as 
+follows: 
+Demonstration Files 
+ 
+Page 51 
+ 
+ 
+ 
+  
+Demonstration Files 
+ 
+Page 52 
+ 
+ 
+ 
+3.6.2 GSO ES on ship entering Seattle Port into FS 
+Action: 
+Run simulation 
+Modules used: 
+Terrain, Define Variable, IDWM 
+Terrain regions: 
+Seattle Area 
+Frequency band: 
+C 
+Station types: 
+GSO Satellite, Earth Stations, Fixed Stations, Maritime 
+Propagation models: 
+Free space, ITU-R Rec.P.452, ITU-R Rec.P.530  
+ 
+This example considers interference from the uplink from an Earth Station on a 
+Vessel (ESV) into terrestrial point to point fixed service (FS) links operating in the 
+vicinity. The ESV is approaching the port of Seattle while transmitting and the 
+amount of interference it could cause will depend upon the locations of the ship 
+and FS receivers. 
+The simulation has been configured with the movement of the ship defined using a 
+series of way points. The interference from the ship at the fixed service receiver 
+has been calculated taking into account the effect of terrain using the ITU-R 
+Rec.P.452 propagation model. The wanted signal of the FS link is calculated 
+taking into account fading due to multi-path and rain as in ITU-R Rec.P.530. 
+The screen shot above shows four window open: 
+• 
+Mercator map view (top left), shows the locations of the FS stations, the 
+ship, the terrain, and the various links, which go red when they suffer 
+interference 
+• 
+Quick graph (top right), shows how the C/I of some of the links varies as 
+the ship progresses up the channel 
+• 
+Watch window (bottom left), shows the worst single interferer’s link budget 
+for the one of the FS links 
+Demonstration Files 
+ 
+Page 53 
+ 
+ 
+ 
+• 
+Path profile window (bottom right), shows the terrain between the ship and 
+the receiver on one of the FS links 
+Demonstration Files 
+ 
+Page 54 
+ 
+ 
+ 
+3.6.3 MRCC Coverage 
+Action: 
+None 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+SW England 
+Frequency band: 
+VHF 
+Station types: 
+Maritime 
+Propagation models: 
+ITU-R Rec.P.1546 
+ 
+This example shows an example of Visualyse Professional the coverage of a 
+maritime VHF voice communication. It calculates the C/N for a 12.5 kHz voice 
+carrier operating on channel 16 around 156 MHz 
+Two Maritime Rescue Co-ordination Centres (MRCC) are modelled and the ship is 
+assumed to transmit at 15W i.e. 17 dBW at a height of 10m above sea level, while 
+the coast guard antenna is at a height of 20m above the local terrain. 
+The prediction is made using ITU-R Rec.P.1546 propagation model and the Area 
+Analysis shows the C/N coloured according to the following scale: 
+ 
+Demonstration Files 
+ 
+Page 55 
+ 
+ 
+ 
+The screenshot shows three windows open: 
+• 
+Mercator map view (right) showing the locations of the coast guard centres, 
+a ship test point, and the predicted coverage 
+• 
+Watch window (top left) showing the link budget for the link between the 
+ship and the nearest coast guard 
+• 
+Path profile (bottom left) showing the terrain between the ship and the 
+nearest coast guard. 
+This type of analysis could be used to: 
+• 
+Ensure there is coverage on channel 16 of the major shipping routes 
+• 
+Identify where there could be re-use of channels between marinas or for in-
+port communications 
+• 
+Analyse the options to move to 4 or 6 kHz channels 
+• 
+Analyse the ability to re-use channels for in-land applications 
+Demonstration Files 
+ 
+Page 56 
+ 
+ 
+ 
+3.7 Military 
+This section contains the following examples: 
+• 
+Missile telemetry with jamming 
+• 
+UAV demo 
+Demonstration Files 
+ 
+Page 57 
+ 
+ 
+ 
+3.7.1 Missile telemetry with jamming 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+X 
+Station types: 
+Non-GSO Satellite, Earth Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows an example of Visualyse Professional modelling jamming. 
+This is specialised form of interference that is deliberately generated to cause loss 
+of service rather than (as is usually the case) unintentional. 
+A number of jamming scenarios could be considered – indeed all the interference 
+simulations in this document could be considered jamming if the motivation was 
+hostile. This simulation shows an exercise where susceptibility of a missile’s 
+telemetry to jamming was being tested.  
+A missile is launch on a test trajectory across the Pacific Ocean, relaying data to 
+ground via a network of satellites at X-band. In the exercise jamming station try to 
+interrupt collection of data with a 10 kW transmission. The main mitigation method 
+to the jamming attack is to switch to an alternative routing i.e. select a back-up 
+satellite. 
+The simulation is configured with three views open: 
+• 
+3D view (left) showing the satellite constellation, the missile, the tracks, the 
+jamming ground station, and the beam footprints 
+• 
+Watch window (top right) showing the link budget of the wanted signal and 
+the link budget of the jamming signal 
+• 
+Quick graph (bottom right) showing how the C/N of the first and second 
+preference links taking into account the effects of jamming. 
+Demonstration Files 
+ 
+Page 58 
+ 
+ 
+ 
+3.7.2 UAV demo 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable, Terrain 
+Terrain regions: 
+Afghanistan 
+Frequency band: 
+Ka, V, S 
+Station types: 
+GSO Satellite, Earth Stations, Fixed Stations, 
+Aeronautical stations 
+Propagation models: 
+Free space, ITU-R Rec.P.676, ITU-R Rec.P.452 
+ 
+This example shows an example of Visualyse Professional modelling unmanned 
+aerial vehicle, i.e. a UAV, including jamming. 
+The UAV is sent on a mission to observe targets in the hills of Afghanistan. Its 
+flight path is defined by a set of way points in (latitude, longitude, height). As it 
+enters the mountainous region it climbs and then descends into valleys. 
+Initially the communication is with the local field base: however soon the UAV is 
+beyond range and instead a satellite link is used. The model also includes the 
+complete end-to-end link back to the operations room in Washington DC. A range 
+of frequency bands are used, including Ka for the UAV to satellite, V for the inter-
+satellite, and S for the field base to UAV. 
+At times during the mission the UAV suffers from jamming, and so the C/N is 
+degraded. The model includes realistic modelling of propagation of wanted and 
+interfering signals over terrain using ITU-R Rec.P.452 and a terrain database. 
+The simulation is configured with four views open: 
+• 
+Plate Carrée map view (top left) showing the satellites routing the 
+communications back to Washington DC 
+• 
+Mercator map view (bottom left) showing the location of the field centre, the 
+terrain, the UAV, the jamming station, and various communications links 
+Demonstration Files 
+ 
+Page 59 
+ 
+ 
+ 
+• 
+Terrain path profile view (top right) showing the terrain between the field 
+base and the UAV 
+• 
+Quick graph (bottom right) showing the C/Ns for the direct link to field base 
+and satellite link 
+ 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 60 
+ 
+ 
+ 
+3.8 Network Coverage 
+This section contains the following examples: 
+• 
+Broadcast Coverage 
+• 
+Mobile Coverage 
+• 
+PMR Coverage 
+Demonstration Files 
+ 
+Page 61 
+ 
+ 
+ 
+3.8.1 Broadcasting Coverage 
+Action: 
+None 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+Greater London 
+Frequency band: 
+S 
+Station types: 
+Broadcasting 
+Propagation models: 
+ITU-R Rec.P.1546 
+ 
+This example shows the coverage of a DTT broadcasting station in the London 
+area. A transmitter of 43 dBW is providing TV services to fixed receivers, with 
+coverage predicted using ITU-R Rec.P.1546. 
+The screen shot shows two views open: 
+• 
+Mercator view (right) showing the terrain database used, the location of the 
+transmitter, and the predicted coverage area 
+• 
+Watch window (top left) showing the key parameters of the prediction, 
+namely: 
+Crystal Palace.Position.Latitude 
+51.425 
+deg 
+Crystal Palace.Position.Longitude 
+0.075 
+deg 
+Crystal Palace.Position.Height above terrain 
+150 
+m 
+TV RX.Position.Height above terrain 
+10 
+m 
+TV RX.Antenna.Feeder Loss 
+3 
+dB 
+ITU Rec P1546.Wanted Time Percentage 
+50 
+% 
+ITU Rec P1546.Revision Number 
+P.1546-2 
+ITU Rec P1546.Percentage Of Locations 
+95 
+% 
+ITU Rec P1546.K 
+1.5 
+ 
+Demonstration Files 
+ 
+Page 62 
+ 
+ 
+ 
+TV broadcast.Transmitter.Transmit Power 
+43 
+dBW 
+Carriers.DVB-T.Allocated Bandwidth 
+8 
+MHz 
+Carriers.DVB-T.Occupied Bandwidth 
+7.6 
+MHz 
+TV broadcast.Link Calculation.Receive Peak Gain 
+10 
+dBi 
+Demonstration Files 
+ 
+Page 63 
+ 
+ 
+ 
+3.8.2 Mobile Coverage 
+Action: 
+None 
+Modules used: 
+Terrain 
+Terrain regions: 
+Surrey 
+Frequency band: 
+S 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+ITU-R Rec.P.452 
+ 
+This example shows Visualyse Professional predicting the coverage a 3G network 
+taking into account the effects of terrain and clutter. 
+A number of base stations have been deployed along the M25 motorway south of 
+London to provide voice and data services to vehicles i.e. using macro cells. These 
+are transmitting at 2.1 GHz and the coverage uses ITU-R Rec.P.452 to predict 
+signal levels and to take into account terrain. A land-use database is also used to 
+derive clutter loss predictions at each pixel. 
+The Area Analysis feature of Visualyse Professional has been used to show where 
+there is usable signal strength according to the following scale: 
+Demonstration Files 
+ 
+Page 64 
+ 
+ 
+ 
+ 
+ 
+ 
+It can be seen that coverage is generally better along the route of the motorway 
+where the terrain is less hilly and there are little buildings. The coverage is reduced 
+where there are hills or within the town of Sevenoaks where there is greater clutter 
+loss. 
+The screen shot above has four windows open: 
+• 
+Mercator view (top left) showing the locations in green where there is 
+coverage above the threshold level, the station locations, and a tinge of red 
+to show terrain data 
+Demonstration Files 
+ 
+Page 65 
+ 
+ 
+ 
+• 
+Path profile view (bottom left) showing the terrain path between one of the 
+base stations and the test location of the mobile 
+• 
+Watch window (top right) showing the link budget from the base station to 
+the test location of the mobile as used in the path profile 
+• 
+Mercator view (bottom right) showing in more detail the map around the 
+town of Sevenoaks with an overlay of colour representing land use where 
+yellow = suburban, pink = buildings etc. 
+Demonstration Files 
+ 
+Page 66 
+ 
+ 
+ 
+3.8.3 PMR Coverage 
+Action: 
+None 
+Modules used: 
+Terrain 
+Terrain regions: 
+Crawley 
+Frequency band: 
+VHF 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+ITU-R Rec.P.1546 
+ 
+This example shows the calculation of the coverage of a Private Mobile Radio 
+(PMR) network based around the UK airport of Gatwick. A base station is 
+transmitting at a power of 12 dBW i.e. about 15.8 Watts within a 25 kHz voice 
+channel at a frequency of 185 MHz.  
+Visualyse Professional is being used to identify where the C/N is above various 
+thresholds, namely: 
+Green:  
+C/N > 20 dB 
+Blue: 
+ 
+20 dB > C/N > 10 dB 
+Yellow:  
+10 dB > C/N > 5 dB 
+Red: 
+ 
+5 dB > C/N 
+The prediction is based upon use of ITU-R Rec.P.1546 using a terrain and land-
+use database. 
+In the screen shot above there are four windows open: 
+• 
+Mercator map view (left) showing the locations of the base station and a 
+test point for the mobile station, the prediction of the C/N at each pixel, and 
+a map of the area. 
+Demonstration Files 
+ 
+Page 67 
+ 
+ 
+ 
+• 
+Watch window (top right) showing the link budget for the base station to 
+mobile station path 
+• 
+Path profile view (middle right) showing the path through the terrain 
+between the base and mobile stations 
+• 
+Mercator map view (bottom right) showing in more detail the map around 
+the town of Dorking, with the land-use colour coded and overlaid on top 
+Note that due to copyright restrictions, the clutter and map overlay might not be 
+available in all installations. 
+The prediction could also be exported to Google Earth, as in the figure below.  
+ 
+ 
+Demonstration Files 
+ 
+Page 68 
+ 
+ 
+ 
+3.9 Non-GSO Satellites 
+This section contains the following examples: 
+• 
+Data relay satellite end to end route with handover 
+• 
+Galileo with HEO overlay 
+• 
+GSO to non-GSO Area Analysis 
+• 
+HEO into GSO DL at Ku band 
+• 
+MSS Feeder links with spot beams 
+• 
+Non-GSO MSS and Galileo 
+• 
+PFD at GSO from NGSO MSS Feeder link 
+• 
+Teledesic & Celestri with constellation avoidance 
+• 
+Teledesic 840 satellite constellation 
+Demonstration Files 
+ 
+Page 69 
+ 
+ 
+ 
+3.9.1 Data relay satellite end to end route with handover 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ka 
+Station types: 
+GSO Satellite, Non-GSO Satellite, Earth Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows an end to end communications link from a non-GSO satellite 
+(in this case the international space station) to its control centre, routing via one of 
+two data relay satellites. 
+The space station selects which of the two tracking satellites to use and then the 
+link down to the earth station starts at the end point of that link. As the space 
+station moves the tracking satellite to use changes.  
+Visualyse Professional derives the C/N for each of the individual hops and also the 
+end to end link assuming a bent-pipe or non-regenerative payload so that the 
+overall performance can be calculated using thermal addition. The earth-space 
+paths include the attenuation due to atmospheric gases in ITU-R Rec.P.676. 
+The simulation is configured with four views open: 
+• 
+Plate Carrée map view (top right) showing the location of the two tracking 
+satellites, the ground station, the current location of the space station, the 
+ground track of the space station, and the footprints of the various beams. 
+• 
+3D view (bottom left) showing the view from one of the tracking satellites of 
+the world, the space station, its orbit, the other tracking satellite, and the 
+ground station. 
+• 
+Quick graph (bottom right) showing how the C/N of each of the links and of 
+the end to end link varies with time 
+Demonstration Files 
+ 
+Page 70 
+ 
+ 
+ 
+• 
+Watch window (top left) showing the value of each of the C/Ns shown in the 
+Quick graph. 
+ 
+Demonstration Files 
+ 
+Page 71 
+ 
+ 
+ 
+3.9.2 Galileo with HEO overlay 
+Action: 
+Run Simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+S 
+Station types: 
+GSO Satellite, Non-GSO Satellite, Earth Stations 
+Propagation models: 
+Free space 
+ 
+This example file shows analysis of the increase in availability for navigation 
+services of using an overlay from a constellation of satellites in Highly Eccentric 
+Orbits (HEO). 
+One objective of navigation services is to be able to provide accurate location 
+within urban areas. However in cities there are likely to be tall buildings that 
+obscure the view of the sky and hence reduce the number of satellites that can be 
+used to gain a fix. This effect can be compensated by adding more satellites to the 
+constellation, but this can be inefficient as any coverage improvement is by nature 
+global. 
+One possible solution that can bring significant coverage improvements without 
+requiring large numbers of additional satellites is to provide an overlay using a 
+HEO constellation. 
+The screen shot above shows one such analysis, with four windows open: 
+• 
+3D view (top left), showing a Galileo like constellation of 27 satellites in 
+circular orbit plus 4 in a HEO constellation, the ground tracks, and location 
+of test point. The view point is that of one of the HEO satellites, so will 
+change during the simulation as the satellite moves 
+• 
+Mercator view (bottom left) showing the test point location in more detail 
+and the various links to highest N satellites 
+Demonstration Files 
+ 
+Page 72 
+ 
+ 
+ 
+• 
+Quick graph (top right) showing how the elevation angle of the tracked 
+satellite varies with time 
+• 
+Statistics graph (bottom right) showing the cumulative distribution function 
+of the links to the four highest circular orbit satellites and two highest HEO 
+satellites  
+It can be seen that both of the two highest HEO satellites are typically better than 
+the 2nd highest circular orbit constellation satellite. Hence using a HEO overlay 
+would significantly improve the statistics of the best four satellites required to make 
+a fix. 
+Demonstration Files 
+ 
+Page 73 
+ 
+ 
+ 
+3.9.3 GSO to non-GSO Area Analysis 
+Action: 
+Select 3D view and rotate Earth 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ka 
+Station types: 
+GSO Satellite, Non-GSO Satellite, Earth Stations 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows an analysis of where a non-GSO satellite would suffer 
+interference from a GSO network’s uplink. An earth station in the UK is transmitting 
+to a GSO satellite on the same frequency as a non-GSO network. The question is 
+where about in the non-GSO satellite’s orbit it would suffer interference. 
+In this simulation a “floating” Area Analysis has been created with a test point at 
+the same height as the non-GSO satellite. The PFD generated by the earth station 
+as measured at the non-GSO satellite is then displayed with colour scheme that 
+shows the intensity. Two areas can be seen: 
+- 
+in the main beam of the earth station just to the left of Spain 
+- 
+over the UK, nearby to the earth station from side-lobe interference 
+The simulation is configured with three views open: 
+• 
+Plate Carrée view (right) showing the satellite, the earth station, the test 
+point (small circle), the beams and the area analysis 
+• 
+Watch window (bottom left) showing the calculation of the interference into 
+an isotropic receiver at the test point 
+• 
+3D view (top left, behind the other two windows), showing the view from 
+space including the Area Analysis. 
+Demonstration Files 
+ 
+Page 74 
+ 
+ 
+ 
+If you select the 3D view and then rotate the Earth by holding the left mouse button 
+down and moving the mouse you can see how the Area Analysis floats in space. 
+Demonstration Files 
+ 
+Page 75 
+ 
+ 
+ 
+3.9.4 HEO into GSO DL at Ku band 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+GSO Satellite, Non-GSO Satellite, Earth Station 
+Propagation models: 
+Free space 
+ 
+This example shows the calculation of Equivalent Power Flux Density (EPFD) from 
+a constellation of satellites in Highly Elliptical Orbit (HEO) into a GSO satellite 
+downlink. 
+The GSO satellite is providing satellite TV services to small aperture receive 
+dishes – here modelled as 60cm dishes using the gain pattern in ITU-R Rec.S.465. 
+It is operating in Ku band where transmissions from non-GSO networks, including 
+HEO, must meet the EPFD limits in Article 22.2 of the Radio Regulations. In this 
+case the limit is -160 dBW/m^2/40 kHz, or -174 dBW/m^2/MHz. 
+A HEO service proposes to operate co-frequency with the GSO network providing 
+data services to VSATs using a series of spot beams to cover its main markets. 
+The question is whether it would meet its requirements under 22.2. 
+The simulation has four test points at various extrema of the GSO satellite 
+downlink, and constellation was built using the HEO Wizard with a tracking 
+strategy to select the active satellite. 
+The screen shot above shows three windows: 
+• 
+Plate Carrée view (right) showing the locations of the satellites, Earth 
+stations, links, beams, and the ground tracks of the HEO satellites. 
+• 
+Watch window (top left) showing the link budget from the HEO satellites 
+into one of the test TV downlinks. 
+Demonstration Files 
+ 
+Page 76 
+ 
+ 
+ 
+• 
+Statistics graph (bottom left) showing the cumulative distribution function of 
+the EPFD. 
+Demonstration Files 
+ 
+Page 77 
+ 
+ 
+ 
+3.9.5 MSS Feeder links with spot beams 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ka 
+Station types: 
+Non-GSO Satellite, Earth Station 
+Propagation models: 
+Free space 
+ 
+This example file shows a non-GSO constellation using steerable spot beams to 
+provide feeder links with a number of gateway Earth Stations. 
+The gateways select the satellite using one of the pre-defined tracking strategies, 
+and the satellites are configured with antennas that can generate electronically 
+steerable beams as required by the link. 
+The simulation has been configured with a single 3D view showing the satellites, 
+the beams, the gateway Earth Stations, and the satellite tracks. The view is fixed in 
+inertial space, so we can see the rotation of the Earth below us. 
+Demonstration Files 
+ 
+Page 78 
+ 
+ 
+ 
+3.9.6 Non-GSO MSS and Galileo 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+S 
+Station types: 
+Non-GSO Satellite, Mobile, Aeronautical 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+  
+This example analysis the potential impact of introducing satellite radionavigation 
+services such as Galileo into bands that are currently used for mobile satellite 
+services such as Globalstar. 
+The motivation was to facilitate the integration of satellite navigation features into 
+3G enabled handsets by using adjacent frequency bands. As a primary band for 
+3G is the 2 500 – 2 690 MHz, there would be clear advantages in having a satellite 
+navigation signal at the adjacent band 2 483 – 2 500 MHz, currently used for 
+mobile satellite services (MSS). However this could raise compatibility issues. 
+This simulation includes two non-GSO constellations, one for the radionavigation 
+service based upon Galileo parameters and another for the MSS service based 
+upon Globalstar parameters. The constellations have been generated using 
+Visualyse’s specialised wizard that takes account of the symmetry of the 
+constellation: if actual orbit data was available in the Two-Line Element (TLE) 
+format that could also be used. 
+The MSS handset is selecting the highest satellite from its constellation, while an 
+airborne user of the satellite radionavigation services is using the tracking 
+strategies to select the four highest elevation satellites from its constellation. 
+The screen shot above has been configured with four windows open: 
+Demonstration Files 
+ 
+Page 79 
+ 
+ 
+ 
+• 
+Plate Carrée view (top left) zoomed into Europe to show the aircraft and 
+mobile stations and the selection of the satellite they use 
+• 
+Plate Carrée view (bottom left) zoomed out to show most of the world, 
+showing more of each constellation 
+• 
+Watch window (top right) showing the wanted and worst single interferer 
+link budget calculation for the MSS handset 
+• 
+Quick graph (bottom right) showing how the C/N for the highest four 
+elevation Galileo satellites vary with time and how a link group is used to 
+work out the overall performance using the take-worst method. 
+Demonstration Files 
+ 
+Page 80 
+ 
+ 
+ 
+3.9.7 PFD at GSO from NGSO MSS Feeder link 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+C 
+Station types: 
+GSO Satellite, Non-GSO Satellite, Earth Station 
+Propagation models: 
+Free space 
+ 
+This example shows a simulation that checks whether a non-GSO network will 
+meet the PFD levels in Article 22.5A of the Radio Regulations. These limit the PFD 
+received at the geostationary orbit from downlinks from non-GSO MSS feeder 
+links. 
+The relevant part of the Radio Regulations of 2004 is: 
+ 
+The simulation has been configured with four windows open: 
+• 
+Plate Carrée map view (top left) showing the locations of the non-GSO 
+satellites and their field of view, and the GSO satellite (at longitude = 0°) 
+• 
+3D view (bottom left) showing the non-GSO satellites and Earth from the 
+perspective of the GSO satellite, with beams and satellite tracks 
+• 
+Quick graph (bottom right) showing how the PFD at the GSO satellite from 
+the non-GSO satellite downlink varies with time 
+Demonstration Files 
+ 
+Page 81 
+ 
+ 
+ 
+• 
+Statistics graph (top right) showing the cumulative distribution function of 
+PFD at the GSO satellite from the non-GSO network: the key number is the 
+maximum PFD calculated in the simulation to date which can be seen to be 
+below the threshold of -169 dB(W/m^2) in any 4 kHz band 
+Demonstration Files 
+ 
+Page 82 
+ 
+ 
+ 
+3.9.8 Teledesic & Celestri with constellation avoidance 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ka 
+Station types: 
+Non-GSO Satellite 
+Propagation models: 
+Free space, Rec.P.676 
+ 
+This example shows sharing between two non-GSO constellations, using tracking 
+strategies to meet regulatory requirements and to coordinate between themselves. 
+Two non-GSO FSS networks are modelled in this simulation, namely the 288 
+satellite Teledesic configuration and Celestri. It is assumed that the Celestri 
+network, which filed after Teledesic, must protect the other from interference. In 
+addition, the Celestri network is assumed to need to protect the GSO arc (either 
+due to EPFD constraints in Article 22 or actual filed networks). 
+One of the primary methods for a satellite network to protect another is to use 
+pointing restrictions, which in Visualyse Professional are modelled in tracking 
+strategies. In this example, there are two links with pointing constraints as follows: 
+• 
+Link 1: point at the highest elevation satellite from those that are at least 
+16° above the horizon and at least 5° away from any point on the GSO arc 
+• 
+Link 2: point at the highest elevation satellite from those that are at least 
+16° above the horizon and at least 5° away from any point on the GSO arc 
+and at least 5° away from any of the Teledesic satellites 
+Link 2 therefore has more vigorous constraints: the question this simulation is 
+addressing is the implications on this on the constellation to provide a service. By 
+analysing the statistics of number of satellites that meet the criteria, it can be 
+Demonstration Files 
+ 
+Page 83 
+ 
+ 
+ 
+determine the service that can be provided while protecting another constellation 
+from interference.  
+The simulation has the two links in different colour: most of the time they result in 
+the earth station selecting the same satellite, but at times at which there would be 
+an “in-line” event they diverge, with link 2 selecting a satellite that can be used 
+without causing interference. 
+At some very rare times no satellite meets the criteria needed for link 2. 
+In the screen shot above there are four windows open: 
+• 
+3D view (top left), showing the satellites of both constellations, their tracks, 
+the earth station, and the two links, coloured red and yellow 
+• 
+Plate Carrée view (bottom left), showing the satellites of both 
+constellations, the earth station, and the two links, coloured red and yellow 
+• 
+Quick graph (top right) plotting how the number of satellites in the Celestri 
+constellation that meets the criteria for Links 1 and 2 varies in time. Usually 
+this is between 1 and 4, but sometimes the number of satellites that meets 
+Link 2’s criteria is below that of Link 1, and sometimes it drops to zero 
+• 
+Statistics graph (bottom right) plotting the histogram of number of satellites 
+that meets the criteria of Links 1 and 2: it can be seen that Link 1 always 
+has more satellites that meets its criteria and sometimes Link 2 is unable to 
+connect. 
+Demonstration Files 
+ 
+Page 84 
+ 
+ 
+ 
+3.9.9 Teledesic 840 satellite constellation 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ka 
+Station types: 
+Non-GSO Satellite 
+Propagation models: 
+n/a 
+ 
+This example shows the original 840 satellite Teledesic constellation. This concept 
+was developed in the 1990s to provide high speed broadband access globally 
+using large numbers of satellites each of which would act as node and route traffic 
+within the network.  
+Teledesic was successful in gaining access to 2 x 400 MHz at WRC 95 and a 
+further 2 x 100 MHz at WRC 97. However the challenges of implementation and 
+most crucially funding such a system proved too great, even after reducing the size 
+of the constellation down to 288 satellites, and the network never entered 
+operation. 
+The simulation only includes a single view showing the constellation in the 3D view 
+together with space tracks. The congestion of the network around the poles can be 
+seen – and the difficulty in avoiding collision and generation of space debris! 
+ 
+Demonstration Files 
+ 
+Page 85 
+ 
+ 
+ 
+3.10 Others 
+This section contains the following examples: 
+• 
+HAPS with FS and FSS 
+• 
+Smart Antennas 
+• 
+Traffic and Exclusion Zone 
+• 
+Wi-Fi and ENG 
+Demonstration Files 
+ 
+Page 86 
+ 
+ 
+ 
+3.10.1 HAPS with FS and FSS 
+Action: 
+None 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+C 
+Station types: 
+GSO Satellite, Earth Station, Fixed Station, 
+Aeronautical 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows sharing between a High-Altitude Platform Station (HAPS) and 
+terrestrial point to point Fixed Service station and satellite Earth Stations. 
+The HAPS network has been configured with two sets of antennas: 
+1. Multiple beam service link antenna 
+2. Spot beam used as feeder to gateway station 
+This example considers use of some of the upper parts of C band for the feeder 
+link. It is assumed that this is shared with terrestrial receivers, which are modelled 
+using ITU-R Rec.F.699 as the gain pattern and a range of locations (latitude, 
+longitude) and pointing angles (azimuth, elevation). These could either come from 
+real assignment data read in using one of: 
+• 
+Interface to the ITU-R’s database of terrestrial assignments (IFIC) 
+• 
+FS import tool using spreadsheet or CSV format data 
+There are also a number of GSO satellite earth stations which could suffer 
+interference from the HAPS.  
+The simulation above shows the following windows: 
+Demonstration Files 
+ 
+Page 87 
+ 
+ 
+ 
+• 
+Mercator view (right) showing the HAPS aeronautical station, its service 
+links beams, its feeder link, the HAPS gateway, the various earth stations, 
+the fixed link stations and their azimuths 
+• 
+Watch window (top left) showing the link budget for the HAPS downlink and 
+also the interference calculation from the HAPS into one of the Earth 
+Stations (the worst case one with I/N around 17 dB) 
+• 
+Statistics graph (bottom left) showing a histogram of the I/N across the 
+various fixed and fixed satellite service receivers. It can be seen that the 
+worst I/N is around 17 dB 
+The view also shows an Area Analysis of locations where putting an Earth Station 
+that could make it susceptible to interference. There are two vulnerable 
+geometries: 
+1. Around the HAPS gateway 
+2. Cases where the HAPS would be directly in line between the Earth Station 
+and its satellite. 
+Demonstration Files 
+ 
+Page 88 
+ 
+ 
+ 
+3.10.2 Smart Antennas 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+S 
+Station types: 
+Mobile, Fixed 
+Propagation models: 
+Hata / COST231 
+ 
+This simulation shows an example of the analysis of the impact of using smart 
+antennas. These can be used, for example, by base stations of mobile networks to 
+improve performance. Rather than having fixed pointing and cover a fixed area – 
+for example 90° of azimuth – a smart antenna creates a focussed beam of energy 
+towards the wanted direction. 
+In this simulation we have two base stations: 
+1. Using conventional 120° sectors, with downtilt of 2° and peak gain 15 dBi 
+2. Using a number (up to 25) narrow spot beams that point at a mobile as 
+required with peak gain 30 dBi 
+Within the cell of each base station there located at random two mobile stations, 
+and a link is set up using 3G/WCDMA parameters to close the link for a C/N of 
+around 12.5 dB using power control to determine an appropriate transmit power. 
+Within this scenario two issues are being addressed: 
+• 
+Which case would create the highest interference towards other receivers 
+co-frequency? 
+• 
+Which case would provide the least intra-system interference and hence 
+could provide the highest capacity? 
+Demonstration Files 
+ 
+Page 89 
+ 
+ 
+ 
+This is analysed by running a Monte Carlo style analysis and producing statistics 
+of I/N at a victim receiver or C/(N+I) for each mobile link assuming the other mobile 
+link also causes interference. It is assumed the intra-system interference path can 
+use orthogonal coding to reduce interference by 10 dB. 
+Both the wanted and interfering paths are assumed to use the Hata / COST 231 
+propagation models and operate at a frequency of 2 GHz. 
+In the screen shot above there are four windows open: 
+• 
+Mercator map view (top left) showing the locations of the two base stations, 
+the mobiles they are services, their beams, and the test point. 
+• 
+Statistics graph (bottom left) showing the cumulative distribution function of 
+I/N from each of the two base stations into the receive test point. It can be 
+seen that for all percentages of time the smart antenna base station causes 
+lower levels of interference 
+• 
+Statistics graph (bottom right) showing the cumulative distribution function 
+of the C/(N+I) for one mobiles for each of the base station taking into 
+account interference from the other within the cell.  
+• 
+Watch window (top right) showing the wanted link budget calculation for a 
+mobile from the 3 sector and smart antenna systems. The effect of power 
+control on the variation in transmit power can be clearly seen. 
+Demonstration Files 
+ 
+Page 90 
+ 
+ 
+ 
+3.10.3 Traffic and Exclusion Zone 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable, Traffic 
+Terrain regions: 
+None 
+Frequency band: 
+UHF 
+Station types: 
+Mobile, Radio astronomy 
+Propagation models: 
+Hata / COST231 
+ 
+This example demonstrates how the Traffic module can be used to model more 
+accurately the behaviour of a mobile network. 
+A mobile operator wants to deploy at base station in UHF band that would receive 
+uplinks from mobile users in a channel adjacent to that used by the radio 
+astronomy service (RAS). This service has very stringent protection requirements: 
+Recommendation ITU-R RA.769 suggests a threshold of -202 dBW/MHz at the 
+receiver for no more than 2% of time. 
+One way to protect the radio astronomy service is to employ an exclusion zone, 
+and the mobile operator is suggesting one with radius 5 km would be sufficient. 
+The question is how to test that assumption. 
+Interference from the uplink can be very variable due the randomisation of the 
+number of active users and their location within the cell. In Visualyse Professional 
+this can be modelled using the Define Variable and the Traffic Module, which can 
+also be used to define an Exclusion Zone. 
+In this case a traffic object is defined such that a mobile user is active for 25% of 
+the time and never when within 5 km of the RAS site. A variable definition is used 
+to randomise the position of 12 users within a hexagonal cell. 
+We have assumed the base station at the centre of the cell and is located just 
+outside the exclusion zone, being 6 km away. Power control is used on the uplink 
+Demonstration Files 
+ 
+Page 91 
+ 
+ 
+ 
+and the COST 231 / Hata propagation model used for both wanted and interfering 
+paths.  
+The RAS is assumed to be operating in UHF channel 38, while the mobiles are in 
+channel 37, so this is an adjacent band analysis. A fixed attenuation of 40 dB is 
+assumed between the 5 MHz WCMDA carrier and a 1 MHz reference receiver 
+bandwidth. 
+In the screen shot above there are five windows open: 
+• 
+Model view (top left) showing the various simulation objects in a “file 
+explorer” like display 
+• 
+Mercator map view (top right) showing the locations of the radio astronomy 
+site, the base station, the mobiles, the active links, and the exclusion zone. 
+Grid lines are every 2 km 
+• 
+Statistics graph (bottom left) showing the cumulative distribution function 
+(CDF) of interference at the radio astronomy site, with the threshold from 
+ITU-R Rec.RA.769 as a marker. Note how the CDF never reaches 100% 
+as there are times when no mobiles outside the exclusion zones are active 
+• 
+Watch window (bottom centre) showing the number of interfering entries, 
+the total interference, the I/N at the RAS site, and the percentage of time 
+interference would occur 
+• 
+Path profile window (bottom right) showing path from the radio astronomy 
+site to the worst single interferer 
+If you run the simulation you will see the interference exceeds the radio astronomy 
+threshold by around 10 dB and so further mitigation would be required. One simple 
+additional step would be to consider the effect of terrain and clutter. 
+Note also how the number of interferers changes due to variation in number of 
+active users and whether they are within the exclusion zone or not. 
+Demonstration Files 
+ 
+Page 92 
+ 
+ 
+ 
+3.10.4 Wi-Fi and ENG 
+Action: 
+None 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+S 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+ITU-R P.1791 
+ 
+There are a number of bands that are or could be used for Electronic News 
+Gathering (ENG). This example considers one such, use of the licence exempt 2.4 
+GHz band for ENG. 
+This is also widely used for wireless access networks using the 802.11 standard, 
+Wi-Fi. The question is then what is the implication of widespread use of the 2.4 
+GHz band by ENG transmitters. 
+The scenario considers two Wi-Fi networks, with central node and remote user. 
+The coverage is predicted using a dual slope propagation model based upon ITU-
+R Rec.P.1791. The simulation considers the downlink direction: it would also be 
+necessary to consider the uplink in more detailed analysis. 
+An ENG is modelled as transmitting pointing directly at one of the Wi-Fi nodes, and 
+the impact on coverage modelled taking into account this source of interference. 
+The interference between the Wi-Fi networks is also included. It can be seen that 
+the coverage of the Wi-Fi network is severely reduced by the impact of the ENG, 
+while there is only minor reduction in coverage due to one Wi-Fi node on another2. 
+The figure above shows two windows open: 
+ 
+2 Note that as 802.11 uses carrier detection to avoid collisions, there is usually time sharing of the radio 
+spectrum between nearby Wi-Fi networks. 
+Demonstration Files 
+ 
+Page 93 
+ 
+ 
+ 
+• 
+Mercator view (right) showing locations of the Wi-Fi nodes, a test user, the 
+ENG transmitter, and the coverage of each wireless network in the 
+presence of interference. To give an idea on scale, the grid lines are 
+spaced every 10 m. 
+• 
+Watch window (left) showing link budgets of the wanted and interfering 
+signals of the most effected Wi-Fi user. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 94 
+ 
+ 
+ 
+3.11 PCS / AWS 
+On the 18th September 2006, the FCC’s Auction 66 completed, releasing the 
+1710-1755 MHz and 2110-2155 MHz bands for Advanced Wireless Services 
+(AWS). This opened up new swaths of spectrum for advanced PCS applications, 
+ranging from web browsing to TV, direct to any suitable handset.  
+However, these bands have a significant number of incumbents, including 
+government (typically military) and private wireless services – in particular fixed 
+links. These existing services have rights that are protected under Title 47 Part 24 
+of the Code of Federal Regulations, in which the FCC requires that new entrants 
+do not cause them harmful interference. Furthermore the new entrants must 
+accept interference into their networks from existing licensed systems.  
+In order to be able to provide a widespread high quality network it is important to 
+be able to analyse this sharing scenario accurately, in order to: 
+• 
+Identify scenarios where interference between PCS and incumbents would 
+be acceptable 
+• 
+Identify scenarios where interference between PCS and incumbents would 
+not be acceptable 
+• 
+Identify strategies that could be used to facilitate sharing in problem cases 
+• 
+Support the migration of existing services to other bands if necessary 
+• 
+Potentially offer ability to automate technical coordination via on-line web 
+service 
+This section describes how Visualyse Professional could be used to support such 
+analysis and contains the following examples: 
+• 
+Analysis of FS into mobile RX 
+• 
+PCS-FS Demo - BS TX 
+• 
+PCS-FS Demo - MS TX 
+Note that this sort of analysis could be used in other bands and in other 
+geographic regions. 
+Demonstration Files 
+ 
+Page 95 
+ 
+ 
+ 
+3.11.1 Analysis of FS into mobile RX 
+Action: 
+None 
+Modules used: 
+Terrain 
+Terrain regions: 
+Virginia terrain 
+Frequency band: 
+L / S 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+ITU-R Rec. P.452 
+ 
+This example shows Visualyse Professional identifying the area where the 
+downlink of a mobile network would suffer interference from a fixed service link. 
+The simulation contains two connected point to point fixed links in the area South-
+East of Washington DC. Around Richmond the PCS licence holder has deployed a 
+grid of base stations and would like to identify those areas that could be affected 
+by the fixed link. 
+The fixed link can be included in the simulation either by entering the parameters 
+by hand, using the spreadsheet based FS import tool, or using the terrestrial IFIC 
+interface (if the data is available). 
+An Area Analysis has been created that shows locations where the I/N would 
+exceed -6 dB, i.e. increase the noise figure by 1 dB. At each pixel the interfering 
+signal is calculated using the propagation model in ITU-R Rec.P.452 using a 
+terrain database to derive path profiles. 
+The screen show above shows four windows open: 
+Demonstration Files 
+ 
+Page 96 
+ 
+ 
+ 
+• 
+Mercator view (right) showing a map3 of region South East of Washington, 
+colour-tint of the terrain height, Area Analysis showing in red where I/N > - 
+6 dB, locations of stations 
+• 
+Watch window (top left) showing some of the key simulation parameters 
+• 
+Watch window (middle left) showing the link budget to a mobile located at 
+the test point 
+• 
+Path profile (bottom left) showing a slice through the terrain from one of the 
+FS transmitters to the test point. 
+ 
+3 Note this map might not be available due to copyright restrictions 
+Demonstration Files 
+ 
+Page 97 
+ 
+ 
+ 
+3.11.2 PCS-FS Demo - BS TX 
+Action: 
+None 
+Modules used: 
+Terrain 
+Terrain regions: 
+Virginia terrain 
+Frequency band: 
+L / S 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+ITU-R Rec. P.452 
+ 
+This example shows a scenario considering interference in the other direction – 
+from the new entrant PCS/AWS network into an incumbent FS network, in 
+particular from the downlink, Base Station (BS) transmit case. 
+The mobile operator has deployed a network of base stations in the area of 
+Richmond South East of Washington DC and needs to identify the interference it 
+would cause into the FS receivers. 
+There a number of ways in which the BS locations could be entered – either 
+manually, using the hexagonal service area wizard, or if locations are known, using 
+a CSV file containing (latitude, longitudes). 
+The base station antennas could be defined using standard patterns such as ITU-
+R Rec.F.1336 or in tables if available from the manufacturer such as in the figure 
+below that shows the elevation slice of a pattern that uses downtilt. 
+Demonstration Files 
+ 
+Page 98 
+ 
+ 
+ 
+ 
+The fixed links have been modelled using the fade model in ITU-R Rec.P.530, but 
+Visualyse Professional also includes the TIA Bulletin 10F fade model. 
+The screen show above shows four windows open: 
+• 
+Mercator view (right) showing a map of region South East of Washington, 
+colour-tint of the terrain height, locations of stations. 
+• 
+Watch window (top left) showing some of the key simulation parameters 
+• 
+Watch window (middle left) showing the link budget to one of the fixed 
+service receivers 
+• 
+Path profile (bottom left) showing a slice through the terrain to one of the 
+FS receivers 
+As the simulation is static there is no need to run the simulation – the results are 
+given directly in the watch windows. The simulation could be extended to do C/I 
+analysis using Monte Carlo methods to convolve fading on the fixed link with 
+variations in interfering signal due to propagation and traffic variation. 
+Demonstration Files 
+ 
+Page 99 
+ 
+ 
+ 
+3.11.3 PCS-FS Demo - MS TX 
+Action: 
+Run simulation 
+Modules used: 
+Terrain, Define Variable 
+Terrain regions: 
+Virginia terrain 
+Frequency band: 
+L / S 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+ITU-R Rec. P.452 
+ 
+This example considers interference from the mobile uplink direction into a point to 
+point fixed link. This requires Monte Carlo modelling methods, as there can be 
+significant variation in interference due to variations in: 
+• 
+Mobile traffic level 
+• 
+Mobile location altering the gain at the FS receiver 
+• 
+Mobile location varying the distance and path profile between mobile and 
+FS receiver 
+• 
+Mobile location impacting the EIRP when using power control 
+• 
+Propagation conditions  
+This type of modelling can be easily done in Visualyse Professional using the 
+Define Variable module to randomise various input parameters. The simulation has 
+been created with a hexagonal grid of 23 base stations. Each base station is 
+assumed to support 30 mobiles, making a total of 690 across the service area. 
+The location of each mobile has been randomised as has the percentage of time 
+used in the propagation model in ITU-R Rec.P.452, which takes account of the 
+terrain database. In this case the EIRP has been fixed at -6 dBW, i.e. -24 dBm, but 
+more advanced simulations could use power control to meet the required quality of 
+service. 
+Demonstration Files 
+ 
+Page 100 
+ 
+ 
+ 
+In Monte Carlo modelling the interfering level will vary from time step to time step – 
+from sample to sample. Hence the simulation must be run for a number of samples 
+and statistics generated. In this case the key output is the cumulative distribution 
+function (CDF) of the I/N at the FS receiver. 
+The simulation has been configured to run for 999 time steps to generate 1,000 
+samples, but it can be run for longer to get statistics for the smaller percentages of 
+time. 
+The resulting I/N statistics can be used to determine whether the probabilistic 
+interference thresholds have been met. These are typically of the form: 
+• 
+Long term: I/N > -20 dB for no more than 20% of the time 
+• 
+Short time: I/N > 18 dB for no more than 0.01% of the time 
+The screen shot above shows the simulation with four windows open: 
+• 
+Mercator view (top left), showing a map colour-tinted with terrain, the 
+location of the FS stations, the base stations, and each of the 690 mobiles 
+(as crosses). The map also shows the boundary of the Washington BEA 
+licence. 
+• 
+Statistics graph (bottom left), showing the cumulative distribution function of 
+I/N at one of the FS receivers 
+• 
+Watch window (top right), showing the link budget for this sample at one of 
+the FS receivers 
+• 
+Path profile (bottom right), showing the terrain along one of the FS links 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 101 
+ 
+ 
+ 
+3.12 Radiolocation 
+This section contains the following examples: 
+• 
+Radar and windfarms line of sight 
+• 
+Radar into IMT BS 
+• 
+Satellite ES into Radar 13.75 GHz 
+These examples give general methodologies for analysis of sharing between radar 
+and other services which can be extended to other bands and services, such as: 
+• 
+Compatibility between radar and broadcasting in UHF bands 
+• 
+Compatibility between radar and radio astronomy around 15 GHz 
+Demonstration Files 
+ 
+Page 102 
+ 
+ 
+ 
+3.12.1 Radar and Wind Farms Line of Sight 
+Action: 
+Export to Google Earth 
+Modules used: 
+Terrain 
+Terrain regions: 
+South West England 30m 
+Frequency band: 
+Any 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+Free space, ITU-R Rec. P.526 
+ 
+This example file analyses sharing issues related to siting of wind farms near 
+radars. There is concern that the rotating blades of the turbines would create 
+reflections that would be hard to filter out and hence reduce the radar’s 
+effectiveness. 
+The issues were addressed in the report “The Effect of Windmill Farms On Military 
+Readiness” prepared for the Congressional Defense Committees. It identified a 
+number of mitigation methods, but suggested that the only reliable one was to 
+avoid radar line of sight: 
+“The mitigations that exist at present to completely preclude any adverse 
+impacts on air defense radars are limited to those methods that avoid 
+locating the wind turbines in radar line of sight of such radars. These 
+mitigations may be achieved by distance, terrain masking, or terrain relief 
+and requires case-by-case analysis.” 
+This simulation file shows how to generate in Visualyse Professional the exclusion 
+zone around an existing radar site where wind farms should not located. 
+The method is based upon using a terrain database together with the ITU-R 
+Rec.P.526 diffraction model. Where there is no diffraction the path is classified as 
+with the radio line of sight and hence should be part of the exclusion zone. This 
+uses Visualyse Professional’s Area Analysis tool. 
+Demonstration Files 
+ 
+Page 103 
+ 
+ 
+ 
+In the screen shot above three windows are open: 
+• 
+Mercator view (left) showing the exclusion zone created by the Area 
+Analysis, the location of the radar and a test point, and the terrain overlay 
+• 
+Watch window (top right) showing two link budgets – the wanted signal that 
+uses free space path loss and the interfering path that uses free space path 
+loss with diffraction. As the only difference between the two is the 
+diffraction element, the ratio of the wanted to interfering, is the diffraction 
+term 
+• 
+Path profile view (bottom right) showing the path through the terrain from 
+the radar to the test point 
+If you select the Export to Google Earth option and configure the tool appropriately 
+you should see something like the figure below. The masking effects of the terrain 
+can be clearly seen. 
+ 
+Demonstration Files 
+ 
+Page 104 
+ 
+ 
+ 
+3.12.2 Radar into IMT BS 
+Action: 
+Export to Google Earth 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+South East England 
+Frequency band: 
+S 
+Station types: 
+Fixed, Mobile, Other 
+Propagation models: 
+ITU-R Rec. P.452 
+ 
+This example analyses the potential to use bands used for maritime radars for 
+terrestrial mobile services at around 2.9 GHz. This is just above the top of the band 
+2.5 – 2.69 GHz which is allocated to terrestrial mobile, particularly IMT-2000. It 
+would be useful if 3G services could expand into higher frequencies, but there is 
+the danger of interference from radars. However, if these radars are located on the 
+coastline to provide maritime surveillance then there might be the potential to 
+operate inland.  
+This example identifies the areas where there could be interference from the radar 
+that could exceed an interference threshold of an I/N = -10 dB at a base station, 
+i.e. considering the mobile uplink. A similar analysis could also be done with the 
+downlink. 
+A particular characteristic of this scenario is the extreme variation in signal from 
+the radar, due to: 
+1. Pulsed nature of signal at the very small scale of time 
+2. Sweeping of the antenna with rotations in the order of a second or seconds 
+3. Propagation variation between radar site and receiver over periods of 
+months or a year 
+One method to undertake analysis to identify those regions that would suffer 
+interference due radar antenna main beam or far side-lobe interference, i.e. 
+Demonstration Files 
+ 
+Page 105 
+ 
+ 
+ 
+eliminate the 2nd of these two variations. The impact of the first of these is likely to 
+depend upon details of the victim system, in particular is susceptibility to pulsed 
+interference, hence can be considered separately. 
+Hence for the purposes of this simulation two exclusion zones are identified: those 
+where the I/N threshold is exceeded by main beam interference and those where it 
+is exceeded even for far side lobes. In both cases we are considering the level that 
+not be exceeded for more than 1% of the time due to propagation variation. The 
+exclusion zones were generated using the Area Analysis tool. 
+The screen shot above shows three views open: 
+• 
+Watch window (top left) showing the link budget from the radar to the 
+location of the test IMT-2000 base station 
+• 
+Path profile (bottom left) showing the path through the terrain from the 
+radar to the location of the test IMT-2000 base station 
+• 
+Mercator view (right) showing the location of the radar, the two exclusion 
+zones in yellow and red and an overlay of the terrain data. 
+When the Area Analysis is exported to Google Earth the output should look similar 
+to this: 
+ 
+Demonstration Files 
+ 
+Page 106 
+ 
+ 
+ 
+3.12.3 Satellite ES into Radar 13.75 GHz 
+Action: 
+None 
+Modules used: 
+Terrain, IDWM 
+Terrain regions: 
+South East England 
+Frequency band: 
+Ku 
+Station types: 
+Satellite Earth Station, Other 
+Propagation models: 
+ITU-R Rec. P.452 
+ 
+At WRC 2003 PFD limits of –115 dBW / m^2 / 10 MHz for no more than 1% of time 
+were agreed in Article 5.502 of the Radio Regulations. Recently Study Group 4 
+has agreed S.1712 which contains “Methodologies for determining whether an 
+FSS earth station at a given location could transmit in the band 13.75-14 GHz 
+without exceeding the pfd limits in No. 5.502 of the Radio Regulations, and 
+guidelines to mitigate excesses”. 
+This example shows how Visualyse Professional can be used to undertake 
+analysis using the methodologies this Recommendation describes, in particular 
+Method 2 in Annex 2, creation of a contour showing the locations where operation 
+is acceptable as it would not exceed the PFD limits; 
+Visualyse Professional can also be used for analysis under Method 3 in Annex 3 to 
+determine whether a specific location can be used or whether it would exceed the 
+PFD limits. More information is given in a Technical Note available on request, 
+which goes into this sharing scenario in a little more depth. 
+The aim of this simulation is to identify those locations where it would be feasible 
+to locate a satellite Earth station and not trigger the PFD limits along a national 
+border or, as in this case, a coastline. This was done by: 
+• 
+Creating a reference satellite Earth station including antenna gain pattern 
+using ITU-R Rec.S.465 
+Demonstration Files 
+ 
+Page 107 
+ 
+ 
+ 
+• 
+Creating a set of test points around the coastline and get them to transmit 
+with the same EIRP as the satellite Earth station (this task can be assisted 
+by Visualyse Professional’s service area wizard that can create test points 
+along a country’s border). 
+• 
+Moving the reference satellite Earth station across the area of interest 
+• 
+At each pixel within the area of interest, calculating the interference from 
+the test points at the Earth station and taking the worst (i.e. highest value). 
+This corresponds to the highest power at the coastline from a transmitting 
+Earth station at that location 
+• 
+Colouring in that pixel according to the highest signal at the test point from 
+the coastline (i.e. the highest power at the coastline from the test point) 
+The figure above shows the resulting Area Analysis. The colour scheme chosen 
+was: 
+Yellow: interference exceeds the threshold but by less than 20 dB. Hence 
+operation at these points might be feasible if site shielding is used 
+Red: interference exceeds the threshold by at least 20 dB. Hence operation at 
+these points is unlikely to be approved. 
+Note the simulation used a 1 km grid and low resolution terrain database: the 
+prediction could be improved using higher resolution terrain data and maybe also a 
+land use database to predict clutter loss. 
+Export to Google Earth can be used to identify those locations where operation 
+would be permitted, as in the example below. 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 108 
+ 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 109 
+ 
+ 
+ 
+3.13 Satellite & Terrestrial 
+This section contains the following examples: 
+• 
+HEO FSS and FS 
+• 
+Satellite ATC Example 
+• 
+Urban GSO S-DARS Coverage 
+Demonstration Files 
+ 
+Page 110 
+ 
+ 
+ 
+3.13.1 HEO FSS and FS 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+Ka 
+Station types: 
+Non-GSO Satellite, Earth Station, Fixed 
+Propagation models: 
+Free space, ITU-R Rec.P.676 
+ 
+This example shows an example of analysis of the power flux density (PFD) mask 
+that can protect terrestrial point to point fixed link from interference from 
+constellations of satellites in highly eccentric orbits (HEO). 
+It is proposed that a PFD limits be -105 dBW / m^2 / MHz for elevation angles of 
+arrival less 5°, -115 dBW / m^2 / MHz for elevation angles above 25°, and linear 
+interpolation between 5° and 25°. 
+The interference that this PFD mask will generate will depend upon the 
+characteristics of the satellite constellation. Therefore to check whether the mask 
+is suitable not it is necessary to run a simulation assuming it applies and checking 
+the predicted levels of interference. 
+The interference will also depend upon the characteristics of the FS receiver: in 
+particular its: 
+• 
+Latitude 
+• 
+Longitude 
+• 
+Antenna azimuth 
+• 
+Antenna gain pattern 
+• 
+Antenna height 
+Demonstration Files 
+ 
+Page 111 
+ 
+ 
+ 
+In this example, we consider a single location, height and gain pattern and vary the 
+azimuth, but other runs could analyse the impact of vary other parameters. 
+Interference is measured in terms of the I/N at the FS receiver and compared 
+against a threshold I/N = -10 dB. Statistics are captured on what percentage of 
+time this threshold is exceeded, and in addition what the worst I/N would be. Other 
+statistics could be generated, such as the Fractional Degradation in Performance 
+(FDP). 
+A 3-satellite HEO constellation is modelled with repeat period and hence 
+simulation duration of 1 day, using a 10 second time step. 
+The screen shot above shows the following windows: 
+• 
+Table view (far left) showing the azimuth angles of the test FS receivers, 
+varying from 0° to 90° in 2.5° steps 
+• 
+Table view (left) showing the worst I/N and percentage of time the I/N > -10 
+dB for each of these azimuths 
+• 
+Plate Carrée view (top right) showing the location of the FS receivers, the 
+satellites, and their foot prints 
+• 
+Statistics view (bottom right) showing the cumulative distribution function of 
+the I/N for all links and two in particular. 
+Note how the azimuth of the worst I/N is not the same as the azimuth of the 
+receiver with the highest probability of interference!  
+Demonstration Files 
+ 
+Page 112 
+ 
+ 
+ 
+3.13.2 Satellite ATC Example 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+L 
+Station types: 
+Non-GSO Satellite, Earth Station, Mobile 
+Propagation models: 
+Free space, ITU-R Rec.P.676, Hata, ITU-R Rec.P.452 
+ 
+This example analyses interference with a satellite network employing Auxiliary 
+Terrestrial Component (ATC). This is used to extend and improve the coverage 
+and capacity of the satellite network, particularly in urban areas where there can 
+be significant reduction in coverage due to clutter (see next example file for 
+details). 
+To improve performance in urban areas, terrestrial repeaters or base stations are 
+deployed, typically operating within the spectrum allocated to the satellite system. 
+However this can result in interference if not managed correctly – either within the 
+satellite / ATC network or into other networks either co-frequency or in adjacent 
+bands. 
+One of the key strengths of Visualyse Professional is how it can analyse the 
+various combinations of satellite and terrestrial systems. In this example file it is 
+analysing both Uplink (UL) and Downlink (DL) and both satellite and terrestrial 
+services in the same simulation file!  
+The various elements are shown in the following two figures. There are two sets of 
+wanted paths: 
+• 
+Space to Earth path between the satellite and the handsets operating in 
+satellite mode, modelling used free space path loss and gaseous 
+attenuation using Rec.P.676 plus 10 dB of clutter loss 
+Demonstration Files 
+ 
+Page 113 
+ 
+ 
+ 
+• 
+Terrestrial path between the ATC base stations and the handsets operating 
+in GSM mode, modelling the short range urban path using the Hata / COST 
+231 propagation model 
+The first figure considers the downlink interference paths including: 
+• 
+Space to Earth path: interference from the satellite DL into the ATC 
+terrestrial component DL, modelling used free space path loss and 
+gaseous attenuation using Rec.P.676 
+• 
+Terrestrial path: interference from the ATC terrestrial component DL into 
+the satellite DL, modelled using terrestrial propagation model ITU-R 
+Rec.P.452 
+ 
+MSS GSO 
+Satellite
+Satellite 
+Downlinks
+Handsets in 
+satellite mode
+Handsets in 
+GSM mode
+ATC Base 
+Stations
+Interference from Satellite 
+DL into Terrestrial DL
+Terrestrial DL
+Interference from Terrestrial DL 
+into Satellite DL
+ 
+The second figure considers the uplink interference paths including: 
+• 
+Terrestrial path: interference from the satellite UL into the ATC terrestrial 
+component UL, modelled using terrestrial propagation model ITU-R 
+Rec.P.452 
+• 
+Space to Earth path: interference from the ATC terrestrial component DL 
+into the satellite DL, modelling used free space path loss and gaseous 
+attenuation using Rec.P.676 
+ 
+Demonstration Files 
+ 
+Page 114 
+ 
+ 
+ 
+MSS GSO 
+Satellite
+Satellite 
+Uplinks
+Handsets in 
+satellite mode
+Handsets in 
+GSM mode
+Interference from Terrestrial 
+UL into Satellite UL
+Terrestrial UL
+Interference from Satellite UL 
+into Terrestrial UL
+ 
+The simulation has been configured so that all links would work with adequate C/N 
+in the absence of interference. However it can be seen that for three of the four 
+interference paths the C/I is significantly negative. 
+The screen shot above shows four windows open: 
+• 
+Plate Carrée view (top left), showing the locations of the satellite, handsets 
+and base stations, and beam foot print of the satellite network (note only a 
+sub-set of the spot beams have been included to simplify the simulation) 
+• 
+Mercator view (bottom left), showing the grid of base stations, randomised 
+deployment of mobiles, interference paths, and beam coverage 
+• 
+Table view (top right) showing the wanted and interfering link budgets for 
+the return paths (satellite downlinks and terrestrial uplinks) 
+• 
+Table view (bottom right) showing the wanted and interfering link budgets 
+for the forward paths (satellite uplinks and terrestrial downlinks) 
+This simulation could be developed further in many ways – contact us for more 
+details. 
+Demonstration Files 
+ 
+Page 115 
+ 
+ 
+ 
+3.13.3 Urban GSO S-DARS Coverage 
+Action: 
+None 
+Modules used: 
+Terrain 
+Terrain regions: 
+S-DARS Lidar 
+Frequency band: 
+S 
+Station types: 
+GSO Satellite, Earth Station, Mobile 
+Propagation models: 
+Free space, ITU-R Rec.P.676, ITU-R Rec.P.452 
+ 
+This example show Visualyse Professional being used to predict the coverage of a 
+GSO satellite providing communication services and broadcasting multi-media to 
+mobiles in urban areas. This can be problematic for areas of Europe, as the GSO 
+arc is low on the horizon for the higher latitudes involved. This means that the 
+direct path to the satellite is more likely to be obscured by a building, and in these 
+cases with the minimal margin available the link will fail. 
+In this case an urban area has been created using the generic terrain file format 
+containing streets between blocks, towers, plazas, and a river with bridges. Using 
+only the GSO satellite the coverage is limited, particularly behind the towers, 
+where there is considerable shadowing. To provide fill-in of these locations a 
+terrestrial repeater has been included: the propagation has been modelled using 
+the “over the top” path included in ITU-R Rec.P.452. 
+Two area analysis have been created: 
+1. Dark green: showing where the C/N from the satellite exceeds 12 dB 
+2. Light green: showing where the C/N from either the satellite or the 
+terrestrial repeater exceeds 12 dB 
+The locations that are uncoloured show where there is coverage from neither the 
+repeater nor the satellite. 
+In the screen shot above there are four windows open: 
+Demonstration Files 
+ 
+Page 116 
+ 
+ 
+ 
+• 
+Mercator view (top right), showing the terrain area, river in blue, and the 
+two area analysis, colour coded in green 
+• 
+Path profile view (bottom right), showing a path across the area, with the 
+towers, streets, and rivers visible 
+• 
+Plate Carrée map view (bottom left), showing the location of the test area, 
+the handset, and the GSO satellite. 
+• 
+Watch window (top left), showing the link budget from the satellite to the 
+handset 
+This analysis could be extended to show the effect of using other architectures – 
+such as Highly Eccentric Orbits (HEO). 
+ 
+ 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 117 
+ 
+ 
+ 
+3.14 Short Range Devices 
+This section contains the following examples: 
+• 
+SRR into FS 
+• 
+Wi-Fi and BT 
+Demonstration Files 
+ 
+Page 118 
+ 
+ 
+ 
+3.14.1 SRR into FS 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+Ka 
+Station types: 
+Fixed, Mobile 
+Propagation models: 
+ITU-R Rec. P.1791 
+ 
+This example shows study of the impact of short range radars (SRRs) on point to 
+point fixed links around 26 GHz. 
+A fixed service receiver station is modelled at the centre of the test area. Its 
+antenna is modelled using the Rec.P.699 gain pattern with azimuth = 90° (due 
+East) and elevation just below horizontal (-0.75°).  
+In the vicinity of this FS receiver are assumed to be a number of roads on which 
+are vehicles. These have been modelled by randomising the position (lat, long) 
+using the Define Variable module.  
+It is assumed there are two roads running North-South, one East-West and several 
+other small roads modelled as vehicles at random locations across the area of 
+interest. 
+Note that the task of defining these roads with all these vehicles is simplified by the 
+use of the duplicate feature! This sort of randomisation makes this a Monte Carlo 
+style simulation. 
+The SRRs are assumed to be transmitting at -73 dBW: this is -43 dBm / MHz as 
+per FCC requirements plus two factors: 
+• 
+3 dB increase due to the gain at the transmit antenna 
+• 
+3 dB increase due to multiple transmitters on the vehicle 
+Demonstration Files 
+ 
+Page 119 
+ 
+ 
+ 
+The net result is an equivalent EIRP per vehicle of -37 dBm or -67 dBW. 
+The propagation model is assumed to be dual slope with decay factor 2 until 1 km 
+and then 3. 
+The figure above shows four windows: 
+• 
+Mercator view (top left) showing the location of stations on a grid every 1 
+km for scale 
+• 
+Quick graph view (bottom left) showing the variation in I/N at the FS 
+receiver against Monte Carlo sample. 
+• 
+Watch window (bottom right) single entry worst case interfering link budget 
+and the aggregate interference from all 50 vehicles. 
+• 
+Statistics graph (top right) I/N cumulative distribution functions for the FS 
+receiver 
+Demonstration Files 
+ 
+Page 120 
+ 
+ 
+ 
+3.14.2 Wi-Fi and BT 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable, Traffic 
+Terrain regions: 
+None 
+Frequency band: 
+S 
+Station types: 
+Mobile 
+Propagation models: 
+ITU-R Rec. P.1791 
+ 
+This example shows sharing between a Wi-Fi network and Bluetooth (BT) at 
+around 2.4 GHz. 
+The simulation operates at short ranges with maximum radius of Wi-Fi network of 
+50m and paired BT devices 1 metre apart. The location of the user terminal is 
+randomised within the Wi-Fi service area as is the paired BT device. 
+The wanted and interfering paths are assumed to use the propagation model in 
+ITU-R Rec.P.1791, which is a dual slope model plus log-normal fading. 
+The Wi-Fi network is operating on one of the three non-overlapping 22 MHz 
+channels while the BT device bandwidth is 1 MHz and is frequency hopping. BT 
+devices can hop over all three channels but tend to avoid those where they suffer 
+interference – such as when co-frequency with Wi-Fi networks. Hence in this 
+example it is assume to hop at random outside the Wi-Fi’s channel. 
+Representative spectrum masks of both the Wi-Fi and BT have been used and for 
+a given frequency offset Visualyse Professional 7 calculates the net filter 
+discrimination (NFD). 
+An additional factor modelled is the activity ratio of the BT device which is 
+assumed to be active for 25% of the time. Hence the simulation calculates the 
+performance using Monte Carlo methods to convolve: 
+• 
+Randomisation of location 
+Demonstration Files 
+ 
+Page 121 
+ 
+ 
+ 
+• 
+Randomisation of fading on wanted paths 
+• 
+Randomisation of fading on interfering paths 
+• 
+Random selection of frequency of BT operation, and hence relative 
+frequency offset, and hence variation in NFD 
+• 
+Random activation of BT link 
+The result is degradation in performance of each link due to the other. The figure 
+above shows four windows: 
+• 
+Mercator view (top left) showing the location of stations on a grid every 
+10m for scale 
+• 
+Frequency view (bottom left) showing the spectrum mask of the BT (as 
+interferer) and receive filter mask of the Wi-Fi (as victim) 
+• 
+Watch window (top right) showing the wanted and interfering link budgets 
+• 
+Statistics graph (bottom right) showing the C/(N+I) and C/N cumulative 
+distribution functions, showing how performance of the Wi-Fi network is 
+degraded due to the proximity of the BT network. 
+ 
+Demonstration Files 
+ 
+Page 122 
+ 
+ 
+ 
+3.15 Space Science Service 
+This section contains the following examples: 
+• 
+PFD from non-GSO satellite DL 
+• 
+P-MP FS into EESS (passive) 
+• 
+Sensor pointing at defined (az, el) angles 
+Demonstration Files 
+ 
+Page 123 
+ 
+ 
+ 
+3.15.1 PFD from non-GSO satellite DL 
+Action: 
+Run simulation 
+Modules used: 
+None 
+Terrain regions: 
+None 
+Frequency band: 
+X 
+Station types: 
+Non-GSO Satellite, Earth Station 
+Propagation models: 
+Free Space 
+ 
+This example considers the case of a non-GSO satellite being used for remote 
+sensing applications. It is downloading using a directional antenna to an Earth 
+Station in the centre of a large country (India) but there is still the potential to 
+exceed the relevant PFD limits. 
+These are defined in Article 21 of the Radio Regulations and for the part of X band 
+under consideration, namely around 8 GHz, the limits are: 
+• 
+-140 dBW/m^2/4 kHz for elevation angles greater than 25° 
+• 
+Linear interpolation between -140 and -150 dBW/m^2/4 kHz for elevation 
+angles between 5° and 25° 
+• 
+-150 dBW/m^2/4 kHz for elevation angles less than 5° 
+The Radio Regulations give each Administration the right to exceed these levels 
+within their own territory. The question is then would these PFD limits be exceeded 
+in adjacent countries? 
+This simulation shows how Visualyse Professional can help analyse these 
+problems. A set of test points have been defined around the border of a 
+neighbouring country, Pakistan, and the PFD at each test point calculated as the 
+satellite moves along its orbit. 
+The figure above shows four windows: 
+Demonstration Files 
+ 
+Page 124 
+ 
+ 
+ 
+• 
+3D view (top left) showing the non-GSO satellite, its orbit track, the Earth 
+Station, the beam from the non-GSO satellite to Earth Station, and the test 
+points around the adjacent country 
+• 
+Plate Carrée map view (bottom left), also showing the non-GSO satellite, 
+its orbit track, the Earth Station, the beam from the non-GSO satellite to 
+Earth Station, and the test points around the adjacent country 
+• 
+Watch window (bottom right) showing the PFD calculation for one of the 
+test points, the worst PFD over all the test points, and the link budget for 
+the X-band downlink 
+• 
+Statistics graph (top right) showing the cumulative distribution function of 
+the worst PFD at each time step and the CDF of the PFD for one test point 
+(number 39) 
+Note that the non-GSO satellite only transmits when it can see the Earth Station 
+and the PFD statistics are only updated when the non-GSO satellite is transmitting 
+and can see the test points: hence the statistics are unlikely to be valid for more 
+than 10% of the time. However in this case it can be seen that the PFD limits are 
+met as the PFD never exceeds -150 dBW/m^2/4 kHz. 
+This simulation can be extended to undertake more advanced analysis which 
+takes account of how the PFD varies with elevation angle. 
+Demonstration Files 
+ 
+Page 125 
+ 
+ 
+ 
+3.15.2 P-MP FS into EESS (passive) 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+Ku 
+Station types: 
+Non-GSO Satellite, Fixed 
+Propagation models: 
+Free space path loss, ITU-R Rec.P.676 
+ 
+This example shows analysis from large numbers of terrestrial transmitters into a 
+passive space-borne sensor. In this example it involves Ku band point to multi-
+point (P-MP) fixed service base station interfering with a satellite sensor. There are 
+many other possible examples – including RLANs at 5 GHz into non-GSO MSS 
+feeder links and Ka band SRR into EESS sensors. 
+In this example 105 P-MP base stations have been deployed across Europe. Their 
+antenna is omni-directional with elevation dependency as in the figure below: 
+Demonstration Files 
+ 
+Page 126 
+ 
+ 
+ 
+ 
+This uses one of the P-MP gain patterns in ITU-R Rec.F.1336. Each one is 
+transmitting at 40 dBm i.e. 10 dBW across a WiMAX channel bandwidth of 10 
+MHz. 
+A remote sensing satellite is in orbit overhead, with sensor moving in pre-defined 
+angles using the Define Variable Module. As it flies over Europe is suffers 
+interference at its receiver, measured using the I/N metric. 
+The screen-shot above shows the following windows: 
+• 
+3D view (top left): showing the locations of the P-MP base stations, the 
+satellite, its beam, and its space track 
+• 
+Plate Carrée map (bottom left): showing the locations of the P-MP base 
+stations, the satellite, its beam, and its ground track 
+• 
+Watch window (top right): showing the link budget for the worst single 
+interfering P-MP base station and the aggregation of all visible interferers 
+• 
+Quick graph (bottom right): showing how the I/N varies with time as the 
+satellite flies over 
+It can be seen that in this case the I/N peaks at around 10.8 dB – which could 
+cause significant data loss. 
+Demonstration Files 
+ 
+Page 127 
+ 
+ 
+ 
+3.15.3 Sensor pointing at defined (az, el) angles 
+Action: 
+Run simulation 
+Modules used: 
+Define Variable 
+Terrain regions: 
+None 
+Frequency band: 
+Any 
+Station types: 
+Non-GSO Satellite 
+Propagation models: 
+n/a 
+ 
+This example shows how the pointing angles of sensors can be defined in a range 
+of different ways in Visualyse Professional. In this example the sensors are on a 
+non-GSO satellite – for example a remote sensing satellite – but they could be on 
+any station type. 
+There are four satellites each using a different method to point their sensor: 
+1. Fixed pointing: the sensor points with (az, el) = (40°, 0°) for the duration of 
+the simulation 
+2. Swept broom pointing: the sensor scans back and forth between (az, el) 
+angles of (-40°, 0°) and (+40°, 0°) at a rate of 1° per second 
+3. Rotating: the sensor scans round around through-out 360° at a fixed 
+elevation angle – in this case -55° – at a scan rate of 1° per second. Note 
+that the scan platform was rotated through -90° of pitch using the Euler 
+angles under “Advanced” so the rotation is around the required axis 
+4. Pre-defined: the Define Variable Module was used to vary the pointing to 
+specific locations at pre-defined times with interpolation between angles 
+defined in the look-up tables 
+The simulation has been configured with three windows open: 
+Demonstration Files 
+ 
+Page 128 
+ 
+ 
+ 
+• 
+Plate Carrée map view (top) showing the location of the satellites, their 
+beam footprints (-3 dB and -10 dB contours), and the ground tracks 
+• 
+3D view (right) showing the location of the satellites, their beam footprints (-
+3 dB and -10 dB contours), and the space tracks 
+• 
+Table view (bottom left) showing the (az, el) angles of the sensors for each 
+of the satellites. 
+ 
+ 
+ 
+ 
+ 
+ 
+Demonstration Files 
+ 
+Page 129 
+ 
+ 
+ 
+4 
+Index of Examples by Frequency Band 
+This section gives an index of examples by frequency band. 
+Any Band: 
+Section 
+File 
+Aeronautical 
+Modelling air traffic routes 
+Radiolocation 
+Radar and windfarms line of sight 
+Space Science 
+Service 
+Sensor pointing at defined AzEl 
+angles 
+ 
+VHF: 
+ 
+ 
+UHF: 
+Section 
+File 
+Digital Dividend 
+3G into DVB Punched Holes 
+Digital Dividend 
+DVB into 3G Punched Holes 
+Digital Dividend 
+Monte Carlo Mobile into DTT Fixed 
+Receive 
+Network 
+Coverage 
+Broadcast coverage 
+Other 
+Traffic and Exclusion Zone 
+ 
+L-band: 
+Section 
+File 
+Aeronautical 
+Aeronautical satellite service 
+Earth station 
+coordination 
+Little Leo gateways into FS 
+GSO to GSO 
+GSO to GSO MSS availability 
+Satellite & 
+Terrestrial 
+Satellite ATC Example 
+PCS/AWS 
+Analysis of FS into mobile RX 
+PCS/AWS 
+PCS-FS Demo - BS TX 
+PCS/AWS 
+PCS-FS Demo - MS TX 
+ 
+S-band: 
+Section 
+File 
+Aeronautical 
+Aircraft with pre-set track across US 
+and interference from FS 
+Network 
+Coverage 
+Mobile coverage 
+Non-GSO 
+Galileo with HEO overlay 
+Section 
+File 
+Maritime 
+MRCC Coverage 
+Network 
+Coverage 
+PMR Coverage 
+Demonstration Files 
+ 
+Page 130 
+ 
+ 
+ 
+Non-GSO 
+Non-GSO MSS and Galileo 
+Others 
+Smart Antennas 
+Others 
+Wi-Fi and ENG 
+Radiolocation 
+Radar into IMT BS 
+Satellite & 
+Terrestrial 
+Urban GSO S-DARS Coverage 
+Short range 
+devices 
+Wi-Fi and BT example 
+Military 
+UAV demo 
+PCS/AWS 
+Analysis of FS into mobile RX 
+PCS/AWS 
+PCS-FS Demo - BS TX 
+PCS/AWS 
+PCS-FS Demo - MS TX 
+ 
+C-band: 
+Section 
+File 
+Aeronautical 
+AMT vs Globalstar 
+Earth station 
+coordination 
+ES Exclusion Zone around WiMAX 
+BS 
+Fixed planning 
+and coordination 
+FS Import from IFIC 
+Fixed planning 
+and coordination 
+PtMP UT Deployment 
+Maritime 
+ESV Interference Area 
+Maritime 
+GSO ES on ship entering Seattle 
+Port into FS 
+Non-GSO 
+PFD at GSO from NGSO MSS 
+Feeder link 
+Others 
+HAPS with FS and FSS 
+ 
+X-band: 
+Section 
+File 
+Military 
+Missile telemetry with jamming 
+Space Science 
+Service 
+PFD from non-GSO satellite DL 
+ 
+Ku-band: 
+Section 
+File 
+Aeronautical 
+Aircraft into FS stations 
+Earth station 
+coordination 
+Coordination contours 
+GSO to GSO 
+GSO transfer orbit TTC with 
+interference from populated GSO arc 
+GSO to GSO 
+LUX 28,2 coverage 
+GSO to GSO 
+Lux Arabsat coordination 
+Non-GSO 
+HEO into GSO DL at Ku band 
+Radiolocation 
+Satellite ES into Radar 13,75 GHz 
+Demonstration Files 
+ 
+Page 131 
+ 
+ 
+ 
+Space Science 
+Service 
+P-MP FS into EESS (passive) 
+ 
+Ka-band: 
+Section 
+File 
+Fixed planning 
+and coordination 
+PtP link planning 
+GSO to GSO 
+GSO downlink with rain loss 
+Military 
+UAV Demo 
+Non-GSO 
+Data relay satellite end to end route 
+with handover 
+Non-GSO 
+GSO to non-GSO Area Analysis 
+Non-GSO 
+MSS Feeder links with spot beams 
+Non-GSO 
+Teledesic & Celestri with 
+constellation avoidance 
+Non-GSO 
+Teledesic 840 satellite constellation 
+Satellite & 
+Terrestrial 
+HEO FSS and FS 
+Short range 
+devices 
+SRR into FS 
+ 
+V-band: 
+Section 
+File 
+Military 
+UAV Demo 
+ 
+Demonstration Files 
+ 
+Page 132 
+ 
+ 
+ 
+5 
+More Information 
+Please contact us with any questions you might have or if you have a suggestion 
+for a new demonstration file. 
+We can be contacted at: 
+Address 
+Transfinite Systems Ltd 
+ 
+ 
+ 
+Suite 24 (5th Floor) 
+ 
+ 
+ 
+AMP House 
+ 
+ 
+ 
+Dingwall Road 
+ 
+ 
+ 
+Croydon CR0 2LX 
+ 
+ 
+ 
+ 
+United Kingdom 
+Phone  
++44 (0)20 3904 3220 
+Email  
+info@transfinite.com 
+Web  
+www.transfinite.com 
+Demonstration Files 
+ 
+Page 133 
+ 
+ 
+ 
+6 
+Acronyms and Abbreviations 
+AMT 
+Aeronautical Mobile Telemetry 
+ATC 
+Auxiliary Terrestrial Component 
+AWS 
+Advanced Wireless Services 
+BEA 
+Bureau of Economic Analysis Economic Area 
+BS 
+Base Station 
+BSS 
+Broadcast Satellite Service 
+BT 
+Bluetooth 
+CDF 
+Cumulative Distribution Function 
+CSV 
+Comma Separated Values 
+DL 
+Downlink 
+DTT 
+Digital Terrestrial Television 
+DVB 
+Digital Video Broadcasting 
+EESS 
+Earth Exploration Satellite Service 
+EIRP 
+Equivalent Isotropic Radiated Power 
+ENG 
+Electronic News Gathering 
+EPFD 
+Equivalent Power Flux Density 
+ES 
+Earth Station 
+ETSI 
+European Telecommunication Standards Institute 
+FCC 
+Federal Communications Commission 
+FDP 
+Fractional Degradation in Performance 
+FS 
+Fixed Service 
+FSS 
+Fixed Satellite Service 
+GSM 
+Global System for Mobiles 
+GSO 
+Geostationary Orbit 
+HAPS 
+High Altitude Platform Station 
+HEO 
+Highly Elliptical Orbit 
+IDWM 
+ITU Digitised World Map 
+IFIC 
+International Frequency Information Circular 
+IMT-2000 
+International Mobile Telecommunications - 2000 
+ITU 
+International Telecommunications Union 
+LEO 
+Low Earth Orbit 
+MRCC 
+Maritime Rescue Co-ordination Centres 
+MS 
+Mobile station 
+MSS 
+Mobile Satellite Service 
+NFD 
+Net Filter Discrimination 
+NGSO 
+Non-Geostationary Orbit 
+PCS 
+Personal Communication Services 
+PFD 
+Power Flux Density 
+PMR 
+Private Mobile Radio 
+PtMP 
+Point to Multi-Point 
+PtP 
+Point to Point 
+Demonstration Files 
+ 
+Page 134 
+ 
+ 
+ 
+RAS 
+Radio Astronomy Service 
+RX 
+Receive 
+S-DARS 
+Satellite Digital Audio Radio Service 
+SRR 
+Short Range Radar 
+SRS 
+Space Radiocommunication Stations 
+TIA 
+Telecommunication Industry Association 
+TLE 
+Two Line Element 
+TT&C 
+Telemetry Telecommand and Control 
+TVRO 
+Television Receive Only 
+TX 
+Transmit 
+UAV 
+Unmanned Aerial Vehicle 
+UE 
+User Equipment (typically a mobile handset) 
+UL 
+Uplink 
+UT 
+User Terminal 
+WCDMA 
+Wideband Code Division Multiple Access 
+WRC 
+World Radiocommunications Conference 
+ 
+ 
+ 

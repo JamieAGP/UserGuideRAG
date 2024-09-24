@@ -1,0 +1,1073 @@
+Tutorial Document 
+ 
+Page 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Visualyse Professional 
+Version 7 
+ 
+ 
+ Tutorial Document 
+ 
+ 
+Tutorial Document 
+ 
+Page 2 
+ 
+ 
+ 
+ 
+Version and Copyright Information 
+Product:  
+ 
+Version Professional 
+Version:  
+ 
+7.10.0.0 
+Document Version: 
+1.5 
+The IDWM database is © ITU and supplied under license. 
+© Transfinite Systems Ltd 
+ 
+Important Note 
+Transfinite Systems Ltd reserves the right to change features and functionality 
+without notice. 
+The simulation files shipped might vary slightly from the ones described in this 
+document. Not all terrain, clutter and map overlays might be available for copyright 
+reasons. 
+Tutorial Document 
+ 
+Page 3 
+ 
+ 
+ 
+Table of Contents 
+1 
+INTRODUCTION 
+............................................................................................ 
+4 
+2 
+QUICK OVERVIEW OF THE EXERCISE ...................................................... 
+5 
+2.1 
+Area Analysis ................................................................................................................................... 5 
+2.2 
+Key Modelling Features .................................................................................................................. 7 
+2.3 
+Propagation Model Variations and Nuances ................................................................................ 8 
+2.4 
+Terrain ............................................................................................................................................. 9 
+3 
+BUILDING THE SIMULATION FILES ......................................................... 
+10 
+3.1 
+Plan of Action .................................................................................................................................10 
+3.2 
+Finding Your Way Around............................................................................................................10 
+3.3 
+Input Parameters 
+............................................................................................................................11 
+3.3.1 
+WiMAX Parameters 
+.....................................................................................................................11 
+3.3.2 
+Satellite ES Parameters ................................................................................................................13 
+3.4 
+Building a Basic Simulation 
+...........................................................................................................13 
+3.4.1 
+Stage 1 - Defining a Single Base Station .....................................................................................13 
+3.4.2 
+Stage 2 - Defining the Earth Station ............................................................................................18 
+3.4.3 
+Stage 3 - Defining the Simulation 
+................................................................................................19 
+3.5 
+Area Analysis ..................................................................................................................................21 
+4 
+ADDITIONAL ANALYSIS ............................................................................ 
+28 
+4.1 
+Site Specific Coordination .............................................................................................................28 
+4.2 
+Analysis of Coverage of a WiMAX Network ...............................................................................29 
+5 
+MORE INFORMATION ................................................................................ 
+34 
+6 
+ACRONYMS AND ABBREVIATIONS ......................................................... 
+35 
+ 
+ 
+Tutorial Document 
+ 
+Page 4 
+ 
+ 
+ 
+1 
+Introduction 
+This document will walk you step-by-step through the creation of a simulation file 
+as a tutorial exercise. In doing so you will get an idea of how Visualyse 
+Professional works and how it can be used to model a wide variety of radio 
+communication scenarios. 
+This document should be read together with rest of the Visualyse Professional 
+document set, including: 
+• 
+User Guide 
+• 
+Technical Annex Document 
+• 
+Demonstration Files Document 
+Visualyse Professional can be used to analyse a very wide range of scenarios – as 
+can be seen by the long list of example files in the Demonstration Document. 
+These can include studies involving a wide range of different types of stations and 
+services, including broadcasting, mobile, fixed, GSO satellite, non-GSO satellite, 
+aircraft, ships, etc. 
+In the example files, we try to cover many of the different types of service and 
+station in at least one of the simulations. In this document, we have just the one 
+scenario, so we have chosen one that includes both satellite and terrestrial 
+services. 
+It is based upon one of the study topics that were discussed at the World 
+Radiocommunications Conference (WRC) in November 2007, namely Agenda 
+Item 1.4, which was concerned with finding additional spectrum for the 
+development of terrestrial mobile broadband services such as 3G, LTE, and 
+WiMAX. Various predictions were given, based on several scenarios for the 
+development of the markets for mobile service - up to 1 GHz requirement was 
+suggested in some scenarios. 
+One possible frequency band that was considered as potentially feasible was the 
+800 MHz currently used by the satellite community between 3.4 - 4.2 GHz. This 
+band is particularly suitable for terrestrial cellular systems and is in a ‘sweet spot’ 
+as far as propagation and capacity are concerned. However, it is a crucial band for 
+satellite networks in many countries around the world. 
+In this document, we will look at the implications of deploying a WiMAX network, 
+co-frequency, around an existing Fixed Satellite Service (FSS) earth station. 
+Important Note 
+This document is based upon example parameters and is not derived from any 
+actual or proposed systems known by Transfinite. While the numbers used are 
+representative, they and the results generated cannot be guaranteed. 
+Suggestion 
+We have located the stations to be around Sydney in Australia – the simulation 
+should still “work” if moved to other places if that would be more convenient for 
+you. 
+Tutorial Document 
+ 
+Page 5 
+ 
+ 
+ 
+2 
+Quick Overview of the Exercise 
+Agenda Item 1.4 was to: 
+“consider frequency-related matters for the future development of IMT-
+2000 and systems beyond IMT-2000 taking into account the results of 
+ITU-R studies in accordance with Resolution 228 (Rev.WRC-03)” 
+Agenda Item 1.4 covers many potential sharing scenarios and frequency bands: 
+this tutorial considers C band sharing with satellite Earth Stations in particular. 
+Visualyse Professional can be used to study the types of constraint that may 
+need to be placed on IMT-2000 systems in order to mitigate interference in 
+these scenarios. 
+In our exercise, we will model a WiMAX network operating in the vicinity of a 
+satellite earth station. WiMAX parameters are assumed to be consistent with 
+IMT-2000 standards given in ITU-R Rec.M.14571. 
+2.1 Area Analysis 
+We will use Visualyse Professional’s powerful area analysis tool to create a 
+colour coded plot showing locations where an earth station would experience 
+excess interference from a specific WiMAX base station. 
+Note this could also be used the other way around – for example show locations 
+around an earth station where a WiMAX base station could not be located. 
+Area analysis can be used to show these colour coded plots or contours of any 
+link parameters (e.g. received signal, interference C/I, PFD etc.) as in the two 
+figures below. 
+                                                     
+ 
+1 This is particularly appropriate given that WiMAX has been accepted as a radio interface for IMT-2000 
+within the ITU framework 
+Tutorial Document 
+ 
+Page 6 
+ 
+ 
+ 
+ 
+Figure 1: Area Analysis using Contours (Earth Station Coordination) 
+ 
+Figure 2: Area Analysis using Block Plot (Mobile Network Coverage) 
+As a quick look-ahead, the figure below shows the exclusion zone that results 
+from basic analysis under the assumption of path loss occurring for 50% time in 
+Recommendation ITU-R 452-16. 
+Tutorial Document 
+ 
+Page 7 
+ 
+ 
+ 
+ 
+Figure 3 – Exclusion zone around a WiMAX deployment in Australia 
+2.2 Key Modelling Features 
+The key features of Visualyse Professional that will be used in this model are: 
+Antenna Gain Patterns – in our model we have used ITU-R Rec. S.465 for the 
+earth stations. For the WiMAX system, we have used both ITU-R Rec. S.1245 
+and as an option a gain table. This latter option allows you to enter specific 
+antenna performance that is not included in Visualyse Professional’s large list of 
+roll-off masks. 
+The WiMAX base station antenna is modelled with multiple sectors – this is 
+reflected in the shape of the exclusion zone around the base station in the figure 
+above. 
+Antenna Pointing – Visualyse Professional allows you to point antennas based 
+on azimuth and elevation of the antenna mechanical boresight. In this 
+simulation, these are defined directly and for the base station the downtilt is an 
+important parameter. In other simulations, antennas may be pointed towards 
+other stations or can be made to scan between defined angles. 
+Tutorial Document 
+ 
+Page 8 
+ 
+ 
+ 
+Propagation Models – in this type of scenario the propagation model used and 
+the model parameters are of vital importance. This is an area where the power 
+of Visualyse Professional becomes apparent. The baseline scenario uses 
+Recommendation ITU-R P.452 with no terrain, under assumptions of long term 
+interference conditions (i.e. 50% of time). Below there is discussion of the 
+impact of varying model scenarios. 
+You can also vary the rain rate, but by default this is determined per 
+Recommendation 837 using the IDWM database. 
+Deploying the WiMAX Network – Visualyse Professional allows you to define 
+deployments of many stations in several ways. In this case, we have imported 
+the locations at defined latitudes and longitudes or use the hexagon deployment 
+facility in the Service Area Wizard. 
+In other scenarios, you could move stations randomly over a defined area using 
+the Define Variable module (allowing you to do statistical analysis using location 
+as Monte-Carlo variable). 
+2.3 Propagation Model Variations and Nuances 
+Propagation loss is the key factor in determining the size of exclusion zone 
+around a station. In Recommendation 452-16 anomalous propagation modes 
+dominate for short time scales and this leads to relatively low path loss and large 
+exclusion zones. 
+Normally, planning criteria for earth stations are required to address short term 
+statistics for availability and this may require, under worst case assumptions, 
+short term statistics for interference. 
+Hence our baseline uses 50 % of time. However, the earth station performance 
+is defined in terms of C/I and the 0.1% statistics could be driven by fading on the 
+satellite link.  
+Technically, we should perform a numerical correlation between C and I, which 
+we can do in Visualyse Professional. However, to illustrate the effect, we have 
+re-run the static analysis for 0.1%, 1% and 20% time in the propagation model.  
+As the percentage time varies from 0.1% to 1% and to 20% the exclusion zone 
+size decreases accordingly. 
+ 
+ 
+ 
+ 
+0.1 % 
+1% 
+20% 
+Figure 4 – Variation of exclusion zone size with percent time. 
+Tutorial Document 
+ 
+Page 9 
+ 
+ 
+ 
+Note these figures assumed the same I/N threshold: in practice, there are 
+different ones for short term and long term. But it shows how important it is that 
+the threshold and percentage of time used in the propagation model are 
+correctly selected. 
+2.4 Terrain 
+Another important factor in the propagation is the effect of terrain. Visualyse 
+Professional allows you to use any latitude / longitude / height terrain data with a 
+minimum of fuss.  
+Introducing terrain can have a radical effect on the exclusion zone and whilst 
+this may not be used in initial planning / coordination triggering, it can certainly 
+be used in site specific coordination. 
+If you have the Terrain Module you can extend the final simulation by adding 
+terrain and seeing the impact on the exclusion zone. 
+If you do not have the Terrain Module you can still see the effect by removing 
+your dongle and loading up the relevant example file. If Visualyse Professional 
+does not find a dongle it runs in demonstration mode which gives limited access 
+to all the Modules. 
+ 
+Tutorial Document 
+ 
+Page 10 
+ 
+ 
+ 
+3 
+Building the Simulation Files 
+3.1 Plan of Action 
+Now we will build a simulation from scratch. The following steps outline the 
+approach needed: 
+1. Create the WiMAX Network 
+• 
+Make a sectored antenna 
+• 
+Create single base station 
+• 
+Create and configure a transmit link 
+2. Define the FSS earth station: 
+• 
+Make a single beam antenna 
+• 
+Create a single station 
+• 
+Create and configure a receive link 
+3. Set up the interference calculation from WiMAX into the Earth Station (ES) 
+The resulting file is useful in its own right as it gives an example of the sort of 
+simulation that can be used to coordinate a single specific base station with an 
+earth station. 
+4. Set-up an area analysis showing the exclusion zone around the WiMAX 
+base station: 
+• 
+Define the threshold criterion 
+• 
+Use the area analysis to show points below the threshold in a different 
+colour from points above the threshold. 
+Once the simulation is set up there are several things that you can do with it – 
+for example use mitigation to reduce the exclusion zone. 
+In addition, it can be useful to consider the effect of multiple base stations and 
+so the final stage is to set up a hexagonal grid of base stations to determine the 
+coverage of the network. 
+3.2 Finding Your Way Around 
+The basic simulation will comprise two systems, the satellite Earth station and a 
+WiMAX base station.  
+In Visualyse Professional systems and scenarios are built from the basic building 
+blocks including Antennas, Stations, Station Groups, Carriers, Links, Link Groups, 
+Propagation Environments, Interference Paths, plus other more specialised ones. 
+Note you do not always need all of these blocks! 
+In this case, you will need to make: 
+Antennas: 
+Two: one for the Earth station and one for the base 
+station 
+Stations: 
+Three: the Earth station, the GSO satellite it is 
+pointing at, and the base station 
+Carriers: 
+Two: one for the satellite downlink and another for the 
+WiMAX downlink 
+Tutorial Document 
+ 
+Page 11 
+ 
+ 
+ 
+Links: 
+Two: a transmit link to define emissions from the 
+WiMAX base station and a receive link for the 
+satellite Earth station 
+Interference Paths: 
+One: from the WiMAX Transmit link to the Earth 
+station receive link 
+All these can be found on Visualyse Professional’s Model menu, which brings you 
+to list managers that can be used to add, delete, modify, and duplicate items of 
+that type.  
+Often if you click on “Add” you will be given the option to specify what sort of object 
+you want to configure – for example the screen shot below shows the list to 
+manage stations and what happens if you click “Add”. 
+ 
+Figure 5: Selection of “Station Type” when creating a new Station 
+You will also need to configure: 
+Propagation Environments: Configure the propagation models for Terrestrial 
+Fixed links such as from the WiMAX base station to 
+Earth station path 
+These can be found under the “Propagation” menu. 
+3.3 Input Parameters 
+3.3.1 WiMAX Parameters 
+For this exercise, we will use the following document as a reference for our 
+WiMAX system. 
+Reference 1: Mobile WiMAX – Part I: A Technical Overview and 
+Performance Evaluation, prepared on Behalf of the WiMAX Forum 
+February 21, 2006  
+In the first instance, we want to extract the essential features of a WiMAX 
+network needed to make Visualyse Professional models of the sharing scenario. 
+Tutorial Document 
+ 
+Page 12 
+ 
+ 
+ 
+We start with the base station network. As noted above we are going to model 
+two WiMAX scenarios: 
+• 
+Single entry interference from a single base station 
+• 
+Aggregate interference from a deployment of multiple base stations 
+A key fact for the aggregate cases comes from Reference 1 (p28) relates to 
+frequency re-use. 
+The sub-channel reuse planning can be dynamically optimized across 
+sectors or cells based on network load and interference conditions on a 
+frame by frame basis. All the cells and sectors therefore, can operate on 
+the same frequency channel without the need for frequency planning. 
+Hence when we consider the possible aggregate interference from multiple base 
+stations we can assume all co-frequency, and therefore we need to have a 
+representative deployment. 
+It can be time consuming to fully engineer a network with good coverage with 
+the minimum of base stations, so it is often the case that simplifying 
+assumptions are used. 
+One such assumption is that the base stations are regularly spaced on a grid – 
+Visualyse Professional can do this so it’s a good starting point. 
+Alternatively, we can do a rough engineering job by moving stations by hand to 
+optimise the network coverage. 
+A final option is to import station locations from an excel spreadsheet – perhaps 
+sourced from an assignment databases.  
+We can try all three in different groups. Using different approaches, each valid to 
+some degree, is a good way to check the sensitivity of the conclusions from the 
+analysis.  
+Reference 1 gives us a starting point for the base station to base station 
+distance of 2.8 km – that and other parameters are given in the table below. 
+ 
+Tutorial Document 
+ 
+Page 13 
+ 
+ 
+ 
+Parameter 
+Value 
+Number of 3-Sector Cells 
+19 
+Operating Frequency 
+2500 MHz 
+Duplex 
+TDD 
+Channel Bandwidth 
+10 MHz 
+BS-to-BS Distance 
+2.8 kilometres 
+Minimum Mobile-to-BS Distance 
+36 meters 
+Antenna Pattern 
+70° (-3 dB) with 20 dB front-to-back ratio 
+BS Height  
+32 meters 
+Mobile Terminal Height 
+1.5 meters 
+BS Antenna Gain 
+15 dBi 
+MS Antenna Gain 
+-1 dBi 
+BS Maximum Power Amplifier Power 
+43 dBm 
+Mobile Terminal Maximum PA Power 
+23 dBm 
+# of BS Tx/Rx Antenna 
+Tx: 2 or 4; Rx: 2 or 4 
+# of MS Tx/Rx Antenna 
+Tx: 1; Rx: 2 
+BS Noise Figure 
+4 dB 
+MS Noise Figure 
+7 dB 
+Mobile WiMAX System Parameters 
+Note use of dBm for the transmit power rather than dBW as entered into 
+Visualyse Professional. 
+3.3.2 Satellite ES Parameters 
+Several satellite operators provide services in C band. The parameters used 
+below are generic not specific to one network. 
+3.4 Building a Basic Simulation  
+The first stage is to create a simulation that models interference at a single 
+point. 
+3.4.1 Stage 1 - Defining a Single Base Station  
+The following bullet points outline the steps you need to take and the 
+parameters you need to input 
+• 
+You need to create a single antenna with three identical beams. So, you 
+need to add an antenna and select ‘Multiple Identical Beams’.  
+• 
+Reference 1 is quite sketchy about the details of the beam performance – a 
+fairly normal situation for future planned systems standards that need to 
+cover a wide group of implementation.  
+• 
+The information we have is that the gain is 12 dB, the beamwidth 140 and 
+the front-back ratio is 20 dB.  
+Tutorial Document 
+ 
+Page 14 
+ 
+ 
+ 
+• 
+We have used the parameters below 
+ 
+Figure 6: Creating Beam Pattern for WiMAX Base Station Antenna 
+• 
+Note use of elliptical pattern with beamwidth 140 horizontal and 5 vertical 
+• 
+The beam arrangement is such that there are three equally spaced sectors – 
+this is achieved by setting the pointing angles as shown below (note that 
+each beam has a 2.5 downtilt). 
+Tutorial Document 
+ 
+Page 15 
+ 
+ 
+ 
+ 
+Figure 7: Defining Beam Pointing for WiMAX Base Station Antenna 
+Tutorial Document 
+ 
+Page 16 
+ 
+ 
+ 
+• 
+Once the antenna is created, make a terrestrial station at the following 
+location: 
+Latitude = -33.88 
+Longitude = 151.21 
+Height = 32 m as per Table 7 of Ref 1. 
+• 
+Add the antenna to it – the key parameter is in pointing the antenna. The 
+antenna tab should look like this 
+ 
+Figure 8: Creating WiMAX Base Station 
+• 
+Open a Mercator view, right click and select properties to open the view 
+configuration and make sure: 
+• 
+Features tab: Beams and Station icons are enabled 
+• 
+Adornments: a grid resolution of 1° is selected 
+• 
+Overlays tab: The Mercator Earth Medium overlay is enabled  
+• 
+Then centre the map on the stations and zoom in using the mouse wheel 
+until the view looks a bit like this: 
+Tutorial Document 
+ 
+Page 17 
+ 
+ 
+ 
+ 
+Figure 9: Visualyse Professional with WiMAX Base Station 
+Now the question is how to define the emissions from base station and which 
+propagation models and parameters to use.  
+• 
+First create a carrier for the WiMAX with bandwidth 10 MHz and using linear 
+polarisation 
+• 
+Set up a transmit link as follows: 
+• 
+Transmit all beams of the WiMAX station 
+• 
+Select the 10 MHz carrier 
+• 
+Set the frequency to 3.6 GHz 
+• 
+Set the transmit power to 13 dBW (43 dBm) 
+• 
+Set propagation environment to terrestrial mobile 
+We must then configure the terrestrial mobile propagation models. 
+The propagation model and parameters can have a huge impact as discussed 
+above. In this case leave the model as Rec.P.452, but configure to set a fixed 
+percentage time as in the figure below. 
+Tutorial Document 
+ 
+Page 18 
+ 
+ 
+ 
+ 
+Figure 10: Configuring the Propagation Model in ITU-R Rec.P.452 
+Note:  We are using IDWM to tell ITU-R Rec.P.452 which paths are over sea and which 
+over land, and hence need the IDWM Module. If you do not have this Module the 
+simulation will still work, but with slightly different propagation over water. 
+Essentially this stage is now complete – you have defined a template base 
+station. Save this work as Stage 1. 
+3.4.2 Stage 2 - Defining the Earth Station 
+Create a satellite ES with parameters such as: 
+Antenna: single circular beam antenna defined by dish size and efficiency, 
+• 
+Antenna dish size = 3 m 
+• 
+Antenna efficiency = 0.6 
+• 
+Antenna gain pattern = Rec.S.465 
+GSO Satellite (to point the ES at) 
+• 
+Position = 150E (this gives an elevation angle of about 17 degrees at the 
+ES) 
+Earth Station: 
+• 
+Position = (-33.94, 150.87) 
+• 
+Height above terrain = 5m 
+• 
+Add an antenna with pointing = at GSO satellite 
+Carrier – we will use a reference 1 MHz carrier to do the I/N calculations, hence: 
+• 
+Bandwidth = 1 MHz 
+• 
+Polarisation = Linear Horizontal 
+Tutorial Document 
+ 
+Page 19 
+ 
+ 
+ 
+Having done that, create a receive link at the ES with the following: 
+• 
+Frequency = 3.6 GHz 
+• 
+RX Temp = 250K 
+• 
+1 MHz reference bandwidth (BW) carrier 
+Having done this there should be two stations as in the figure below: 
+ 
+Figure 11: Visualyse Professional with Earth Station and WiMAX Base Station 
+3.4.3 Stage 3 - Defining the Simulation 
+Having created the TX and RX links it is necessary to configure the rest of the 
+simulation, and create: 
+Interference Path: 
+ 
+Victim = ES RX link 
+ 
+Interferer = WiMAX TX link 
+ 
+Options = leave at default 
+Statistics: 
+Tutorial Document 
+ 
+Page 20 
+ 
+ 
+ 
+ 
+Activate I/N statistics with threshold -10 dB 
+Then option a watch window to look at the interfering worst single entry link 
+budget into the ES and a terrain path profile to measure the distance between 
+the two. The result should look at bit like this: 
+ 
+Figure 12: Visualyse Professional at the end of Stage 3 
+Note that the I/N exceeds the threshold even though the stations are separated 
+by about 32 km. 
+This file can be saved as Stage 3. 
+This simulation file could be the basis of a study to coordinate the deployment of 
+a single base station against an Earth Station. Having created the baseline file, 
+you could vary the: 
+WiMAX Network: 
+• 
+Antenna downtilt 
+• 
+Antenna pattern (e.g. use measured data) 
+• 
+Antenna azimuths 
+• 
+Number of antennas 
+• 
+Transmit power 
+Earth Station: 
+• 
+Dish size 
+• 
+Interference threshold 
+• 
+Availability requirement (and hence % used in Rec.P.452) 
+Tutorial Document 
+ 
+Page 21 
+ 
+ 
+ 
+3.5 Area Analysis 
+The next phase is to repeat the analysis undertaken at a single point (above) 
+over an area and showing how it varies. This is done using the Visualyse 
+Professional Area Analysis tool. 
+There are many ways in which the Area Analysis can be used – two of interest 
+are to: 
+1. Vary the location of the WiMAX base station to see how the interference 
+at the Earth station would vary depending upon its location and define 
+exclusion zones around the Earth station where WiMAX could not be 
+deployed 
+2. Vary the location of the Earth station to see how the interference it 
+receives would vary depending upon its location, and hence define 
+exclusion zones where an Earth station could not be deployed because 
+of a WiMAX base station 
+In this case, we are going to do the second of these and vary the location of the 
+Earth station. 
+To create the Area Analysis, select map view, click on the icon from the toolbar, 
+then click in the top left of the map and drag across to the bottom right. 
+Within the properties select: 
+• 
+Station to move = Earth Station 
+• 
+Victim Link = ES Link 
+• 
+Attribute to plot = the aggregate interference I/N 
+• 
+Display type = colour block plots 
+• 
+Plot resolution = 1 km 
+The completed dialog should look something like this: 
+Tutorial Document 
+ 
+Page 22 
+ 
+ 
+ 
+ 
+Figure 13: Defining the Area Analysis 
+Then click on the display settings so that: 
+• 
+I/N less than -20 show is not shown 
+• 
+I/N between -20 and -10 is shown as green 
+• 
+I/N between -10 and 0 show as orange 
+• 
+I/N between 0 and 10 dB show as yellow 
+• 
+I/N above 10 dB show as red 
+To do this, configure the control as follows: 
+Tutorial Document 
+ 
+Page 23 
+ 
+ 
+ 
+ 
+Figure 14: Defining the Colours to use on the Area Analysis  
+Having done this, you should see an area analysis that plots and colour codes 
+the I/N from the WiMAX into the ES as in the figure below. 
+Tutorial Document 
+ 
+Page 24 
+ 
+ 
+ 
+ 
+ 
+Figure 15: The Resulting Area Analysis   
+It can be seen that a large area is excluded.  
+A scale has been created via a grid about 10 km x 10 km by making the 
+latitude/longitude resolution 0.09 degrees in latitude and 0.11 in longitude.  
+The Area Analysis has been moved to the top of the list of overlays and set 
+semi-transparent so the underlying map can still be seen. 
+Note that the pattern is not symmetric! This is because the ES is pointing at the 
+satellite at longitude 150 which is towards the North East: hence when it is to the 
+South West it has slightly higher gain towards the WiMAX base station. 
+Save this simulation as Stage 4. 
+Consider making some, or all, of the variations on this simulation as in the table 
+below: 
+Tutorial Document 
+ 
+Page 25 
+ 
+ 
+ 
+Parameter 
+Baseline 
+Variation 
+WiMAX antenna downtilt 
+-2.5 
+0 or 5 
+WiMAX antenna azimuths 
+-120, 0, 120 
+60, 180, -60 
+WiMAX antenna gain pattern 
+Rec.1245 
+Table 
+WiMAX station height 
+35m 
+20m  
+Earth Station dish size 
+3m 
+1.5m or 4.5m 
+GSO satellite longitude 
+94.2 
+149 
+Rec.P.452 % time (1) 
+50 % 
+0.1 or 0.01% 
+Additional losses (clutter) 
+None 
+20 dB 
+Terrain 
+Smooth Earth 
+Terrain 
+Polarisation advantage 
+None 
+Include 
+ 
+Notes: 
+1. When using other percentages of time remember that the I/N threshold 
+will also change 
+Spot which increases or decreases the interfered area! 
+For comparison, the figure below shows a similar plot with terrain  
+Tutorial Document 
+ 
+Page 26 
+ 
+ 
+ 
+ 
+Figure 16: The Area Analysis Including Effects of Terrain  
+It can be seen that interference in most directions has decreased though it has 
+increased at a minority of points. 
+It is noticeable how the direction of increased interference is consistent with the 
+azimuth of the GSO satellite as seen by earth station. 
+Note:  This file is given in the example files together with test terrain data. So, if you do 
+not have the Terrain Module you can still see the impact of terrain by removing 
+your dongle and loading this file in demonstration mode. 
+Other overlays can be displayed on the map view – such as any map data you 
+have access to. If you have no map data, you can also export the Area Analysis 
+into Google Earth as in the figure below. 
+Tutorial Document 
+ 
+Page 27 
+ 
+ 
+ 
+ 
+Figure 17: Output of Visualyse Professional Area Analysis into Google Earth 
+ 
+ 
+Tutorial Document 
+ 
+Page 28 
+ 
+ 
+ 
+4 
+Additional Analysis 
+This section gives a flavour of the additional analysis that could be done from the 
+files generated without going through the details step by step. 
+4.1 Site Specific Coordination 
+As well as helping to identify general problems and sharing constraints, 
+Visualyse Professional is also well suited to allowing you to investigate site 
+specific coordination problems. 
+The figure below shows three useful views  
+1. The map view – explicitly showing the sectored coverage of the WiMAX 
+base station 
+2. The interference link budget to the WiMAX base station 
+3. The terrain profile along the interference path. 
+ 
+Figure 18 – Visualyse views that are useful in investigating site specific coordination issues 
+Visualyse is the ideal tool for What If? analysis – allowing you to see the impact 
+of varying key parameters.  
+In this case, we could think of the following mitigation options which can be 
+assessed easily in Visualyse. 
+• 
+Move ES 
+• 
+Move BS 
+• 
+BS antenna downtilt 
+• 
+BS antenna pointing 
+• 
+BS power reduction 
+• 
+ES site shielding 
+Tutorial Document 
+ 
+Page 29 
+ 
+ 
+ 
+• 
+Increase ES dish size 
+• 
+Take account of terrain 
+• 
+Reduce satellite link availability requirement or increase the permitted 
+interference level 
+• 
+Include the effect of power control by undertaking Monte Carlo analysis that 
+convolves its effect with the variation in propagation 
+Question: what others could be used? 
+4.2 Analysis of Coverage of a WiMAX Network 
+In this part of the exercise we need to know three key parameters 
+1. Density and extent of deployment of base stations 
+2. EIRP of base stations 
+3. Coverage requirement (in terms of received power threshold or something 
+else) 
+Ref 1 gives parameters of a typical network as having 19 three-sector cells with 
+a BS-BS distance of 2.8 km.  
+In the Visualyse Professional Grid Service Area wizard you can directly input the 
+station to station distance for a regular hexagon grid. Hence with not too much 
+effort you can set the geographic extent of the grid such that you have 20 
+stations separated by exactly 2.8 km on a regular hexagonal grid. 
+Rename the existing WiMAX base station as “Ref WiMax BS”. Then create a 
+Station Group using the Service Area Wizard and with this base station as the 
+template. 
+On the following page, enter the following latitude and longitude range: 
+ 
+Max 
+Min 
+Latitude 
+-33.83 
+-33.93 
+Longitude 
++151.26 
++151.10 
+ 
+The Service Area Wizard stages are shown below: 
+Tutorial Document 
+ 
+Page 30 
+ 
+ 
+ 
+ 
+Figure 19: Service Area Wizard – Defining the Area  
+ 
+Figure 20: Service Area Wizard – Defining the Deployment  
+Once you have created a group of stations representing your WiMAX network, 
+and added terrain data, you should have a window that looks something like this 
+Tutorial Document 
+ 
+Page 31 
+ 
+ 
+ 
+ 
+Figure 21: Deployed WiMAX Network  
+The next stage is to consider whether this network will provide reasonable 
+coverage for mobile WiMAX, and so we need to know what the network design 
+aim is.  
+Section 5 of reference one gives us example link budgets, from which we can 
+derive the required signal level or SNR. It also gives a simpler measure i.e. 
+maximum allowable path loss to the cell edge. 
+A figure of -128.2 dBW is given as the requirement for downlink data rates of 
+5.76 Mbps and uplink rates of 115 Kbps – so let’s use this figure. In addition, we 
+added 25 dB to model loss due to clutter and indoor – outdoor propagation. 
+Therefore, the necessary steps are: 
+1. Create a mobile station as a test point at height 1.5m with isotropic 
+antenna of 0 dB gain 
+2. Modify the receive link to use this mobile station and the WiMAX carrier 
+(instead of the earth station and 1 MHz carrier) 
+3. Modify the transmit link to use the group with all the WiMAX base 
+stations (rather than the single reference base station) 
+4. Modify the propagation environment for terrestrial mobile systems to 
+have an additional loss of 25 dB 
+Tutorial Document 
+ 
+Page 32 
+ 
+ 
+ 
+5. Create an area analysis covering the locations of the base stations with 
+resolution 0.2 km and block plot colour threshold of -128.2 dBW. 
+Using the Area Analysis tool to plot received signal at an isotropic antenna it is 
+possible to show the coverage that looks something like this. 
+ 
+Figure 22: Coverage from WiMAX Network  
+Note it is very hard to get uniform signal coverage when terrain is involved! 
+However, in this case there is good coverage apart from a few holes. Again, this 
+would benefit from overlay of maps if available or alternatively the coverage plot 
+could be exported to Google Earth. 
+This analysis was done with 90m terrain database and constant clutter loss: 
+more detailed analysis could use higher resolution terrain data and a land-use 
+database. 
+This baseline could then be used to optimise coverage by moving the base 
+stations.  
+One of the main constraints on coverage is the limited number of locations 
+where base stations could be located – and not in Sydney Harbour! Therefore, 
+an alternative way of defining their deployment is using the Service Area wizard 
+with CSV file containing list of (latitudes, longitudes) for the locations to use as 
+below: 
+Tutorial Document 
+ 
+Page 33 
+ 
+ 
+ 
+ 
+Figure 23: Importing Base Station Locations  
+This simulation file can then be used in further analysis – for example to repeat 
+the analysis above and identify the areas that would be excluded for use by an 
+Earth station due to aggregate interference from the WiMAX network. 
+ 
+ 
+Tutorial Document 
+ 
+Page 34 
+ 
+ 
+ 
+5 
+More Information 
+Please contact us with any questions you might have or if you have a suggestion 
+for a new demonstration file. 
+We can be contacted at: 
+Address: 
+ 
+Transfinite Systems Ltd 
+  
+ 
+Suite 24 (5th Floor) 
+  
+ 
+AMP House 
+  
+ 
+Dingwall Road 
+  
+ 
+Croydon CR0 2LX 
+  
+ 
+United Kingdom 
+Phone  
++44 (0)20 3904 3220 
+Email 
+ 
+info@transfinite.com 
+Web 
+ 
+www.transfinite.com 
+ 
+ 
+Tutorial Document 
+ 
+Page 35 
+ 
+ 
+ 
+6 
+Acronyms and Abbreviations 
+BS 
+Base Station 
+BW 
+Bandwidth 
+CSV 
+Comma Separated Values 
+EIRP 
+Equivalent Isotropic Radiated Power 
+ES 
+Earth Station 
+FSS 
+Fixed Satellite Service 
+GSO 
+Geostationary Orbit 
+ITU 
+International Telecommunications Union 
+IDWM 
+ITU Digitised World Map 
+IMT 
+International Mobile Telecommunications 
+LTE 
+Long Term Evolution 
+MS 
+Mobile Station 
+PFD 
+Power Flux Density 
+RX 
+Receive 
+SNR 
+Signal to Noise Ratio 
+TDD 
+Time Division Duplex 
+TX 
+Transmit 
+WRC 
+World Radiocommunications Conference 
+ 
