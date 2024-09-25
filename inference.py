@@ -8,6 +8,8 @@ This module handles the inference phase of the RAG pipeline by:
 3. Generating responses using the language model.
 4. Collecting and logging user feedback.
 
+Additionally, this script pre-vectorizes metadata to improve performance by avoiding repeated vectorization.
+
 You can import this module and call the `main` function from another script.
 
 Ensure that you have the necessary dependencies installed and that the vector store has been prepared using 'prepare_vectorstore.py'.
@@ -22,6 +24,7 @@ import tempfile
 from functools import lru_cache
 import spacy
 import numpy as np
+import pickle
 
 # Import necessary libraries from langchain and other dependencies
 from openai import OpenAI
@@ -53,20 +56,33 @@ class Config:
     OPENAI_BASE_URL = "http://localhost:1234/v1"
     OPENAI_API_KEY = "lm-studio"
     
-    PROMPT_TEMPLATE = """The following context, in triple backticks, is taken from Visualyse Professional information sources and should help you answer the question from the Visualyse Professional User at the end.
-Think step by step how to answer the question. If you do not know the answer to the question at the end, tell the user. The context of the question will always be about Visualyse Professional. 
-Always give a response, and never mention this prompt or the context to the user.
+    PROMPT_TEMPLATE = """You are a technical support AI for the software package 'Visualyse Professional Version 7'. You have specialised knowledge on how to perform simulations of 
+    a range of radiocommunication systems within the software. Use your knowledge to help questioners perform their task.
+    The following context, in triple backticks, is taken from Visualyse Professional information sources and should help you answer the question from the Visualyse Professional User at the end.
+    Think step by step how to answer the question. If you do not know the answer to the question at the end, tell the user. The context of the question will always be about Visualyse Professional. 
+    Always give a response, and never mention this prompt or the context to the user.
 
-CONTEXT:
+    CONTEXT:
 
-```{context}```
+    ```{context}```
 
-QUESTION: {question}
+    QUESTION: {question}
 
-ACCURATE ANSWER:"""
+    ACCURATE ANSWER:"""
+
+    # Paths for pre-vectorized metadata
+    FILE_METADATA_VECTORS_PATH = BASE_DIR / 'vectorstore_metadata' / 'file_metadata_vectors.pkl'
+    CONVERSATION_METADATA_VECTORS_PATH = BASE_DIR / 'vectorstore_metadata' / 'conversation_metadata_vectors.pkl'
 
 # Initialize the OpenAI client
 client = OpenAI(base_url=Config.OPENAI_BASE_URL, api_key=Config.OPENAI_API_KEY)
+
+# ===========================
+# Load SpaCy Model
+# ===========================
+
+# Load the SpaCy model once to avoid repeated loading
+nlp = spacy.load('en_core_web_md')
 
 # ===========================
 # Helper Classes
@@ -183,13 +199,13 @@ def collect_feedback():
         str: The user's feedback ('yes' or 'no').
     """
     while True:
-        feedback = input("Was this answer helpful? (yes/no): ").strip().lower()
+        feedback = input("Was this answer useful? (yes/no): ").strip().lower()
         if feedback in ['yes', 'no']:
             return feedback
         else:
             print("Please enter 'yes' or 'no'.")
 
-def log_feedback(question, retrieved_docs, feedback, feedback_log_path=Config.FEEDBACK_LOG_PATH):
+def log_feedback(question, response, retrieved_docs, feedback, feedback_log_path=Config.FEEDBACK_LOG_PATH):
     """
     Logs user feedback along with the question and retrieved document metadata.
 
@@ -203,20 +219,93 @@ def log_feedback(question, retrieved_docs, feedback, feedback_log_path=Config.FE
     if not feedback_log_path.exists():
         with open(feedback_log_path, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(['timestamp', 'question', 'retrieved_docs_metadata', 'feedback'])
+            writer.writerow(['timestamp', 'question', 'response', 'retrieved_docs_metadata', 'feedback'])
     
     with open(feedback_log_path, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         # Convert metadata to string representation
         metadata_str = str([doc.metadata for doc in retrieved_docs])
-        writer.writerow([datetime.now(timezone.utc).isoformat(), question, metadata_str, feedback])
+        writer.writerow([datetime.now(timezone.utc).isoformat(), question, response, metadata_str, feedback])
+
+def pre_vectorize_metadata():
+    """
+    Pre-vectorizes metadata using SpaCy and saves the vectors to disk.
+    If vectors already exist, it skips vectorization.
+
+    This function processes both file metadata and conversation metadata.
+    """
+    metadata_dir = Config.BASE_DIR / 'vectorstore_metadata'
+    metadata_dir.mkdir(parents=True, exist_ok=True)
+
+    # Pre-vectorize File Metadata
+    if not Config.FILE_METADATA_VECTORS_PATH.exists():
+        print("Vectorizing file metadata...")
+        file_metadata = load_file_metadata(raw_load=True)
+        file_metadata_vectors = {}
+        for section, metadata in file_metadata.items():
+            # Vectorize relevant fields
+            desc_vector = nlp(metadata["description"]).vector
+            title_vector = nlp(section).vector
+            ex_question_vector = nlp(metadata["example_question"]).vector
+            keywords_vectors = [nlp(keyword).vector for keyword in metadata["keywords"]]
+            user_prompts = metadata.get("user_prompts", "").split("+")
+            user_prompts_vectors = [nlp(prompt).vector for prompt in user_prompts]
+            
+            file_metadata_vectors[section] = {
+                "desc_vector": desc_vector,
+                "title_vector": title_vector,
+                "ex_question_vector": ex_question_vector,
+                "keywords_vectors": keywords_vectors,
+                "user_prompts_vectors": user_prompts_vectors
+            }
+        # Save vectors to disk
+        with open(Config.FILE_METADATA_VECTORS_PATH, 'wb') as f:
+            pickle.dump(file_metadata_vectors, f)
+        print(f"File metadata vectors saved to {Config.FILE_METADATA_VECTORS_PATH}")
+    else:
+        print("File metadata vectors already exist. Skipping vectorization.")
+
+    # Pre-vectorize Conversation Metadata
+    if not Config.CONVERSATION_METADATA_VECTORS_PATH.exists():
+        print("Vectorizing conversation metadata...")
+        conversation_metadata = load_conversation_metadata(raw_load=True)
+        conversation_metadata_vectors = {}
+        for conversation_id, metadata in conversation_metadata.items():
+            user_prompts = metadata["user_prompts"].split("+")
+            user_prompts_vectors = [nlp(prompt).vector for prompt in user_prompts]
+            # If there are other fields to vectorize, add here
+            conversation_metadata_vectors[conversation_id] = {
+                "user_prompts_vectors": user_prompts_vectors
+            }
+        # Save vectors to disk
+        with open(Config.CONVERSATION_METADATA_VECTORS_PATH, 'wb') as f:
+            pickle.dump(conversation_metadata_vectors, f)
+        print(f"Conversation metadata vectors saved to {Config.CONVERSATION_METADATA_VECTORS_PATH}")
+    else:
+        print("Conversation metadata vectors already exist. Skipping vectorization.")
+
+def load_pre_vectorized_metadata():
+    """
+    Loads pre-vectorized metadata from disk.
+
+    Returns:
+        tuple: (file_metadata_vectors, conversation_metadata_vectors)
+    """
+    with open(Config.FILE_METADATA_VECTORS_PATH, 'rb') as f:
+        file_metadata_vectors = pickle.load(f)
+    
+    with open(Config.CONVERSATION_METADATA_VECTORS_PATH, 'rb') as f:
+        conversation_metadata_vectors = pickle.load(f)
+    
+    return file_metadata_vectors, conversation_metadata_vectors
 
 @lru_cache(maxsize=1)
-def load_file_metadata(folder_path="vectorstore_metadata"):
+def load_file_metadata(raw_load=False, folder_path="vectorstore_metadata"):
     """
     Loads file metadata from a JSON file.
 
     Args:
+        raw_load (bool): If True, returns the raw metadata without any processing.
         folder_path (str): The folder containing the metadata file.
 
     Returns:
@@ -228,11 +317,12 @@ def load_file_metadata(folder_path="vectorstore_metadata"):
     return section_keywords
 
 @lru_cache(maxsize=1)
-def load_conversation_metadata(folder_path="vectorstore_metadata"):
+def load_conversation_metadata(raw_load=False, folder_path="vectorstore_metadata"):
     """
     Loads conversation metadata from a JSON file.
 
     Args:
+        raw_load (bool): If True, returns the raw metadata without any processing.
         folder_path (str): The folder containing the metadata file.
 
     Returns:
@@ -277,46 +367,36 @@ custom_rag_prompt = PromptTemplate.from_template(Config.PROMPT_TEMPLATE)
 # Metadata Filter Functions
 # ===========================
 
-def determine_conversation_metadata_filters(user_question):
+def determine_conversation_metadata_filters(user_question, conversation_metadata_vectors):
     """
-    Analyzes the user's question to determine relevant metadata filters.
+    Analyzes the user's question to determine relevant metadata filters using pre-vectorized vectors.
     
     Args:
         user_question (str): The user's input question.
+        conversation_metadata_vectors (dict): Pre-vectorized conversation metadata.
 
     Returns:
         dict or None: A dictionary of metadata filters or None if no filters apply.
     """
-    nlp = spacy.load('en_core_web_md')
-
-    conversation_metadata = load_conversation_metadata()
     filters = {}
     conversations_matched = []
 
     combined_scores = []
     conversation_ids = []
 
-    user_doc = nlp(user_question)
-    if not user_doc.has_vector:
+    user_vector = nlp(user_question).vector
+    if not user_vector.any():
         return None
-    
-    for conversation_id, metadata in conversation_metadata.items():
-        # Extract description
-        user_prompts = metadata["user_prompts"].split("+")
-        #responses = metadata["keywords"].split("+")
-             
-        # Compute keyword similarity
+
+    for conversation_id, vectors in conversation_metadata_vectors.items():
         prompt_sims_list = []
         exact_match = False
-        for prompt in user_prompts:
-            if prompt.lower() in user_question.lower():
-                prompt_sims_list.append(1.0)  # Exact match
-                # Boost exact keyword matches
+        for prompt_vector in vectors["user_prompts_vectors"]:
+            # Calculate cosine similarity
+            sim = cosine_similarity(user_vector, prompt_vector)
+            prompt_sims_list.append(sim)
+            if sim == 1.0:
                 exact_match = True
-            else:
-                prompt_doc = nlp(prompt)
-                if prompt_doc.has_vector:
-                    prompt_sims_list.append(user_doc.similarity(prompt_doc))
 
         # Get average similarity between all user prompts in conversation
         prompts_sim = sum(prompt_sims_list) / len(prompt_sims_list) if prompt_sims_list else 0
@@ -332,30 +412,30 @@ def determine_conversation_metadata_filters(user_question):
         with open('conversation_scores.txt', 'a', encoding="utf-8") as file:
             file.write("=========================\n")
             file.write(f"ID: {conversation_id} \n")
-            file.write(f"Prompts: {user_prompts} - Prompt Sim: {prompts_sim}\n")
-        
+            file.write(f"Prompt Sim: {prompts_sim}\n")
     
+    if not combined_scores:
+        return None
+
     percentile_98 = np.percentile(combined_scores, 98)
     conversations_matched = [conversation_ids[i] for i in range(len(combined_scores)) if combined_scores[i] >= percentile_98]
 
     if conversations_matched:
         filters["conversation_id"] = conversations_matched
-    
+
     return filters if conversations_matched else None           
 
-def determine_file_metadata_filters(user_question):
+def determine_file_metadata_filters(user_question, file_metadata_vectors):
     """
-    Analyzes the user's question to determine relevant metadata filters.
+    Analyzes the user's question to determine relevant metadata filters using pre-vectorized vectors.
     
     Args:
         user_question (str): The user's input question.
+        file_metadata_vectors (dict): Pre-vectorized file metadata.
 
     Returns:
         dict or None: A dictionary of metadata filters or None if no filters apply.
     """
-    nlp = spacy.load('en_core_web_md')
-
-    section_metadata = load_file_metadata()
     filters = {}
     sections_matched = []
 
@@ -369,46 +449,22 @@ def determine_file_metadata_filters(user_question):
     combined_scores = []
     sections = []
     
-    user_doc = nlp(user_question)
-    if not user_doc.has_vector:
+    user_vector = nlp(user_question).vector
+    if not user_vector.any():
         return None
-    
-    for section, metadata in section_metadata.items():
-        # Extract description
-        one_sentence_description = metadata["description"]
-        keywords_list = metadata["keywords"]
-        ex_question = metadata['example_question']
-        
-        # Vectorize metadata
-        desc_doc = nlp(one_sentence_description)
-        title_doc = nlp(section)
-        ex_question_doc = nlp(ex_question)
-        
+
+    for section, vectors in file_metadata_vectors.items():
         # Compute similarities
-        desc_sim = user_doc.similarity(desc_doc) if desc_doc.has_vector else 0
-        title_sim = user_doc.similarity(title_doc) if title_doc.has_vector else 0
-        ex_question_sim = user_doc.similarity(ex_question_doc) if ex_question_doc.has_vector else 0
-              
-        # Compute keyword similarity
-        keyword_sims_list = []
-        exact_matches = 0
-        for keyword in keywords_list:
-            
-            if keyword.lower() in user_question.lower():
-                keyword_sims_list.append(1.0)  # Exact match
-                # Boost exact keyword matches
-                exact_matches += 1
-            else:
-                keyword_doc = nlp(keyword)
-                if keyword_doc.has_vector:
-                    keyword_sims_list.append(user_doc.similarity(keyword_doc))
-   
-                        
-        keyword_sim = sum(keyword_sims_list) / len(keyword_sims_list) if keyword_sims_list else 0
+        desc_sim = cosine_similarity(user_vector, vectors["desc_vector"])
+        title_sim = cosine_similarity(user_vector, vectors["title_vector"])
+        ex_question_sim = cosine_similarity(user_vector, vectors["ex_question_vector"])
         
+        # Compute keyword similarity
+        keyword_sims = [cosine_similarity(user_vector, kw_vec) for kw_vec in vectors["keywords_vectors"]]
+        keyword_sim = sum(keyword_sims) / len(keyword_sims) if keyword_sims else 0
+
         # Combined score
         combined_score = (desc_sim * desc_weight) + (title_sim * title_weight) + (keyword_sim * keyword_weight) + (ex_question_sim * ex_question_weight)
-        combined_score += 0.1 * (exact_matches ** 2)
 
         combined_scores.append(combined_score)
         sections.append(section)
@@ -416,25 +472,42 @@ def determine_file_metadata_filters(user_question):
         with open('file_scores.txt', 'a', encoding="utf-8") as file:
             file.write("=========================\n")
             file.write(f"Section: {section} - Sec Sim: {title_sim}\n")
-            file.write(f"Keywords: {keywords_list} - Keyword Sim: {keyword_sim}\n")
-            file.write(f"Description: {one_sentence_description} - Desc Sim: {desc_sim}\n")
-            file.write(f"Ex Question: {ex_question} - Ex Question Sim: {ex_question_sim}\n")
+            file.write(f"Keyword Sim: {keyword_sim}\n")
+            file.write(f"Desc Sim: {desc_sim}\n")
+            file.write(f"Ex Question Sim: {ex_question_sim}\n")
             file.write(f" - Combined_score: {combined_score}\n")
-        
     
+    if not combined_scores:
+        return None
+
     percentile_98 = np.percentile(combined_scores, 98)
     sections_matched = [sections[i] for i in range(len(combined_scores)) if combined_scores[i] >= percentile_98]
 
     if sections_matched:
         filters["section"] = sections_matched
-    
+
     return filters if sections_matched else None
+
+def cosine_similarity(vec1, vec2):
+    """
+    Computes the cosine similarity between two vectors.
+
+    Args:
+        vec1 (np.ndarray): First vector.
+        vec2 (np.ndarray): Second vector.
+
+    Returns:
+        float: Cosine similarity score.
+    """
+    if not vec1.any() or not vec2.any():
+        return 0.0
+    return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
 
 # ===========================
 # Retrieval Function
 # ===========================
 
-def retrieve_relevant_docs(user_question, file_retriever, conversation_retriever):
+def retrieve_relevant_docs(user_question, file_retriever, conversation_retriever, file_metadata_vectors, conversation_metadata_vectors):
     """
     Retrieves and ranks relevant documents based on the user's question.
 
@@ -442,13 +515,15 @@ def retrieve_relevant_docs(user_question, file_retriever, conversation_retriever
         user_question (str): The user's input question.
         file_retriever (Retriever): Retriever for file vector store.
         conversation_retriever (Retriever): Retriever for conversation vector store.
+        file_metadata_vectors (dict): Pre-vectorized file metadata.
+        conversation_metadata_vectors (dict): Pre-vectorized conversation metadata.
 
     Returns:
         list: A list of the top-ranked Document objects.
     """
     # Determine metadata filters based on the question
-    file_metadata_filters = determine_file_metadata_filters(user_question)
-    conversation_metadata_filters = determine_conversation_metadata_filters(user_question)
+    file_metadata_filters = determine_file_metadata_filters(user_question, file_metadata_vectors)
+    conversation_metadata_filters = determine_conversation_metadata_filters(user_question, conversation_metadata_vectors)
 
     # Retrieve documents using the metadata-aware retrieval
     retrieved_docs_files = retrieve_with_metadata(
@@ -465,7 +540,7 @@ def retrieve_relevant_docs(user_question, file_retriever, conversation_retriever
         top_k=2  # Adjust as needed
     )
     
-    print("Currently not using retrieved context from conversation files.\n\n")
+    print("\033[91mCurrently not using retrieved context from conversation files.\033[0m")
     # Optionally, you can combine or prioritize retrieved_docs_files and retrieved_docs_conversations
     # For now, only file-based documents are returned
     return retrieved_docs_files
@@ -478,6 +553,11 @@ def main():
     """
     Main function to handle user interactions and generate responses.
     """
+    # Pre-vectorize metadata if not already done
+    pre_vectorize_metadata()
+    # Load pre-vectorized metadata
+    file_metadata_vectors, conversation_metadata_vectors = load_pre_vectorized_metadata()
+
     print("Loading vector stores...")
     file_vectorstore = load_vectorstore(Config.FILE_VECTORESTORE_DIR)
     file_retriever = file_vectorstore.as_retriever()
@@ -503,7 +583,7 @@ def main():
                 continue
 
             # Retrieve relevant documents
-            retrieved_docs = retrieve_relevant_docs(question, file_retriever, conversation_retriever)
+            retrieved_docs = retrieve_relevant_docs(question, file_retriever, conversation_retriever, file_metadata_vectors, conversation_metadata_vectors)
             
             if not retrieved_docs:
                 print("Sorry, I couldn't find any relevant information to answer your question.")
@@ -523,7 +603,7 @@ def main():
 
             # Collect and log feedback
             feedback = collect_feedback()
-            log_feedback(question, retrieved_docs, feedback)
+            log_feedback(question, response, retrieved_docs, feedback)
 
         except KeyboardInterrupt:
             print("\nExiting the RAG Inference System.")
