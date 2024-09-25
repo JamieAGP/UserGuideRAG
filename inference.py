@@ -109,14 +109,17 @@ class CallableLLM:
     def __call__(self, prompt, system_prompt=None):
         if system_prompt:
             prompt = f"{system_prompt}\n\n{prompt}"
+        
         response = self.client.completions.create(
             model=self.model,
             prompt=prompt,
             max_tokens=512,  # Adjust as needed
-            stream=False  # Disable streaming for synchronous processing
+            stream=True  # Disable streaming for synchronous processing
         )
-        return response.choices[0].text.strip()
-
+        for chunk in response:
+            choice = chunk.choices[0].text
+            yield choice
+ 
 # ===========================
 # Helper Functions
 # ===========================
@@ -567,7 +570,7 @@ def main():
     # Initialize the language model callable
     llm_callable = CallableLLM(client)
 
-    print("\033[92mRAG Inference System Ready. Type 'exit' to quit.\033[0m")
+    print("\033[92mRAG Inference System Ready. Type 'exit' or 'quit' or ctrl+c to end.\033[0m")
 
     while True:
         try:
@@ -595,15 +598,16 @@ def main():
             # Construct the prompt
             prompt = custom_rag_prompt.format(context=context, question=question)
 
-            # Generate the response
-            response = llm_callable(prompt, system_prompt=None)  # System prompt is already included in the prompt template
-
-            # Display the response
-            print("\033[94m\nResponse: \033[0m", response)
+            # # Generate the response
+            print("\033[94m\nResponse: \033[0m", end='', flush=True)
+            response_text = ""
+            for chunk in llm_callable(prompt, system_prompt=None):
+                print(chunk, end='', flush=True)  # Display each chunk as it arrives
+                response_text += chunk
 
             # Collect and log feedback
             feedback = collect_feedback()
-            log_feedback(question, response, retrieved_docs, feedback)
+            log_feedback(question, response_text, retrieved_docs, feedback)
 
         except KeyboardInterrupt:
             print("\nExiting the RAG Inference System.")
