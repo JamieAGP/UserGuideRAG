@@ -33,7 +33,6 @@ def process_metadata(all_metadata):
         user_prompts = doc['user_prompts']
         responses = doc['responses']
         conversation_id = doc['conversation_id']
-        print(conversation_id)
 
         conversation_data = {
             "user_prompts": user_prompts,

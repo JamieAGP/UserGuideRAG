@@ -202,7 +202,7 @@ def collect_feedback():
         str: The user's feedback ('yes' or 'no').
     """
     while True:
-        feedback = input("Was this answer useful? (yes/no): ").strip().lower()
+        feedback = input("\n\nWas this answer useful? (yes/no): ").strip().lower()
         if feedback in ['yes', 'no']:
             return feedback
         else:
@@ -364,7 +364,7 @@ def load_vectorstore(vectorstore_dir):
 # Prompt Template
 # ===========================
 
-custom_rag_prompt = PromptTemplate.from_template(Config.PROMPT_TEMPLATE)
+
 
 # ===========================
 # Metadata Filter Functions
@@ -566,6 +566,8 @@ def main():
     file_retriever = file_vectorstore.as_retriever()
     conversation_vectorstore = load_vectorstore(Config.CONVERSATION_VECTORSTORE_DIR)
     conversation_retriever = conversation_vectorstore.as_retriever()
+
+    custom_rag_prompt = PromptTemplate.from_template(Config.PROMPT_TEMPLATE)
 
     # Initialize the language model callable
     llm_callable = CallableLLM(client)
