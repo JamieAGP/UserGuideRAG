@@ -1,5 +1,4 @@
 from langchain_chroma import Chroma
-from collections import Counter
 import json
 
 class CustomEmbeddings:
@@ -52,14 +51,14 @@ def write_to_json(output_file, data):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4)
 
-def main(vectorstore_folderpath='vectorstore', keyword_filepath='vectorstore_metadata/file_metadata.json'):
+def main(vectorstore_folderpath='file_vectorstore', metadata_filepath='vectorstore_metadata/file_metadata.json'):
     """Main function to execute the workflow."""
     vectorstore = initialize_vector_store(vectorstore_folderpath)
     documents = retrieve_documents(vectorstore)
     all_metadata = documents['metadatas']
 
     meta_data = process_metadata(all_metadata)
-    write_to_json(keyword_filepath, meta_data)
+    write_to_json(metadata_filepath, meta_data)
 
 if __name__ == "__main__":
-    main(keyword_filepath='vectorstore_metadata/file_metadata.json')
+    main(metadata_filepath='vectorstore_metadata/file_metadata.json')

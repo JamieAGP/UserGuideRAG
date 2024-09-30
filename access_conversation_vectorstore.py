@@ -1,5 +1,4 @@
 from langchain_chroma import Chroma
-from collections import Counter
 import json
 
 class CustomEmbeddings:
