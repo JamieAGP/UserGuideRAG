@@ -1,26 +1,3 @@
-# import inference
-# import prepare_file_vectorstore import main, Config
-# from pathlib import Path
-# import access_file_vectorstore
-
-# def main():
-#     config = Config(
-#         rag_files_dir=Path('RAG_files'),
-#         vectorestore_dir=Path('vectorstore'),
-#         embedding_model="nomic-ai/nomic-embed-text-v1.5-GGUF",
-#         llm_model="ggml-model-Q8_0.gguf",
-#         chunk_size=1500,
-#         chunk_overlap=200,
-#         openai_base_url="http://localhost:1234/v1",
-#         openai_api_key="your-api-key"
-#     )
-#     prepare_file_vectorstore.main(config=config)
-#     access_file_vectorstore.main()
-
-
-# if __name__ == "__main__":
-#     main()
-
 import os
 from access_conversation_vectorstore import main as access_conversation_main
 from access_file_vectorstore import main as access_file_main
@@ -40,23 +17,31 @@ def check_vectorstore_exists(path):
 def ensure_conversation_vectorstore():
     """Ensure the conversation vectorstore is ready."""
     if not check_vectorstore_exists(CONVERSATION_VECTORSTORE_PATH):
-        print(f"Conversation vectorstore not found. Preparing conversation vectorstore.")
+        input("Conversation vectorstore not found. Ensure a comprehension model is loaded to prepare vectorstore. Hit Enter to continue...")
         prepare_conversation_main()
+        return False
     else:
         print(f"Conversation vectorstore found. Skipping preparation.")
+        return True
 
 def ensure_file_vectorstore():
     """Ensure the file vectorstore is ready."""
     if not check_vectorstore_exists(FILE_VECTORSTORE_PATH):
-        print(f"File vectorstore not found. Preparing file vectorstore.")
+        input("File vectorstore not found. Ensure a comprehension model is loaded to prepare vectorstore. Hit Enter to continue...")
         prepare_file_main()
+        return False
     else:
         print(f"File vectorstore found. Skipping preparation.")
+        return True
+
 
 def main():
     # Ensure both conversation and file vector stores are ready
-    ensure_conversation_vectorstore()
-    ensure_file_vectorstore()
+    conversation_vectorestore = ensure_conversation_vectorstore()
+    file_vectorestore = ensure_file_vectorstore()
+
+    if not conversation_vectorestore or not file_vectorestore:
+        input ("Ensure wanted inference model is loaded for interaction. Hit Enter to continue")
 
     # Run access scripts to process the vector stores
     print("Accessing conversation vectorstore...")
