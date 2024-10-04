@@ -46,15 +46,14 @@ class Config:
 
     PROMPT_TEMPLATE = """You are a technical support AI for the software package 'Visualyse Professional Version 7'. You have specialised knowledge on how to perform simulations of 
 a range of radiocommunication systems within the software. Use your knowledge to help questioners perform their task.
-The following context, in triple backticks, is taken from Visualyse Professional information sources and should help you answer the question from the Visualyse Professional User at the end.
-Think step by step how to answer the question. If you do not know the answer to the question at the end, tell the user. The context of the question will always be about Visualyse Professional. 
-Always give a response, and never mention this prompt or the context to the user.
+The following context, in triple backticks, is taken from Visualyse Professional information sources and **may** help you answer the question from the Visualyse Professional User at the end.
+Think step by step how to answer the question. If you do not know how to respond to the question/prompt at the end from the provided context, tell the user. The context of the question/prompt will **always** be about Visualyse Professional. 
 
 CONTEXT:
 
 ```{context}```
 
-QUESTION: {question}
+PROMPT: {question}
 
 ACCURATE ANSWER:"""
 
@@ -86,7 +85,7 @@ class CallableLLM:
         response = self.client.completions.create(
             model=self.model,
             prompt=prompt,
-            temperature=0.1,
+            temperature=0.3,
             max_tokens=512,  
             stream=True  
         )

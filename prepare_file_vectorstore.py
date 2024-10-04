@@ -264,26 +264,6 @@ def cached_extract_section_title(chunk_content: str, llm_callable: CallableLLM) 
     """
     return extract_section_title(chunk_content, llm_callable)
 
-def format_docs(docs: list) -> str:
-    """
-    Formats retrieved documents into a single context string and logs it to a temporary file.
-
-    Args:
-        docs (list): List of Document objects.
-
-    Returns:
-        str: The concatenated context string.
-    """
-    context = "\n\n".join(doc.page_content for doc in docs)
-
-    # Create a temporary file for logging purposes
-    with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding="utf-8", suffix='.txt') as temp_file:
-        temp_file.write(context)
-        temp_file_path = temp_file.name
-
-    print(f"\033[91mSelected Context has been written to a temporary file: {temp_file_path}\033[0m")
-    return context
-
 def load_and_process_documents(config: Config, client: OpenAI) -> list:
     """
     Loads text files, splits them into chunks, generates section titles, and enriches them with metadata.
